@@ -1,1 +1,17 @@
+PODS:
+  - Operations (3.2.0):
+    - Operations/Standard (= 3.2.0)
+  - Operations/+CloudKit (3.2.0):
+    - Operations/Standard
+  - Operations/Extension (3.2.0)
+  - Operations/Standard (3.2.0)
+
+DEPENDENCIES:
+  - Operations
+  - Operations/+CloudKit
+  - Operations/Extension
+
+SPEC CHECKSUMS:
+  Operations: 4c5f06d7328f1b097d5dac5c0d614917ecbc96e7
+
 COCOAPODS: 0.39.0
