@@ -14,6 +14,7 @@
 		E734F82A1D79CED1001E013C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E734F8291D79CED1001E013C /* Assets.xcassets */; };
 		E734F82F1D79CF08001E013C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E734F82D1D79CF08001E013C /* LaunchScreen.storyboard */; };
 		E734F8301D79CF08001E013C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E734F82E1D79CF08001E013C /* Main.storyboard */; };
+		E7E5FA371D79EFAE00B6FF1D /* CloudOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7E5FA361D79EFAE00B6FF1D /* CloudOperation.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +28,7 @@
 		E734F8291D79CED1001E013C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = Resources/Assets.xcassets; sourceTree = "<group>"; };
 		E734F82D1D79CF08001E013C /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = Resources/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E734F82E1D79CF08001E013C /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = Resources/Main.storyboard; sourceTree = "<group>"; };
+		E7E5FA361D79EFAE00B6FF1D /* CloudOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CloudOperation.swift; path = Classes/CloudOperation.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,6 +110,7 @@
 		E734F81E1D79CDE6001E013C /* Repository */ = {
 			isa = PBXGroup;
 			children = (
+				E7E5FA2D1D79ED4100B6FF1D /* Shared */,
 			);
 			name = Repository;
 			sourceTree = "<group>";
@@ -142,6 +145,14 @@
 			children = (
 			);
 			name = Extensions;
+			sourceTree = "<group>";
+		};
+		E7E5FA2D1D79ED4100B6FF1D /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				E7E5FA361D79EFAE00B6FF1D /* CloudOperation.swift */,
+			);
+			name = Shared;
 			sourceTree = "<group>";
 		};
 		E9BDF7BA86B7BDC958BEA6A7 /* Pods */ = {
@@ -277,6 +288,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E734F8261D79CEA1001E013C /* ViewController.swift in Sources */,
+				E7E5FA371D79EFAE00B6FF1D /* CloudOperation.swift in Sources */,
 				E734F8241D79CE95001E013C /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
