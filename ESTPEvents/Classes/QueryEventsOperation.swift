@@ -10,7 +10,7 @@ import Foundation
 import Operations
 import CloudKit
 
-class QueryEventsOperation: QueryOperation {
+class QueryEventsOperation: QueryOperation, QueryEventsOperationPrototype {
     var events: [Event] {
         return fetchedRecords.map {Event(record: $0)}
     }
