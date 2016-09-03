@@ -32,6 +32,7 @@
 		E7E5FA391D79F01900B6FF1D /* QueryOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7E5FA381D79F01900B6FF1D /* QueryOperation.swift */; };
 		E7E5FA3B1D79F08000B6FF1D /* EventRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7E5FA3A1D79F08000B6FF1D /* EventRepository.swift */; };
 		E7FB89301D7B1C6900FEFD1B /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7FB892F1D7B1C6900FEFD1B /* CloudKit.framework */; };
+		E7FB89361D7B211700FEFD1B /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E7FB89341D7B211700FEFD1B /* Model.xcdatamodeld */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -64,6 +65,7 @@
 		E7E5FA3A1D79F08000B6FF1D /* EventRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EventRepository.swift; path = Classes/EventRepository.swift; sourceTree = "<group>"; };
 		E7EE0E9F1D7AF70F0089B38C /* ESTPEvents.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = ESTPEvents.entitlements; sourceTree = "<group>"; };
 		E7FB892F1D7B1C6900FEFD1B /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
+		E7FB89351D7B211700FEFD1B /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -162,6 +164,7 @@
 			children = (
 				E79B6BBA1D7AFE780048E0DF /* Error.swift */,
 				E79B6BC31D7AFE780048E0DF /* Result.swift */,
+				E7FB89311D7B1F6600FEFD1B /* Persistency */,
 				E7E5FA3C1D79F0AE00B6FF1D /* Entity */,
 			);
 			name = Model;
@@ -255,6 +258,14 @@
 				E79B6BC11D7AFE780048E0DF /* PresenterFactory.swift */,
 			);
 			name = Shared;
+			sourceTree = "<group>";
+		};
+		E7FB89311D7B1F6600FEFD1B /* Persistency */ = {
+			isa = PBXGroup;
+			children = (
+				E7FB89341D7B211700FEFD1B /* Model.xcdatamodeld */,
+			);
+			name = Persistency;
 			sourceTree = "<group>";
 		};
 		E9BDF7BA86B7BDC958BEA6A7 /* Pods */ = {
@@ -411,6 +422,7 @@
 				E79B6BCB1D7AFE780048E0DF /* Int+Bool.swift in Sources */,
 				E7E5FA3B1D79F08000B6FF1D /* EventRepository.swift in Sources */,
 				E79B6BC51D7AFE780048E0DF /* Entity.swift in Sources */,
+				E7FB89361D7B211700FEFD1B /* Model.xcdatamodeld in Sources */,
 				E79B6BCC1D7AFE780048E0DF /* Operation+Completion.swift in Sources */,
 				E79B6BC61D7AFE780048E0DF /* Error.swift in Sources */,
 				E734F8241D79CE95001E013C /* AppDelegate.swift in Sources */,
@@ -551,6 +563,20 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		E7FB89341D7B211700FEFD1B /* Model.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				E7FB89351D7B211700FEFD1B /* Model.xcdatamodel */,
+			);
+			currentVersion = E7FB89351D7B211700FEFD1B /* Model.xcdatamodel */;
+			name = Model.xcdatamodeld;
+			path = Resources/Model.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = E734F7FE1D79CD33001E013C /* Project object */;
 }
