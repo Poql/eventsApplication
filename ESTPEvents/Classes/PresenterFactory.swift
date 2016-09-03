@@ -9,4 +9,6 @@
 import Foundation
 
 protocol PresenterFactory {
+    var eventPresenter: EventPresenter { get }
+    func addClient(eventClient: EventPresenterClient)
 }
