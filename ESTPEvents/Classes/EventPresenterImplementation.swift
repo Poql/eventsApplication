@@ -10,8 +10,31 @@ import Foundation
 import Operations
 
 class EventPresenterImplementation<Repository: EventRepository>: EventPresenter {
-    private(set) var events: [Event] = []
+    private let eventRepository: Repository
     
+    private let operationQueue = OperationQueue()
+
+    private(set) var events: [Event] = []
+
+    weak var client: EventPresenterClient?
+    
+    init(repository: Repository) {
+        self.eventRepository = repository
+    }
+    
+    // MARK: - EventPresenter
+
     func queryAllEvents() {
+        let operation = eventRepository.queryEventsOperation()
+        operation.completionHandler = { result in
+            switch result {
+            case let .error(err):
+                print(err)
+            case let .value(events):
+                self.events = events
+                self.client?.presenterDidQueryEvents()
+            }
+        }
+        operationQueue.addOperation(operation)
     }
 }
