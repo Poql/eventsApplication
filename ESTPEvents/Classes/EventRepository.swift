@@ -7,6 +7,15 @@
 //
 
 import Foundation
+import Operations
+
+protocol QueryEventsOperationPrototype: class {
+    var events: [Event] { get }
+    var completionHandler: ((result: Result<[Event], ApplicationError>) -> Void)? { get set }
+}
 
 protocol EventRepository {
+    associatedtype QueryEventsOperation: Operation, QueryEventsOperationPrototype
+    
+    func queryEventsOperation() -> QueryEventsOperation
 }
