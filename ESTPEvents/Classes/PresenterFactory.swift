@@ -12,3 +12,22 @@ protocol PresenterFactory {
     var eventPresenter: EventPresenter { get }
     func addClient(eventClient: EventPresenterClient)
 }
+
+class PresenterFactoryImplementation: PresenterFactory {
+    
+    private let eventRepository = EventRepositoryImplementation()
+    
+    private lazy var eventPresenterImplementation: EventPresenterImplementation<EventRepositoryImplementation> = {
+        return EventPresenterImplementation(repository: self.eventRepository)
+    }()
+    
+    // MARK: - PresenterFactory
+    
+    var eventPresenter: EventPresenter {
+        return eventPresenterImplementation
+    }
+    
+    func addClient(eventClient: EventPresenterClient) {
+        eventPresenterImplementation.client = eventClient
+    }
+}
