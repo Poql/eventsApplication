@@ -21,6 +21,7 @@
 		E79B6BC61D7AFE780048E0DF /* Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = E79B6BBA1D7AFE780048E0DF /* Error.swift */; };
 		E79B6BC71D7AFE780048E0DF /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = E79B6BBB1D7AFE780048E0DF /* Event.swift */; };
 		E79B6BC81D7AFE780048E0DF /* EventPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E79B6BBC1D7AFE780048E0DF /* EventPresenter.swift */; };
+		E79B6BC91D7AFE780048E0DF /* EventPresenterImplementation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E79B6BBD1D7AFE780048E0DF /* EventPresenterImplementation.swift */; };
 		E79B6BCA1D7AFE780048E0DF /* EventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E79B6BBE1D7AFE780048E0DF /* EventViewController.swift */; };
 		E79B6BCB1D7AFE780048E0DF /* Int+Bool.swift in Sources */ = {isa = PBXBuildFile; fileRef = E79B6BBF1D7AFE780048E0DF /* Int+Bool.swift */; };
 		E79B6BCC1D7AFE780048E0DF /* Operation+Completion.swift in Sources */ = {isa = PBXBuildFile; fileRef = E79B6BC01D7AFE780048E0DF /* Operation+Completion.swift */; };
@@ -50,6 +51,7 @@
 		E79B6BBA1D7AFE780048E0DF /* Error.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Error.swift; path = Classes/Error.swift; sourceTree = "<group>"; };
 		E79B6BBB1D7AFE780048E0DF /* Event.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Event.swift; path = Classes/Event.swift; sourceTree = "<group>"; };
 		E79B6BBC1D7AFE780048E0DF /* EventPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EventPresenter.swift; path = Classes/EventPresenter.swift; sourceTree = "<group>"; };
+		E79B6BBD1D7AFE780048E0DF /* EventPresenterImplementation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EventPresenterImplementation.swift; path = Classes/EventPresenterImplementation.swift; sourceTree = "<group>"; };
 		E79B6BBE1D7AFE780048E0DF /* EventViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EventViewController.swift; path = Classes/EventViewController.swift; sourceTree = "<group>"; };
 		E79B6BBF1D7AFE780048E0DF /* Int+Bool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Int+Bool.swift"; path = "Classes/Int+Bool.swift"; sourceTree = "<group>"; };
 		E79B6BC01D7AFE780048E0DF /* Operation+Completion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Operation+Completion.swift"; path = "Classes/Operation+Completion.swift"; sourceTree = "<group>"; };
@@ -228,6 +230,7 @@
 			isa = PBXGroup;
 			children = (
 				E79B6BBC1D7AFE780048E0DF /* EventPresenter.swift */,
+				E79B6BBD1D7AFE780048E0DF /* EventPresenterImplementation.swift */,
 			);
 			name = Event;
 			sourceTree = "<group>";
@@ -392,6 +395,7 @@
 				E79B6BC71D7AFE780048E0DF /* Event.swift in Sources */,
 				E79B6BC81D7AFE780048E0DF /* EventPresenter.swift in Sources */,
 				E7E5FA391D79F01900B6FF1D /* QueryOperation.swift in Sources */,
+				E79B6BC91D7AFE780048E0DF /* EventPresenterImplementation.swift in Sources */,
 				E79B6BCB1D7AFE780048E0DF /* Int+Bool.swift in Sources */,
 				E7E5FA3B1D79F08000B6FF1D /* EventRepository.swift in Sources */,
 				E79B6BC51D7AFE780048E0DF /* Entity.swift in Sources */,
