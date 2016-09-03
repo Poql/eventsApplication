@@ -14,6 +14,7 @@
 		E734F82A1D79CED1001E013C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E734F8291D79CED1001E013C /* Assets.xcassets */; };
 		E734F82F1D79CF08001E013C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E734F82D1D79CF08001E013C /* LaunchScreen.storyboard */; };
 		E734F8301D79CF08001E013C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E734F82E1D79CF08001E013C /* Main.storyboard */; };
+		E79B6BC41D7AFE780048E0DF /* CKQuery+Record.swift in Sources */ = {isa = PBXBuildFile; fileRef = E79B6BB81D7AFE780048E0DF /* CKQuery+Record.swift */; };
 		E79B6BC51D7AFE780048E0DF /* Entity.swift in Sources */ = {isa = PBXBuildFile; fileRef = E79B6BB91D7AFE780048E0DF /* Entity.swift */; };
 		E79B6BCB1D7AFE780048E0DF /* Int+Bool.swift in Sources */ = {isa = PBXBuildFile; fileRef = E79B6BBF1D7AFE780048E0DF /* Int+Bool.swift */; };
 		E79B6BCC1D7AFE780048E0DF /* Operation+Completion.swift in Sources */ = {isa = PBXBuildFile; fileRef = E79B6BC01D7AFE780048E0DF /* Operation+Completion.swift */; };
@@ -34,6 +35,7 @@
 		E734F8291D79CED1001E013C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = Resources/Assets.xcassets; sourceTree = "<group>"; };
 		E734F82D1D79CF08001E013C /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = Resources/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E734F82E1D79CF08001E013C /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = Resources/Main.storyboard; sourceTree = "<group>"; };
+		E79B6BB81D7AFE780048E0DF /* CKQuery+Record.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "CKQuery+Record.swift"; path = "Classes/CKQuery+Record.swift"; sourceTree = "<group>"; };
 		E79B6BB91D7AFE780048E0DF /* Entity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Entity.swift; path = Classes/Entity.swift; sourceTree = "<group>"; };
 		E79B6BBF1D7AFE780048E0DF /* Int+Bool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Int+Bool.swift"; path = "Classes/Int+Bool.swift"; sourceTree = "<group>"; };
 		E79B6BC01D7AFE780048E0DF /* Operation+Completion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Operation+Completion.swift"; path = "Classes/Operation+Completion.swift"; sourceTree = "<group>"; };
@@ -157,6 +159,7 @@
 		E734F8311D79CFCA001E013C /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				E79B6BB81D7AFE780048E0DF /* CKQuery+Record.swift */,
 				E79B6BBF1D7AFE780048E0DF /* Int+Bool.swift */,
 				E79B6BC01D7AFE780048E0DF /* Operation+Completion.swift */,
 			);
@@ -323,6 +326,7 @@
 			files = (
 				E79B6BCE1D7AFE780048E0DF /* Record.swift in Sources */,
 				E734F8261D79CEA1001E013C /* SharedViewController.swift in Sources */,
+				E79B6BC41D7AFE780048E0DF /* CKQuery+Record.swift in Sources */,
 				E7E5FA371D79EFAE00B6FF1D /* CloudOperation.swift in Sources */,
 				E7E5FA391D79F01900B6FF1D /* QueryOperation.swift in Sources */,
 				E79B6BCB1D7AFE780048E0DF /* Int+Bool.swift in Sources */,
