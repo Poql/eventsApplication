@@ -4,6 +4,11 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>BNRCoreDataStack.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Operations.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -17,12 +22,17 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>8E074E6EA71EFAA744E886CCEE00C52E</key>
+		<key>698733C4D35F57BFBAEEEF66B2C06C7F</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
 		<key>9A9B79A554AF37A9DCD75E33D95141DE</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>A7AA17D4D5CE32A75DFF206031F3034A</key>
 		<dict>
 			<key>primary</key>
 			<true/>
