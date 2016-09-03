@@ -12,3 +12,7 @@ protocol EventPresenter {
     var events: [Event] { get }
     func queryAllEvents()
 }
+
+protocol EventPresenterClient: class {
+    func presenterDidQueryEvents()
+}
