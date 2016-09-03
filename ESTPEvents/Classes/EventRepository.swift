@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import Operations
 
 protocol QueryEventsOperationPrototype: class {
     var events: [Event] { get }
@@ -14,4 +15,7 @@ protocol QueryEventsOperationPrototype: class {
 }
 
 protocol EventRepository {
+    associatedtype QueryEventsOperation: Operation, QueryEventsOperationPrototype
+    
+    func queryEventsOperation() -> QueryEventsOperation
 }

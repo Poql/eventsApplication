@@ -9,4 +9,7 @@
 import Foundation
 
 class EventRepositoryImplementation: EventRepository {
+    func queryEventsOperation() -> QueryEventsOperation {
+        return QueryEventsOperation()
+    }
 }
