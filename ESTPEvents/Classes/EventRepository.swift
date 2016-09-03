@@ -8,5 +8,10 @@
 
 import Foundation
 
+protocol QueryEventsOperationPrototype: class {
+    var events: [Event] { get }
+    var completionHandler: ((result: Result<[Event], ApplicationError>) -> Void)? { get set }
+}
+
 protocol EventRepository {
 }
