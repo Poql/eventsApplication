@@ -16,6 +16,7 @@
 		E734F8301D79CF08001E013C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E734F82E1D79CF08001E013C /* Main.storyboard */; };
 		E79B6BC41D7AFE780048E0DF /* CKQuery+Record.swift in Sources */ = {isa = PBXBuildFile; fileRef = E79B6BB81D7AFE780048E0DF /* CKQuery+Record.swift */; };
 		E79B6BC51D7AFE780048E0DF /* Entity.swift in Sources */ = {isa = PBXBuildFile; fileRef = E79B6BB91D7AFE780048E0DF /* Entity.swift */; };
+		E79B6BC61D7AFE780048E0DF /* Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = E79B6BBA1D7AFE780048E0DF /* Error.swift */; };
 		E79B6BCB1D7AFE780048E0DF /* Int+Bool.swift in Sources */ = {isa = PBXBuildFile; fileRef = E79B6BBF1D7AFE780048E0DF /* Int+Bool.swift */; };
 		E79B6BCC1D7AFE780048E0DF /* Operation+Completion.swift in Sources */ = {isa = PBXBuildFile; fileRef = E79B6BC01D7AFE780048E0DF /* Operation+Completion.swift */; };
 		E79B6BCE1D7AFE780048E0DF /* Record.swift in Sources */ = {isa = PBXBuildFile; fileRef = E79B6BC21D7AFE780048E0DF /* Record.swift */; };
@@ -37,6 +38,7 @@
 		E734F82E1D79CF08001E013C /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = Resources/Main.storyboard; sourceTree = "<group>"; };
 		E79B6BB81D7AFE780048E0DF /* CKQuery+Record.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "CKQuery+Record.swift"; path = "Classes/CKQuery+Record.swift"; sourceTree = "<group>"; };
 		E79B6BB91D7AFE780048E0DF /* Entity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Entity.swift; path = Classes/Entity.swift; sourceTree = "<group>"; };
+		E79B6BBA1D7AFE780048E0DF /* Error.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Error.swift; path = Classes/Error.swift; sourceTree = "<group>"; };
 		E79B6BBF1D7AFE780048E0DF /* Int+Bool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Int+Bool.swift"; path = "Classes/Int+Bool.swift"; sourceTree = "<group>"; };
 		E79B6BC01D7AFE780048E0DF /* Operation+Completion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Operation+Completion.swift"; path = "Classes/Operation+Completion.swift"; sourceTree = "<group>"; };
 		E79B6BC21D7AFE780048E0DF /* Record.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Record.swift; path = Classes/Record.swift; sourceTree = "<group>"; };
@@ -133,6 +135,7 @@
 		E734F81F1D79CDFA001E013C /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				E79B6BBA1D7AFE780048E0DF /* Error.swift */,
 				E7E5FA3C1D79F0AE00B6FF1D /* Entity */,
 			);
 			name = Model;
@@ -333,6 +336,7 @@
 				E7E5FA3B1D79F08000B6FF1D /* EventRepository.swift in Sources */,
 				E79B6BC51D7AFE780048E0DF /* Entity.swift in Sources */,
 				E79B6BCC1D7AFE780048E0DF /* Operation+Completion.swift in Sources */,
+				E79B6BC61D7AFE780048E0DF /* Error.swift in Sources */,
 				E734F8241D79CE95001E013C /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
