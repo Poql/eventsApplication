@@ -47,6 +47,23 @@ class EventPresenterImplementation<R: EventRepository, PR: PersistencyRepository
         resultsController = FetchedResultsController<PersistentEvent>(fetchRequest: request, managedObjectContext: context)
     }
 
+    private func queryRemoteEvents() {
+        let operation = eventRepository.queryEventsOperation()
+        let persistOperation = persistencyRepository.persistEventsOperation()
+        (persistOperation as Operation).addDependency(operation)
+        operation.completionHandler = { result in
+            switch result {
+            case .error:
+                self.client?.presenterDidChangeState(.error(ApplicationError.generic))
+            case let .value(events):
+                persistOperation.events = events
+            }
+        }
+        let group = GroupOperation(operations: [persistOperation, operation])
+        group.addObserver(NetworkObserver())
+        operationQueue.addOperation(group)
+    }
+
     private func queryPersistedEvents() {
         guard let resultsController = resultsController else { return }
         try! resultsController.performFetch()
