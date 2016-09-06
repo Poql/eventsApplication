@@ -11,4 +11,11 @@ import CloudKit
 import BNRCoreDataStack
 
 struct RecordMapper {
+    
+    // MARK: - Private
+    
+    private static func insertPersistentRecord<R: Record, PR: PersistentRecord where PR: CoreDataModelable>(from record: R, inContext context: NSManagedObjectContext) -> PR {
+        let persistentRecord = PR(managedObjectContext: context)
+        return persistentRecord
+    }
 }
