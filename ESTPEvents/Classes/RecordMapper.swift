@@ -18,4 +18,17 @@ struct RecordMapper {
         let persistentRecord = PR(managedObjectContext: context)
         return persistentRecord
     }
+    
+    private static func updatePersistentRecord<R: Record, PR: PersistentRecord where PR: CoreDataModelable>(persistentRecord: PR, with record: R) {
+        let archivedData = NSMutableData()
+        let archiver = NSKeyedArchiver(forWritingWithMutableData: archivedData)
+        archiver.requiresSecureCoding = true
+        record.record.encodeSystemFieldsWithCoder(archiver)
+        archiver.finishEncoding()
+        persistentRecord.metadata = archivedData
+        persistentRecord.recordName = record.record.recordID.recordName
+        persistentRecord.modificationDate = record.record.modificationDate
+        persistentRecord.creationDate = record.record.creationDate
+        persistentRecord.changeTag = record.record.recordChangeTag
+    }
 }
