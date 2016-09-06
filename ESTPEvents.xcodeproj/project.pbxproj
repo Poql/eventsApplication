@@ -144,6 +144,7 @@
 				E734F81B1D79CDD1001E013C /* Controller */,
 				E734F81F1D79CDFA001E013C /* Model */,
 				E734F81D1D79CDDE001E013C /* Operations */,
+				E7BC16031D7F431500B02897 /* View */,
 				E734F8311D79CFCA001E013C /* Extensions */,
 				E734F8201D79CE03001E013C /* Resources */,
 				E734F8211D79CE08001E013C /* Configuration */,
@@ -252,6 +253,13 @@
 				E7BC15F51D7ED67E00B02897 /* RecordMapper.swift */,
 			);
 			name = Mapper;
+			sourceTree = "<group>";
+		};
+		E7BC16031D7F431500B02897 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = View;
 			sourceTree = "<group>";
 		};
 		E7E5FA2D1D79ED4100B6FF1D /* Shared */ = {
