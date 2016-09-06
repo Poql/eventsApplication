@@ -17,8 +17,10 @@ class PresenterFactoryImplementation: PresenterFactory {
     
     private let eventRepository = EventRepositoryImplementation()
     
-    private lazy var eventPresenterImplementation: EventPresenterImplementation<EventRepositoryImplementation> = {
-        return EventPresenterImplementation(repository: self.eventRepository)
+    private let persistencyRepository = PersistencyRepositoryImplementation()
+    
+    private lazy var eventPresenterImplementation: EventPresenterImplementation<EventRepositoryImplementation, PersistencyRepositoryImplementation> = {
+        return EventPresenterImplementation(repository: self.eventRepository, persistencyRepository: self.persistencyRepository)
     }()
     
     // MARK: - PresenterFactory

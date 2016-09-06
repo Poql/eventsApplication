@@ -7,5 +7,6 @@ target 'ESTPEvents' do
     pod 'Operations'
     pod 'Operations/Extension'
     pod 'Operations/+CloudKit'
+    pod 'BNRCoreDataStack'
 end
 

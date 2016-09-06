@@ -33,7 +33,34 @@ class EventViewController: SharedViewController, EventPresenterClient, UITableVi
     
     // MARK: - EventPresenterClient
     
-    func presenterDidQueryEvents() {
+    func presenterEventsDidChange() {
+        tableView.endUpdates()
+    }
+
+    func presenterEventDidChange(eventChange: EntityChange) {
+        switch eventChange {
+        case let .insert(indexPath: indexPath):
+            self.tableView.insertRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
+        case let .delete(indexPath: indexPath):
+            self.tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
+        case let .update(indexPath: indexPath):
+            if let cell = self.tableView.cellForRowAtIndexPath(indexPath) {
+                cell.textLabel?.text = eventPresenter?.event(atIndex: indexPath).description
+            }
+        case let .move(fromIndexPath: fromIndexPath, toIndexPath: toIndexPath):
+            self.tableView.deleteRowsAtIndexPaths([fromIndexPath], withRowAnimation: .Fade)
+            self.tableView.insertRowsAtIndexPaths([toIndexPath], withRowAnimation: .Fade)
+        }
+    }
+
+    func presenterEventsWillChange() {
+        tableView.beginUpdates()
+    }
+    
+    func presenterEventSectionDidChange(eventSectionChange: EntitySectionChange) {
+    }
+    
+    func presenterDidChangeState(state: PresenterState<ApplicationError>) {
         tableView.reloadData()
     }
     
@@ -41,11 +68,15 @@ class EventViewController: SharedViewController, EventPresenterClient, UITableVi
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("cell")!
-        cell.textLabel?.text = eventPresenter?.events[indexPath.row].description
+        cell.textLabel?.text = eventPresenter?.event(atIndex: indexPath).description
         return cell
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return eventPresenter?.events.count ?? 0
+        return eventPresenter?.numberOfEvents(inSection: section) ?? 0
+    }
+    
+    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+        return eventPresenter?.numberOfEventSections() ?? 0
     }
 }

@@ -1,4 +1,5 @@
 PODS:
+  - BNRCoreDataStack (1.2.5)
   - Operations (3.2.0):
     - Operations/Standard (= 3.2.0)
   - Operations/+CloudKit (3.2.0):
@@ -7,11 +8,13 @@ PODS:
   - Operations/Standard (3.2.0)
 
 DEPENDENCIES:
+  - BNRCoreDataStack
   - Operations
   - Operations/+CloudKit
   - Operations/Extension
 
 SPEC CHECKSUMS:
+  BNRCoreDataStack: 968926d1cef9d6eee5e7c18b57762aa270f9b96c
   Operations: 4c5f06d7328f1b097d5dac5c0d614917ecbc96e7
 
 COCOAPODS: 0.39.0

@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = '762DF8D20FD1DA28FAC5B671'
+               BlueprintIdentifier = '3BAC85DFDC2C31DF5ED906F4'
                BlueprintName = 'Pods-ESTPEvents'
                ReferencedContainer = 'container:Pods.xcodeproj'
                BuildableName = 'Pods_ESTPEvents.framework'>
