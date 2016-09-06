@@ -17,6 +17,7 @@
 		E797F2EF1D7C2D4100CB5EE2 /* PersistencyRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = E797F2ED1D7C2D4100CB5EE2 /* PersistencyRepository.swift */; };
 		E797F2F01D7C2D4100CB5EE2 /* PersistencyRepositoryImplementation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E797F2EE1D7C2D4100CB5EE2 /* PersistencyRepositoryImplementation.swift */; };
 		E797F2F31D7C2D8100CB5EE2 /* PersistEventsOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E797F2F21D7C2D8100CB5EE2 /* PersistEventsOperation.swift */; };
+		E797F2F81D7C3D3E00CB5EE2 /* EntityChange.swift in Sources */ = {isa = PBXBuildFile; fileRef = E797F2F71D7C3D3E00CB5EE2 /* EntityChange.swift */; };
 		E79B6BB51D7AFE4A0048E0DF /* EventRepositoryImplementation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E79B6BB41D7AFE4A0048E0DF /* EventRepositoryImplementation.swift */; };
 		E79B6BB71D7AFE570048E0DF /* QueryEventsOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E79B6BB61D7AFE570048E0DF /* QueryEventsOperation.swift */; };
 		E79B6BC41D7AFE780048E0DF /* CKQuery+Record.swift in Sources */ = {isa = PBXBuildFile; fileRef = E79B6BB81D7AFE780048E0DF /* CKQuery+Record.swift */; };
@@ -60,6 +61,7 @@
 		E797F2ED1D7C2D4100CB5EE2 /* PersistencyRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PersistencyRepository.swift; path = Classes/PersistencyRepository.swift; sourceTree = "<group>"; };
 		E797F2EE1D7C2D4100CB5EE2 /* PersistencyRepositoryImplementation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PersistencyRepositoryImplementation.swift; path = Classes/PersistencyRepositoryImplementation.swift; sourceTree = "<group>"; };
 		E797F2F21D7C2D8100CB5EE2 /* PersistEventsOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PersistEventsOperation.swift; path = Classes/PersistEventsOperation.swift; sourceTree = "<group>"; };
+		E797F2F71D7C3D3E00CB5EE2 /* EntityChange.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EntityChange.swift; path = Classes/EntityChange.swift; sourceTree = "<group>"; };
 		E79B6BB41D7AFE4A0048E0DF /* EventRepositoryImplementation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EventRepositoryImplementation.swift; path = Classes/EventRepositoryImplementation.swift; sourceTree = "<group>"; };
 		E79B6BB61D7AFE570048E0DF /* QueryEventsOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = QueryEventsOperation.swift; path = Classes/QueryEventsOperation.swift; sourceTree = "<group>"; };
 		E79B6BB81D7AFE780048E0DF /* CKQuery+Record.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "CKQuery+Record.swift"; path = "Classes/CKQuery+Record.swift"; sourceTree = "<group>"; };
@@ -309,6 +311,7 @@
 			children = (
 				E7BC15F71D7ED68A00B02897 /* PresenterState.swift */,
 				E79B6BC11D7AFE780048E0DF /* PresenterFactory.swift */,
+				E797F2F71D7C3D3E00CB5EE2 /* EntityChange.swift */,
 			);
 			name = Shared;
 			sourceTree = "<group>";
@@ -495,6 +498,7 @@
 				E79B6BC91D7AFE780048E0DF /* EventPresenterImplementation.swift in Sources */,
 				E79B6BCB1D7AFE780048E0DF /* Int+Bool.swift in Sources */,
 				E7E5FA3B1D79F08000B6FF1D /* EventRepository.swift in Sources */,
+				E797F2F81D7C3D3E00CB5EE2 /* EntityChange.swift in Sources */,
 				E7FB89401D7B3DDE00FEFD1B /* LoadCoreDataStackOperation.swift in Sources */,
 				E79B6BC51D7AFE780048E0DF /* Entity.swift in Sources */,
 				E7FB89361D7B211700FEFD1B /* Model.xcdatamodeld in Sources */,
