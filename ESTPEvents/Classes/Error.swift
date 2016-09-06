@@ -8,7 +8,7 @@
 
 import Foundation
 
-enum ApplicationError {
+enum ApplicationError: ErrorType {
     case generic
 }
 
