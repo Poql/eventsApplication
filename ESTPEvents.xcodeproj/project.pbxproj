@@ -15,6 +15,7 @@
 		E734F82F1D79CF08001E013C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E734F82D1D79CF08001E013C /* LaunchScreen.storyboard */; };
 		E734F8301D79CF08001E013C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E734F82E1D79CF08001E013C /* Main.storyboard */; };
 		E797F2EF1D7C2D4100CB5EE2 /* PersistencyRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = E797F2ED1D7C2D4100CB5EE2 /* PersistencyRepository.swift */; };
+		E797F2F31D7C2D8100CB5EE2 /* PersistEventsOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E797F2F21D7C2D8100CB5EE2 /* PersistEventsOperation.swift */; };
 		E79B6BB51D7AFE4A0048E0DF /* EventRepositoryImplementation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E79B6BB41D7AFE4A0048E0DF /* EventRepositoryImplementation.swift */; };
 		E79B6BB71D7AFE570048E0DF /* QueryEventsOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E79B6BB61D7AFE570048E0DF /* QueryEventsOperation.swift */; };
 		E79B6BC41D7AFE780048E0DF /* CKQuery+Record.swift in Sources */ = {isa = PBXBuildFile; fileRef = E79B6BB81D7AFE780048E0DF /* CKQuery+Record.swift */; };
@@ -55,6 +56,7 @@
 		E734F82D1D79CF08001E013C /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = Resources/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E734F82E1D79CF08001E013C /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = Resources/Main.storyboard; sourceTree = "<group>"; };
 		E797F2ED1D7C2D4100CB5EE2 /* PersistencyRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PersistencyRepository.swift; path = Classes/PersistencyRepository.swift; sourceTree = "<group>"; };
+		E797F2F21D7C2D8100CB5EE2 /* PersistEventsOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PersistEventsOperation.swift; path = Classes/PersistEventsOperation.swift; sourceTree = "<group>"; };
 		E79B6BB41D7AFE4A0048E0DF /* EventRepositoryImplementation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EventRepositoryImplementation.swift; path = Classes/EventRepositoryImplementation.swift; sourceTree = "<group>"; };
 		E79B6BB61D7AFE570048E0DF /* QueryEventsOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = QueryEventsOperation.swift; path = Classes/QueryEventsOperation.swift; sourceTree = "<group>"; };
 		E79B6BB81D7AFE780048E0DF /* CKQuery+Record.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "CKQuery+Record.swift"; path = "Classes/CKQuery+Record.swift"; sourceTree = "<group>"; };
@@ -221,9 +223,18 @@
 			isa = PBXGroup;
 			children = (
 				E797F2F41D7C2EBE00CB5EE2 /* Mapper */,
+				E797F2F11D7C2D6D00CB5EE2 /* Operations */,
 				E797F2ED1D7C2D4100CB5EE2 /* PersistencyRepository.swift */,
 			);
 			name = Persistency;
+			sourceTree = "<group>";
+		};
+		E797F2F11D7C2D6D00CB5EE2 /* Operations */ = {
+			isa = PBXGroup;
+			children = (
+				E797F2F21D7C2D8100CB5EE2 /* PersistEventsOperation.swift */,
+			);
+			name = Operations;
 			sourceTree = "<group>";
 		};
 		E797F2F41D7C2EBE00CB5EE2 /* Mapper */ = {
@@ -455,6 +466,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E79B6BB71D7AFE570048E0DF /* QueryEventsOperation.swift in Sources */,
+				E797F2F31D7C2D8100CB5EE2 /* PersistEventsOperation.swift in Sources */,
 				E7BC15FE1D7EDD3900B02897 /* PersistentEvent.swift in Sources */,
 				E7FB89421D7B402100FEFD1B /* ContextOperation.swift in Sources */,
 				E79B6BCE1D7AFE780048E0DF /* Record.swift in Sources */,
