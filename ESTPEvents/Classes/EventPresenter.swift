@@ -9,10 +9,16 @@
 import Foundation
 
 protocol EventPresenter {
-    var events: [Event] { get }
     func queryAllEvents()
+    func event(atIndex index: NSIndexPath) -> Event
+    func numberOfEvents(inSection section: Int) -> Int
+    func numberOfEventSections() -> Int
 }
 
 protocol EventPresenterClient: class {
-    func presenterDidQueryEvents()
+    func presenterDidChangeState(state: PresenterState<ApplicationError>)
+    func presenterEventsWillChange()
+    func presenterEventDidChange(eventChange: EntityChange)
+    func presenterEventSectionDidChange(eventSectionChange: EntitySectionChange)
+    func presenterEventsDidChange()
 }

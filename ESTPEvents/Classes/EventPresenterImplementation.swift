@@ -10,14 +10,12 @@ import Foundation
 import Operations
 import BNRCoreDataStack
 
-class EventPresenterImplementation<R: EventRepository, PR: PersistencyRepository>: EventPresenter {
+class EventPresenterImplementation<R: EventRepository, PR: PersistencyRepository>: EventPresenter, FetchedResultsControllerDelegate {
     private let eventRepository: R
 
     private let persistencyRepository: PR
     
     private let operationQueue = OperationQueue()
-
-    private(set) var events: [Event] = []
     
     private var resultsController: FetchedResultsController<PersistentEvent>?
 
@@ -45,6 +43,7 @@ class EventPresenterImplementation<R: EventRepository, PR: PersistencyRepository
         let request = NSFetchRequest(entity: PersistentEvent.self)
         request.sortDescriptors = [NSSortDescriptor(key: "eventDescription", ascending: true)]
         resultsController = FetchedResultsController<PersistentEvent>(fetchRequest: request, managedObjectContext: context)
+        resultsController?.setDelegate(self)
     }
 
     private func queryRemoteEvents() {
@@ -67,22 +66,64 @@ class EventPresenterImplementation<R: EventRepository, PR: PersistencyRepository
     private func queryPersistedEvents() {
         guard let resultsController = resultsController else { return }
         try! resultsController.performFetch()
-        client?.presenterDidChangeState(.value)
     }
 
     // MARK: - EventPresenter
 
     func queryAllEvents() {
-        let operation = eventRepository.queryEventsOperation()
-        operation.completionHandler = { result in
-            switch result {
-            case let .error(err):
-                print(err)
-            case let .value(events):
-                self.events = events
-                self.client?.presenterDidQueryEvents()
-            }
+        queryPersistedEvents()
+        queryRemoteEvents()
+    }
+    
+    func numberOfEventSections() -> Int {
+        return resultsController?.sections?.count ?? 0
+    }
+    
+    func numberOfEvents(inSection section: Int) -> Int {
+        return resultsController?.sections?[section].objects.count ?? 0
+    }
+    
+    func event(atIndex index: NSIndexPath) -> Event {
+        return RecordMapper.getEvent(from: resultsController![index])
+    }
+    
+    // MARK: - FetchedResultsControllerDelegate
+
+    func fetchedResultsController(controller: FetchedResultsController<PersistentEvent>, didChangeObject change: FetchedResultsObjectChange<PersistentEvent>) {
+        let entityChange: EntityChange
+        switch change {
+        case let .Delete(object: _, indexPath: indexPath):
+            entityChange = .delete(indexPath: indexPath)
+        case let .Insert(object: _, indexPath: indexPath):
+            entityChange = .insert(indexPath: indexPath)
+        case let .Update(object: _, indexPath: indexPath):
+            entityChange = .update(indexPath: indexPath)
+        case let .Move(object: _, fromIndexPath: fromIndexPath, toIndexPath: toIndexPath):
+            entityChange = .move(fromIndexPath: fromIndexPath, toIndexPath: toIndexPath)
         }
-        operationQueue.addOperation(operation)
+        client?.presenterEventDidChange(entityChange)
+    }
+
+    func fetchedResultsController(controller: FetchedResultsController<PersistentEvent>, didChangeSection change: FetchedResultsSectionChange<PersistentEvent>) {
+        let entitySectionChange: EntitySectionChange
+        switch change {
+        case let .Insert(_, index):
+            entitySectionChange = .insert(index: index)
+        case let .Delete(_, index):
+            entitySectionChange = .delete(index: index)
+        }
+        client?.presenterEventSectionDidChange(entitySectionChange)
+    }
+
+    func fetchedResultsControllerWillChangeContent(controller: FetchedResultsController<PersistentEvent>) {
+        client?.presenterEventsWillChange()
+    }
+
+    func fetchedResultsControllerDidChangeContent(controller: FetchedResultsController<PersistentEvent>) {
+        client?.presenterEventsDidChange()
+    }
+
+    func fetchedResultsControllerDidPerformFetch(controller: FetchedResultsController<PersistentEvent>) {
+        client?.presenterDidChangeState(.value)
     }
 }
