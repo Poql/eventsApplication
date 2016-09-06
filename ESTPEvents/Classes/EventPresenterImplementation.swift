@@ -9,8 +9,10 @@
 import Foundation
 import Operations
 
-class EventPresenterImplementation<Repository: EventRepository>: EventPresenter {
-    private let eventRepository: Repository
+class EventPresenterImplementation<R: EventRepository, PR: PersistencyRepository>: EventPresenter {
+    private let eventRepository: R
+
+    private let persistencyRepository: PR
     
     private let operationQueue = OperationQueue()
 
@@ -18,8 +20,9 @@ class EventPresenterImplementation<Repository: EventRepository>: EventPresenter 
 
     weak var client: EventPresenterClient?
     
-    init(repository: Repository) {
+    init(repository: R, persistencyRepository: PR) {
         self.eventRepository = repository
+        self.persistencyRepository = persistencyRepository
     }
     
     // MARK: - EventPresenter
