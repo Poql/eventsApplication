@@ -14,6 +14,7 @@
 		E734F82A1D79CED1001E013C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E734F8291D79CED1001E013C /* Assets.xcassets */; };
 		E734F82F1D79CF08001E013C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E734F82D1D79CF08001E013C /* LaunchScreen.storyboard */; };
 		E734F8301D79CF08001E013C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E734F82E1D79CF08001E013C /* Main.storyboard */; };
+		E797F2EF1D7C2D4100CB5EE2 /* PersistencyRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = E797F2ED1D7C2D4100CB5EE2 /* PersistencyRepository.swift */; };
 		E79B6BB51D7AFE4A0048E0DF /* EventRepositoryImplementation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E79B6BB41D7AFE4A0048E0DF /* EventRepositoryImplementation.swift */; };
 		E79B6BB71D7AFE570048E0DF /* QueryEventsOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E79B6BB61D7AFE570048E0DF /* QueryEventsOperation.swift */; };
 		E79B6BC41D7AFE780048E0DF /* CKQuery+Record.swift in Sources */ = {isa = PBXBuildFile; fileRef = E79B6BB81D7AFE780048E0DF /* CKQuery+Record.swift */; };
@@ -52,6 +53,7 @@
 		E734F8291D79CED1001E013C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = Resources/Assets.xcassets; sourceTree = "<group>"; };
 		E734F82D1D79CF08001E013C /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = Resources/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E734F82E1D79CF08001E013C /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = Resources/Main.storyboard; sourceTree = "<group>"; };
+		E797F2ED1D7C2D4100CB5EE2 /* PersistencyRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PersistencyRepository.swift; path = Classes/PersistencyRepository.swift; sourceTree = "<group>"; };
 		E79B6BB41D7AFE4A0048E0DF /* EventRepositoryImplementation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EventRepositoryImplementation.swift; path = Classes/EventRepositoryImplementation.swift; sourceTree = "<group>"; };
 		E79B6BB61D7AFE570048E0DF /* QueryEventsOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = QueryEventsOperation.swift; path = Classes/QueryEventsOperation.swift; sourceTree = "<group>"; };
 		E79B6BB81D7AFE780048E0DF /* CKQuery+Record.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "CKQuery+Record.swift"; path = "Classes/CKQuery+Record.swift"; sourceTree = "<group>"; };
@@ -167,6 +169,7 @@
 			isa = PBXGroup;
 			children = (
 				E7E5FA2D1D79ED4100B6FF1D /* Shared */,
+				E797F2EC1D7C2D3000CB5EE2 /* Persistency */,
 				E7E5FA321D79EE0100B6FF1D /* Event */,
 			);
 			name = Repository;
@@ -210,6 +213,14 @@
 				E79B6BC01D7AFE780048E0DF /* Operation+Completion.swift */,
 			);
 			name = Extensions;
+			sourceTree = "<group>";
+		};
+		E797F2EC1D7C2D3000CB5EE2 /* Persistency */ = {
+			isa = PBXGroup;
+			children = (
+				E797F2ED1D7C2D4100CB5EE2 /* PersistencyRepository.swift */,
+			);
+			name = Persistency;
 			sourceTree = "<group>";
 		};
 		E7E5FA2D1D79ED4100B6FF1D /* Shared */ = {
@@ -448,6 +459,7 @@
 				E79B6BCA1D7AFE780048E0DF /* EventViewController.swift in Sources */,
 				E79B6BC71D7AFE780048E0DF /* Event.swift in Sources */,
 				E79B6BC81D7AFE780048E0DF /* EventPresenter.swift in Sources */,
+				E797F2EF1D7C2D4100CB5EE2 /* PersistencyRepository.swift in Sources */,
 				E7E5FA391D79F01900B6FF1D /* QueryOperation.swift in Sources */,
 				E79B6BC91D7AFE780048E0DF /* EventPresenterImplementation.swift in Sources */,
 				E79B6BCB1D7AFE780048E0DF /* Int+Bool.swift in Sources */,
