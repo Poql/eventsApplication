@@ -11,6 +11,14 @@ import CloudKit
 import BNRCoreDataStack
 
 struct RecordMapper {
+
+    static func shouldUpdatePersistentRecord<R: Record, PR: PersistentRecord where PR: CoreDataModelable>(persistentRecord: PR, with record: R) -> Bool {
+        let eventModificationDate = record.record.modificationDate ?? NSDate.distantFuture()
+        let persistentEventModificationDate = persistentRecord.modificationDate ?? NSDate.distantPast()
+        let persistentDateIsOlder = persistentEventModificationDate.compare(eventModificationDate) == .OrderedDescending
+        let changeTagDidChange = persistentRecord.changeTag ?? "0" == record.record.recordChangeTag ?? "1"
+        return persistentDateIsOlder && changeTagDidChange
+    }
     
     static func getEvent(from persistentEvent: PersistentEvent) -> Event {
         var event: Event = record(from: persistentEvent)
@@ -22,6 +30,12 @@ struct RecordMapper {
         let persistenEvent: PersistentEvent = insertPersistentRecord(from: event, inContext: context)
         updatePersistentEvent(persistenEvent, with: event)
         return persistenEvent
+    }
+    
+    static func updatePersistentEvent(persistentEvent: PersistentEvent, with event: Event) {
+        guard shouldUpdatePersistentRecord(persistentEvent, with: event) else { return }
+        updatePersistentRecord(persistentEvent, with: event)
+        persistentEvent.eventDescription = event.description ?? ""
     }
     
     // MARK: - Private
