@@ -31,4 +31,10 @@ struct RecordMapper {
         persistentRecord.creationDate = record.record.creationDate
         persistentRecord.changeTag = record.record.recordChangeTag
     }
+    
+    private static func record<R: Record, PR: PersistentRecord>(from persistentRecord: PR) -> R {
+        let unarchiver = NSKeyedUnarchiver(forReadingWithData: persistentRecord.metadata)
+        unarchiver.requiresSecureCoding = true
+        return R(record: CKRecord(coder: unarchiver)!)
+    }
 }
