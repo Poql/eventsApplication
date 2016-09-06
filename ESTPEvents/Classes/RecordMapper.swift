@@ -12,6 +12,12 @@ import BNRCoreDataStack
 
 struct RecordMapper {
     
+    static func getEvent(from persistentEvent: PersistentEvent) -> Event {
+        var event: Event = record(from: persistentEvent)
+        event.description = persistentEvent.eventDescription
+        return event
+    }
+    
     // MARK: - Private
     
     private static func insertPersistentRecord<R: Record, PR: PersistentRecord where PR: CoreDataModelable>(from record: R, inContext context: NSManagedObjectContext) -> PR {
