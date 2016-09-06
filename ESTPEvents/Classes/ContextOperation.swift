@@ -13,3 +13,25 @@ import BNRCoreDataStack
 protocol ManagedObjectContextOperation: class {
     var context: NSManagedObjectContext? { get set }
 }
+
+class ManagedObjectContextCondition: Condition {
+    private let coreDataStackOperation = ReturnCoreDataStackOperation()
+    
+    override init() {
+        super.init()
+        addDependency(coreDataStackOperation)
+    }
+
+    override func evaluate(operation: Operation, completion: OperationConditionResult -> Void) {
+        guard let contexOperation = operation as? ManagedObjectContextOperation else {
+            completion(.Satisfied)
+            return
+        }
+        if let stack = coreDataStackOperation.stack {
+            contexOperation.context = stack.newChildContext()
+            completion(.Satisfied)
+            return
+        }
+        completion(.Failed(OperationError.noContext))
+    }
+}

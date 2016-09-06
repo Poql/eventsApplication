@@ -11,3 +11,7 @@ import Foundation
 enum ApplicationError {
     case generic
 }
+
+enum OperationError: ErrorType {
+    case noContext
+}
