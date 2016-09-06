@@ -36,6 +36,7 @@ class EventPresenterImplementation<R: EventRepository, PR: PersistencyRepository
         operation.addCompletionBlockOnMainQueue {
             guard let mainContext = operation.stack?.mainQueueContext else { return }
             self.setResultsController(with: mainContext)
+            self.queryPersistedEvents()
         }
         operationQueue.addOperation(operation)
     }
@@ -44,6 +45,12 @@ class EventPresenterImplementation<R: EventRepository, PR: PersistencyRepository
         let request = NSFetchRequest(entity: PersistentEvent.self)
         request.sortDescriptors = [NSSortDescriptor(key: "eventDescription", ascending: true)]
         resultsController = FetchedResultsController<PersistentEvent>(fetchRequest: request, managedObjectContext: context)
+    }
+
+    private func queryPersistedEvents() {
+        guard let resultsController = resultsController else { return }
+        try! resultsController.performFetch()
+        client?.presenterDidChangeState(.value)
     }
 
     // MARK: - EventPresenter
