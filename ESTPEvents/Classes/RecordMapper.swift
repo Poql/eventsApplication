@@ -18,6 +18,12 @@ struct RecordMapper {
         return event
     }
     
+    static func insertPersistentEvent(from event: Event, inContext context: NSManagedObjectContext) -> PersistentEvent {
+        let persistenEvent: PersistentEvent = insertPersistentRecord(from: event, inContext: context)
+        updatePersistentEvent(persistenEvent, with: event)
+        return persistenEvent
+    }
+    
     // MARK: - Private
     
     private static func insertPersistentRecord<R: Record, PR: PersistentRecord where PR: CoreDataModelable>(from record: R, inContext context: NSManagedObjectContext) -> PR {
