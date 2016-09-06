@@ -28,6 +28,7 @@
 		E79B6BCD1D7AFE780048E0DF /* PresenterFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = E79B6BC11D7AFE780048E0DF /* PresenterFactory.swift */; };
 		E79B6BCE1D7AFE780048E0DF /* Record.swift in Sources */ = {isa = PBXBuildFile; fileRef = E79B6BC21D7AFE780048E0DF /* Record.swift */; };
 		E79B6BCF1D7AFE780048E0DF /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = E79B6BC31D7AFE780048E0DF /* Result.swift */; };
+		E7BC15FA1D7ED69900B02897 /* NSFetchRequest+CoreDataModelable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7BC15F91D7ED69900B02897 /* NSFetchRequest+CoreDataModelable.swift */; };
 		E7BC15FC1D7EDD2E00B02897 /* PersistentRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7BC15FB1D7EDD2E00B02897 /* PersistentRecord.swift */; };
 		E7BC15FE1D7EDD3900B02897 /* PersistentEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7BC15FD1D7EDD3900B02897 /* PersistentEvent.swift */; };
 		E7BC16001D7EF78600B02897 /* ReturnCoreDataStackOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7BC15FF1D7EF78600B02897 /* ReturnCoreDataStackOperation.swift */; };
@@ -65,6 +66,7 @@
 		E79B6BC11D7AFE780048E0DF /* PresenterFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PresenterFactory.swift; path = Classes/PresenterFactory.swift; sourceTree = "<group>"; };
 		E79B6BC21D7AFE780048E0DF /* Record.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Record.swift; path = Classes/Record.swift; sourceTree = "<group>"; };
 		E79B6BC31D7AFE780048E0DF /* Result.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Result.swift; path = Classes/Result.swift; sourceTree = "<group>"; };
+		E7BC15F91D7ED69900B02897 /* NSFetchRequest+CoreDataModelable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "NSFetchRequest+CoreDataModelable.swift"; path = "Classes/NSFetchRequest+CoreDataModelable.swift"; sourceTree = "<group>"; };
 		E7BC15FB1D7EDD2E00B02897 /* PersistentRecord.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PersistentRecord.swift; path = Classes/PersistentRecord.swift; sourceTree = "<group>"; };
 		E7BC15FD1D7EDD3900B02897 /* PersistentEvent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PersistentEvent.swift; path = Classes/PersistentEvent.swift; sourceTree = "<group>"; };
 		E7BC15FF1D7EF78600B02897 /* ReturnCoreDataStackOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ReturnCoreDataStackOperation.swift; path = Classes/ReturnCoreDataStackOperation.swift; sourceTree = "<group>"; };
@@ -202,6 +204,7 @@
 		E734F8311D79CFCA001E013C /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				E7BC15F91D7ED69900B02897 /* NSFetchRequest+CoreDataModelable.swift */,
 				E79B6BB81D7AFE780048E0DF /* CKQuery+Record.swift */,
 				E79B6BBF1D7AFE780048E0DF /* Int+Bool.swift */,
 				E79B6BC01D7AFE780048E0DF /* Operation+Completion.swift */,
@@ -436,6 +439,7 @@
 				E79B6BCF1D7AFE780048E0DF /* Result.swift in Sources */,
 				E734F8261D79CEA1001E013C /* SharedViewController.swift in Sources */,
 				E7BC16001D7EF78600B02897 /* ReturnCoreDataStackOperation.swift in Sources */,
+				E7BC15FA1D7ED69900B02897 /* NSFetchRequest+CoreDataModelable.swift in Sources */,
 				E79B6BC41D7AFE780048E0DF /* CKQuery+Record.swift in Sources */,
 				E79B6BB51D7AFE4A0048E0DF /* EventRepositoryImplementation.swift in Sources */,
 				E7BC15FC1D7EDD2E00B02897 /* PersistentRecord.swift in Sources */,
