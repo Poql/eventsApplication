@@ -35,3 +35,30 @@ class ManagedObjectContextCondition: Condition {
         completion(.Failed(OperationError.noContext))
     }
 }
+
+class ContextOperation: Operation, ManagedObjectContextOperation {
+    var context: NSManagedObjectContext?
+    
+    override init() {
+        super.init()
+        addCondition(ManagedObjectContextCondition())
+    }
+    
+    func performBlock(block: (inContext: NSManagedObjectContext) -> Void) {
+        guard let context = context else { finish(); return }
+        context.performBlock {
+            block(inContext: context)
+        }
+    }
+    
+    func saveContextAndFinish() {
+        context?.saveContext { result in
+            switch result {
+            case let .Failure(err):
+                self.finish(err)
+            case .Success:
+                self.finish()
+            }
+        }
+    }
+}
