@@ -36,6 +36,7 @@
 		E7FB89301D7B1C6900FEFD1B /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7FB892F1D7B1C6900FEFD1B /* CloudKit.framework */; };
 		E7FB89361D7B211700FEFD1B /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E7FB89341D7B211700FEFD1B /* Model.xcdatamodeld */; };
 		E7FB89401D7B3DDE00FEFD1B /* LoadCoreDataStackOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7FB893F1D7B3DDE00FEFD1B /* LoadCoreDataStackOperation.swift */; };
+		E7FB89421D7B402100FEFD1B /* ContextOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7FB89411D7B402100FEFD1B /* ContextOperation.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -72,6 +73,7 @@
 		E7FB892F1D7B1C6900FEFD1B /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
 		E7FB89351D7B211700FEFD1B /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		E7FB893F1D7B3DDE00FEFD1B /* LoadCoreDataStackOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoadCoreDataStackOperation.swift; path = Classes/LoadCoreDataStackOperation.swift; sourceTree = "<group>"; };
+		E7FB89411D7B402100FEFD1B /* ContextOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ContextOperation.swift; path = Classes/ContextOperation.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -281,6 +283,7 @@
 			isa = PBXGroup;
 			children = (
 				E7FB893F1D7B3DDE00FEFD1B /* LoadCoreDataStackOperation.swift */,
+				E7FB89411D7B402100FEFD1B /* ContextOperation.swift */,
 			);
 			name = CoreData;
 			sourceTree = "<group>";
@@ -425,6 +428,7 @@
 			files = (
 				E79B6BB71D7AFE570048E0DF /* QueryEventsOperation.swift in Sources */,
 				E7BC15FE1D7EDD3900B02897 /* PersistentEvent.swift in Sources */,
+				E7FB89421D7B402100FEFD1B /* ContextOperation.swift in Sources */,
 				E79B6BCE1D7AFE780048E0DF /* Record.swift in Sources */,
 				E79B6BCF1D7AFE780048E0DF /* Result.swift in Sources */,
 				E734F8261D79CEA1001E013C /* SharedViewController.swift in Sources */,
