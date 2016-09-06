@@ -32,6 +32,7 @@
 		E79B6BCE1D7AFE780048E0DF /* Record.swift in Sources */ = {isa = PBXBuildFile; fileRef = E79B6BC21D7AFE780048E0DF /* Record.swift */; };
 		E79B6BCF1D7AFE780048E0DF /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = E79B6BC31D7AFE780048E0DF /* Result.swift */; };
 		E7BC15F61D7ED67E00B02897 /* RecordMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7BC15F51D7ED67E00B02897 /* RecordMapper.swift */; };
+		E7BC15F81D7ED68A00B02897 /* PresenterState.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7BC15F71D7ED68A00B02897 /* PresenterState.swift */; };
 		E7BC15FA1D7ED69900B02897 /* NSFetchRequest+CoreDataModelable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7BC15F91D7ED69900B02897 /* NSFetchRequest+CoreDataModelable.swift */; };
 		E7BC15FC1D7EDD2E00B02897 /* PersistentRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7BC15FB1D7EDD2E00B02897 /* PersistentRecord.swift */; };
 		E7BC15FE1D7EDD3900B02897 /* PersistentEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7BC15FD1D7EDD3900B02897 /* PersistentEvent.swift */; };
@@ -74,6 +75,7 @@
 		E79B6BC21D7AFE780048E0DF /* Record.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Record.swift; path = Classes/Record.swift; sourceTree = "<group>"; };
 		E79B6BC31D7AFE780048E0DF /* Result.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Result.swift; path = Classes/Result.swift; sourceTree = "<group>"; };
 		E7BC15F51D7ED67E00B02897 /* RecordMapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RecordMapper.swift; path = Classes/RecordMapper.swift; sourceTree = "<group>"; };
+		E7BC15F71D7ED68A00B02897 /* PresenterState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PresenterState.swift; path = Classes/PresenterState.swift; sourceTree = "<group>"; };
 		E7BC15F91D7ED69900B02897 /* NSFetchRequest+CoreDataModelable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "NSFetchRequest+CoreDataModelable.swift"; path = "Classes/NSFetchRequest+CoreDataModelable.swift"; sourceTree = "<group>"; };
 		E7BC15FB1D7EDD2E00B02897 /* PersistentRecord.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PersistentRecord.swift; path = Classes/PersistentRecord.swift; sourceTree = "<group>"; };
 		E7BC15FD1D7EDD3900B02897 /* PersistentEvent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PersistentEvent.swift; path = Classes/PersistentEvent.swift; sourceTree = "<group>"; };
@@ -305,6 +307,7 @@
 		E7EE0E9E1D7AF6B50089B38C /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				E7BC15F71D7ED68A00B02897 /* PresenterState.swift */,
 				E79B6BC11D7AFE780048E0DF /* PresenterFactory.swift */,
 			);
 			name = Shared;
@@ -470,6 +473,7 @@
 			files = (
 				E79B6BB71D7AFE570048E0DF /* QueryEventsOperation.swift in Sources */,
 				E797F2F31D7C2D8100CB5EE2 /* PersistEventsOperation.swift in Sources */,
+				E7BC15F81D7ED68A00B02897 /* PresenterState.swift in Sources */,
 				E7BC15FE1D7EDD3900B02897 /* PersistentEvent.swift in Sources */,
 				E7FB89421D7B402100FEFD1B /* ContextOperation.swift in Sources */,
 				E79B6BCE1D7AFE780048E0DF /* Record.swift in Sources */,
