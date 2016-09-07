@@ -42,7 +42,7 @@ class EventPresenterImplementation<R: EventRepository, PR: PersistencyRepository
     private func setResultsController(with context: NSManagedObjectContext) {
         let request = NSFetchRequest(entity: PersistentEvent.self)
         request.sortDescriptors = [NSSortDescriptor(key: "eventDescription", ascending: true)]
-        resultsController = FetchedResultsController<PersistentEvent>(fetchRequest: request, managedObjectContext: context)
+        resultsController = FetchedResultsController<PersistentEvent>(fetchRequest: request, managedObjectContext: context, sectionNameKeyPath: "sectionIdentifier")
         resultsController?.setDelegate(self)
     }
 
@@ -81,6 +81,10 @@ class EventPresenterImplementation<R: EventRepository, PR: PersistencyRepository
     
     func numberOfEvents(inSection section: Int) -> Int {
         return resultsController?.sections?[section].objects.count ?? 0
+    }
+    
+    func title(forSection section: Int) -> String? {
+        return resultsController?.sections?[section].name
     }
     
     func event(atIndex index: NSIndexPath) -> Event {
