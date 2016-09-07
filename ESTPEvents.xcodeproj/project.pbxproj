@@ -41,6 +41,7 @@
 		E7BC16021D7F02D900B02897 /* EntitySectionChange.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7BC16011D7F02D900B02897 /* EntitySectionChange.swift */; };
 		E7BC16061D7F434A00B02897 /* CircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7BC16051D7F434A00B02897 /* CircleView.swift */; };
 		E7C3D23F1D800970007F5146 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C3D23E1D800970007F5146 /* UIColor.swift */; };
+		E7C3D2411D800DB2007F5146 /* String+Localization.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C3D2401D800DB2007F5146 /* String+Localization.swift */; };
 		E7E5FA371D79EFAE00B6FF1D /* CloudOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7E5FA361D79EFAE00B6FF1D /* CloudOperation.swift */; };
 		E7E5FA391D79F01900B6FF1D /* QueryOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7E5FA381D79F01900B6FF1D /* QueryOperation.swift */; };
 		E7E5FA3B1D79F08000B6FF1D /* EventRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7E5FA3A1D79F08000B6FF1D /* EventRepository.swift */; };
@@ -88,6 +89,7 @@
 		E7BC16011D7F02D900B02897 /* EntitySectionChange.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EntitySectionChange.swift; path = Classes/EntitySectionChange.swift; sourceTree = "<group>"; };
 		E7BC16051D7F434A00B02897 /* CircleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CircleView.swift; path = Classes/CircleView.swift; sourceTree = "<group>"; };
 		E7C3D23E1D800970007F5146 /* UIColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UIColor.swift; path = Classes/UIColor.swift; sourceTree = "<group>"; };
+		E7C3D2401D800DB2007F5146 /* String+Localization.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "String+Localization.swift"; path = "Classes/String+Localization.swift"; sourceTree = "<group>"; };
 		E7E5FA361D79EFAE00B6FF1D /* CloudOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CloudOperation.swift; path = Classes/CloudOperation.swift; sourceTree = "<group>"; };
 		E7E5FA381D79F01900B6FF1D /* QueryOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = QueryOperation.swift; path = Classes/QueryOperation.swift; sourceTree = "<group>"; };
 		E7E5FA3A1D79F08000B6FF1D /* EventRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EventRepository.swift; path = Classes/EventRepository.swift; sourceTree = "<group>"; };
@@ -229,6 +231,7 @@
 				E79B6BBF1D7AFE780048E0DF /* Int+Bool.swift */,
 				E79B6BC01D7AFE780048E0DF /* Operation+Completion.swift */,
 				E7C3D23E1D800970007F5146 /* UIColor.swift */,
+				E7C3D2401D800DB2007F5146 /* String+Localization.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -534,6 +537,7 @@
 				E7BC15F61D7ED67E00B02897 /* RecordMapper.swift in Sources */,
 				E79B6BC61D7AFE780048E0DF /* Error.swift in Sources */,
 				E734F8241D79CE95001E013C /* AppDelegate.swift in Sources */,
+				E7C3D2411D800DB2007F5146 /* String+Localization.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
