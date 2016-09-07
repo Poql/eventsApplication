@@ -18,7 +18,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         let controller = window?.rootViewController as? EventViewController
         controller?.presenterFactory = presenterFactory
+        setupNavigationAppearance()
         return true
+    }
+    
+    // MARK: - Private
+    private func setupNavigationAppearance() {
+        UINavigationBar.appearance().barTintColor = .lightBlue()
+        UINavigationBar.appearance().tintColor = .whiteColor()
+        UINavigationBar.appearance().titleTextAttributes = [NSForegroundColorAttributeName : UIColor.whiteColor()]
     }
 }
 
