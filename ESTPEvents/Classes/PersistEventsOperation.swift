@@ -17,17 +17,28 @@ class PersistEventsOperation: ContextOperation, PersistEventsOperationPrototype 
     override func execute() {
         performBlock { context in
             let events = Set(self.events)
-            let updatingEvents = self.updatePersistedEvents(with: events, inContext: context)
-            self.insertPersistedEvents(with: events.subtract(updatingEvents), inContext: context)
+            let deletedEvents = events.filter { $0.deleted }
+            self.deletePersistentEventsDeleted(in: deletedEvents, inContext: context)
+            let updatingEvents = self.updatePersistedEvents(with: events.subtract(deletedEvents), inContext: context)
+            self.insertPersistedEvents(with: events.subtract(updatingEvents.union(deletedEvents)), inContext: context)
             self.saveContextAndFinish()
         }
     }
     
     // MARK: - Private
+
+    private func deletePersistentEventsDeleted(in events: [Event], inContext context: NSManagedObjectContext) {
+        let request = NSFetchRequest(entity: PersistentEvent.self)
+        request.predicate = NSPredicate(format: "recordName IN %@", events.recordNames())
+        let persistentEvents = try! context.executeFetchRequest(request) as! [PersistentEvent]
+        for event in persistentEvents {
+            context.deleteObject(event)
+        }
+    }
     
     private func updatePersistedEvents(with events: Set<Event>, inContext context: NSManagedObjectContext) -> Set<Event> {
         let request = NSFetchRequest(entity: PersistentEvent.self)
-        request.predicate = NSPredicate(format: "recordName IN %@", events.map {$0.record.recordID.recordName })
+        request.predicate = NSPredicate(format: "recordName IN %@", events.recordNames())
         let persistentEvents = try! context.executeFetchRequest(request) as! [PersistentEvent]
 
         var persistentEventsDict = [String : PersistentEvent]()
@@ -52,7 +63,7 @@ class PersistEventsOperation: ContextOperation, PersistEventsOperationPrototype 
     
     private func removePersistedEvents(notIn events: [Event], inContext context: NSManagedObjectContext) {
         let request = NSFetchRequest(entity: PersistentEvent.self)
-        request.predicate = NSPredicate(format: "recordName NOT IN %@", events.map {$0.record.recordID.recordName })
+        request.predicate = NSPredicate(format: "recordName NOT IN %@", events.recordNames())
         let persistentEvents = try! context.executeFetchRequest(request) as! [PersistentEvent]
         persistentEvents.forEach { context.deleteObject($0) }
     }

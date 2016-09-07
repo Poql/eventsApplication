@@ -45,6 +45,10 @@
 		E7C3D2411D800DB2007F5146 /* String+Localization.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C3D2401D800DB2007F5146 /* String+Localization.swift */; };
 		E7C3D2431D80120E007F5146 /* UITableViewCell + ReusableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C3D2421D80120E007F5146 /* UITableViewCell + ReusableCell.swift */; };
 		E7C3D2451D802022007F5146 /* NavigationControllerWithWhiteStatusBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C3D2441D802022007F5146 /* NavigationControllerWithWhiteStatusBar.swift */; };
+		E7C3D2471D803174007F5146 /* SequenceType + Record.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C3D2461D803174007F5146 /* SequenceType + Record.swift */; };
+		E7C3D2491D803FBF007F5146 /* DeleteEventsOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C3D2481D803FBF007F5146 /* DeleteEventsOperation.swift */; };
+		E7C3D24C1D8041FE007F5146 /* ApplicationPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C3D24B1D8041FE007F5146 /* ApplicationPresenter.swift */; };
+		E7C3D24E1D804244007F5146 /* ApplicationPresenterImplementation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C3D24D1D804244007F5146 /* ApplicationPresenterImplementation.swift */; };
 		E7E5FA371D79EFAE00B6FF1D /* CloudOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7E5FA361D79EFAE00B6FF1D /* CloudOperation.swift */; };
 		E7E5FA391D79F01900B6FF1D /* QueryOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7E5FA381D79F01900B6FF1D /* QueryOperation.swift */; };
 		E7E5FA3B1D79F08000B6FF1D /* EventRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7E5FA3A1D79F08000B6FF1D /* EventRepository.swift */; };
@@ -96,6 +100,10 @@
 		E7C3D2401D800DB2007F5146 /* String+Localization.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "String+Localization.swift"; path = "Classes/String+Localization.swift"; sourceTree = "<group>"; };
 		E7C3D2421D80120E007F5146 /* UITableViewCell + ReusableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UITableViewCell + ReusableCell.swift"; path = "Classes/UITableViewCell + ReusableCell.swift"; sourceTree = "<group>"; };
 		E7C3D2441D802022007F5146 /* NavigationControllerWithWhiteStatusBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NavigationControllerWithWhiteStatusBar.swift; path = Classes/NavigationControllerWithWhiteStatusBar.swift; sourceTree = "<group>"; };
+		E7C3D2461D803174007F5146 /* SequenceType + Record.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "SequenceType + Record.swift"; path = "Classes/SequenceType + Record.swift"; sourceTree = "<group>"; };
+		E7C3D2481D803FBF007F5146 /* DeleteEventsOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DeleteEventsOperation.swift; path = Classes/DeleteEventsOperation.swift; sourceTree = "<group>"; };
+		E7C3D24B1D8041FE007F5146 /* ApplicationPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ApplicationPresenter.swift; path = Classes/ApplicationPresenter.swift; sourceTree = "<group>"; };
+		E7C3D24D1D804244007F5146 /* ApplicationPresenterImplementation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ApplicationPresenterImplementation.swift; path = Classes/ApplicationPresenterImplementation.swift; sourceTree = "<group>"; };
 		E7E5FA361D79EFAE00B6FF1D /* CloudOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CloudOperation.swift; path = Classes/CloudOperation.swift; sourceTree = "<group>"; };
 		E7E5FA381D79F01900B6FF1D /* QueryOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = QueryOperation.swift; path = Classes/QueryOperation.swift; sourceTree = "<group>"; };
 		E7E5FA3A1D79F08000B6FF1D /* EventRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EventRepository.swift; path = Classes/EventRepository.swift; sourceTree = "<group>"; };
@@ -179,6 +187,7 @@
 			children = (
 				E7EE0E9E1D7AF6B50089B38C /* Shared */,
 				E7E5FA4A1D79FDAD00B6FF1D /* Event */,
+				E7C3D24A1D8041DB007F5146 /* Application */,
 			);
 			name = Presenter;
 			sourceTree = "<group>";
@@ -240,6 +249,7 @@
 				E7C3D23E1D800970007F5146 /* UIColor.swift */,
 				E7C3D2401D800DB2007F5146 /* String+Localization.swift */,
 				E7C3D2421D80120E007F5146 /* UITableViewCell + ReusableCell.swift */,
+				E7C3D2461D803174007F5146 /* SequenceType + Record.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -259,6 +269,7 @@
 			isa = PBXGroup;
 			children = (
 				E797F2F21D7C2D8100CB5EE2 /* PersistEventsOperation.swift */,
+				E7C3D2481D803FBF007F5146 /* DeleteEventsOperation.swift */,
 			);
 			name = Operations;
 			sourceTree = "<group>";
@@ -286,6 +297,15 @@
 				E7BC16051D7F434A00B02897 /* CircleView.swift */,
 			);
 			name = Event;
+			sourceTree = "<group>";
+		};
+		E7C3D24A1D8041DB007F5146 /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				E7C3D24B1D8041FE007F5146 /* ApplicationPresenter.swift */,
+				E7C3D24D1D804244007F5146 /* ApplicationPresenterImplementation.swift */,
+			);
+			name = Application;
 			sourceTree = "<group>";
 		};
 		E7E5FA2D1D79ED4100B6FF1D /* Shared */ = {
@@ -524,6 +544,7 @@
 				E7BC15FA1D7ED69900B02897 /* NSFetchRequest+CoreDataModelable.swift in Sources */,
 				E7BC16021D7F02D900B02897 /* EntitySectionChange.swift in Sources */,
 				E79B6BC41D7AFE780048E0DF /* CKQuery+Record.swift in Sources */,
+				E7C3D2491D803FBF007F5146 /* DeleteEventsOperation.swift in Sources */,
 				E7C3D23F1D800970007F5146 /* UIColor.swift in Sources */,
 				E79B6BB51D7AFE4A0048E0DF /* EventRepositoryImplementation.swift in Sources */,
 				E7BC15FC1D7EDD2E00B02897 /* PersistentRecord.swift in Sources */,
@@ -531,18 +552,21 @@
 				E79B6BCD1D7AFE780048E0DF /* PresenterFactory.swift in Sources */,
 				E79B6BCA1D7AFE780048E0DF /* EventViewController.swift in Sources */,
 				E7BC160A1D7F5C8900B02897 /* EventTableViewCell.swift in Sources */,
+				E7C3D24C1D8041FE007F5146 /* ApplicationPresenter.swift in Sources */,
 				E79B6BC71D7AFE780048E0DF /* Event.swift in Sources */,
 				E79B6BC81D7AFE780048E0DF /* EventPresenter.swift in Sources */,
 				E797F2EF1D7C2D4100CB5EE2 /* PersistencyRepository.swift in Sources */,
 				E7E5FA391D79F01900B6FF1D /* QueryOperation.swift in Sources */,
 				E79B6BC91D7AFE780048E0DF /* EventPresenterImplementation.swift in Sources */,
 				E79B6BCB1D7AFE780048E0DF /* Int+Bool.swift in Sources */,
+				E7C3D24E1D804244007F5146 /* ApplicationPresenterImplementation.swift in Sources */,
 				E7E5FA3B1D79F08000B6FF1D /* EventRepository.swift in Sources */,
 				E797F2F81D7C3D3E00CB5EE2 /* EntityChange.swift in Sources */,
 				E7FB89401D7B3DDE00FEFD1B /* LoadCoreDataStackOperation.swift in Sources */,
 				E7C3D2451D802022007F5146 /* NavigationControllerWithWhiteStatusBar.swift in Sources */,
 				E79B6BC51D7AFE780048E0DF /* Entity.swift in Sources */,
 				E7BC16061D7F434A00B02897 /* CircleView.swift in Sources */,
+				E7C3D2471D803174007F5146 /* SequenceType + Record.swift in Sources */,
 				E7FB89361D7B211700FEFD1B /* Model.xcdatamodeld in Sources */,
 				E79B6BCC1D7AFE780048E0DF /* Operation+Completion.swift in Sources */,
 				E7BC15F61D7ED67E00B02897 /* RecordMapper.swift in Sources */,
