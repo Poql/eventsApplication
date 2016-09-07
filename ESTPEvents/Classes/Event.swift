@@ -11,12 +11,21 @@ import CloudKit
 
 struct Event: Entity, Record {
 
-    var author: String? {
+    var creator: String? {
         get {
-            return record["author"] as? String
+            return record["creator"] as? String
         }
         set {
-            record["author"] = newValue
+            record["creator"] = newValue
+        }
+    }
+    
+    var title: String? {
+        get {
+            return record["title"] as? String
+        }
+        set {
+            record["title"] = newValue
         }
     }
     
@@ -35,6 +44,15 @@ struct Event: Entity, Record {
         }
         set {
             record["type"] = newValue
+        }
+    }
+    
+    var link: String? {
+        get {
+            return record["link"] as? String
+        }
+        set {
+            record["link"] = newValue
         }
     }
     
@@ -71,6 +89,15 @@ struct Event: Entity, Record {
         }
         set {
             self.record["cancelled"] = Int(newValue)
+        }
+    }
+    
+    var location: CLLocation? {
+        get {
+            return record["location"] as? CLLocation
+        }
+        set {
+            self.record["location"] = newValue
         }
     }
     
