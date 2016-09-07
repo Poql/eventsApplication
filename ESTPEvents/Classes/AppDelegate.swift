@@ -8,6 +8,10 @@
 
 import UIKit
 
+private struct Constant {
+    static let weekTimeInterval: NSTimeInterval = 60 * 60 * 24 * 7
+}
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
@@ -18,6 +22,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         setupNavigationAppearance()
         setPresenterFactory()
+        removeOldEvents()
         return true
     }
     
@@ -33,6 +38,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UINavigationBar.appearance().barTintColor = .lightBlue()
         UINavigationBar.appearance().tintColor = .whiteColor()
         UINavigationBar.appearance().titleTextAttributes = [NSForegroundColorAttributeName : UIColor.whiteColor()]
+    }
+    
+    private func removeOldEvents() {
+        presenterFactory.applicationPresenter.deleteEvents(beforeDate: NSDate().dateByAddingTimeInterval(-Constant.weekTimeInterval))
     }
 }
 
