@@ -40,6 +40,7 @@
 		E7BC16001D7EF78600B02897 /* ReturnCoreDataStackOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7BC15FF1D7EF78600B02897 /* ReturnCoreDataStackOperation.swift */; };
 		E7BC16021D7F02D900B02897 /* EntitySectionChange.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7BC16011D7F02D900B02897 /* EntitySectionChange.swift */; };
 		E7BC16061D7F434A00B02897 /* CircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7BC16051D7F434A00B02897 /* CircleView.swift */; };
+		E7BC160A1D7F5C8900B02897 /* EventTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7BC16091D7F5C8900B02897 /* EventTableViewCell.swift */; };
 		E7C3D23F1D800970007F5146 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C3D23E1D800970007F5146 /* UIColor.swift */; };
 		E7C3D2411D800DB2007F5146 /* String+Localization.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C3D2401D800DB2007F5146 /* String+Localization.swift */; };
 		E7E5FA371D79EFAE00B6FF1D /* CloudOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7E5FA361D79EFAE00B6FF1D /* CloudOperation.swift */; };
@@ -88,6 +89,7 @@
 		E7BC15FF1D7EF78600B02897 /* ReturnCoreDataStackOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ReturnCoreDataStackOperation.swift; path = Classes/ReturnCoreDataStackOperation.swift; sourceTree = "<group>"; };
 		E7BC16011D7F02D900B02897 /* EntitySectionChange.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EntitySectionChange.swift; path = Classes/EntitySectionChange.swift; sourceTree = "<group>"; };
 		E7BC16051D7F434A00B02897 /* CircleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CircleView.swift; path = Classes/CircleView.swift; sourceTree = "<group>"; };
+		E7BC16091D7F5C8900B02897 /* EventTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EventTableViewCell.swift; path = Classes/EventTableViewCell.swift; sourceTree = "<group>"; };
 		E7C3D23E1D800970007F5146 /* UIColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UIColor.swift; path = Classes/UIColor.swift; sourceTree = "<group>"; };
 		E7C3D2401D800DB2007F5146 /* String+Localization.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "String+Localization.swift"; path = "Classes/String+Localization.swift"; sourceTree = "<group>"; };
 		E7E5FA361D79EFAE00B6FF1D /* CloudOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CloudOperation.swift; path = Classes/CloudOperation.swift; sourceTree = "<group>"; };
@@ -274,6 +276,7 @@
 		E7BC16041D7F433500B02897 /* Event */ = {
 			isa = PBXGroup;
 			children = (
+				E7BC16091D7F5C8900B02897 /* EventTableViewCell.swift */,
 				E7BC16051D7F434A00B02897 /* CircleView.swift */,
 			);
 			name = Event;
@@ -521,6 +524,7 @@
 				E7E5FA371D79EFAE00B6FF1D /* CloudOperation.swift in Sources */,
 				E79B6BCD1D7AFE780048E0DF /* PresenterFactory.swift in Sources */,
 				E79B6BCA1D7AFE780048E0DF /* EventViewController.swift in Sources */,
+				E7BC160A1D7F5C8900B02897 /* EventTableViewCell.swift in Sources */,
 				E79B6BC71D7AFE780048E0DF /* Event.swift in Sources */,
 				E79B6BC81D7AFE780048E0DF /* EventPresenter.swift in Sources */,
 				E797F2EF1D7C2D4100CB5EE2 /* PersistencyRepository.swift in Sources */,
