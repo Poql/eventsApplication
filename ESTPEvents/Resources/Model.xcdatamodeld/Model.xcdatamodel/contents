@@ -1,8 +1,17 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="10174" systemVersion="15G31" minimumToolsVersion="Xcode 7.0">
-    <elements/>
     <entity name="PersistentEvent" representedClassName=".PersistentEvent" parentEntity="PersistentRecord" syncable="YES">
+        <attribute name="cancelled" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="color" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="creator" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="eventDate" optional="YES" attributeType="Date" syncable="YES"/>
         <attribute name="eventDescription" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="link" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="locationLatitude" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="locationLongitude" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="notify" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="type" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <entity name="PersistentRecord" representedClassName=".PersistentRecord" syncable="YES">
         <attribute name="changeTag" optional="YES" attributeType="String" syncable="YES"/>
@@ -12,7 +21,7 @@
         <attribute name="recordName" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <elements>
-        <element name="PersistentEvent" positionX="-45" positionY="27" width="128" height="60"/>
+        <element name="PersistentEvent" positionX="-45" positionY="27" width="128" height="210"/>
         <element name="PersistentRecord" positionX="-63" positionY="-18" width="128" height="120"/>
     </elements>
 </model>
