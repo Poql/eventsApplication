@@ -28,6 +28,7 @@ class EventViewController: SharedViewController, EventPresenterClient, UITableVi
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupController()
         eventPresenter?.queryAllEvents()
     }
     
@@ -62,6 +63,13 @@ class EventViewController: SharedViewController, EventPresenterClient, UITableVi
     
     func presenterDidChangeState(state: PresenterState<ApplicationError>) {
         tableView.reloadData()
+    }
+    
+    // MARK: - Private
+    
+    private func setupController() {
+        title = String(key: "event_title")
+        automaticallyAdjustsScrollViewInsets = false
     }
     
     // MARK: - UITableViewDataSource
