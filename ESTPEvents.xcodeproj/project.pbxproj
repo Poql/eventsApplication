@@ -45,6 +45,7 @@
 		E7C3D2411D800DB2007F5146 /* String+Localization.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C3D2401D800DB2007F5146 /* String+Localization.swift */; };
 		E7C3D2431D80120E007F5146 /* UITableViewCell + ReusableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C3D2421D80120E007F5146 /* UITableViewCell + ReusableCell.swift */; };
 		E7C3D2451D802022007F5146 /* NavigationControllerWithWhiteStatusBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C3D2441D802022007F5146 /* NavigationControllerWithWhiteStatusBar.swift */; };
+		E7C3D2471D803174007F5146 /* SequenceType + Record.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C3D2461D803174007F5146 /* SequenceType + Record.swift */; };
 		E7E5FA371D79EFAE00B6FF1D /* CloudOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7E5FA361D79EFAE00B6FF1D /* CloudOperation.swift */; };
 		E7E5FA391D79F01900B6FF1D /* QueryOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7E5FA381D79F01900B6FF1D /* QueryOperation.swift */; };
 		E7E5FA3B1D79F08000B6FF1D /* EventRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7E5FA3A1D79F08000B6FF1D /* EventRepository.swift */; };
@@ -96,6 +97,7 @@
 		E7C3D2401D800DB2007F5146 /* String+Localization.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "String+Localization.swift"; path = "Classes/String+Localization.swift"; sourceTree = "<group>"; };
 		E7C3D2421D80120E007F5146 /* UITableViewCell + ReusableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UITableViewCell + ReusableCell.swift"; path = "Classes/UITableViewCell + ReusableCell.swift"; sourceTree = "<group>"; };
 		E7C3D2441D802022007F5146 /* NavigationControllerWithWhiteStatusBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NavigationControllerWithWhiteStatusBar.swift; path = Classes/NavigationControllerWithWhiteStatusBar.swift; sourceTree = "<group>"; };
+		E7C3D2461D803174007F5146 /* SequenceType + Record.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "SequenceType + Record.swift"; path = "Classes/SequenceType + Record.swift"; sourceTree = "<group>"; };
 		E7E5FA361D79EFAE00B6FF1D /* CloudOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CloudOperation.swift; path = Classes/CloudOperation.swift; sourceTree = "<group>"; };
 		E7E5FA381D79F01900B6FF1D /* QueryOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = QueryOperation.swift; path = Classes/QueryOperation.swift; sourceTree = "<group>"; };
 		E7E5FA3A1D79F08000B6FF1D /* EventRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EventRepository.swift; path = Classes/EventRepository.swift; sourceTree = "<group>"; };
@@ -240,6 +242,7 @@
 				E7C3D23E1D800970007F5146 /* UIColor.swift */,
 				E7C3D2401D800DB2007F5146 /* String+Localization.swift */,
 				E7C3D2421D80120E007F5146 /* UITableViewCell + ReusableCell.swift */,
+				E7C3D2461D803174007F5146 /* SequenceType + Record.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -543,6 +546,7 @@
 				E7C3D2451D802022007F5146 /* NavigationControllerWithWhiteStatusBar.swift in Sources */,
 				E79B6BC51D7AFE780048E0DF /* Entity.swift in Sources */,
 				E7BC16061D7F434A00B02897 /* CircleView.swift in Sources */,
+				E7C3D2471D803174007F5146 /* SequenceType + Record.swift in Sources */,
 				E7FB89361D7B211700FEFD1B /* Model.xcdatamodeld in Sources */,
 				E79B6BCC1D7AFE780048E0DF /* Operation+Completion.swift in Sources */,
 				E7BC15F61D7ED67E00B02897 /* RecordMapper.swift in Sources */,
