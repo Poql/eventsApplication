@@ -8,12 +8,18 @@
 
 import UIKit
 
+private struct Constant {
+    static let rowHeight: CGFloat = 100
+}
+
 class EventViewController: SharedViewController, EventPresenterClient, UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet var tableView: UITableView! {
         didSet {
             tableView.delegate = self
             tableView.dataSource = self
+            tableView.rowHeight = Constant.rowHeight
+            tableView.tableFooterView = UIView()
         }
     }
     
@@ -59,6 +65,12 @@ class EventViewController: SharedViewController, EventPresenterClient, UITableVi
     }
     
     func presenterEventSectionDidChange(eventSectionChange: EntitySectionChange) {
+        switch eventSectionChange {
+        case let .insert(section):
+            tableView.insertSections(NSIndexSet(index: section), withRowAnimation: .Fade)
+        case let .delete(section):
+            tableView.deleteSections(NSIndexSet(index: section), withRowAnimation: .Fade)
+        }
     }
     
     func presenterDidChangeState(state: PresenterState<ApplicationError>) {
@@ -74,9 +86,15 @@ class EventViewController: SharedViewController, EventPresenterClient, UITableVi
     
     // MARK: - UITableViewDataSource
     
+    func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return eventPresenter?.title(forSection: section)
+    }
+    
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("cell")!
-        cell.textLabel?.text = eventPresenter?.event(atIndex: indexPath).description
+        let cell: EventTableViewCell = tableView.dequeueCell()
+        if let event = eventPresenter?.event(atIndex: indexPath) {
+            cell.configure(with: event)
+        }
         return cell
     }
     
