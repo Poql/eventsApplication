@@ -10,6 +10,7 @@ import Foundation
 
 protocol PresenterFactory {
     var eventPresenter: EventPresenter { get }
+    var applicationPresenter: ApplicationPresenter { get }
     func addClient(eventClient: EventPresenterClient)
 }
 
@@ -23,7 +24,15 @@ class PresenterFactoryImplementation: PresenterFactory {
         return EventPresenterImplementation(repository: self.eventRepository, persistencyRepository: self.persistencyRepository)
     }()
     
+    private lazy var applicationPresenterImplementation: ApplicationPresenterImplementation<PersistencyRepositoryImplementation> = {
+        return ApplicationPresenterImplementation(persistencyRepository: self.persistencyRepository)
+    }()
+    
     // MARK: - PresenterFactory
+    
+    var applicationPresenter: ApplicationPresenter {
+        return applicationPresenterImplementation
+    }
     
     var eventPresenter: EventPresenter {
         return eventPresenterImplementation
