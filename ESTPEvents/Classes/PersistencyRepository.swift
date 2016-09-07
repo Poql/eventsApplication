@@ -14,8 +14,14 @@ protocol PersistEventsOperationPrototype: class {
     var completionHandler: (([Event]) -> Void)? { get set }
 }
 
+protocol DeleteEventsOperationPrototype: class {
+    var limitDate: NSDate { get set }
+}
+
 protocol PersistencyRepository {
     associatedtype PersistEventsOperation: Operation, PersistEventsOperationPrototype
+    associatedtype DeleteEventsOperation: Operation, DeleteEventsOperationPrototype
     
     func persistEventsOperation() -> PersistEventsOperation
+    func deleteEventsOperation(limitDate limitDate: NSDate) -> DeleteEventsOperation
 }

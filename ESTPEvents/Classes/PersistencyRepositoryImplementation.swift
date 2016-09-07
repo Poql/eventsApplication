@@ -13,4 +13,8 @@ class PersistencyRepositoryImplementation: PersistencyRepository {
     func persistEventsOperation() -> PersistEventsOperation {
         return PersistEventsOperation()
     }
+    
+    func deleteEventsOperation(limitDate limitDate: NSDate) -> DeleteEventsOperation {
+        return DeleteEventsOperation(limitDate: limitDate)
+    }
 }
