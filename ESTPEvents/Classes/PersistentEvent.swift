@@ -27,6 +27,17 @@ class PersistentEvent: PersistentRecord {
         }
     }
     
+    static let sectionDateFormatter: NSDateFormatter = {
+        let dateFormatter = NSDateFormatter()
+        dateFormatter.locale = NSLocale(localeIdentifier: "fr")
+        dateFormatter.dateFormat = "EEEE d MMMM"
+        return dateFormatter
+    }()
+    
+    var sectionIdentifier: String {
+        return self.dynamicType.sectionDateFormatter.stringFromDate(eventDate)
+    }
+    
     @NSManaged var type: String
     
     @NSManaged var title: String
