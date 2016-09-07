@@ -16,9 +16,23 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-        let controller = window?.rootViewController as? EventViewController
-        controller?.presenterFactory = presenterFactory
+        setupNavigationAppearance()
+        setPresenterFactory()
         return true
+    }
+    
+    // MARK: - Private
+    
+    private func setPresenterFactory() {
+        guard let controller = window?.rootViewController as? EventViewController else { return }
+        controller.presenterFactory = presenterFactory
+        window?.rootViewController = NavigationControllerWithWhiteStatusBar(rootViewController: controller)
+    }
+    
+    private func setupNavigationAppearance() {
+        UINavigationBar.appearance().barTintColor = .lightBlue()
+        UINavigationBar.appearance().tintColor = .whiteColor()
+        UINavigationBar.appearance().titleTextAttributes = [NSForegroundColorAttributeName : UIColor.whiteColor()]
     }
 }
 

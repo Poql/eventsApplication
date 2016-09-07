@@ -39,6 +39,12 @@
 		E7BC15FE1D7EDD3900B02897 /* PersistentEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7BC15FD1D7EDD3900B02897 /* PersistentEvent.swift */; };
 		E7BC16001D7EF78600B02897 /* ReturnCoreDataStackOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7BC15FF1D7EF78600B02897 /* ReturnCoreDataStackOperation.swift */; };
 		E7BC16021D7F02D900B02897 /* EntitySectionChange.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7BC16011D7F02D900B02897 /* EntitySectionChange.swift */; };
+		E7BC16061D7F434A00B02897 /* CircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7BC16051D7F434A00B02897 /* CircleView.swift */; };
+		E7BC160A1D7F5C8900B02897 /* EventTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7BC16091D7F5C8900B02897 /* EventTableViewCell.swift */; };
+		E7C3D23F1D800970007F5146 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C3D23E1D800970007F5146 /* UIColor.swift */; };
+		E7C3D2411D800DB2007F5146 /* String+Localization.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C3D2401D800DB2007F5146 /* String+Localization.swift */; };
+		E7C3D2431D80120E007F5146 /* UITableViewCell + ReusableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C3D2421D80120E007F5146 /* UITableViewCell + ReusableCell.swift */; };
+		E7C3D2451D802022007F5146 /* NavigationControllerWithWhiteStatusBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C3D2441D802022007F5146 /* NavigationControllerWithWhiteStatusBar.swift */; };
 		E7E5FA371D79EFAE00B6FF1D /* CloudOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7E5FA361D79EFAE00B6FF1D /* CloudOperation.swift */; };
 		E7E5FA391D79F01900B6FF1D /* QueryOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7E5FA381D79F01900B6FF1D /* QueryOperation.swift */; };
 		E7E5FA3B1D79F08000B6FF1D /* EventRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7E5FA3A1D79F08000B6FF1D /* EventRepository.swift */; };
@@ -84,6 +90,12 @@
 		E7BC15FD1D7EDD3900B02897 /* PersistentEvent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PersistentEvent.swift; path = Classes/PersistentEvent.swift; sourceTree = "<group>"; };
 		E7BC15FF1D7EF78600B02897 /* ReturnCoreDataStackOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ReturnCoreDataStackOperation.swift; path = Classes/ReturnCoreDataStackOperation.swift; sourceTree = "<group>"; };
 		E7BC16011D7F02D900B02897 /* EntitySectionChange.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EntitySectionChange.swift; path = Classes/EntitySectionChange.swift; sourceTree = "<group>"; };
+		E7BC16051D7F434A00B02897 /* CircleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CircleView.swift; path = Classes/CircleView.swift; sourceTree = "<group>"; };
+		E7BC16091D7F5C8900B02897 /* EventTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EventTableViewCell.swift; path = Classes/EventTableViewCell.swift; sourceTree = "<group>"; };
+		E7C3D23E1D800970007F5146 /* UIColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UIColor.swift; path = Classes/UIColor.swift; sourceTree = "<group>"; };
+		E7C3D2401D800DB2007F5146 /* String+Localization.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "String+Localization.swift"; path = "Classes/String+Localization.swift"; sourceTree = "<group>"; };
+		E7C3D2421D80120E007F5146 /* UITableViewCell + ReusableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UITableViewCell + ReusableCell.swift"; path = "Classes/UITableViewCell + ReusableCell.swift"; sourceTree = "<group>"; };
+		E7C3D2441D802022007F5146 /* NavigationControllerWithWhiteStatusBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NavigationControllerWithWhiteStatusBar.swift; path = Classes/NavigationControllerWithWhiteStatusBar.swift; sourceTree = "<group>"; };
 		E7E5FA361D79EFAE00B6FF1D /* CloudOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CloudOperation.swift; path = Classes/CloudOperation.swift; sourceTree = "<group>"; };
 		E7E5FA381D79F01900B6FF1D /* QueryOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = QueryOperation.swift; path = Classes/QueryOperation.swift; sourceTree = "<group>"; };
 		E7E5FA3A1D79F08000B6FF1D /* EventRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EventRepository.swift; path = Classes/EventRepository.swift; sourceTree = "<group>"; };
@@ -144,6 +156,7 @@
 				E734F81B1D79CDD1001E013C /* Controller */,
 				E734F81F1D79CDFA001E013C /* Model */,
 				E734F81D1D79CDDE001E013C /* Operations */,
+				E7BC16031D7F431500B02897 /* View */,
 				E734F8311D79CFCA001E013C /* Extensions */,
 				E734F8201D79CE03001E013C /* Resources */,
 				E734F8211D79CE08001E013C /* Configuration */,
@@ -155,6 +168,7 @@
 			isa = PBXGroup;
 			children = (
 				E734F8251D79CEA1001E013C /* SharedViewController.swift */,
+				E7C3D2441D802022007F5146 /* NavigationControllerWithWhiteStatusBar.swift */,
 				E7EE0E991D7AC2740089B38C /* Event */,
 			);
 			name = Controller;
@@ -223,6 +237,9 @@
 				E79B6BB81D7AFE780048E0DF /* CKQuery+Record.swift */,
 				E79B6BBF1D7AFE780048E0DF /* Int+Bool.swift */,
 				E79B6BC01D7AFE780048E0DF /* Operation+Completion.swift */,
+				E7C3D23E1D800970007F5146 /* UIColor.swift */,
+				E7C3D2401D800DB2007F5146 /* String+Localization.swift */,
+				E7C3D2421D80120E007F5146 /* UITableViewCell + ReusableCell.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -252,6 +269,23 @@
 				E7BC15F51D7ED67E00B02897 /* RecordMapper.swift */,
 			);
 			name = Mapper;
+			sourceTree = "<group>";
+		};
+		E7BC16031D7F431500B02897 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				E7BC16041D7F433500B02897 /* Event */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		E7BC16041D7F433500B02897 /* Event */ = {
+			isa = PBXGroup;
+			children = (
+				E7BC16091D7F5C8900B02897 /* EventTableViewCell.swift */,
+				E7BC16051D7F434A00B02897 /* CircleView.swift */,
+			);
+			name = Event;
 			sourceTree = "<group>";
 		};
 		E7E5FA2D1D79ED4100B6FF1D /* Shared */ = {
@@ -490,11 +524,13 @@
 				E7BC15FA1D7ED69900B02897 /* NSFetchRequest+CoreDataModelable.swift in Sources */,
 				E7BC16021D7F02D900B02897 /* EntitySectionChange.swift in Sources */,
 				E79B6BC41D7AFE780048E0DF /* CKQuery+Record.swift in Sources */,
+				E7C3D23F1D800970007F5146 /* UIColor.swift in Sources */,
 				E79B6BB51D7AFE4A0048E0DF /* EventRepositoryImplementation.swift in Sources */,
 				E7BC15FC1D7EDD2E00B02897 /* PersistentRecord.swift in Sources */,
 				E7E5FA371D79EFAE00B6FF1D /* CloudOperation.swift in Sources */,
 				E79B6BCD1D7AFE780048E0DF /* PresenterFactory.swift in Sources */,
 				E79B6BCA1D7AFE780048E0DF /* EventViewController.swift in Sources */,
+				E7BC160A1D7F5C8900B02897 /* EventTableViewCell.swift in Sources */,
 				E79B6BC71D7AFE780048E0DF /* Event.swift in Sources */,
 				E79B6BC81D7AFE780048E0DF /* EventPresenter.swift in Sources */,
 				E797F2EF1D7C2D4100CB5EE2 /* PersistencyRepository.swift in Sources */,
@@ -504,12 +540,16 @@
 				E7E5FA3B1D79F08000B6FF1D /* EventRepository.swift in Sources */,
 				E797F2F81D7C3D3E00CB5EE2 /* EntityChange.swift in Sources */,
 				E7FB89401D7B3DDE00FEFD1B /* LoadCoreDataStackOperation.swift in Sources */,
+				E7C3D2451D802022007F5146 /* NavigationControllerWithWhiteStatusBar.swift in Sources */,
 				E79B6BC51D7AFE780048E0DF /* Entity.swift in Sources */,
+				E7BC16061D7F434A00B02897 /* CircleView.swift in Sources */,
 				E7FB89361D7B211700FEFD1B /* Model.xcdatamodeld in Sources */,
 				E79B6BCC1D7AFE780048E0DF /* Operation+Completion.swift in Sources */,
 				E7BC15F61D7ED67E00B02897 /* RecordMapper.swift in Sources */,
+				E7C3D2431D80120E007F5146 /* UITableViewCell + ReusableCell.swift in Sources */,
 				E79B6BC61D7AFE780048E0DF /* Error.swift in Sources */,
 				E734F8241D79CE95001E013C /* AppDelegate.swift in Sources */,
+				E7C3D2411D800DB2007F5146 /* String+Localization.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -15,14 +15,23 @@ struct RecordMapper {
     static func shouldUpdatePersistentRecord<R: Record, PR: PersistentRecord where PR: CoreDataModelable>(persistentRecord: PR, with record: R) -> Bool {
         let eventModificationDate = record.record.modificationDate ?? NSDate.distantFuture()
         let persistentEventModificationDate = persistentRecord.modificationDate ?? NSDate.distantPast()
-        let persistentDateIsOlder = persistentEventModificationDate.compare(eventModificationDate) == .OrderedDescending
-        let changeTagDidChange = persistentRecord.changeTag ?? "0" == record.record.recordChangeTag ?? "1"
+        let persistentDateIsOlder = persistentEventModificationDate.compare(eventModificationDate) == .OrderedAscending
+        let changeTagDidChange = persistentRecord.changeTag ?? "0" != record.record.recordChangeTag ?? "1"
         return persistentDateIsOlder && changeTagDidChange
     }
     
     static func getEvent(from persistentEvent: PersistentEvent) -> Event {
         var event: Event = record(from: persistentEvent)
         event.description = persistentEvent.eventDescription
+        event.color = persistentEvent.color
+        event.eventDate = persistentEvent.eventDate
+        event.link = persistentEvent.link
+        event.location = persistentEvent.location
+        event.notify = persistentEvent.notify
+        event.cancelled = persistentEvent.cancelled
+        event.type = persistentEvent.type
+        event.creator = persistentEvent.creator
+        event.title = persistentEvent.title
         return event
     }
     
@@ -36,6 +45,15 @@ struct RecordMapper {
         guard shouldUpdatePersistentRecord(persistentEvent, with: event) else { return }
         updatePersistentRecord(persistentEvent, with: event)
         persistentEvent.eventDescription = event.description ?? ""
+        persistentEvent.color = event.color ?? ""
+        persistentEvent.eventDate = event.eventDate ?? NSDate.distantPast()
+        persistentEvent.link = event.link ?? ""
+        persistentEvent.location = event.location
+        persistentEvent.notify = event.notify
+        persistentEvent.cancelled = event.cancelled
+        persistentEvent.type = event.type ?? ""
+        persistentEvent.creator = event.creator ?? ""
+        persistentEvent.title = event.title ?? ""
     }
     
     // MARK: - Private

@@ -11,6 +11,7 @@ import Foundation
 protocol EventPresenter {
     func queryAllEvents()
     func event(atIndex index: NSIndexPath) -> Event
+    func title(forSection section: Int) -> String?
     func numberOfEvents(inSection section: Int) -> Int
     func numberOfEventSections() -> Int
 }
