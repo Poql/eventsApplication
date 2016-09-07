@@ -26,4 +26,8 @@ extension UIColor {
         
         self.init(red: red, green: green, blue: blue, alpha: CGFloat(alpha))
     }
+    
+    static func red() -> UIColor {
+        return UIColor(red: 208/255, green: 0, blue: 27/255, alpha: 1)
+    }
 }
