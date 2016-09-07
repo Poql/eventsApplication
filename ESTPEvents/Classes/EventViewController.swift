@@ -51,9 +51,11 @@ class EventViewController: SharedViewController, EventPresenterClient, UITableVi
         case let .delete(indexPath: indexPath):
             self.tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
         case let .update(indexPath: indexPath):
-            if let cell = self.tableView.cellForRowAtIndexPath(indexPath) {
-                cell.textLabel?.text = eventPresenter?.event(atIndex: indexPath).description
-            }
+            guard
+                let cell = self.tableView.cellForRowAtIndexPath(indexPath) as? EventTableViewCell,
+                let event = eventPresenter?.event(atIndex: indexPath)
+                else { return }
+                cell.configure(with: event)
         case let .move(fromIndexPath: fromIndexPath, toIndexPath: toIndexPath):
             self.tableView.deleteRowsAtIndexPaths([fromIndexPath], withRowAnimation: .Fade)
             self.tableView.insertRowsAtIndexPaths([toIndexPath], withRowAnimation: .Fade)
