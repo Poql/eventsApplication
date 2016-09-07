@@ -15,8 +15,8 @@ struct RecordMapper {
     static func shouldUpdatePersistentRecord<R: Record, PR: PersistentRecord where PR: CoreDataModelable>(persistentRecord: PR, with record: R) -> Bool {
         let eventModificationDate = record.record.modificationDate ?? NSDate.distantFuture()
         let persistentEventModificationDate = persistentRecord.modificationDate ?? NSDate.distantPast()
-        let persistentDateIsOlder = persistentEventModificationDate.compare(eventModificationDate) == .OrderedDescending
-        let changeTagDidChange = persistentRecord.changeTag ?? "0" == record.record.recordChangeTag ?? "1"
+        let persistentDateIsOlder = persistentEventModificationDate.compare(eventModificationDate) == .OrderedAscending
+        let changeTagDidChange = persistentRecord.changeTag ?? "0" != record.record.recordChangeTag ?? "1"
         return persistentDateIsOlder && changeTagDidChange
     }
     
