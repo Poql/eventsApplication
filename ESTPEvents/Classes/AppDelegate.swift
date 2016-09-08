@@ -10,6 +10,7 @@ import UIKit
 
 private struct Constant {
     static let weekTimeInterval: NSTimeInterval = 60 * 60 * 24 * 7
+    static let notificationSettings = UIUserNotificationSettings(forTypes: .Alert, categories: nil)
 }
 
 @UIApplicationMain
@@ -20,6 +21,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
+        setupNotifications(in: application)
         setupNavigationAppearance()
         setPresenterFactory()
         removeOldEvents()
@@ -27,6 +29,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     // MARK: - Private
+    
+    private func setupNotifications(in application: UIApplication) {
+        application.registerForRemoteNotifications()
+        application.registerUserNotificationSettings(Constant.notificationSettings)
+        presenterFactory.applicationPresenter.ensureNotifications()
+    }
     
     private func setPresenterFactory() {
         guard let controller = window?.rootViewController as? EventViewController else { return }
