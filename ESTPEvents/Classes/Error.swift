@@ -14,4 +14,5 @@ enum ApplicationError: ErrorType {
 
 enum OperationError: ErrorType {
     case noContext
+    case subscriptionAlreadySubmitted
 }
