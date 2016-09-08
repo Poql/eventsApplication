@@ -16,6 +16,8 @@
 		E756AC001D81A0A90077375D /* FetchRecordsOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E756ABFF1D81A0A90077375D /* FetchRecordsOperation.swift */; };
 		E756AC041D81AFE40077375D /* FetchRecordOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E756AC031D81AFE40077375D /* FetchRecordOperation.swift */; };
 		E756AC061D81E49A0077375D /* ModifyEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E756AC051D81E49A0077375D /* ModifyEventViewController.swift */; };
+		E756AC0D1D81E9DB0077375D /* TextViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E756AC0C1D81E9DB0077375D /* TextViewCell.swift */; };
+		E756AC0F1D81EA270077375D /* TextViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E756AC0E1D81EA270077375D /* TextViewCell.xib */; };
 		E797F2EF1D7C2D4100CB5EE2 /* PersistencyRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = E797F2ED1D7C2D4100CB5EE2 /* PersistencyRepository.swift */; };
 		E797F2F01D7C2D4100CB5EE2 /* PersistencyRepositoryImplementation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E797F2EE1D7C2D4100CB5EE2 /* PersistencyRepositoryImplementation.swift */; };
 		E797F2F31D7C2D8100CB5EE2 /* PersistEventsOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E797F2F21D7C2D8100CB5EE2 /* PersistEventsOperation.swift */; };
@@ -81,6 +83,8 @@
 		E756ABFF1D81A0A90077375D /* FetchRecordsOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FetchRecordsOperation.swift; path = Classes/FetchRecordsOperation.swift; sourceTree = "<group>"; };
 		E756AC031D81AFE40077375D /* FetchRecordOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FetchRecordOperation.swift; path = Classes/FetchRecordOperation.swift; sourceTree = "<group>"; };
 		E756AC051D81E49A0077375D /* ModifyEventViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ModifyEventViewController.swift; path = Classes/ModifyEventViewController.swift; sourceTree = "<group>"; };
+		E756AC0C1D81E9DB0077375D /* TextViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TextViewCell.swift; path = Classes/TextViewCell.swift; sourceTree = "<group>"; };
+		E756AC0E1D81EA270077375D /* TextViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = TextViewCell.xib; path = Classes/TextViewCell.xib; sourceTree = "<group>"; };
 		E797F2ED1D7C2D4100CB5EE2 /* PersistencyRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PersistencyRepository.swift; path = Classes/PersistencyRepository.swift; sourceTree = "<group>"; };
 		E797F2EE1D7C2D4100CB5EE2 /* PersistencyRepositoryImplementation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PersistencyRepositoryImplementation.swift; path = Classes/PersistencyRepositoryImplementation.swift; sourceTree = "<group>"; };
 		E797F2F21D7C2D8100CB5EE2 /* PersistEventsOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PersistEventsOperation.swift; path = Classes/PersistEventsOperation.swift; sourceTree = "<group>"; };
@@ -247,6 +251,7 @@
 				E734F8291D79CED1001E013C /* Assets.xcassets */,
 				E734F82D1D79CF08001E013C /* LaunchScreen.storyboard */,
 				E734F82E1D79CF08001E013C /* Main.storyboard */,
+				E756AC0E1D81EA270077375D /* TextViewCell.xib */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -275,6 +280,14 @@
 				E7C3D25D1D818AF8007F5146 /* NSPredicate.swift */,
 			);
 			name = Extensions;
+			sourceTree = "<group>";
+		};
+		E756AC071D81E5F90077375D /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				E756AC0C1D81E9DB0077375D /* TextViewCell.swift */,
+			);
+			name = Shared;
 			sourceTree = "<group>";
 		};
 		E797F2EC1D7C2D3000CB5EE2 /* Persistency */ = {
@@ -308,6 +321,7 @@
 		E7BC16031D7F431500B02897 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				E756AC071D81E5F90077375D /* Shared */,
 				E7BC16041D7F433500B02897 /* Event */,
 			);
 			name = View;
@@ -521,6 +535,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E734F82F1D79CF08001E013C /* LaunchScreen.storyboard in Resources */,
+				E756AC0F1D81EA270077375D /* TextViewCell.xib in Resources */,
 				E734F82A1D79CED1001E013C /* Assets.xcassets in Resources */,
 				E734F8301D79CF08001E013C /* Main.storyboard in Resources */,
 			);
@@ -594,6 +609,7 @@
 				E797F2F01D7C2D4100CB5EE2 /* PersistencyRepositoryImplementation.swift in Sources */,
 				E756AC061D81E49A0077375D /* ModifyEventViewController.swift in Sources */,
 				E7BC15FA1D7ED69900B02897 /* NSFetchRequest+CoreDataModelable.swift in Sources */,
+				E756AC0D1D81E9DB0077375D /* TextViewCell.swift in Sources */,
 				E7C3D2561D817869007F5146 /* EnsureSubscriptionOperation.swift in Sources */,
 				E7BC16021D7F02D900B02897 /* EntitySectionChange.swift in Sources */,
 				E79B6BC41D7AFE780048E0DF /* CKQuery+Record.swift in Sources */,
