@@ -19,6 +19,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
     private let presenterFactory = PresenterFactoryImplementation()
 
+    private var applicationPresenter: ApplicationPresenter {
+        return presenterFactory.applicationPresenter
+    }
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         setupNotifications(in: application)
@@ -33,7 +36,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     private func setupNotifications(in application: UIApplication) {
         application.registerForRemoteNotifications()
         application.registerUserNotificationSettings(Constant.notificationSettings)
-        presenterFactory.applicationPresenter.ensureNotifications()
+        applicationPresenter.ensureNotifications()
     }
     
     private func setPresenterFactory() {
@@ -49,7 +52,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     private func removeOldEvents() {
-        presenterFactory.applicationPresenter.deleteEvents(beforeDate: NSDate().dateByAddingTimeInterval(-Constant.weekTimeInterval))
+        applicationPresenter.deleteEvents(beforeDate: NSDate().dateByAddingTimeInterval(-Constant.weekTimeInterval))
     }
 }
 
