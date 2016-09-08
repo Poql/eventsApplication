@@ -50,6 +50,7 @@
 		E7C3D24C1D8041FE007F5146 /* ApplicationPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C3D24B1D8041FE007F5146 /* ApplicationPresenter.swift */; };
 		E7C3D24E1D804244007F5146 /* ApplicationPresenterImplementation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C3D24D1D804244007F5146 /* ApplicationPresenterImplementation.swift */; };
 		E7C3D2501D816B3A007F5146 /* ModifySubscriptionsOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C3D24F1D816B3A007F5146 /* ModifySubscriptionsOperation.swift */; };
+		E7C3D2561D817869007F5146 /* EnsureSubscriptionOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C3D2551D817869007F5146 /* EnsureSubscriptionOperation.swift */; };
 		E7C3D2581D817CFD007F5146 /* NSUserDefault + Subscription.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C3D2571D817CFD007F5146 /* NSUserDefault + Subscription.swift */; };
 		E7C3D25A1D818405007F5146 /* Error+CloudKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C3D2591D818405007F5146 /* Error+CloudKit.swift */; };
 		E7C3D25E1D818AF8007F5146 /* NSPredicate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C3D25D1D818AF8007F5146 /* NSPredicate.swift */; };
@@ -109,6 +110,7 @@
 		E7C3D24B1D8041FE007F5146 /* ApplicationPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ApplicationPresenter.swift; path = Classes/ApplicationPresenter.swift; sourceTree = "<group>"; };
 		E7C3D24D1D804244007F5146 /* ApplicationPresenterImplementation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ApplicationPresenterImplementation.swift; path = Classes/ApplicationPresenterImplementation.swift; sourceTree = "<group>"; };
 		E7C3D24F1D816B3A007F5146 /* ModifySubscriptionsOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ModifySubscriptionsOperation.swift; path = Classes/ModifySubscriptionsOperation.swift; sourceTree = "<group>"; };
+		E7C3D2551D817869007F5146 /* EnsureSubscriptionOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EnsureSubscriptionOperation.swift; path = Classes/EnsureSubscriptionOperation.swift; sourceTree = "<group>"; };
 		E7C3D2571D817CFD007F5146 /* NSUserDefault + Subscription.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "NSUserDefault + Subscription.swift"; path = "Classes/NSUserDefault + Subscription.swift"; sourceTree = "<group>"; };
 		E7C3D2591D818405007F5146 /* Error+CloudKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Error+CloudKit.swift"; path = "Classes/Error+CloudKit.swift"; sourceTree = "<group>"; };
 		E7C3D25D1D818AF8007F5146 /* NSPredicate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NSPredicate.swift; path = Classes/NSPredicate.swift; sourceTree = "<group>"; };
@@ -332,6 +334,7 @@
 			isa = PBXGroup;
 			children = (
 				E7C3D24F1D816B3A007F5146 /* ModifySubscriptionsOperation.swift */,
+				E7C3D2551D817869007F5146 /* EnsureSubscriptionOperation.swift */,
 			);
 			name = Operations;
 			sourceTree = "<group>";
@@ -571,6 +574,7 @@
 				E7BC16001D7EF78600B02897 /* ReturnCoreDataStackOperation.swift in Sources */,
 				E797F2F01D7C2D4100CB5EE2 /* PersistencyRepositoryImplementation.swift in Sources */,
 				E7BC15FA1D7ED69900B02897 /* NSFetchRequest+CoreDataModelable.swift in Sources */,
+				E7C3D2561D817869007F5146 /* EnsureSubscriptionOperation.swift in Sources */,
 				E7BC16021D7F02D900B02897 /* EntitySectionChange.swift in Sources */,
 				E79B6BC41D7AFE780048E0DF /* CKQuery+Record.swift in Sources */,
 				E7C3D2491D803FBF007F5146 /* DeleteEventsOperation.swift in Sources */,
