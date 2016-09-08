@@ -18,7 +18,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
     private let presenterFactory = PresenterFactoryImplementation()
-
     private var applicationPresenter: ApplicationPresenter {
         return presenterFactory.applicationPresenter
     }
@@ -29,6 +28,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         setPresenterFactory()
         removeOldEvents()
         return true
+    }
+    
+    func application(application: UIApplication, didReceiveRemoteNotification userInfo: [NSObject : AnyObject], fetchCompletionHandler completionHandler: (UIBackgroundFetchResult) -> Void) {
+        applicationPresenter.handleRemoteNotification(withUserInfo: userInfo, completionHandler: completionHandler)
     }
     
     // MARK: - Private
