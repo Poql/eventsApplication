@@ -727,7 +727,7 @@
 				CODE_SIGN_ENTITLEMENTS = ESTPEvents/ESTPEvents.entitlements;
 				INFOPLIST_FILE = ESTPEvents/Configuration/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.gzanella.ESTPEvents;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.gz.Events-App";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -740,7 +740,7 @@
 				CODE_SIGN_ENTITLEMENTS = ESTPEvents/ESTPEvents.entitlements;
 				INFOPLIST_FILE = ESTPEvents/Configuration/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.gzanella.ESTPEvents;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.gz.Events-App";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
