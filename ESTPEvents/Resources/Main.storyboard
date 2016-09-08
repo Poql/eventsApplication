@@ -144,5 +144,23 @@
             </objects>
             <point key="canvasLocation" x="375" y="337"/>
         </scene>
+        <!--Modify Event View Controller-->
+        <scene sceneID="DYX-Vx-899">
+            <objects>
+                <viewController id="gsY-eb-6eQ" customClass="ModifyEventViewController" customModule="ESTPEvents" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="kVI-Qz-TbI"/>
+                        <viewControllerLayoutGuide type="bottom" id="ySt-fC-U3e"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="6GY-ch-Gec">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="txd-U6-dvi" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="375" y="-349"/>
+        </scene>
     </scenes>
 </document>
