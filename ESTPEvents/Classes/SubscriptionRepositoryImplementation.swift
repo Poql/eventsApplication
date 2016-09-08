@@ -32,7 +32,12 @@ class SubscriptionRepositoryImplementation: SubscriptionRepository {
         operation.notificationInfo = notificationInfo
         return operation
     }
+    
+    func fetchRecordOperation(recordName recordName: String) -> FetchRecordOperation {
+        return FetchRecordOperation(recordName: recordName)
+    }
 }
 
 extension EnsureSubscriptionOperation: EnsureEventModificationSubscriptionOperationPrototype {}
 extension EnsureSubscriptionOperation: EnsureNotifyUserOnEventCreationOperationPrototype {}
+extension FetchRecordOperation: FetchRecordOperationPrototype {}
