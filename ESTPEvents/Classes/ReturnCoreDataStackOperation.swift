@@ -35,5 +35,6 @@ class ReturnCoreDataStackOperation: GroupOperation {
     init() {
         super.init(operations: [])
         addOperation(getCoreDataStackOperation)
+        userIntent = .Initiated
     }
 }
