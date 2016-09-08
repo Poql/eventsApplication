@@ -13,6 +13,15 @@ import CloudKit
 class CloudOperation: Operation {
     let database: CKDatabase
     
+    override var name: String? {
+        get {
+            return String(self.dynamicType)
+        }
+        set {
+            self.name = newValue
+        }
+    }
+    
     init(database: CKDatabase) {
         self.database = database
         super.init()
