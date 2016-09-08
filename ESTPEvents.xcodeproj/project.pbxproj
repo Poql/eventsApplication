@@ -14,6 +14,8 @@
 		E734F82A1D79CED1001E013C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E734F8291D79CED1001E013C /* Assets.xcassets */; };
 		E734F82F1D79CF08001E013C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E734F82D1D79CF08001E013C /* LaunchScreen.storyboard */; };
 		E734F8301D79CF08001E013C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E734F82E1D79CF08001E013C /* Main.storyboard */; };
+		E756AC001D81A0A90077375D /* FetchRecordsOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E756ABFF1D81A0A90077375D /* FetchRecordsOperation.swift */; };
+		E756AC041D81AFE40077375D /* FetchRecordOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E756AC031D81AFE40077375D /* FetchRecordOperation.swift */; };
 		E797F2EF1D7C2D4100CB5EE2 /* PersistencyRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = E797F2ED1D7C2D4100CB5EE2 /* PersistencyRepository.swift */; };
 		E797F2F01D7C2D4100CB5EE2 /* PersistencyRepositoryImplementation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E797F2EE1D7C2D4100CB5EE2 /* PersistencyRepositoryImplementation.swift */; };
 		E797F2F31D7C2D8100CB5EE2 /* PersistEventsOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E797F2F21D7C2D8100CB5EE2 /* PersistEventsOperation.swift */; };
@@ -49,6 +51,13 @@
 		E7C3D2491D803FBF007F5146 /* DeleteEventsOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C3D2481D803FBF007F5146 /* DeleteEventsOperation.swift */; };
 		E7C3D24C1D8041FE007F5146 /* ApplicationPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C3D24B1D8041FE007F5146 /* ApplicationPresenter.swift */; };
 		E7C3D24E1D804244007F5146 /* ApplicationPresenterImplementation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C3D24D1D804244007F5146 /* ApplicationPresenterImplementation.swift */; };
+		E7C3D2501D816B3A007F5146 /* ModifySubscriptionsOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C3D24F1D816B3A007F5146 /* ModifySubscriptionsOperation.swift */; };
+		E7C3D2541D816E6B007F5146 /* SubscriptionsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C3D2531D816E6B007F5146 /* SubscriptionsRepository.swift */; };
+		E7C3D2561D817869007F5146 /* EnsureSubscriptionOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C3D2551D817869007F5146 /* EnsureSubscriptionOperation.swift */; };
+		E7C3D2581D817CFD007F5146 /* NSUserDefault + Subscription.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C3D2571D817CFD007F5146 /* NSUserDefault + Subscription.swift */; };
+		E7C3D25A1D818405007F5146 /* Error+CloudKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C3D2591D818405007F5146 /* Error+CloudKit.swift */; };
+		E7C3D25C1D8186A6007F5146 /* SubscriptionRepositoryImplementation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C3D25B1D8186A6007F5146 /* SubscriptionRepositoryImplementation.swift */; };
+		E7C3D25E1D818AF8007F5146 /* NSPredicate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C3D25D1D818AF8007F5146 /* NSPredicate.swift */; };
 		E7E5FA371D79EFAE00B6FF1D /* CloudOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7E5FA361D79EFAE00B6FF1D /* CloudOperation.swift */; };
 		E7E5FA391D79F01900B6FF1D /* QueryOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7E5FA381D79F01900B6FF1D /* QueryOperation.swift */; };
 		E7E5FA3B1D79F08000B6FF1D /* EventRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7E5FA3A1D79F08000B6FF1D /* EventRepository.swift */; };
@@ -69,6 +78,8 @@
 		E734F8291D79CED1001E013C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = Resources/Assets.xcassets; sourceTree = "<group>"; };
 		E734F82D1D79CF08001E013C /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = Resources/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E734F82E1D79CF08001E013C /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = Resources/Main.storyboard; sourceTree = "<group>"; };
+		E756ABFF1D81A0A90077375D /* FetchRecordsOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FetchRecordsOperation.swift; path = Classes/FetchRecordsOperation.swift; sourceTree = "<group>"; };
+		E756AC031D81AFE40077375D /* FetchRecordOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FetchRecordOperation.swift; path = Classes/FetchRecordOperation.swift; sourceTree = "<group>"; };
 		E797F2ED1D7C2D4100CB5EE2 /* PersistencyRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PersistencyRepository.swift; path = Classes/PersistencyRepository.swift; sourceTree = "<group>"; };
 		E797F2EE1D7C2D4100CB5EE2 /* PersistencyRepositoryImplementation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PersistencyRepositoryImplementation.swift; path = Classes/PersistencyRepositoryImplementation.swift; sourceTree = "<group>"; };
 		E797F2F21D7C2D8100CB5EE2 /* PersistEventsOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PersistEventsOperation.swift; path = Classes/PersistEventsOperation.swift; sourceTree = "<group>"; };
@@ -104,6 +115,13 @@
 		E7C3D2481D803FBF007F5146 /* DeleteEventsOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DeleteEventsOperation.swift; path = Classes/DeleteEventsOperation.swift; sourceTree = "<group>"; };
 		E7C3D24B1D8041FE007F5146 /* ApplicationPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ApplicationPresenter.swift; path = Classes/ApplicationPresenter.swift; sourceTree = "<group>"; };
 		E7C3D24D1D804244007F5146 /* ApplicationPresenterImplementation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ApplicationPresenterImplementation.swift; path = Classes/ApplicationPresenterImplementation.swift; sourceTree = "<group>"; };
+		E7C3D24F1D816B3A007F5146 /* ModifySubscriptionsOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ModifySubscriptionsOperation.swift; path = Classes/ModifySubscriptionsOperation.swift; sourceTree = "<group>"; };
+		E7C3D2531D816E6B007F5146 /* SubscriptionsRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SubscriptionsRepository.swift; path = Classes/SubscriptionsRepository.swift; sourceTree = "<group>"; };
+		E7C3D2551D817869007F5146 /* EnsureSubscriptionOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EnsureSubscriptionOperation.swift; path = Classes/EnsureSubscriptionOperation.swift; sourceTree = "<group>"; };
+		E7C3D2571D817CFD007F5146 /* NSUserDefault + Subscription.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "NSUserDefault + Subscription.swift"; path = "Classes/NSUserDefault + Subscription.swift"; sourceTree = "<group>"; };
+		E7C3D2591D818405007F5146 /* Error+CloudKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Error+CloudKit.swift"; path = "Classes/Error+CloudKit.swift"; sourceTree = "<group>"; };
+		E7C3D25B1D8186A6007F5146 /* SubscriptionRepositoryImplementation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SubscriptionRepositoryImplementation.swift; path = Classes/SubscriptionRepositoryImplementation.swift; sourceTree = "<group>"; };
+		E7C3D25D1D818AF8007F5146 /* NSPredicate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NSPredicate.swift; path = Classes/NSPredicate.swift; sourceTree = "<group>"; };
 		E7E5FA361D79EFAE00B6FF1D /* CloudOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CloudOperation.swift; path = Classes/CloudOperation.swift; sourceTree = "<group>"; };
 		E7E5FA381D79F01900B6FF1D /* QueryOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = QueryOperation.swift; path = Classes/QueryOperation.swift; sourceTree = "<group>"; };
 		E7E5FA3A1D79F08000B6FF1D /* EventRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EventRepository.swift; path = Classes/EventRepository.swift; sourceTree = "<group>"; };
@@ -204,6 +222,7 @@
 			isa = PBXGroup;
 			children = (
 				E7E5FA2D1D79ED4100B6FF1D /* Shared */,
+				E7C3D2511D816E3C007F5146 /* Subscriptions */,
 				E797F2EC1D7C2D3000CB5EE2 /* Persistency */,
 				E7E5FA321D79EE0100B6FF1D /* Event */,
 			);
@@ -250,6 +269,9 @@
 				E7C3D2401D800DB2007F5146 /* String+Localization.swift */,
 				E7C3D2421D80120E007F5146 /* UITableViewCell + ReusableCell.swift */,
 				E7C3D2461D803174007F5146 /* SequenceType + Record.swift */,
+				E7C3D2571D817CFD007F5146 /* NSUserDefault + Subscription.swift */,
+				E7C3D2591D818405007F5146 /* Error+CloudKit.swift */,
+				E7C3D25D1D818AF8007F5146 /* NSPredicate.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -308,11 +330,32 @@
 			name = Application;
 			sourceTree = "<group>";
 		};
+		E7C3D2511D816E3C007F5146 /* Subscriptions */ = {
+			isa = PBXGroup;
+			children = (
+				E7C3D2521D816E49007F5146 /* Operations */,
+				E7C3D2531D816E6B007F5146 /* SubscriptionsRepository.swift */,
+				E7C3D25B1D8186A6007F5146 /* SubscriptionRepositoryImplementation.swift */,
+			);
+			name = Subscriptions;
+			sourceTree = "<group>";
+		};
+		E7C3D2521D816E49007F5146 /* Operations */ = {
+			isa = PBXGroup;
+			children = (
+				E7C3D24F1D816B3A007F5146 /* ModifySubscriptionsOperation.swift */,
+				E7C3D2551D817869007F5146 /* EnsureSubscriptionOperation.swift */,
+				E756AC031D81AFE40077375D /* FetchRecordOperation.swift */,
+			);
+			name = Operations;
+			sourceTree = "<group>";
+		};
 		E7E5FA2D1D79ED4100B6FF1D /* Shared */ = {
 			isa = PBXGroup;
 			children = (
 				E7E5FA361D79EFAE00B6FF1D /* CloudOperation.swift */,
 				E7E5FA381D79F01900B6FF1D /* QueryOperation.swift */,
+				E756ABFF1D81A0A90077375D /* FetchRecordsOperation.swift */,
 			);
 			name = Shared;
 			sourceTree = "<group>";
@@ -439,6 +482,12 @@
 						CreatedOnToolsVersion = 7.3.1;
 						DevelopmentTeam = C7G63Q6LZ9;
 						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+							com.apple.Push = {
+								enabled = 1;
+							};
 							com.apple.iCloud = {
 								enabled = 1;
 							};
@@ -535,6 +584,7 @@
 				E797F2F31D7C2D8100CB5EE2 /* PersistEventsOperation.swift in Sources */,
 				E7BC15F81D7ED68A00B02897 /* PresenterState.swift in Sources */,
 				E7BC15FE1D7EDD3900B02897 /* PersistentEvent.swift in Sources */,
+				E7C3D2501D816B3A007F5146 /* ModifySubscriptionsOperation.swift in Sources */,
 				E7FB89421D7B402100FEFD1B /* ContextOperation.swift in Sources */,
 				E79B6BCE1D7AFE780048E0DF /* Record.swift in Sources */,
 				E79B6BCF1D7AFE780048E0DF /* Result.swift in Sources */,
@@ -542,22 +592,30 @@
 				E7BC16001D7EF78600B02897 /* ReturnCoreDataStackOperation.swift in Sources */,
 				E797F2F01D7C2D4100CB5EE2 /* PersistencyRepositoryImplementation.swift in Sources */,
 				E7BC15FA1D7ED69900B02897 /* NSFetchRequest+CoreDataModelable.swift in Sources */,
+				E7C3D2561D817869007F5146 /* EnsureSubscriptionOperation.swift in Sources */,
 				E7BC16021D7F02D900B02897 /* EntitySectionChange.swift in Sources */,
 				E79B6BC41D7AFE780048E0DF /* CKQuery+Record.swift in Sources */,
+				E756AC041D81AFE40077375D /* FetchRecordOperation.swift in Sources */,
 				E7C3D2491D803FBF007F5146 /* DeleteEventsOperation.swift in Sources */,
+				E7C3D25E1D818AF8007F5146 /* NSPredicate.swift in Sources */,
 				E7C3D23F1D800970007F5146 /* UIColor.swift in Sources */,
 				E79B6BB51D7AFE4A0048E0DF /* EventRepositoryImplementation.swift in Sources */,
 				E7BC15FC1D7EDD2E00B02897 /* PersistentRecord.swift in Sources */,
+				E7C3D25A1D818405007F5146 /* Error+CloudKit.swift in Sources */,
+				E7C3D25C1D8186A6007F5146 /* SubscriptionRepositoryImplementation.swift in Sources */,
 				E7E5FA371D79EFAE00B6FF1D /* CloudOperation.swift in Sources */,
 				E79B6BCD1D7AFE780048E0DF /* PresenterFactory.swift in Sources */,
 				E79B6BCA1D7AFE780048E0DF /* EventViewController.swift in Sources */,
 				E7BC160A1D7F5C8900B02897 /* EventTableViewCell.swift in Sources */,
 				E7C3D24C1D8041FE007F5146 /* ApplicationPresenter.swift in Sources */,
 				E79B6BC71D7AFE780048E0DF /* Event.swift in Sources */,
+				E756AC001D81A0A90077375D /* FetchRecordsOperation.swift in Sources */,
 				E79B6BC81D7AFE780048E0DF /* EventPresenter.swift in Sources */,
 				E797F2EF1D7C2D4100CB5EE2 /* PersistencyRepository.swift in Sources */,
 				E7E5FA391D79F01900B6FF1D /* QueryOperation.swift in Sources */,
+				E7C3D2581D817CFD007F5146 /* NSUserDefault + Subscription.swift in Sources */,
 				E79B6BC91D7AFE780048E0DF /* EventPresenterImplementation.swift in Sources */,
+				E7C3D2541D816E6B007F5146 /* SubscriptionsRepository.swift in Sources */,
 				E79B6BCB1D7AFE780048E0DF /* Int+Bool.swift in Sources */,
 				E7C3D24E1D804244007F5146 /* ApplicationPresenterImplementation.swift in Sources */,
 				E7E5FA3B1D79F08000B6FF1D /* EventRepository.swift in Sources */,

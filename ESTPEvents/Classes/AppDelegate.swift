@@ -10,6 +10,7 @@ import UIKit
 
 private struct Constant {
     static let weekTimeInterval: NSTimeInterval = 60 * 60 * 24 * 7
+    static let notificationSettings = UIUserNotificationSettings(forTypes: .Alert, categories: nil)
 }
 
 @UIApplicationMain
@@ -17,16 +18,29 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
     private let presenterFactory = PresenterFactoryImplementation()
-
+    private var applicationPresenter: ApplicationPresenter {
+        return presenterFactory.applicationPresenter
+    }
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
+        setupNotifications(in: application)
         setupNavigationAppearance()
         setPresenterFactory()
         removeOldEvents()
         return true
     }
     
+    func application(application: UIApplication, didReceiveRemoteNotification userInfo: [NSObject : AnyObject], fetchCompletionHandler completionHandler: (UIBackgroundFetchResult) -> Void) {
+        applicationPresenter.handleRemoteNotification(withUserInfo: userInfo, completionHandler: completionHandler)
+    }
+    
     // MARK: - Private
+    
+    private func setupNotifications(in application: UIApplication) {
+        application.registerForRemoteNotifications()
+        application.registerUserNotificationSettings(Constant.notificationSettings)
+        applicationPresenter.ensureNotifications()
+    }
     
     private func setPresenterFactory() {
         guard let controller = window?.rootViewController as? EventViewController else { return }
@@ -41,7 +55,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     private func removeOldEvents() {
-        presenterFactory.applicationPresenter.deleteEvents(beforeDate: NSDate().dateByAddingTimeInterval(-Constant.weekTimeInterval))
+        applicationPresenter.deleteEvents(beforeDate: NSDate().dateByAddingTimeInterval(-Constant.weekTimeInterval))
     }
 }
 

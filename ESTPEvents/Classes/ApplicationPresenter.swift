@@ -7,7 +7,10 @@
 //
 
 import Foundation
+import UIKit
 
 protocol ApplicationPresenter {
     func deleteEvents(beforeDate date: NSDate)
+    func ensureNotifications()
+    func handleRemoteNotification(withUserInfo userInfo: [NSObject : AnyObject], completionHandler: (UIBackgroundFetchResult) -> Void)
 }
