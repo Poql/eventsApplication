@@ -10,7 +10,6 @@
 		CC0116202BF53C24686BE3C2 /* Pods_ESTPEvents.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B732DA91610C0FDAF3B949AB /* Pods_ESTPEvents.framework */; };
 		E734F8241D79CE95001E013C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E734F8231D79CE95001E013C /* AppDelegate.swift */; };
 		E734F8261D79CEA1001E013C /* SharedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E734F8251D79CEA1001E013C /* SharedViewController.swift */; };
-		E734F8281D79CEAF001E013C /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E734F8271D79CEAF001E013C /* Info.plist */; };
 		E734F82A1D79CED1001E013C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E734F8291D79CED1001E013C /* Assets.xcassets */; };
 		E734F82F1D79CF08001E013C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E734F82D1D79CF08001E013C /* LaunchScreen.storyboard */; };
 		E734F8301D79CF08001E013C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E734F82E1D79CF08001E013C /* Main.storyboard */; };
@@ -519,7 +518,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				E734F82F1D79CF08001E013C /* LaunchScreen.storyboard in Resources */,
-				E734F8281D79CEAF001E013C /* Info.plist in Resources */,
 				E734F82A1D79CED1001E013C /* Assets.xcassets in Resources */,
 				E734F8301D79CF08001E013C /* Main.storyboard in Resources */,
 			);
