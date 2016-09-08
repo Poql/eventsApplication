@@ -10,4 +10,5 @@ import Foundation
 
 protocol ApplicationPresenter {
     func deleteEvents(beforeDate date: NSDate)
+    func ensureNotifications()
 }
