@@ -49,6 +49,7 @@
 		E7C3D2491D803FBF007F5146 /* DeleteEventsOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C3D2481D803FBF007F5146 /* DeleteEventsOperation.swift */; };
 		E7C3D24C1D8041FE007F5146 /* ApplicationPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C3D24B1D8041FE007F5146 /* ApplicationPresenter.swift */; };
 		E7C3D24E1D804244007F5146 /* ApplicationPresenterImplementation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C3D24D1D804244007F5146 /* ApplicationPresenterImplementation.swift */; };
+		E7C3D2501D816B3A007F5146 /* ModifySubscriptionsOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C3D24F1D816B3A007F5146 /* ModifySubscriptionsOperation.swift */; };
 		E7E5FA371D79EFAE00B6FF1D /* CloudOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7E5FA361D79EFAE00B6FF1D /* CloudOperation.swift */; };
 		E7E5FA391D79F01900B6FF1D /* QueryOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7E5FA381D79F01900B6FF1D /* QueryOperation.swift */; };
 		E7E5FA3B1D79F08000B6FF1D /* EventRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7E5FA3A1D79F08000B6FF1D /* EventRepository.swift */; };
@@ -104,6 +105,7 @@
 		E7C3D2481D803FBF007F5146 /* DeleteEventsOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DeleteEventsOperation.swift; path = Classes/DeleteEventsOperation.swift; sourceTree = "<group>"; };
 		E7C3D24B1D8041FE007F5146 /* ApplicationPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ApplicationPresenter.swift; path = Classes/ApplicationPresenter.swift; sourceTree = "<group>"; };
 		E7C3D24D1D804244007F5146 /* ApplicationPresenterImplementation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ApplicationPresenterImplementation.swift; path = Classes/ApplicationPresenterImplementation.swift; sourceTree = "<group>"; };
+		E7C3D24F1D816B3A007F5146 /* ModifySubscriptionsOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ModifySubscriptionsOperation.swift; path = Classes/ModifySubscriptionsOperation.swift; sourceTree = "<group>"; };
 		E7E5FA361D79EFAE00B6FF1D /* CloudOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CloudOperation.swift; path = Classes/CloudOperation.swift; sourceTree = "<group>"; };
 		E7E5FA381D79F01900B6FF1D /* QueryOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = QueryOperation.swift; path = Classes/QueryOperation.swift; sourceTree = "<group>"; };
 		E7E5FA3A1D79F08000B6FF1D /* EventRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EventRepository.swift; path = Classes/EventRepository.swift; sourceTree = "<group>"; };
@@ -204,6 +206,7 @@
 			isa = PBXGroup;
 			children = (
 				E7E5FA2D1D79ED4100B6FF1D /* Shared */,
+				E7C3D2511D816E3C007F5146 /* Subscriptions */,
 				E797F2EC1D7C2D3000CB5EE2 /* Persistency */,
 				E7E5FA321D79EE0100B6FF1D /* Event */,
 			);
@@ -306,6 +309,22 @@
 				E7C3D24D1D804244007F5146 /* ApplicationPresenterImplementation.swift */,
 			);
 			name = Application;
+			sourceTree = "<group>";
+		};
+		E7C3D2511D816E3C007F5146 /* Subscriptions */ = {
+			isa = PBXGroup;
+			children = (
+				E7C3D2521D816E49007F5146 /* Operations */,
+			);
+			name = Subscriptions;
+			sourceTree = "<group>";
+		};
+		E7C3D2521D816E49007F5146 /* Operations */ = {
+			isa = PBXGroup;
+			children = (
+				E7C3D24F1D816B3A007F5146 /* ModifySubscriptionsOperation.swift */,
+			);
+			name = Operations;
 			sourceTree = "<group>";
 		};
 		E7E5FA2D1D79ED4100B6FF1D /* Shared */ = {
@@ -535,6 +554,7 @@
 				E797F2F31D7C2D8100CB5EE2 /* PersistEventsOperation.swift in Sources */,
 				E7BC15F81D7ED68A00B02897 /* PresenterState.swift in Sources */,
 				E7BC15FE1D7EDD3900B02897 /* PersistentEvent.swift in Sources */,
+				E7C3D2501D816B3A007F5146 /* ModifySubscriptionsOperation.swift in Sources */,
 				E7FB89421D7B402100FEFD1B /* ContextOperation.swift in Sources */,
 				E79B6BCE1D7AFE780048E0DF /* Record.swift in Sources */,
 				E79B6BCF1D7AFE780048E0DF /* Result.swift in Sources */,
