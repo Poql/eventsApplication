@@ -103,6 +103,9 @@ class ModifyEventViewController: SharedViewController, UITableViewDataSource, UI
     // MARK: - DatePickerViewControllerDelegate
     
     func controller(controller: DatePickerViewController, didPickDate date: NSDate) {
+        event?.eventDate = date
+        tryEnableAddButton()
+        tableView.reloadRowsAtIndexPaths([dateIndexPath], withRowAnimation: .Fade)
     }
     
     // MARK: - UITableViewDataSource
@@ -134,10 +137,12 @@ class ModifyEventViewController: SharedViewController, UITableViewDataSource, UI
             case .title:
                 let cell: TextFieldCell = tableView.dequeueCell()
                 cell.configure(withLabel: nil, placeholder: String(key: "modify_event_title_label"), text: event?.title)
+                cell.textFieldDidChange = { self.event?.title = $0; self.tryEnableAddButton() }
                 return cell
             case .type:
                 let cell: TextFieldCell = tableView.dequeueCell()
                 cell.configure(withLabel: nil, placeholder: String(key: "modify_event_type_label"), text: event?.type)
+                cell.textFieldDidChange = { self.event?.type = $0; self.tryEnableAddButton() }
                 return cell
             }
         case .creator:
@@ -146,10 +151,12 @@ class ModifyEventViewController: SharedViewController, UITableViewDataSource, UI
             case .creator:
                 let cell: TextFieldCell = tableView.dequeueCell()
                 cell.configure(withLabel: nil, placeholder: String(key: "modify_event_creator_label"), text: event?.creator)
+                cell.textFieldDidChange = { self.event?.creator = $0; self.tryEnableAddButton() }
                 return cell
             case .color:
                 let cell: ColorCell = tableView.dequeueCell()
                 cell.configure(withPlaceholder: String(key: "modify_event_color_label"), value: event?.color)
+                cell.colorDidChange = { self.event?.color = $0; self.tryEnableAddButton() }
                 return cell
             }
         case .detail:
@@ -168,6 +175,7 @@ class ModifyEventViewController: SharedViewController, UITableViewDataSource, UI
             case .notify:
                 let cell: BooleanCell = tableView.dequeueCell()
                 cell.configure(withLabel: String(key: "modify_event_notify_label"), selected: event?.notify ?? false)
+                cell.switchDidChange = { self.event?.notify = $0; self.tryEnableAddButton() }
                 return cell
             }
         case .adjunct:
@@ -176,12 +184,14 @@ class ModifyEventViewController: SharedViewController, UITableViewDataSource, UI
             case .url:
                 let cell: TextFieldCell = tableView.dequeueCell()
                 cell.configure(withLabel: nil, placeholder: String(key: "modify_event_url_label"), text: event?.link)
+                cell.textFieldDidChange = { self.event?.link = $0; self.tryEnableAddButton() }
                 cell.textField.autocorrectionType = .No
                 cell.textField.autocapitalizationType = .None
                 return cell
             case .description:
                 let cell: TextViewCell = tableView.dequeueCell()
                 cell.configure(placeholder: String(key: "modify_event_description_label"), text: event?.description)
+                cell.textViewDidChange = { self.event?.description = $0; self.tryEnableAddButton() }
                 return cell
             }
         }
