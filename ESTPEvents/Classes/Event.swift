@@ -106,4 +106,8 @@ struct Event: Entity, Record {
     init(record: CKRecord) {
         self.record = record
     }
+    
+    init() {
+        self.init(record: CKRecord(recordType: self.dynamicType.name))
+    }
 }
