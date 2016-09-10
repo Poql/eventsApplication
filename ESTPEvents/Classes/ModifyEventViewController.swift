@@ -13,6 +13,10 @@ private struct Constant {
     static let textViewRowHeight: CGFloat = 150
 }
 
+protocol ModifyEventViewControllerDelegate: class {
+    func controller(controller: ModifyEventViewController, didModify event: Event)
+}
+
 class ModifyEventViewController: SharedViewController, UITableViewDataSource, UITableViewDelegate, SegueHandlerType, DatePickerViewControllerDelegate {
 
     enum SegueIdentifier: String {
@@ -51,6 +55,9 @@ class ModifyEventViewController: SharedViewController, UITableViewDataSource, UI
     private var initialEvent: Event?
 
     var event: Event?
+
+    weak var delegate: ModifyEventViewControllerDelegate?
+    
     // MARK: - UIViewController
     
     override func viewDidLoad() {
@@ -98,6 +105,8 @@ class ModifyEventViewController: SharedViewController, UITableViewDataSource, UI
     func addAction(button: UIBarButtonItem) {
         view.endEditing(true)
         dismissViewControllerAnimated(true, completion: nil)
+        guard let event = event else { return }
+        delegate?.controller(self, didModify: event)
     }
     
     // MARK: - DatePickerViewControllerDelegate
