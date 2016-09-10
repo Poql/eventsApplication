@@ -18,6 +18,8 @@
 		E756AC061D81E49A0077375D /* ModifyEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E756AC051D81E49A0077375D /* ModifyEventViewController.swift */; };
 		E756AC0B1D81E8DB0077375D /* RawRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E756AC0A1D81E8DB0077375D /* RawRepresentable.swift */; };
 		E756AC0D1D81E9DB0077375D /* TextViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E756AC0C1D81E9DB0077375D /* TextViewCell.swift */; };
+		E756AC151D81FA8A0077375D /* BooleanCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E756AC141D81FA8A0077375D /* BooleanCell.swift */; };
+		E756AC171D81FAC90077375D /* BooleanCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E756AC161D81FAC90077375D /* BooleanCell.xib */; };
 		E76570301D82A00400304D3E /* TextCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E765702F1D82A00400304D3E /* TextCell.swift */; };
 		E76570321D82A01D00304D3E /* TextCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E76570311D82A01D00304D3E /* TextCell.xib */; };
 		E765703A1D82E6ED00304D3E /* UIViewController + SegueHandlerType.swift in Sources */ = {isa = PBXBuildFile; fileRef = E76570391D82E6ED00304D3E /* UIViewController + SegueHandlerType.swift */; };
@@ -89,6 +91,8 @@
 		E756AC051D81E49A0077375D /* ModifyEventViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ModifyEventViewController.swift; path = Classes/ModifyEventViewController.swift; sourceTree = "<group>"; };
 		E756AC0A1D81E8DB0077375D /* RawRepresentable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RawRepresentable.swift; path = Classes/RawRepresentable.swift; sourceTree = "<group>"; };
 		E756AC0C1D81E9DB0077375D /* TextViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TextViewCell.swift; path = Classes/TextViewCell.swift; sourceTree = "<group>"; };
+		E756AC141D81FA8A0077375D /* BooleanCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BooleanCell.swift; path = Classes/BooleanCell.swift; sourceTree = "<group>"; };
+		E756AC161D81FAC90077375D /* BooleanCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = BooleanCell.xib; path = Resources/BooleanCell.xib; sourceTree = "<group>"; };
 		E765702F1D82A00400304D3E /* TextCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TextCell.swift; path = Classes/TextCell.swift; sourceTree = "<group>"; };
 		E76570311D82A01D00304D3E /* TextCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = TextCell.xib; path = Resources/TextCell.xib; sourceTree = "<group>"; };
 		E76570391D82E6ED00304D3E /* UIViewController + SegueHandlerType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIViewController + SegueHandlerType.swift"; path = "Classes/UIViewController + SegueHandlerType.swift"; sourceTree = "<group>"; };
@@ -261,6 +265,7 @@
 				E734F8291D79CED1001E013C /* Assets.xcassets */,
 				E734F82D1D79CF08001E013C /* LaunchScreen.storyboard */,
 				E734F82E1D79CF08001E013C /* Main.storyboard */,
+				E756AC161D81FAC90077375D /* BooleanCell.xib */,
 				E76570311D82A01D00304D3E /* TextCell.xib */,
 			);
 			name = Resources;
@@ -298,6 +303,7 @@
 			isa = PBXGroup;
 			children = (
 				E756AC0C1D81E9DB0077375D /* TextViewCell.swift */,
+				E756AC141D81FA8A0077375D /* BooleanCell.swift */,
 				E765702F1D82A00400304D3E /* TextCell.swift */,
 			);
 			name = Shared;
@@ -558,6 +564,7 @@
 				E76570401D8405A600304D3E /* TextViewCell.xib in Resources */,
 				E734F82A1D79CED1001E013C /* Assets.xcassets in Resources */,
 				E76570321D82A01D00304D3E /* TextCell.xib in Resources */,
+				E756AC171D81FAC90077375D /* BooleanCell.xib in Resources */,
 				E734F8301D79CF08001E013C /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -636,6 +643,7 @@
 				E7BC16021D7F02D900B02897 /* EntitySectionChange.swift in Sources */,
 				E79B6BC41D7AFE780048E0DF /* CKQuery+Record.swift in Sources */,
 				E756AC041D81AFE40077375D /* FetchRecordOperation.swift in Sources */,
+				E756AC151D81FA8A0077375D /* BooleanCell.swift in Sources */,
 				E765703A1D82E6ED00304D3E /* UIViewController + SegueHandlerType.swift in Sources */,
 				E7C3D2491D803FBF007F5146 /* DeleteEventsOperation.swift in Sources */,
 				E7C3D25E1D818AF8007F5146 /* NSPredicate.swift in Sources */,
