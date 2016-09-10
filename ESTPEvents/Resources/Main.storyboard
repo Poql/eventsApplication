@@ -161,6 +161,52 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="txd-U6-dvi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="375" y="-349"/>
+        <!--Date Picker View Controller-->
+        <scene sceneID="649-I9-onm">
+            <objects>
+                <viewController id="7gX-4E-6DC" customClass="DatePickerViewController" customModule="ESTPEvents" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Cyv-JQ-Me7"/>
+                        <viewControllerLayoutGuide type="bottom" id="a8g-Sg-jbq"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="bPB-MP-nS1">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="Mdt-qQ-Oyj">
+                                <rect key="frame" x="0.0" y="64" width="600" height="250"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="250" id="GaP-Ft-83D"/>
+                                </constraints>
+                                <date key="date" timeIntervalSinceReferenceDate="495112904.118384">
+                                    <!--2016-09-09 11:21:44 +0000-->
+                                </date>
+                                <date key="minimumDate" timeIntervalSinceReferenceDate="-978267600">
+                                    <!--1970-01-01 11:00:00 +0000-->
+                                </date>
+                            </datePicker>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Mdt-qQ-Oyj" firstAttribute="top" secondItem="bPB-MP-nS1" secondAttribute="top" id="9En-uX-Bce"/>
+                            <constraint firstAttribute="trailing" secondItem="Mdt-qQ-Oyj" secondAttribute="trailing" id="MPE-hN-b2F"/>
+                            <constraint firstItem="Mdt-qQ-Oyj" firstAttribute="leading" secondItem="bPB-MP-nS1" secondAttribute="leading" id="f8g-WQ-BOz"/>
+                            <constraint firstItem="Mdt-qQ-Oyj" firstAttribute="top" secondItem="Cyv-JQ-Me7" secondAttribute="bottom" id="wmd-bK-Wjh"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="9En-uX-Bce"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <connections>
+                        <outlet property="datePicker" destination="Mdt-qQ-Oyj" id="eKz-GX-u3k"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1Ih-is-xbD" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3090" y="-313"/>
+        </scene>
         </scene>
     </scenes>
 </document>

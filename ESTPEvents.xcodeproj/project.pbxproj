@@ -25,6 +25,7 @@
 		E76570321D82A01D00304D3E /* TextCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E76570311D82A01D00304D3E /* TextCell.xib */; };
 		E76570341D82BFDF00304D3E /* ColorCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E76570331D82BFDF00304D3E /* ColorCell.swift */; };
 		E76570361D82BFF200304D3E /* ColorCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E76570351D82BFF200304D3E /* ColorCell.xib */; };
+		E76570381D82D28400304D3E /* DatePickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E76570371D82D28400304D3E /* DatePickerViewController.swift */; };
 		E765703A1D82E6ED00304D3E /* UIViewController + SegueHandlerType.swift in Sources */ = {isa = PBXBuildFile; fileRef = E76570391D82E6ED00304D3E /* UIViewController + SegueHandlerType.swift */; };
 		E765703F1D8405A600304D3E /* TextFieldCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E765703D1D8405A600304D3E /* TextFieldCell.xib */; };
 		E76570401D8405A600304D3E /* TextViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E765703E1D8405A600304D3E /* TextViewCell.xib */; };
@@ -102,6 +103,7 @@
 		E76570311D82A01D00304D3E /* TextCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = TextCell.xib; path = Resources/TextCell.xib; sourceTree = "<group>"; };
 		E76570331D82BFDF00304D3E /* ColorCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ColorCell.swift; path = Classes/ColorCell.swift; sourceTree = "<group>"; };
 		E76570351D82BFF200304D3E /* ColorCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ColorCell.xib; path = Resources/ColorCell.xib; sourceTree = "<group>"; };
+		E76570371D82D28400304D3E /* DatePickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DatePickerViewController.swift; path = Classes/DatePickerViewController.swift; sourceTree = "<group>"; };
 		E76570391D82E6ED00304D3E /* UIViewController + SegueHandlerType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIViewController + SegueHandlerType.swift"; path = "Classes/UIViewController + SegueHandlerType.swift"; sourceTree = "<group>"; };
 		E765703D1D8405A600304D3E /* TextFieldCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = TextFieldCell.xib; path = Resources/TextFieldCell.xib; sourceTree = "<group>"; };
 		E765703E1D8405A600304D3E /* TextViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = TextViewCell.xib; path = Resources/TextViewCell.xib; sourceTree = "<group>"; };
@@ -220,6 +222,7 @@
 			children = (
 				E734F8251D79CEA1001E013C /* SharedViewController.swift */,
 				E7C3D2441D802022007F5146 /* NavigationControllerWithWhiteStatusBar.swift */,
+				E76570371D82D28400304D3E /* DatePickerViewController.swift */,
 				E7EE0E991D7AC2740089B38C /* Event */,
 				E765703B1D84007A00304D3E /* Modify Event */,
 			);
@@ -699,6 +702,7 @@
 				E7BC16061D7F434A00B02897 /* CircleView.swift in Sources */,
 				E7C3D2471D803174007F5146 /* SequenceType + Record.swift in Sources */,
 				E7FB89361D7B211700FEFD1B /* Model.xcdatamodeld in Sources */,
+				E76570381D82D28400304D3E /* DatePickerViewController.swift in Sources */,
 				E76570341D82BFDF00304D3E /* ColorCell.swift in Sources */,
 				E79B6BCC1D7AFE780048E0DF /* Operation+Completion.swift in Sources */,
 				E7BC15F61D7ED67E00B02897 /* RecordMapper.swift in Sources */,
