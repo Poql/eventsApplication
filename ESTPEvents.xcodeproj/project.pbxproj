@@ -18,6 +18,8 @@
 		E756AC061D81E49A0077375D /* ModifyEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E756AC051D81E49A0077375D /* ModifyEventViewController.swift */; };
 		E756AC0B1D81E8DB0077375D /* RawRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E756AC0A1D81E8DB0077375D /* RawRepresentable.swift */; };
 		E756AC0D1D81E9DB0077375D /* TextViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E756AC0C1D81E9DB0077375D /* TextViewCell.swift */; };
+		E76570301D82A00400304D3E /* TextCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E765702F1D82A00400304D3E /* TextCell.swift */; };
+		E76570321D82A01D00304D3E /* TextCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E76570311D82A01D00304D3E /* TextCell.xib */; };
 		E765703A1D82E6ED00304D3E /* UIViewController + SegueHandlerType.swift in Sources */ = {isa = PBXBuildFile; fileRef = E76570391D82E6ED00304D3E /* UIViewController + SegueHandlerType.swift */; };
 		E76570401D8405A600304D3E /* TextViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E765703E1D8405A600304D3E /* TextViewCell.xib */; };
 		E797F2EF1D7C2D4100CB5EE2 /* PersistencyRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = E797F2ED1D7C2D4100CB5EE2 /* PersistencyRepository.swift */; };
@@ -87,6 +89,8 @@
 		E756AC051D81E49A0077375D /* ModifyEventViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ModifyEventViewController.swift; path = Classes/ModifyEventViewController.swift; sourceTree = "<group>"; };
 		E756AC0A1D81E8DB0077375D /* RawRepresentable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RawRepresentable.swift; path = Classes/RawRepresentable.swift; sourceTree = "<group>"; };
 		E756AC0C1D81E9DB0077375D /* TextViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TextViewCell.swift; path = Classes/TextViewCell.swift; sourceTree = "<group>"; };
+		E765702F1D82A00400304D3E /* TextCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TextCell.swift; path = Classes/TextCell.swift; sourceTree = "<group>"; };
+		E76570311D82A01D00304D3E /* TextCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = TextCell.xib; path = Resources/TextCell.xib; sourceTree = "<group>"; };
 		E76570391D82E6ED00304D3E /* UIViewController + SegueHandlerType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIViewController + SegueHandlerType.swift"; path = "Classes/UIViewController + SegueHandlerType.swift"; sourceTree = "<group>"; };
 		E765703E1D8405A600304D3E /* TextViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = TextViewCell.xib; path = Resources/TextViewCell.xib; sourceTree = "<group>"; };
 		E797F2ED1D7C2D4100CB5EE2 /* PersistencyRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PersistencyRepository.swift; path = Classes/PersistencyRepository.swift; sourceTree = "<group>"; };
@@ -257,6 +261,7 @@
 				E734F8291D79CED1001E013C /* Assets.xcassets */,
 				E734F82D1D79CF08001E013C /* LaunchScreen.storyboard */,
 				E734F82E1D79CF08001E013C /* Main.storyboard */,
+				E76570311D82A01D00304D3E /* TextCell.xib */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -293,6 +298,7 @@
 			isa = PBXGroup;
 			children = (
 				E756AC0C1D81E9DB0077375D /* TextViewCell.swift */,
+				E765702F1D82A00400304D3E /* TextCell.swift */,
 			);
 			name = Shared;
 			sourceTree = "<group>";
@@ -551,6 +557,7 @@
 				E734F82F1D79CF08001E013C /* LaunchScreen.storyboard in Resources */,
 				E76570401D8405A600304D3E /* TextViewCell.xib in Resources */,
 				E734F82A1D79CED1001E013C /* Assets.xcassets in Resources */,
+				E76570321D82A01D00304D3E /* TextCell.xib in Resources */,
 				E734F8301D79CF08001E013C /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -613,6 +620,7 @@
 				E79B6BB71D7AFE570048E0DF /* QueryEventsOperation.swift in Sources */,
 				E797F2F31D7C2D8100CB5EE2 /* PersistEventsOperation.swift in Sources */,
 				E7BC15F81D7ED68A00B02897 /* PresenterState.swift in Sources */,
+				E76570301D82A00400304D3E /* TextCell.swift in Sources */,
 				E7BC15FE1D7EDD3900B02897 /* PersistentEvent.swift in Sources */,
 				E7C3D2501D816B3A007F5146 /* ModifySubscriptionsOperation.swift in Sources */,
 				E7FB89421D7B402100FEFD1B /* ContextOperation.swift in Sources */,
