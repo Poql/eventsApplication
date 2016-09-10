@@ -48,11 +48,14 @@ class ModifyEventViewController: SharedViewController, UITableViewDataSource, UI
         return NSIndexPath(forRow: ModifyEventAdjunctRow.description.rawValue, inSection: ModifyEventSection.adjunct.rawValue)
     }
 
+    private var initialEvent: Event?
+
     var event: Event?
     // MARK: - UIViewController
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        initialEvent = event
         setupController()
     }
 
@@ -73,6 +76,17 @@ class ModifyEventViewController: SharedViewController, UITableViewDataSource, UI
         navigationItem.leftBarButtonItem = cancelButton
         navigationItem.rightBarButtonItem = addButton
         addButton.enabled = false
+    }
+
+    private func tryEnableAddButton() {
+        let eventIsEmpty = (event?.color ?? "") != ""
+            && (event?.creator ?? "") != ""
+            && (event?.title ?? "") != ""
+            && (event?.description ?? "") != ""
+            && (event?.type ?? "") != ""
+            && (event?.eventDate != nil)
+        let eventHasChanged = initialEvent?.isEqual(to: event) ?? true
+        addButton.enabled = eventHasChanged && eventIsEmpty
     }
     
     // MARK: - Actions
