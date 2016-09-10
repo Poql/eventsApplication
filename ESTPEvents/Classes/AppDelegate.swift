@@ -17,15 +17,18 @@ private struct Constant {
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-    private let presenterFactory = PresenterFactoryImplementation()
+    let presenterFactory = PresenterFactoryImplementation()
     private var applicationPresenter: ApplicationPresenter {
         return presenterFactory.applicationPresenter
+    }
+
+    static var shared: AppDelegate {
+        return UIApplication.sharedApplication().delegate as! AppDelegate
     }
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         setupNotifications(in: application)
         setupNavigationAppearance()
-        setPresenterFactory()
         removeOldEvents()
         return true
     }
@@ -41,13 +44,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         application.registerUserNotificationSettings(Constant.notificationSettings)
         applicationPresenter.ensureNotifications()
     }
-    
-    private func setPresenterFactory() {
-        guard let controller = window?.rootViewController as? EventViewController else { return }
-        controller.presenterFactory = presenterFactory
-        window?.rootViewController = NavigationControllerWithWhiteStatusBar(rootViewController: controller)
-    }
-    
+
     private func setupNavigationAppearance() {
         UINavigationBar.appearance().barTintColor = .lightBlue()
         UINavigationBar.appearance().tintColor = .whiteColor()

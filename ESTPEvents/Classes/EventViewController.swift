@@ -23,11 +23,9 @@ class EventViewController: SharedViewController, EventPresenterClient, UITableVi
         }
     }
     
-    var presenterFactory: PresenterFactory?
-    
-    private lazy var eventPresenter: EventPresenter? = {
-        self.presenterFactory?.addClient(self as EventPresenterClient)
-        return self.presenterFactory?.eventPresenter
+    private lazy var eventPresenter: EventPresenter = {
+        self.presenterFactory.addClient(self as EventPresenterClient)
+        return self.presenterFactory.eventPresenter
     }()
     
     // MARK: - UIViewController
@@ -35,7 +33,7 @@ class EventViewController: SharedViewController, EventPresenterClient, UITableVi
     override func viewDidLoad() {
         super.viewDidLoad()
         setupController()
-        eventPresenter?.queryAllEvents()
+        eventPresenter.queryAllEvents()
     }
     
     // MARK: - EventPresenterClient
@@ -52,10 +50,9 @@ class EventViewController: SharedViewController, EventPresenterClient, UITableVi
             self.tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
         case let .update(indexPath: indexPath):
             guard
-                let cell = self.tableView.cellForRowAtIndexPath(indexPath) as? EventTableViewCell,
-                let event = eventPresenter?.event(atIndex: indexPath)
+                let cell = self.tableView.cellForRowAtIndexPath(indexPath) as? EventTableViewCell
                 else { return }
-                cell.configure(with: event)
+                cell.configure(with: eventPresenter.event(atIndex: indexPath))
         case let .move(fromIndexPath: fromIndexPath, toIndexPath: toIndexPath):
             self.tableView.deleteRowsAtIndexPaths([fromIndexPath], withRowAnimation: .Fade)
             self.tableView.insertRowsAtIndexPaths([toIndexPath], withRowAnimation: .Fade)
@@ -89,22 +86,20 @@ class EventViewController: SharedViewController, EventPresenterClient, UITableVi
     // MARK: - UITableViewDataSource
     
     func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return eventPresenter?.title(forSection: section)
+        return eventPresenter.title(forSection: section)
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell: EventTableViewCell = tableView.dequeueCell()
-        if let event = eventPresenter?.event(atIndex: indexPath) {
-            cell.configure(with: event)
-        }
+        cell.configure(with: eventPresenter.event(atIndex: indexPath))
         return cell
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return eventPresenter?.numberOfEvents(inSection: section) ?? 0
+        return eventPresenter.numberOfEvents(inSection: section)
     }
     
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        return eventPresenter?.numberOfEventSections() ?? 0
+        return eventPresenter.numberOfEventSections()
     }
 }
