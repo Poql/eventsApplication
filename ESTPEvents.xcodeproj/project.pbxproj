@@ -205,6 +205,7 @@
 				E734F8251D79CEA1001E013C /* SharedViewController.swift */,
 				E7C3D2441D802022007F5146 /* NavigationControllerWithWhiteStatusBar.swift */,
 				E7EE0E991D7AC2740089B38C /* Event */,
+				E765703B1D84007A00304D3E /* Modify Event */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -294,6 +295,14 @@
 				E756AC0C1D81E9DB0077375D /* TextViewCell.swift */,
 			);
 			name = Shared;
+			sourceTree = "<group>";
+		};
+		E765703B1D84007A00304D3E /* Modify Event */ = {
+			isa = PBXGroup;
+			children = (
+				E756AC051D81E49A0077375D /* ModifyEventViewController.swift */,
+			);
+			name = "Modify Event";
 			sourceTree = "<group>";
 		};
 		E797F2EC1D7C2D3000CB5EE2 /* Persistency */ = {
@@ -422,7 +431,6 @@
 			isa = PBXGroup;
 			children = (
 				E79B6BBE1D7AFE780048E0DF /* EventViewController.swift */,
-				E756AC051D81E49A0077375D /* ModifyEventViewController.swift */,
 			);
 			name = Event;
 			sourceTree = "<group>";
