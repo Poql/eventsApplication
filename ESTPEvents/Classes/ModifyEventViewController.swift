@@ -13,7 +13,11 @@ private struct Constant {
     static let textViewRowHeight: CGFloat = 150
 }
 
-class ModifyEventViewController: SharedViewController, UITableViewDataSource, UITableViewDelegate {
+class ModifyEventViewController: SharedViewController, UITableViewDataSource, UITableViewDelegate, SegueHandlerType, DatePickerViewControllerDelegate {
+
+    enum SegueIdentifier: String {
+        case date = "DatePickerViewController"
+    }
 
     @IBOutlet var tableView: UITableView! {
         didSet {
@@ -52,6 +56,15 @@ class ModifyEventViewController: SharedViewController, UITableViewDataSource, UI
         setupController()
     }
 
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        switch segueIdentifier(forSegue: segue) {
+        case .date:
+            guard let controller = segue.destinationViewController as? DatePickerViewController else { return }
+            controller.initialDate = event?.eventDate
+            controller.delegate = self
+        }
+    }
+    
     // MARK: - Private
 
     private func setupController() {
@@ -71,6 +84,11 @@ class ModifyEventViewController: SharedViewController, UITableViewDataSource, UI
     func addAction(button: UIBarButtonItem) {
         view.endEditing(true)
         dismissViewControllerAnimated(true, completion: nil)
+    }
+    
+    // MARK: - DatePickerViewControllerDelegate
+    
+    func controller(controller: DatePickerViewController, didPickDate date: NSDate) {
     }
     
     // MARK: - UITableViewDataSource
@@ -159,6 +177,12 @@ class ModifyEventViewController: SharedViewController, UITableViewDataSource, UI
 
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         return indexPath == descriptionIndexPath ? Constant.textViewRowHeight : Constant.defaultRowHeight
+    }
+    
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        guard indexPath == dateIndexPath else { return }
+        performSegue(withIdentifier: .date, sender: self)
+        tableView.deselectRowAtIndexPath(indexPath, animated: true)
     }
     
     func tableView(tableView: UITableView, shouldHighlightRowAtIndexPath indexPath: NSIndexPath) -> Bool {
