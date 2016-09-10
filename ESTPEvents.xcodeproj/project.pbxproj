@@ -19,6 +19,7 @@
 		E756AC0B1D81E8DB0077375D /* RawRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E756AC0A1D81E8DB0077375D /* RawRepresentable.swift */; };
 		E756AC0D1D81E9DB0077375D /* TextViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E756AC0C1D81E9DB0077375D /* TextViewCell.swift */; };
 		E756AC0F1D81EA270077375D /* TextViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E756AC0E1D81EA270077375D /* TextViewCell.xib */; };
+		E765703A1D82E6ED00304D3E /* UIViewController + SegueHandlerType.swift in Sources */ = {isa = PBXBuildFile; fileRef = E76570391D82E6ED00304D3E /* UIViewController + SegueHandlerType.swift */; };
 		E797F2EF1D7C2D4100CB5EE2 /* PersistencyRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = E797F2ED1D7C2D4100CB5EE2 /* PersistencyRepository.swift */; };
 		E797F2F01D7C2D4100CB5EE2 /* PersistencyRepositoryImplementation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E797F2EE1D7C2D4100CB5EE2 /* PersistencyRepositoryImplementation.swift */; };
 		E797F2F31D7C2D8100CB5EE2 /* PersistEventsOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E797F2F21D7C2D8100CB5EE2 /* PersistEventsOperation.swift */; };
@@ -87,6 +88,7 @@
 		E756AC0A1D81E8DB0077375D /* RawRepresentable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RawRepresentable.swift; path = Classes/RawRepresentable.swift; sourceTree = "<group>"; };
 		E756AC0C1D81E9DB0077375D /* TextViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TextViewCell.swift; path = Classes/TextViewCell.swift; sourceTree = "<group>"; };
 		E756AC0E1D81EA270077375D /* TextViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = TextViewCell.xib; path = Classes/TextViewCell.xib; sourceTree = "<group>"; };
+		E76570391D82E6ED00304D3E /* UIViewController + SegueHandlerType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIViewController + SegueHandlerType.swift"; path = "Classes/UIViewController + SegueHandlerType.swift"; sourceTree = "<group>"; };
 		E797F2ED1D7C2D4100CB5EE2 /* PersistencyRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PersistencyRepository.swift; path = Classes/PersistencyRepository.swift; sourceTree = "<group>"; };
 		E797F2EE1D7C2D4100CB5EE2 /* PersistencyRepositoryImplementation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PersistencyRepositoryImplementation.swift; path = Classes/PersistencyRepositoryImplementation.swift; sourceTree = "<group>"; };
 		E797F2F21D7C2D8100CB5EE2 /* PersistEventsOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PersistEventsOperation.swift; path = Classes/PersistEventsOperation.swift; sourceTree = "<group>"; };
@@ -269,6 +271,7 @@
 		E734F8311D79CFCA001E013C /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				E76570391D82E6ED00304D3E /* UIViewController + SegueHandlerType.swift */,
 				E7BC15F91D7ED69900B02897 /* NSFetchRequest+CoreDataModelable.swift */,
 				E79B6BB81D7AFE780048E0DF /* CKQuery+Record.swift */,
 				E79B6BBF1D7AFE780048E0DF /* Int+Bool.swift */,
@@ -617,6 +620,7 @@
 				E7BC16021D7F02D900B02897 /* EntitySectionChange.swift in Sources */,
 				E79B6BC41D7AFE780048E0DF /* CKQuery+Record.swift in Sources */,
 				E756AC041D81AFE40077375D /* FetchRecordOperation.swift in Sources */,
+				E765703A1D82E6ED00304D3E /* UIViewController + SegueHandlerType.swift in Sources */,
 				E7C3D2491D803FBF007F5146 /* DeleteEventsOperation.swift in Sources */,
 				E7C3D25E1D818AF8007F5146 /* NSPredicate.swift in Sources */,
 				E7C3D23F1D800970007F5146 /* UIColor.swift in Sources */,
