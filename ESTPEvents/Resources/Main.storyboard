@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="e5k-bg-yRY">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -18,12 +18,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="223" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="JFP-RT-3Vp">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="223" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="JFP-RT-3Vp">
                                 <rect key="frame" x="0.0" y="20" width="600" height="580"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="EventTableViewCell" rowHeight="120" id="P9r-ut-AUS" customClass="EventTableViewCell" customModule="ESTPEvents" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="600" height="120"/>
+                                        <rect key="frame" x="0.0" y="92" width="600" height="120"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="P9r-ut-AUS" id="JEa-De-JbZ">
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="119.5"/>
@@ -136,13 +136,20 @@
                             <constraint firstAttribute="trailing" secondItem="JFP-RT-3Vp" secondAttribute="trailing" id="lao-pG-PQD"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="UQk-3G-cj4">
+                        <barButtonItem key="rightBarButtonItem" title="Item" systemItem="add" id="7Ri-WH-7Ol">
+                            <connections>
+                                <segue destination="3QM-OY-xd4" kind="presentation" identifier="ModifyEventViewController" id="jlF-FV-j2q"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="JFP-RT-3Vp" id="Igc-qD-FzH"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="375" y="337"/>
+            <point key="canvasLocation" x="1187" y="337"/>
         </scene>
         <!--Modify Event View Controller-->
         <scene sceneID="DYX-Vx-899">
@@ -180,6 +187,7 @@
                             </mask>
                         </variation>
                     </view>
+                    <navigationItem key="navigationItem" id="z2X-9a-ezl"/>
                     <connections>
                         <outlet property="tableView" destination="FaT-ay-zlB" id="ltf-Sc-CLJ"/>
                         <segue destination="7gX-4E-6DC" kind="show" identifier="DatePickerViewController" id="9jF-vk-kNS"/>
@@ -187,7 +195,8 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="txd-U6-dvi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="375" y="-349"/>
+            <point key="canvasLocation" x="2437" y="-313"/>
+        </scene>
         <!--Date Picker View Controller-->
         <scene sceneID="649-I9-onm">
             <objects>
@@ -234,6 +243,41 @@
             </objects>
             <point key="canvasLocation" x="3090" y="-313"/>
         </scene>
+        <!--Navigation Controller With White Status Bar-->
+        <scene sceneID="xZo-MD-eNy">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="e5k-bg-yRY" customClass="NavigationControllerWithWhiteStatusBar" customModule="ESTPEvents" customModuleProvider="target" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="JpL-bl-NDx">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="sqY-aK-bod"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aBL-Rv-Lsl" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="375" y="337"/>
+        </scene>
+        <!--Navigation Controller With White Status Bar-->
+        <scene sceneID="1GA-ta-p10">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="3QM-OY-xd4" customClass="NavigationControllerWithWhiteStatusBar" customModule="ESTPEvents" customModuleProvider="target" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="N25-yB-SGD">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="gsY-eb-6eQ" kind="relationship" relationship="rootViewController" id="Xwm-w4-lA8"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mHT-GX-GTH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1492" y="-327"/>
         </scene>
     </scenes>
 </document>

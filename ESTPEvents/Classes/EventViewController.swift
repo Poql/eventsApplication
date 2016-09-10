@@ -12,8 +12,12 @@ private struct Constant {
     static let rowHeight: CGFloat = 100
 }
 
-class EventViewController: SharedViewController, EventPresenterClient, UITableViewDelegate, UITableViewDataSource {
+class EventViewController: SharedViewController, EventPresenterClient, UITableViewDelegate, UITableViewDataSource, SegueHandlerType {
     
+    enum SegueIdentifier: String {
+        case addEvent = "ModifyEventViewController"
+    }
+
     @IBOutlet var tableView: UITableView! {
         didSet {
             tableView.delegate = self
@@ -34,6 +38,16 @@ class EventViewController: SharedViewController, EventPresenterClient, UITableVi
         super.viewDidLoad()
         setupController()
         eventPresenter.queryAllEvents()
+    }
+
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        switch segueIdentifier(forSegue: segue) {
+        case .addEvent:
+            guard
+                let navigationController = segue.destinationViewController as?  UINavigationController,
+                let controller = navigationController.topViewController as? ModifyEventViewController else { return }
+            controller.event = Event()
+        }
     }
     
     // MARK: - EventPresenterClient
