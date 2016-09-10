@@ -26,6 +26,10 @@ class ModifyEventViewController: SharedViewController, UITableViewDataSource, UI
         }
     }
     
+    private lazy var addButton: UIBarButtonItem = {
+        return UIBarButtonItem(title: String(key: "add_button_title"), style: .Plain, target: self, action: #selector(addAction(_:)))
+    }()
+
     private let dateFormatter: NSDateFormatter = {
         let dateFormatter = NSDateFormatter()
         dateFormatter.dateFormat = "MM/dd/yy HH:mm"
@@ -52,6 +56,21 @@ class ModifyEventViewController: SharedViewController, UITableViewDataSource, UI
 
     private func setupController() {
         title = String(key: "modify_event_title")
+        let cancelButton = UIBarButtonItem(title: String(key: "cancel_button_title"), style: .Plain, target: self, action: #selector(cancelAction(_:)))
+        navigationItem.leftBarButtonItem = cancelButton
+        navigationItem.rightBarButtonItem = addButton
+        addButton.enabled = false
+    }
+    
+    // MARK: - Actions
+
+    func cancelAction(button: UIBarButtonItem) {
+        dismissViewControllerAnimated(true, completion: nil)
+    }
+    
+    func addAction(button: UIBarButtonItem) {
+        view.endEditing(true)
+        dismissViewControllerAnimated(true, completion: nil)
     }
     
     // MARK: - UITableViewDataSource
