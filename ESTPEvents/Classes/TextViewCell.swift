@@ -14,6 +14,8 @@ class TextViewCell: UITableViewCell, UITextViewDelegate {
     
     var placeholder = ""
     
+    var textViewDidChange: ((text: String?) -> Void)?
+
     override func awakeFromNib() {
         super.awakeFromNib()
         setupViews()
@@ -47,5 +49,9 @@ class TextViewCell: UITableViewCell, UITextViewDelegate {
             textView.text = placeholder
             textView.textColor = .lightGrayColor()
         }
+    }
+    
+    func textViewDidChange(textView: UITextView) {
+        textViewDidChange?(text: textView.text)
     }
 }
