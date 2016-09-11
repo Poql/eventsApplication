@@ -74,6 +74,19 @@ class EventPresenterImplementation<R: EventRepository, PR: PersistencyRepository
         queryPersistedEvents()
         queryRemoteEvents()
     }
+
+    func modifyEvent(event: Event) {
+        let operation = eventRepository.modifyEventOperation(event: event)
+        let persistentOperation = persistencyRepository.persistEventsOperation()
+        operation.addCompletionBlockOnMainQueue {
+            guard let resultingEvent = operation.resultingEvent else { return }
+            persistentOperation.events = [resultingEvent]
+        }
+        (persistentOperation as Operation).addDependency(operation)
+        let groupOperation = GroupOperation(operations: operation, persistentOperation)
+        groupOperation.addObserver(NetworkObserver())
+        operationQueue.addOperation(groupOperation)
+    }
     
     func numberOfEventSections() -> Int {
         return resultsController?.sections?.count ?? 0
