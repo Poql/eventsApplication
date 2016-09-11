@@ -12,7 +12,7 @@ private struct Constant {
     static let rowHeight: CGFloat = 100
 }
 
-class EventViewController: SharedViewController, EventPresenterClient, UITableViewDelegate, UITableViewDataSource, SegueHandlerType {
+class EventViewController: SharedViewController, EventPresenterClient, UITableViewDelegate, UITableViewDataSource, SegueHandlerType, ModifyEventViewControllerDelegate {
     
     enum SegueIdentifier: String {
         case addEvent = "ModifyEventViewController"
@@ -47,9 +47,16 @@ class EventViewController: SharedViewController, EventPresenterClient, UITableVi
                 let navigationController = segue.destinationViewController as?  UINavigationController,
                 let controller = navigationController.topViewController as? ModifyEventViewController else { return }
             controller.event = Event()
+            controller.delegate = self
         }
     }
     
+    // MARK: - ModifyEventViewControllerDelegate
+
+    func controller(controller: ModifyEventViewController, didModify event: Event) {
+        eventPresenter.modifyEvent(event)
+    }
+
     // MARK: - EventPresenterClient
     
     func presenterEventsDidChange() {
