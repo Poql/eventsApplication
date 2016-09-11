@@ -41,7 +41,7 @@ class EventPresenterImplementation<R: EventRepository, PR: PersistencyRepository
     
     private func setResultsController(with context: NSManagedObjectContext) {
         let request = NSFetchRequest(entity: PersistentEvent.self)
-        request.sortDescriptors = [NSSortDescriptor(key: "eventDescription", ascending: true)]
+        request.sortDescriptors = [NSSortDescriptor(key: "eventDate", ascending: true), NSSortDescriptor(key: "eventDescription", ascending: true)]
         resultsController = FetchedResultsController<PersistentEvent>(fetchRequest: request, managedObjectContext: context, sectionNameKeyPath: "sectionIdentifier")
         resultsController?.setDelegate(self)
     }
