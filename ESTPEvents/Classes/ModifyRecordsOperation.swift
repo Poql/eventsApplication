@@ -17,6 +17,15 @@ class ModifyRecordsOperation: CloudOperation {
 
     private(set) var deletedRecordIDs: [CKRecordID]?
 
+    var recordsToSave: [CKRecord]? {
+        set {
+            operation.recordsToSave = newValue
+        }
+        get {
+            return operation.recordsToSave
+        }
+    }
+    
     var savePolicy: CKRecordSavePolicy {
         set {
             operation.savePolicy = newValue
