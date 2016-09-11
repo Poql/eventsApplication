@@ -9,7 +9,7 @@
 import Foundation
 import CloudKit
 
-class ModifyEventOperation: ModifyRecordsOperation {
+class ModifyEventOperation: ModifyRecordsOperation, ModifyEventOperationPrototype {
     var event: Event? {
         set {
             if let event = newValue {

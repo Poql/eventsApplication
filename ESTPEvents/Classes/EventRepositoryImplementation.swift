@@ -12,4 +12,8 @@ class EventRepositoryImplementation: EventRepository {
     func queryEventsOperation() -> QueryEventsOperation {
         return QueryEventsOperation()
     }
+
+    func modifyEventOperation(event event: Event) -> ModifyEventOperation {
+        return ModifyEventOperation(event: event)
+    }
 }
