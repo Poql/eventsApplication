@@ -151,6 +151,58 @@
             </objects>
             <point key="canvasLocation" x="1187" y="337"/>
         </scene>
+        <!--Location Picker View Controller-->
+        <scene sceneID="ii6-02-Bt5">
+            <objects>
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="Tq6-PX-Tpy" customClass="LocationPickerViewController" customModule="ESTPEvents" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ewZ-2B-DgS"/>
+                        <viewControllerLayoutGuide type="bottom" id="o1U-mQ-hUi"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="plR-du-hAq">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="3Ps-Jz-luu">
+                                <rect key="frame" x="0.0" y="64" width="600" height="44"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="RcU-Lk-NDN">
+                                <rect key="frame" x="0.0" y="108" width="600" height="492"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="Tq6-PX-Tpy" id="3UT-Ix-3lT"/>
+                                    <outlet property="delegate" destination="Tq6-PX-Tpy" id="9rt-0J-0g2"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="o1U-mQ-hUi" firstAttribute="top" secondItem="RcU-Lk-NDN" secondAttribute="bottom" id="5zp-II-Rxq"/>
+                            <constraint firstItem="3Ps-Jz-luu" firstAttribute="leading" secondItem="plR-du-hAq" secondAttribute="leading" id="6By-DG-FYw"/>
+                            <constraint firstItem="3Ps-Jz-luu" firstAttribute="top" secondItem="ewZ-2B-DgS" secondAttribute="bottom" id="CeH-57-IzD"/>
+                            <constraint firstItem="RcU-Lk-NDN" firstAttribute="top" secondItem="plR-du-hAq" secondAttribute="top" id="Dmq-J7-NEp"/>
+                            <constraint firstItem="RcU-Lk-NDN" firstAttribute="leading" secondItem="plR-du-hAq" secondAttribute="leading" id="Xt3-sY-YDf"/>
+                            <constraint firstItem="RcU-Lk-NDN" firstAttribute="top" secondItem="3Ps-Jz-luu" secondAttribute="bottom" id="b4i-15-7aH"/>
+                            <constraint firstAttribute="trailing" secondItem="RcU-Lk-NDN" secondAttribute="trailing" id="cDa-QA-cQP"/>
+                            <constraint firstAttribute="trailing" secondItem="3Ps-Jz-luu" secondAttribute="trailing" id="d2h-q7-uKv"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="Dmq-J7-NEp"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <navigationItem key="navigationItem" id="Ubr-TC-kab"/>
+                    <connections>
+                        <outlet property="searchBar" destination="3Ps-Jz-luu" id="yjF-Ul-jiv"/>
+                        <outlet property="tableView" destination="RcU-Lk-NDN" id="dMJ-mh-KFF"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5t5-iy-XnW" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3249" y="-1015"/>
+        </scene>
         <!--Modify Event View Controller-->
         <scene sceneID="DYX-Vx-899">
             <objects>
