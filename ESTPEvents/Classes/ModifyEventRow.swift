@@ -22,6 +22,7 @@ enum ModifyEventPreviewRow: Int {
 
 enum ModifyEventDetailRow: Int {
     case date = 0
+    case location
     case notify
 }
 

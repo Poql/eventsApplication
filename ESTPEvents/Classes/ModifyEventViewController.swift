@@ -17,10 +17,11 @@ protocol ModifyEventViewControllerDelegate: class {
     func controller(controller: ModifyEventViewController, didModify event: Event)
 }
 
-class ModifyEventViewController: SharedViewController, UITableViewDataSource, UITableViewDelegate, SegueHandlerType, DatePickerViewControllerDelegate {
+class ModifyEventViewController: SharedViewController, UITableViewDataSource, UITableViewDelegate, SegueHandlerType, DatePickerViewControllerDelegate, LocationPickerViewControllerDelegate {
 
     enum SegueIdentifier: String {
         case date = "DatePickerViewController"
+        case location = "LocationPickerViewController"
     }
 
     @IBOutlet var tableView: UITableView! {
@@ -52,6 +53,10 @@ class ModifyEventViewController: SharedViewController, UITableViewDataSource, UI
         return NSIndexPath(forRow: ModifyEventAdjunctRow.description.rawValue, inSection: ModifyEventSection.adjunct.rawValue)
     }
 
+    private var locationIndexPath: NSIndexPath {
+        return NSIndexPath(forRow: ModifyEventDetailRow.location.rawValue, inSection: ModifyEventSection.detail.rawValue)
+    }
+
     private var initialEvent: Event?
 
     var event: Event?
@@ -71,6 +76,9 @@ class ModifyEventViewController: SharedViewController, UITableViewDataSource, UI
         case .date:
             guard let controller = segue.destinationViewController as? DatePickerViewController else { return }
             controller.initialDate = event?.eventDate
+            controller.delegate = self
+        case .location:
+            guard let controller = segue.destinationViewController as? LocationPickerViewController else { return }
             controller.delegate = self
         }
     }
@@ -107,6 +115,14 @@ class ModifyEventViewController: SharedViewController, UITableViewDataSource, UI
         dismissViewControllerAnimated(true, completion: nil)
         guard let event = event else { return }
         delegate?.controller(self, didModify: event)
+    }
+
+    // MARK: - LocationPickerViewControllerDelegate
+
+    func controller(controller: LocationPickerViewController, didPickLocation location: Location) {
+        event?.location = location
+        tryEnableAddButton()
+        tableView.reloadRowsAtIndexPaths([locationIndexPath], withRowAnimation: .Fade)
     }
     
     // MARK: - DatePickerViewControllerDelegate
@@ -186,6 +202,11 @@ class ModifyEventViewController: SharedViewController, UITableViewDataSource, UI
                 cell.configure(withLabel: String(key: "modify_event_notify_label"), selected: event?.notify ?? false)
                 cell.switchDidChange = { self.event?.notify = $0; self.tryEnableAddButton() }
                 return cell
+            case .location:
+                let cell: TextCell = tableView.dequeueCell()
+                let label = event?.location?.title ?? String(key: "modify_event_location_label")
+                cell.configure(withLabel: label, value: event?.location?.subtitle)
+                return cell
             }
         case .adjunct:
             guard let row = ModifyEventAdjunctRow(rawValue: indexPath.row) else { return UITableViewCell() }
@@ -213,12 +234,18 @@ class ModifyEventViewController: SharedViewController, UITableViewDataSource, UI
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        guard indexPath == dateIndexPath else { return }
-        performSegue(withIdentifier: .date, sender: self)
+        switch indexPath {
+        case dateIndexPath:
+            performSegue(withIdentifier: .date, sender: self)
+        case locationIndexPath:
+            performSegue(withIdentifier: .location, sender: self)
+        default:
+            break
+        }
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
     }
     
     func tableView(tableView: UITableView, shouldHighlightRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        return indexPath == dateIndexPath
+        return indexPath == dateIndexPath || indexPath == locationIndexPath
     }
 }
