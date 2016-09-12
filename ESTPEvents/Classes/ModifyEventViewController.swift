@@ -34,6 +34,10 @@ class ModifyEventViewController: SharedViewController, UITableViewDataSource, UI
             tableView.tableFooterView = UIView()
         }
     }
+
+    private lazy var keyboardManager: KeyboardManager = {
+        return KeyboardManager(scrollView: self.tableView)
+    }()
     
     private lazy var addButton: UIBarButtonItem = {
         return UIBarButtonItem(title: String(key: "add_button_title"), style: .Plain, target: self, action: #selector(addAction(_:)))
@@ -69,6 +73,16 @@ class ModifyEventViewController: SharedViewController, UITableViewDataSource, UI
         super.viewDidLoad()
         initialEvent = event
         setupController()
+    }
+
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        keyboardManager.registerForKeyboardMoves()
+    }
+
+    override func viewWillDisappear(animated: Bool) {
+        super.viewWillDisappear(animated)
+        keyboardManager.unregisterForKeyboardMoves()
     }
 
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
