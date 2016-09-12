@@ -16,14 +16,14 @@ class PersistentEvent: PersistentRecord {
         return "PersistentEvent"
     }
     
-    var location: CLLocation? {
+    var location: Location? {
         set {
-            locationLongitude = newValue?.coordinate.longitude ?? 200
-            locationLatitude = newValue?.coordinate.latitude ?? 200
+            locationTitle = location?.title ?? ""
+            locationSubtitle = location?.subtitle ?? ""
         }
         get {
-            guard locationLongitude <= 180 && locationLatitude <= 180 else { return nil }
-            return CLLocation(latitude: locationLatitude, longitude: locationLongitude)
+            guard !locationTitle.isEmpty && !locationSubtitle.isEmpty else { return nil }
+            return Location(title: locationTitle, subtitle: locationSubtitle)
         }
     }
     
@@ -52,9 +52,9 @@ class PersistentEvent: PersistentRecord {
     
     @NSManaged var link: String
     
-    @NSManaged var locationLatitude: Double
+    @NSManaged var locationTitle: String
     
-    @NSManaged var locationLongitude: Double
+    @NSManaged var locationSubtitle: String
     
     @NSManaged var notify: Bool
 

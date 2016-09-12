@@ -92,12 +92,17 @@ struct Event: Entity, Record {
         }
     }
     
-    var location: CLLocation? {
+    var location: Location? {
         get {
-            return record["location"] as? CLLocation
+            guard let location = record["location"] as? [String] where location.count == 2 else { return nil }
+            return Location(title: location[0], subtitle: location[1])
         }
         set {
-            self.record["location"] = newValue
+            if let location = newValue where !location.title.isEmpty && !location.subtitle.isEmpty {
+                record["location"] = [location.title, location.subtitle]
+                return
+            }
+            record["location"] = nil
         }
     }
     
