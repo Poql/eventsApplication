@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="109" id="rgZ-FY-mvq" customClass="ColorCell" customModule="ESTPEvents" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="109"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="rgZ-FY-mvq" id="deE-YA-C3j">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="108.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="ztr-8d-fRM">
+                        <rect key="frame" x="16" y="8" width="296" height="93"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mAl-H2-rT4">
+                                <rect key="frame" x="0.0" y="22" width="30" height="50"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CjQ-re-3Tk">
+                                        <rect key="frame" x="0.0" y="-15" width="30" height="30"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="CjQ-re-3Tk" secondAttribute="height" multiplier="1:1" id="fiM-6n-OxU"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="30" id="KLm-O6-AVN"/>
+                                    <constraint firstItem="CjQ-re-3Tk" firstAttribute="leading" secondItem="mAl-H2-rT4" secondAttribute="leading" id="QMf-kU-3cs"/>
+                                    <constraint firstItem="CjQ-re-3Tk" firstAttribute="centerX" secondItem="mAl-H2-rT4" secondAttribute="centerX" id="UXg-WJ-aTX"/>
+                                    <constraint firstItem="CjQ-re-3Tk" firstAttribute="centerY" secondItem="mAl-H2-rT4" secondAttribute="centerY" id="Zvp-TB-jYI"/>
+                                    <constraint firstAttribute="trailing" secondItem="CjQ-re-3Tk" secondAttribute="trailing" id="d1T-0m-nsy"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="QMf-kU-3cs"/>
+                                    </mask>
+                                </variation>
+                            </view>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vmp-ao-75R">
+                                <rect key="frame" x="38" y="38" width="258" height="18"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters" autocorrectionType="no" spellCheckingType="no"/>
+                            </textField>
+                        </subviews>
+                    </stackView>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="ztr-8d-fRM" firstAttribute="top" secondItem="deE-YA-C3j" secondAttribute="top" constant="8" id="Bj3-U9-nZ3"/>
+                    <constraint firstItem="ztr-8d-fRM" firstAttribute="leading" secondItem="deE-YA-C3j" secondAttribute="leading" constant="16" id="Jdq-Xi-kgO"/>
+                    <constraint firstAttribute="trailing" secondItem="ztr-8d-fRM" secondAttribute="trailing" constant="8" id="KJk-az-rke"/>
+                    <constraint firstAttribute="bottom" secondItem="ztr-8d-fRM" secondAttribute="bottom" constant="8" id="ger-el-t4Y"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="colorView" destination="CjQ-re-3Tk" id="2IB-AW-9kg"/>
+                <outlet property="textField" destination="vmp-ao-75R" id="EvQ-Fx-5Kd"/>
+            </connections>
+            <point key="canvasLocation" x="256" y="203.5"/>
+        </tableViewCell>
+    </objects>
+</document>

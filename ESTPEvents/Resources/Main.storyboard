@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="e5k-bg-yRY">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -18,12 +18,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="223" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="JFP-RT-3Vp">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="223" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="JFP-RT-3Vp">
                                 <rect key="frame" x="0.0" y="20" width="600" height="580"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="EventTableViewCell" rowHeight="120" id="P9r-ut-AUS" customClass="EventTableViewCell" customModule="ESTPEvents" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="600" height="120"/>
+                                        <rect key="frame" x="0.0" y="92" width="600" height="120"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="P9r-ut-AUS" id="JEa-De-JbZ">
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="119.5"/>
@@ -136,13 +136,203 @@
                             <constraint firstAttribute="trailing" secondItem="JFP-RT-3Vp" secondAttribute="trailing" id="lao-pG-PQD"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="UQk-3G-cj4">
+                        <barButtonItem key="rightBarButtonItem" title="Item" systemItem="add" id="7Ri-WH-7Ol">
+                            <connections>
+                                <segue destination="3QM-OY-xd4" kind="presentation" identifier="ModifyEventViewController" id="jlF-FV-j2q"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="JFP-RT-3Vp" id="Igc-qD-FzH"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="1187" y="337"/>
+        </scene>
+        <!--Location Picker View Controller-->
+        <scene sceneID="ii6-02-Bt5">
+            <objects>
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="Tq6-PX-Tpy" customClass="LocationPickerViewController" customModule="ESTPEvents" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ewZ-2B-DgS"/>
+                        <viewControllerLayoutGuide type="bottom" id="o1U-mQ-hUi"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="plR-du-hAq">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="3Ps-Jz-luu">
+                                <rect key="frame" x="0.0" y="64" width="600" height="44"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="RcU-Lk-NDN">
+                                <rect key="frame" x="0.0" y="108" width="600" height="492"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="Tq6-PX-Tpy" id="3UT-Ix-3lT"/>
+                                    <outlet property="delegate" destination="Tq6-PX-Tpy" id="9rt-0J-0g2"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="o1U-mQ-hUi" firstAttribute="top" secondItem="RcU-Lk-NDN" secondAttribute="bottom" id="5zp-II-Rxq"/>
+                            <constraint firstItem="3Ps-Jz-luu" firstAttribute="leading" secondItem="plR-du-hAq" secondAttribute="leading" id="6By-DG-FYw"/>
+                            <constraint firstItem="3Ps-Jz-luu" firstAttribute="top" secondItem="ewZ-2B-DgS" secondAttribute="bottom" id="CeH-57-IzD"/>
+                            <constraint firstItem="RcU-Lk-NDN" firstAttribute="top" secondItem="plR-du-hAq" secondAttribute="top" id="Dmq-J7-NEp"/>
+                            <constraint firstItem="RcU-Lk-NDN" firstAttribute="leading" secondItem="plR-du-hAq" secondAttribute="leading" id="Xt3-sY-YDf"/>
+                            <constraint firstItem="RcU-Lk-NDN" firstAttribute="top" secondItem="3Ps-Jz-luu" secondAttribute="bottom" id="b4i-15-7aH"/>
+                            <constraint firstAttribute="trailing" secondItem="RcU-Lk-NDN" secondAttribute="trailing" id="cDa-QA-cQP"/>
+                            <constraint firstAttribute="trailing" secondItem="3Ps-Jz-luu" secondAttribute="trailing" id="d2h-q7-uKv"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="Dmq-J7-NEp"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <navigationItem key="navigationItem" id="Ubr-TC-kab"/>
+                    <connections>
+                        <outlet property="searchBar" destination="3Ps-Jz-luu" id="yjF-Ul-jiv"/>
+                        <outlet property="tableView" destination="RcU-Lk-NDN" id="dMJ-mh-KFF"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5t5-iy-XnW" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3249" y="-1015"/>
+        </scene>
+        <!--Modify Event View Controller-->
+        <scene sceneID="DYX-Vx-899">
+            <objects>
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="gsY-eb-6eQ" customClass="ModifyEventViewController" customModule="ESTPEvents" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="kVI-Qz-TbI"/>
+                        <viewControllerLayoutGuide type="bottom" id="ySt-fC-U3e"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="6GY-ch-Gec">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="FaT-ay-zlB">
+                                <rect key="frame" x="0.0" y="64" width="600" height="536"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <sections/>
+                                <connections>
+                                    <outlet property="dataSource" destination="gsY-eb-6eQ" id="GAr-jl-PO8"/>
+                                    <outlet property="delegate" destination="gsY-eb-6eQ" id="nmG-Ib-e6V"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="FaT-ay-zlB" firstAttribute="top" secondItem="kVI-Qz-TbI" secondAttribute="bottom" id="Hwc-x6-l6D"/>
+                            <constraint firstAttribute="trailing" secondItem="FaT-ay-zlB" secondAttribute="trailing" id="ZDa-qc-Rv0"/>
+                            <constraint firstItem="FaT-ay-zlB" firstAttribute="top" secondItem="6GY-ch-Gec" secondAttribute="top" id="ezX-45-Cth"/>
+                            <constraint firstItem="ySt-fC-U3e" firstAttribute="top" secondItem="FaT-ay-zlB" secondAttribute="bottom" id="pIz-zn-2W8"/>
+                            <constraint firstItem="FaT-ay-zlB" firstAttribute="top" secondItem="kVI-Qz-TbI" secondAttribute="bottom" id="qjs-xE-Xjg"/>
+                            <constraint firstItem="FaT-ay-zlB" firstAttribute="leading" secondItem="6GY-ch-Gec" secondAttribute="leading" id="uAi-P2-qri"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="Hwc-x6-l6D"/>
+                                <exclude reference="ezX-45-Cth"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <navigationItem key="navigationItem" id="z2X-9a-ezl"/>
+                    <connections>
+                        <outlet property="tableView" destination="FaT-ay-zlB" id="ltf-Sc-CLJ"/>
+                        <segue destination="7gX-4E-6DC" kind="show" identifier="DatePickerViewController" id="9jF-vk-kNS"/>
+                        <segue destination="Tq6-PX-Tpy" kind="show" identifier="LocationPickerViewController" id="Kwa-22-iRb"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="txd-U6-dvi" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2437" y="-313"/>
+        </scene>
+        <!--Date Picker View Controller-->
+        <scene sceneID="649-I9-onm">
+            <objects>
+                <viewController id="7gX-4E-6DC" customClass="DatePickerViewController" customModule="ESTPEvents" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Cyv-JQ-Me7"/>
+                        <viewControllerLayoutGuide type="bottom" id="a8g-Sg-jbq"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="bPB-MP-nS1">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="Mdt-qQ-Oyj">
+                                <rect key="frame" x="0.0" y="64" width="600" height="250"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="250" id="GaP-Ft-83D"/>
+                                </constraints>
+                                <date key="date" timeIntervalSinceReferenceDate="495112904.118384">
+                                    <!--2016-09-09 11:21:44 +0000-->
+                                </date>
+                                <date key="minimumDate" timeIntervalSinceReferenceDate="-978267600">
+                                    <!--1970-01-01 11:00:00 +0000-->
+                                </date>
+                            </datePicker>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Mdt-qQ-Oyj" firstAttribute="top" secondItem="bPB-MP-nS1" secondAttribute="top" id="9En-uX-Bce"/>
+                            <constraint firstAttribute="trailing" secondItem="Mdt-qQ-Oyj" secondAttribute="trailing" id="MPE-hN-b2F"/>
+                            <constraint firstItem="Mdt-qQ-Oyj" firstAttribute="leading" secondItem="bPB-MP-nS1" secondAttribute="leading" id="f8g-WQ-BOz"/>
+                            <constraint firstItem="Mdt-qQ-Oyj" firstAttribute="top" secondItem="Cyv-JQ-Me7" secondAttribute="bottom" id="wmd-bK-Wjh"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="9En-uX-Bce"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <connections>
+                        <outlet property="datePicker" destination="Mdt-qQ-Oyj" id="eKz-GX-u3k"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1Ih-is-xbD" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3090" y="-313"/>
+        </scene>
+        <!--Navigation Controller With White Status Bar-->
+        <scene sceneID="xZo-MD-eNy">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="e5k-bg-yRY" customClass="NavigationControllerWithWhiteStatusBar" customModule="ESTPEvents" customModuleProvider="target" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="JpL-bl-NDx">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="sqY-aK-bod"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aBL-Rv-Lsl" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
             <point key="canvasLocation" x="375" y="337"/>
+        </scene>
+        <!--Navigation Controller With White Status Bar-->
+        <scene sceneID="1GA-ta-p10">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="3QM-OY-xd4" customClass="NavigationControllerWithWhiteStatusBar" customModule="ESTPEvents" customModuleProvider="target" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="N25-yB-SGD">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="gsY-eb-6eQ" kind="relationship" relationship="rootViewController" id="Xwm-w4-lA8"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mHT-GX-GTH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1492" y="-327"/>
         </scene>
     </scenes>
 </document>

@@ -19,6 +19,16 @@ extension Record {
     static var name: String {
         return String(self)
     }
+
+    func isEqual(to record: Record?) -> Bool {
+        guard let record = record else { return false }
+        for key in record.record.allKeys() {
+            if let value = self.record[key] where !value.isEqual(record.record[key]) {
+                return false
+            }
+        }
+        return true
+    }
 }
 
 extension Entity where Self: Record {

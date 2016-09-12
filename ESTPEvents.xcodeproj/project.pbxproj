@@ -15,6 +15,27 @@
 		E734F8301D79CF08001E013C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E734F82E1D79CF08001E013C /* Main.storyboard */; };
 		E756AC001D81A0A90077375D /* FetchRecordsOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E756ABFF1D81A0A90077375D /* FetchRecordsOperation.swift */; };
 		E756AC041D81AFE40077375D /* FetchRecordOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E756AC031D81AFE40077375D /* FetchRecordOperation.swift */; };
+		E756AC061D81E49A0077375D /* ModifyEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E756AC051D81E49A0077375D /* ModifyEventViewController.swift */; };
+		E756AC091D81E6730077375D /* ModifyEventRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = E756AC081D81E6730077375D /* ModifyEventRow.swift */; };
+		E756AC0B1D81E8DB0077375D /* RawRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E756AC0A1D81E8DB0077375D /* RawRepresentable.swift */; };
+		E756AC0D1D81E9DB0077375D /* TextViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E756AC0C1D81E9DB0077375D /* TextViewCell.swift */; };
+		E756AC111D81F8DA0077375D /* TextFieldCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E756AC101D81F8DA0077375D /* TextFieldCell.swift */; };
+		E756AC151D81FA8A0077375D /* BooleanCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E756AC141D81FA8A0077375D /* BooleanCell.swift */; };
+		E756AC171D81FAC90077375D /* BooleanCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E756AC161D81FAC90077375D /* BooleanCell.xib */; };
+		E76570301D82A00400304D3E /* TextCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E765702F1D82A00400304D3E /* TextCell.swift */; };
+		E76570321D82A01D00304D3E /* TextCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E76570311D82A01D00304D3E /* TextCell.xib */; };
+		E76570341D82BFDF00304D3E /* ColorCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E76570331D82BFDF00304D3E /* ColorCell.swift */; };
+		E76570361D82BFF200304D3E /* ColorCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E76570351D82BFF200304D3E /* ColorCell.xib */; };
+		E76570381D82D28400304D3E /* DatePickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E76570371D82D28400304D3E /* DatePickerViewController.swift */; };
+		E765703A1D82E6ED00304D3E /* UIViewController + SegueHandlerType.swift in Sources */ = {isa = PBXBuildFile; fileRef = E76570391D82E6ED00304D3E /* UIViewController + SegueHandlerType.swift */; };
+		E765703F1D8405A600304D3E /* TextFieldCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E765703D1D8405A600304D3E /* TextFieldCell.xib */; };
+		E76570401D8405A600304D3E /* TextViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E765703E1D8405A600304D3E /* TextViewCell.xib */; };
+		E76570421D8481DC00304D3E /* ModifyRecordsOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E76570411D8481DC00304D3E /* ModifyRecordsOperation.swift */; };
+		E76570441D84844400304D3E /* ModifyEventOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E76570431D84844400304D3E /* ModifyEventOperation.swift */; };
+		E780F2561D8556FC0084E86B /* LocationPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E780F2551D8556FC0084E86B /* LocationPickerViewController.swift */; };
+		E780F2581D8599850084E86B /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = E780F2571D8599850084E86B /* Location.swift */; };
+		E780F25A1D8599CE0084E86B /* Location+MapKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = E780F2591D8599CE0084E86B /* Location+MapKit.swift */; };
+		E796409B1D86AF9600C9F9DC /* KeyboardManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E796409A1D86AF9600C9F9DC /* KeyboardManager.swift */; };
 		E797F2EF1D7C2D4100CB5EE2 /* PersistencyRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = E797F2ED1D7C2D4100CB5EE2 /* PersistencyRepository.swift */; };
 		E797F2F01D7C2D4100CB5EE2 /* PersistencyRepositoryImplementation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E797F2EE1D7C2D4100CB5EE2 /* PersistencyRepositoryImplementation.swift */; };
 		E797F2F31D7C2D8100CB5EE2 /* PersistEventsOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E797F2F21D7C2D8100CB5EE2 /* PersistEventsOperation.swift */; };
@@ -79,6 +100,27 @@
 		E734F82E1D79CF08001E013C /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = Resources/Main.storyboard; sourceTree = "<group>"; };
 		E756ABFF1D81A0A90077375D /* FetchRecordsOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FetchRecordsOperation.swift; path = Classes/FetchRecordsOperation.swift; sourceTree = "<group>"; };
 		E756AC031D81AFE40077375D /* FetchRecordOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FetchRecordOperation.swift; path = Classes/FetchRecordOperation.swift; sourceTree = "<group>"; };
+		E756AC051D81E49A0077375D /* ModifyEventViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ModifyEventViewController.swift; path = Classes/ModifyEventViewController.swift; sourceTree = "<group>"; };
+		E756AC081D81E6730077375D /* ModifyEventRow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ModifyEventRow.swift; path = Classes/ModifyEventRow.swift; sourceTree = "<group>"; };
+		E756AC0A1D81E8DB0077375D /* RawRepresentable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RawRepresentable.swift; path = Classes/RawRepresentable.swift; sourceTree = "<group>"; };
+		E756AC0C1D81E9DB0077375D /* TextViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TextViewCell.swift; path = Classes/TextViewCell.swift; sourceTree = "<group>"; };
+		E756AC101D81F8DA0077375D /* TextFieldCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TextFieldCell.swift; path = Classes/TextFieldCell.swift; sourceTree = "<group>"; };
+		E756AC141D81FA8A0077375D /* BooleanCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BooleanCell.swift; path = Classes/BooleanCell.swift; sourceTree = "<group>"; };
+		E756AC161D81FAC90077375D /* BooleanCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = BooleanCell.xib; path = Resources/BooleanCell.xib; sourceTree = "<group>"; };
+		E765702F1D82A00400304D3E /* TextCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TextCell.swift; path = Classes/TextCell.swift; sourceTree = "<group>"; };
+		E76570311D82A01D00304D3E /* TextCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = TextCell.xib; path = Resources/TextCell.xib; sourceTree = "<group>"; };
+		E76570331D82BFDF00304D3E /* ColorCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ColorCell.swift; path = Classes/ColorCell.swift; sourceTree = "<group>"; };
+		E76570351D82BFF200304D3E /* ColorCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ColorCell.xib; path = Resources/ColorCell.xib; sourceTree = "<group>"; };
+		E76570371D82D28400304D3E /* DatePickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DatePickerViewController.swift; path = Classes/DatePickerViewController.swift; sourceTree = "<group>"; };
+		E76570391D82E6ED00304D3E /* UIViewController + SegueHandlerType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIViewController + SegueHandlerType.swift"; path = "Classes/UIViewController + SegueHandlerType.swift"; sourceTree = "<group>"; };
+		E765703D1D8405A600304D3E /* TextFieldCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = TextFieldCell.xib; path = Resources/TextFieldCell.xib; sourceTree = "<group>"; };
+		E765703E1D8405A600304D3E /* TextViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = TextViewCell.xib; path = Resources/TextViewCell.xib; sourceTree = "<group>"; };
+		E76570411D8481DC00304D3E /* ModifyRecordsOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ModifyRecordsOperation.swift; path = Classes/ModifyRecordsOperation.swift; sourceTree = "<group>"; };
+		E76570431D84844400304D3E /* ModifyEventOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ModifyEventOperation.swift; path = Classes/ModifyEventOperation.swift; sourceTree = "<group>"; };
+		E780F2551D8556FC0084E86B /* LocationPickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LocationPickerViewController.swift; path = Classes/LocationPickerViewController.swift; sourceTree = "<group>"; };
+		E780F2571D8599850084E86B /* Location.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Location.swift; path = Classes/Location.swift; sourceTree = "<group>"; };
+		E780F2591D8599CE0084E86B /* Location+MapKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Location+MapKit.swift"; path = "Classes/Location+MapKit.swift"; sourceTree = "<group>"; };
+		E796409A1D86AF9600C9F9DC /* KeyboardManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = KeyboardManager.swift; path = Classes/KeyboardManager.swift; sourceTree = "<group>"; };
 		E797F2ED1D7C2D4100CB5EE2 /* PersistencyRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PersistencyRepository.swift; path = Classes/PersistencyRepository.swift; sourceTree = "<group>"; };
 		E797F2EE1D7C2D4100CB5EE2 /* PersistencyRepositoryImplementation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PersistencyRepositoryImplementation.swift; path = Classes/PersistencyRepositoryImplementation.swift; sourceTree = "<group>"; };
 		E797F2F21D7C2D8100CB5EE2 /* PersistEventsOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PersistEventsOperation.swift; path = Classes/PersistEventsOperation.swift; sourceTree = "<group>"; };
@@ -192,9 +234,13 @@
 		E734F81B1D79CDD1001E013C /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				E780F2551D8556FC0084E86B /* LocationPickerViewController.swift */,
 				E734F8251D79CEA1001E013C /* SharedViewController.swift */,
 				E7C3D2441D802022007F5146 /* NavigationControllerWithWhiteStatusBar.swift */,
+				E76570371D82D28400304D3E /* DatePickerViewController.swift */,
+				E796409A1D86AF9600C9F9DC /* KeyboardManager.swift */,
 				E7EE0E991D7AC2740089B38C /* Event */,
+				E765703B1D84007A00304D3E /* Modify Event */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -233,6 +279,7 @@
 			children = (
 				E79B6BBA1D7AFE780048E0DF /* Error.swift */,
 				E79B6BC31D7AFE780048E0DF /* Result.swift */,
+				E780F2571D8599850084E86B /* Location.swift */,
 				E7FB89311D7B1F6600FEFD1B /* Persistency */,
 				E7E5FA3C1D79F0AE00B6FF1D /* Entity */,
 			);
@@ -242,9 +289,14 @@
 		E734F8201D79CE03001E013C /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				E765703D1D8405A600304D3E /* TextFieldCell.xib */,
+				E765703E1D8405A600304D3E /* TextViewCell.xib */,
 				E734F8291D79CED1001E013C /* Assets.xcassets */,
 				E734F82D1D79CF08001E013C /* LaunchScreen.storyboard */,
 				E734F82E1D79CF08001E013C /* Main.storyboard */,
+				E756AC161D81FAC90077375D /* BooleanCell.xib */,
+				E76570311D82A01D00304D3E /* TextCell.xib */,
+				E76570351D82BFF200304D3E /* ColorCell.xib */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -260,6 +312,7 @@
 		E734F8311D79CFCA001E013C /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				E76570391D82E6ED00304D3E /* UIViewController + SegueHandlerType.swift */,
 				E7BC15F91D7ED69900B02897 /* NSFetchRequest+CoreDataModelable.swift */,
 				E79B6BB81D7AFE780048E0DF /* CKQuery+Record.swift */,
 				E79B6BBF1D7AFE780048E0DF /* Int+Bool.swift */,
@@ -271,8 +324,38 @@
 				E7C3D2571D817CFD007F5146 /* NSUserDefault + Subscription.swift */,
 				E7C3D2591D818405007F5146 /* Error+CloudKit.swift */,
 				E7C3D25D1D818AF8007F5146 /* NSPredicate.swift */,
+				E756AC0A1D81E8DB0077375D /* RawRepresentable.swift */,
+				E780F2591D8599CE0084E86B /* Location+MapKit.swift */,
 			);
 			name = Extensions;
+			sourceTree = "<group>";
+		};
+		E756AC071D81E5F90077375D /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				E756AC0C1D81E9DB0077375D /* TextViewCell.swift */,
+				E756AC101D81F8DA0077375D /* TextFieldCell.swift */,
+				E756AC141D81FA8A0077375D /* BooleanCell.swift */,
+				E765702F1D82A00400304D3E /* TextCell.swift */,
+			);
+			name = Shared;
+			sourceTree = "<group>";
+		};
+		E765703B1D84007A00304D3E /* Modify Event */ = {
+			isa = PBXGroup;
+			children = (
+				E756AC051D81E49A0077375D /* ModifyEventViewController.swift */,
+				E756AC081D81E6730077375D /* ModifyEventRow.swift */,
+			);
+			name = "Modify Event";
+			sourceTree = "<group>";
+		};
+		E765703C1D84012600304D3E /* Modify Event */ = {
+			isa = PBXGroup;
+			children = (
+				E76570331D82BFDF00304D3E /* ColorCell.swift */,
+			);
+			name = "Modify Event";
 			sourceTree = "<group>";
 		};
 		E797F2EC1D7C2D3000CB5EE2 /* Persistency */ = {
@@ -306,7 +389,9 @@
 		E7BC16031D7F431500B02897 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				E756AC071D81E5F90077375D /* Shared */,
 				E7BC16041D7F433500B02897 /* Event */,
+				E765703C1D84012600304D3E /* Modify Event */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -355,6 +440,7 @@
 				E7E5FA361D79EFAE00B6FF1D /* CloudOperation.swift */,
 				E7E5FA381D79F01900B6FF1D /* QueryOperation.swift */,
 				E756ABFF1D81A0A90077375D /* FetchRecordsOperation.swift */,
+				E76570411D8481DC00304D3E /* ModifyRecordsOperation.swift */,
 			);
 			name = Shared;
 			sourceTree = "<group>";
@@ -383,6 +469,7 @@
 			isa = PBXGroup;
 			children = (
 				E79B6BB61D7AFE570048E0DF /* QueryEventsOperation.swift */,
+				E76570431D84844400304D3E /* ModifyEventOperation.swift */,
 			);
 			name = Operations;
 			sourceTree = "<group>";
@@ -518,8 +605,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				E734F82F1D79CF08001E013C /* LaunchScreen.storyboard in Resources */,
+				E76570401D8405A600304D3E /* TextViewCell.xib in Resources */,
 				E734F82A1D79CED1001E013C /* Assets.xcassets in Resources */,
+				E76570321D82A01D00304D3E /* TextCell.xib in Resources */,
+				E76570361D82BFF200304D3E /* ColorCell.xib in Resources */,
+				E756AC171D81FAC90077375D /* BooleanCell.xib in Resources */,
 				E734F8301D79CF08001E013C /* Main.storyboard in Resources */,
+				E765703F1D8405A600304D3E /* TextFieldCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -581,21 +673,31 @@
 				E79B6BB71D7AFE570048E0DF /* QueryEventsOperation.swift in Sources */,
 				E797F2F31D7C2D8100CB5EE2 /* PersistEventsOperation.swift in Sources */,
 				E7BC15F81D7ED68A00B02897 /* PresenterState.swift in Sources */,
+				E76570301D82A00400304D3E /* TextCell.swift in Sources */,
 				E7BC15FE1D7EDD3900B02897 /* PersistentEvent.swift in Sources */,
 				E7C3D2501D816B3A007F5146 /* ModifySubscriptionsOperation.swift in Sources */,
 				E7FB89421D7B402100FEFD1B /* ContextOperation.swift in Sources */,
 				E79B6BCE1D7AFE780048E0DF /* Record.swift in Sources */,
 				E79B6BCF1D7AFE780048E0DF /* Result.swift in Sources */,
 				E734F8261D79CEA1001E013C /* SharedViewController.swift in Sources */,
+				E780F25A1D8599CE0084E86B /* Location+MapKit.swift in Sources */,
 				E7BC16001D7EF78600B02897 /* ReturnCoreDataStackOperation.swift in Sources */,
 				E797F2F01D7C2D4100CB5EE2 /* PersistencyRepositoryImplementation.swift in Sources */,
+				E756AC061D81E49A0077375D /* ModifyEventViewController.swift in Sources */,
 				E7BC15FA1D7ED69900B02897 /* NSFetchRequest+CoreDataModelable.swift in Sources */,
+				E756AC0D1D81E9DB0077375D /* TextViewCell.swift in Sources */,
 				E7C3D2561D817869007F5146 /* EnsureSubscriptionOperation.swift in Sources */,
+				E76570441D84844400304D3E /* ModifyEventOperation.swift in Sources */,
 				E7BC16021D7F02D900B02897 /* EntitySectionChange.swift in Sources */,
+				E780F2561D8556FC0084E86B /* LocationPickerViewController.swift in Sources */,
+				E796409B1D86AF9600C9F9DC /* KeyboardManager.swift in Sources */,
 				E79B6BC41D7AFE780048E0DF /* CKQuery+Record.swift in Sources */,
 				E756AC041D81AFE40077375D /* FetchRecordOperation.swift in Sources */,
+				E756AC151D81FA8A0077375D /* BooleanCell.swift in Sources */,
+				E765703A1D82E6ED00304D3E /* UIViewController + SegueHandlerType.swift in Sources */,
 				E7C3D2491D803FBF007F5146 /* DeleteEventsOperation.swift in Sources */,
 				E7C3D25E1D818AF8007F5146 /* NSPredicate.swift in Sources */,
+				E76570421D8481DC00304D3E /* ModifyRecordsOperation.swift in Sources */,
 				E7C3D23F1D800970007F5146 /* UIColor.swift in Sources */,
 				E79B6BB51D7AFE4A0048E0DF /* EventRepositoryImplementation.swift in Sources */,
 				E7BC15FC1D7EDD2E00B02897 /* PersistentRecord.swift in Sources */,
@@ -604,6 +706,7 @@
 				E7E5FA371D79EFAE00B6FF1D /* CloudOperation.swift in Sources */,
 				E79B6BCD1D7AFE780048E0DF /* PresenterFactory.swift in Sources */,
 				E79B6BCA1D7AFE780048E0DF /* EventViewController.swift in Sources */,
+				E780F2581D8599850084E86B /* Location.swift in Sources */,
 				E7BC160A1D7F5C8900B02897 /* EventTableViewCell.swift in Sources */,
 				E7C3D24C1D8041FE007F5146 /* ApplicationPresenter.swift in Sources */,
 				E79B6BC71D7AFE780048E0DF /* Event.swift in Sources */,
@@ -614,16 +717,21 @@
 				E7C3D2581D817CFD007F5146 /* NSUserDefault + Subscription.swift in Sources */,
 				E79B6BC91D7AFE780048E0DF /* EventPresenterImplementation.swift in Sources */,
 				E7C3D2541D816E6B007F5146 /* SubscriptionsRepository.swift in Sources */,
+				E756AC0B1D81E8DB0077375D /* RawRepresentable.swift in Sources */,
+				E756AC111D81F8DA0077375D /* TextFieldCell.swift in Sources */,
 				E79B6BCB1D7AFE780048E0DF /* Int+Bool.swift in Sources */,
 				E7C3D24E1D804244007F5146 /* ApplicationPresenterImplementation.swift in Sources */,
 				E7E5FA3B1D79F08000B6FF1D /* EventRepository.swift in Sources */,
 				E797F2F81D7C3D3E00CB5EE2 /* EntityChange.swift in Sources */,
+				E756AC091D81E6730077375D /* ModifyEventRow.swift in Sources */,
 				E7FB89401D7B3DDE00FEFD1B /* LoadCoreDataStackOperation.swift in Sources */,
 				E7C3D2451D802022007F5146 /* NavigationControllerWithWhiteStatusBar.swift in Sources */,
 				E79B6BC51D7AFE780048E0DF /* Entity.swift in Sources */,
 				E7BC16061D7F434A00B02897 /* CircleView.swift in Sources */,
 				E7C3D2471D803174007F5146 /* SequenceType + Record.swift in Sources */,
 				E7FB89361D7B211700FEFD1B /* Model.xcdatamodeld in Sources */,
+				E76570381D82D28400304D3E /* DatePickerViewController.swift in Sources */,
+				E76570341D82BFDF00304D3E /* ColorCell.swift in Sources */,
 				E79B6BCC1D7AFE780048E0DF /* Operation+Completion.swift in Sources */,
 				E7BC15F61D7ED67E00B02897 /* RecordMapper.swift in Sources */,
 				E7C3D2431D80120E007F5146 /* UITableViewCell + ReusableCell.swift in Sources */,

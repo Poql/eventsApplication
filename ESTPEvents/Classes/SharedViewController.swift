@@ -9,5 +9,8 @@
 import UIKit
 
 class SharedViewController: UIViewController {
+    var presenterFactory: PresenterFactory {
+        return AppDelegate.shared.presenterFactory
+    }
 }
 

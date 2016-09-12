@@ -41,7 +41,7 @@ class EventPresenterImplementation<R: EventRepository, PR: PersistencyRepository
     
     private func setResultsController(with context: NSManagedObjectContext) {
         let request = NSFetchRequest(entity: PersistentEvent.self)
-        request.sortDescriptors = [NSSortDescriptor(key: "eventDescription", ascending: true)]
+        request.sortDescriptors = [NSSortDescriptor(key: "eventDate", ascending: true), NSSortDescriptor(key: "eventDescription", ascending: true)]
         resultsController = FetchedResultsController<PersistentEvent>(fetchRequest: request, managedObjectContext: context, sectionNameKeyPath: "sectionIdentifier")
         resultsController?.setDelegate(self)
     }
@@ -73,6 +73,19 @@ class EventPresenterImplementation<R: EventRepository, PR: PersistencyRepository
     func queryAllEvents() {
         queryPersistedEvents()
         queryRemoteEvents()
+    }
+
+    func modifyEvent(event: Event) {
+        let operation = eventRepository.modifyEventOperation(event: event)
+        let persistentOperation = persistencyRepository.persistEventsOperation()
+        operation.addCompletionBlockOnMainQueue {
+            guard let resultingEvent = operation.resultingEvent else { return }
+            persistentOperation.events = [resultingEvent]
+        }
+        (persistentOperation as Operation).addDependency(operation)
+        let groupOperation = GroupOperation(operations: operation, persistentOperation)
+        groupOperation.addObserver(NetworkObserver())
+        operationQueue.addOperation(groupOperation)
     }
     
     func numberOfEventSections() -> Int {

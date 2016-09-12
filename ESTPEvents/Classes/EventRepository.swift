@@ -14,8 +14,16 @@ protocol QueryEventsOperationPrototype: class {
     var completionHandler: ((result: Result<[Event], ApplicationError>) -> Void)? { get set }
 }
 
+protocol ModifyEventOperationPrototype {
+    var event: Event? { get set }
+    var resultingEvent: Event? { get }
+}
+
 protocol EventRepository {
     associatedtype QueryEventsOperation: Operation, QueryEventsOperationPrototype
+    associatedtype ModifyEventOperation: Operation, ModifyEventOperationPrototype
     
     func queryEventsOperation() -> QueryEventsOperation
+
+    func modifyEventOperation(event event: Event) -> ModifyEventOperation
 }

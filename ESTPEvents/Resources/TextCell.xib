@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" id="DoK-OV-NbL" customClass="TextCell" customModule="ESTPEvents" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="DoK-OV-NbL" id="ODf-gB-lwt">
+                <rect key="frame" x="0.0" y="0.0" width="287" height="43.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <stackView opaque="NO" contentMode="scaleToFill" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="GeY-8i-7Ut">
+                        <rect key="frame" x="16" y="8" width="263" height="28"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EBe-Ku-W8j">
+                                <rect key="frame" x="0.0" y="0.0" width="220" height="28"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="750" verticalHuggingPriority="251" horizontalCompressionResistancePriority="250" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o12-nt-gP9">
+                                <rect key="frame" x="226" y="0.0" width="38" height="28"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                    </stackView>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="trailing" secondItem="GeY-8i-7Ut" secondAttribute="trailing" constant="8" id="C1Q-jE-MhJ"/>
+                    <constraint firstAttribute="bottom" secondItem="GeY-8i-7Ut" secondAttribute="bottom" constant="8" id="O2k-4W-MLM"/>
+                    <constraint firstItem="GeY-8i-7Ut" firstAttribute="leading" secondItem="ODf-gB-lwt" secondAttribute="leading" constant="16" id="TUB-C1-wJ7"/>
+                    <constraint firstItem="GeY-8i-7Ut" firstAttribute="top" secondItem="ODf-gB-lwt" secondAttribute="top" constant="8" id="V2s-pg-ELY"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="label" destination="EBe-Ku-W8j" id="U0C-Jd-6QG"/>
+                <outlet property="valueLabel" destination="o12-nt-gP9" id="rCy-R5-cs2"/>
+            </connections>
+            <point key="canvasLocation" x="215" y="263"/>
+        </tableViewCell>
+    </objects>
+</document>
