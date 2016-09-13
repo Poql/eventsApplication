@@ -18,8 +18,8 @@ class PersistentEvent: PersistentRecord {
     
     var location: Location? {
         set {
-            locationTitle = location?.title ?? ""
-            locationSubtitle = location?.subtitle ?? ""
+            locationTitle = newValue?.title ?? ""
+            locationSubtitle = newValue?.subtitle ?? ""
         }
         get {
             guard !locationTitle.isEmpty && !locationSubtitle.isEmpty else { return nil }
