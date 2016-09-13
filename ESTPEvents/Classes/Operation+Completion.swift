@@ -17,4 +17,11 @@ extension Operation {
             }
         }
     }
+
+    func addWillFinishBlock(block: () -> Void) {
+        let observer = BlockObserver(willFinish: { _,_ in
+            block()
+        })
+        addObserver(observer)
+    }
 }
