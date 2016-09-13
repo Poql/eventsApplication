@@ -43,6 +43,7 @@
 		E79640A91D86FF7100C9F9DC /* EventPreviewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E79640A81D86FF7100C9F9DC /* EventPreviewCell.xib */; };
 		E79640AB1D870B3C00C9F9DC /* String+Capitalization.swift in Sources */ = {isa = PBXBuildFile; fileRef = E79640AA1D870B3C00C9F9DC /* String+Capitalization.swift */; };
 		E79640B31D87E39200C9F9DC /* FetchUserOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E79640B21D87E39200C9F9DC /* FetchUserOperation.swift */; };
+		E79640B51D87E4C600C9F9DC /* AuthenticatedOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E79640B41D87E4C600C9F9DC /* AuthenticatedOperation.swift */; };
 		E79640B71D87E94200C9F9DC /* Admin.swift in Sources */ = {isa = PBXBuildFile; fileRef = E79640B61D87E94200C9F9DC /* Admin.swift */; };
 		E79640B91D880B0100C9F9DC /* EventDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E79640B81D880B0100C9F9DC /* EventDetailViewController.swift */; };
 		E797F2EF1D7C2D4100CB5EE2 /* PersistencyRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = E797F2ED1D7C2D4100CB5EE2 /* PersistencyRepository.swift */; };
@@ -137,6 +138,7 @@
 		E79640A81D86FF7100C9F9DC /* EventPreviewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = EventPreviewCell.xib; path = Resources/EventPreviewCell.xib; sourceTree = "<group>"; };
 		E79640AA1D870B3C00C9F9DC /* String+Capitalization.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "String+Capitalization.swift"; path = "Classes/String+Capitalization.swift"; sourceTree = "<group>"; };
 		E79640B21D87E39200C9F9DC /* FetchUserOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FetchUserOperation.swift; path = Classes/FetchUserOperation.swift; sourceTree = "<group>"; };
+		E79640B41D87E4C600C9F9DC /* AuthenticatedOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AuthenticatedOperation.swift; path = Classes/AuthenticatedOperation.swift; sourceTree = "<group>"; };
 		E79640B61D87E94200C9F9DC /* Admin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Admin.swift; path = Classes/Admin.swift; sourceTree = "<group>"; };
 		E79640B81D880B0100C9F9DC /* EventDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EventDetailViewController.swift; path = Classes/EventDetailViewController.swift; sourceTree = "<group>"; };
 		E797F2ED1D7C2D4100CB5EE2 /* PersistencyRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PersistencyRepository.swift; path = Classes/PersistencyRepository.swift; sourceTree = "<group>"; };
@@ -410,6 +412,14 @@
 			name = Operations;
 			sourceTree = "<group>";
 		};
+		E79640AF1D87E1EB00C9F9DC /* Condition */ = {
+			isa = PBXGroup;
+			children = (
+				E79640B41D87E4C600C9F9DC /* AuthenticatedOperation.swift */,
+			);
+			name = Condition;
+			sourceTree = "<group>";
+		};
 		E797F2EC1D7C2D3000CB5EE2 /* Persistency */ = {
 			isa = PBXGroup;
 			children = (
@@ -491,6 +501,7 @@
 			isa = PBXGroup;
 			children = (
 				E79640AE1D87E1E100C9F9DC /* Operations */,
+				E79640AF1D87E1EB00C9F9DC /* Condition */,
 			);
 			name = Shared;
 			sourceTree = "<group>";
@@ -758,6 +769,7 @@
 				E7C3D23F1D800970007F5146 /* UIColor.swift in Sources */,
 				E79B6BB51D7AFE4A0048E0DF /* EventRepositoryImplementation.swift in Sources */,
 				E7BC15FC1D7EDD2E00B02897 /* PersistentRecord.swift in Sources */,
+				E79640B51D87E4C600C9F9DC /* AuthenticatedOperation.swift in Sources */,
 				E7C3D25A1D818405007F5146 /* Error+CloudKit.swift in Sources */,
 				E7C3D25C1D8186A6007F5146 /* SubscriptionRepositoryImplementation.swift in Sources */,
 				E7E5FA371D79EFAE00B6FF1D /* CloudOperation.swift in Sources */,
