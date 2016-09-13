@@ -50,13 +50,8 @@ class EventPresenterImplementation<R: EventRepository, PR: PersistencyRepository
         let operation = eventRepository.queryEventsOperation()
         let persistOperation = persistencyRepository.persistEventsOperation()
         (persistOperation as Operation).addDependency(operation)
-        operation.completionHandler = { result in
-            switch result {
-            case .error:
-                self.client?.presenterDidChangeState(.error(ApplicationError.generic))
-            case let .value(events):
-                persistOperation.events = events
-            }
+        operation.addWillFinishBlock {
+            persistOperation.events = operation.events
         }
         let group = GroupOperation(operations: [persistOperation, operation])
         group.addObserver(NetworkObserver())
