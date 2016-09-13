@@ -14,12 +14,22 @@ class QueryOperation: CloudOperation {
     private var queryOperation: CKQueryOperation
     
     private(set) var fetchedRecords: [CKRecord] = []
+
+    var query: CKQuery? {
+        get {
+            return queryOperation.query
+        }
+        set {
+            queryOperation.query = newValue
+        }
+    }
     
     // MARK: - Init
     
-    init(query: CKQuery, database: CKDatabase = CKContainer.defaultContainer().publicCloudDatabase) {
-        self.queryOperation = CKQueryOperation(query: query)
+    init(query: CKQuery?, database: CKDatabase = CKContainer.defaultContainer().publicCloudDatabase) {
+        self.queryOperation = CKQueryOperation()
         super.init(database: database)
+        self.query = query
     }
     
     // MARK: - Execution
