@@ -123,6 +123,7 @@
                                             <outlet property="readView" destination="KLO-6D-Osu" id="GSr-HZ-iFr"/>
                                             <outlet property="stateLabel" destination="hc7-rx-yrI" id="jM2-B9-w7r"/>
                                             <outlet property="titleLabel" destination="UWb-Aa-PV4" id="rOa-7C-wRH"/>
+                                            <segue destination="RnZ-Tx-lrL" kind="show" identifier="EventDetailViewController" id="nNe-Dl-lnY"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -373,4 +374,7 @@
             <point key="canvasLocation" x="1492" y="-327"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="cwG-G0-3Sj"/>
+    </inferredMetricsTieBreakers>
 </document>
