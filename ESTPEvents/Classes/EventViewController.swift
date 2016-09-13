@@ -16,6 +16,7 @@ class EventViewController: SharedViewController, EventPresenterClient, UITableVi
     
     enum SegueIdentifier: String {
         case addEvent = "ModifyEventViewController"
+        case eventDetail = "EventDetailViewController"
     }
 
     @IBOutlet var tableView: UITableView! {
@@ -47,6 +48,13 @@ class EventViewController: SharedViewController, EventPresenterClient, UITableVi
                 let navigationController = segue.destinationViewController as?  UINavigationController,
                 let controller = navigationController.topViewController as? ModifyEventViewController else { return }
             controller.event = Event()
+            controller.delegate = self
+        case .eventDetail:
+            guard
+                let selectedIndexPath = tableView.indexPathForSelectedRow,
+                let controller = segue.destinationViewController as? EventDetailViewController
+            else { return }
+            controller.event = eventPresenter.event(atIndex: selectedIndexPath)
             controller.delegate = self
         }
     }
@@ -102,6 +110,14 @@ class EventViewController: SharedViewController, EventPresenterClient, UITableVi
     private func setupController() {
         title = String(key: "event_title")
         automaticallyAdjustsScrollViewInsets = false
+    }
+
+    // MARK: - UITableViewDelegate
+
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        dispatch_async(dispatch_get_main_queue()) {
+            self.tableView.deselectRowAtIndexPath(indexPath, animated: true)
+        }
     }
     
     // MARK: - UITableViewDataSource

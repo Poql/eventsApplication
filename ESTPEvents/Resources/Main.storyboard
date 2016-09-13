@@ -123,6 +123,7 @@
                                             <outlet property="readView" destination="KLO-6D-Osu" id="GSr-HZ-iFr"/>
                                             <outlet property="stateLabel" destination="hc7-rx-yrI" id="jM2-B9-w7r"/>
                                             <outlet property="titleLabel" destination="UWb-Aa-PV4" id="rOa-7C-wRH"/>
+                                            <segue destination="RnZ-Tx-lrL" kind="show" identifier="EventDetailViewController" id="nNe-Dl-lnY"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -150,6 +151,44 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1187" y="337"/>
+        </scene>
+        <!--Event Detail View Controller-->
+        <scene sceneID="fag-ny-eka">
+            <objects>
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="RnZ-Tx-lrL" customClass="EventDetailViewController" customModule="ESTPEvents" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="1Hn-a5-qyL"/>
+                        <viewControllerLayoutGuide type="bottom" id="TKb-Cr-Xjm"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="RhD-dT-8Sn">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="kzU-5d-Whh">
+                                <rect key="frame" x="0.0" y="64" width="600" height="536"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="RnZ-Tx-lrL" id="VQt-be-MHu"/>
+                                    <outlet property="delegate" destination="RnZ-Tx-lrL" id="rFV-ZB-YTy"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="kzU-5d-Whh" secondAttribute="trailing" id="8Ke-lf-lvF"/>
+                            <constraint firstItem="TKb-Cr-Xjm" firstAttribute="top" secondItem="kzU-5d-Whh" secondAttribute="bottom" id="G5Q-CV-f9I"/>
+                            <constraint firstItem="kzU-5d-Whh" firstAttribute="leading" secondItem="RhD-dT-8Sn" secondAttribute="leading" id="jmx-c4-ntA"/>
+                            <constraint firstItem="kzU-5d-Whh" firstAttribute="top" secondItem="1Hn-a5-qyL" secondAttribute="bottom" id="mIW-sw-M5g"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="tableView" destination="kzU-5d-Whh" id="dUv-sZ-LYY"/>
+                        <segue destination="3QM-OY-xd4" kind="showDetail" identifier="ModifyEventViewController" id="cwG-G0-3Sj"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1d1-aa-xXv" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1890" y="436"/>
         </scene>
         <!--Location Picker View Controller-->
         <scene sceneID="ii6-02-Bt5">
@@ -335,4 +374,7 @@
             <point key="canvasLocation" x="1492" y="-327"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="cwG-G0-3Sj"/>
+    </inferredMetricsTieBreakers>
 </document>
