@@ -42,6 +42,7 @@
 		E79640A71D86FF5F00C9F9DC /* EventPreviewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E79640A61D86FF5F00C9F9DC /* EventPreviewCell.swift */; };
 		E79640A91D86FF7100C9F9DC /* EventPreviewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E79640A81D86FF7100C9F9DC /* EventPreviewCell.xib */; };
 		E79640AB1D870B3C00C9F9DC /* String+Capitalization.swift in Sources */ = {isa = PBXBuildFile; fileRef = E79640AA1D870B3C00C9F9DC /* String+Capitalization.swift */; };
+		E79640B71D87E94200C9F9DC /* Admin.swift in Sources */ = {isa = PBXBuildFile; fileRef = E79640B61D87E94200C9F9DC /* Admin.swift */; };
 		E79640B91D880B0100C9F9DC /* EventDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E79640B81D880B0100C9F9DC /* EventDetailViewController.swift */; };
 		E797F2EF1D7C2D4100CB5EE2 /* PersistencyRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = E797F2ED1D7C2D4100CB5EE2 /* PersistencyRepository.swift */; };
 		E797F2F01D7C2D4100CB5EE2 /* PersistencyRepositoryImplementation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E797F2EE1D7C2D4100CB5EE2 /* PersistencyRepositoryImplementation.swift */; };
@@ -134,6 +135,7 @@
 		E79640A61D86FF5F00C9F9DC /* EventPreviewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EventPreviewCell.swift; path = Classes/EventPreviewCell.swift; sourceTree = "<group>"; };
 		E79640A81D86FF7100C9F9DC /* EventPreviewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = EventPreviewCell.xib; path = Resources/EventPreviewCell.xib; sourceTree = "<group>"; };
 		E79640AA1D870B3C00C9F9DC /* String+Capitalization.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "String+Capitalization.swift"; path = "Classes/String+Capitalization.swift"; sourceTree = "<group>"; };
+		E79640B61D87E94200C9F9DC /* Admin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Admin.swift; path = Classes/Admin.swift; sourceTree = "<group>"; };
 		E79640B81D880B0100C9F9DC /* EventDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EventDetailViewController.swift; path = Classes/EventDetailViewController.swift; sourceTree = "<group>"; };
 		E797F2ED1D7C2D4100CB5EE2 /* PersistencyRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PersistencyRepository.swift; path = Classes/PersistencyRepository.swift; sourceTree = "<group>"; };
 		E797F2EE1D7C2D4100CB5EE2 /* PersistencyRepositoryImplementation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PersistencyRepositoryImplementation.swift; path = Classes/PersistencyRepositoryImplementation.swift; sourceTree = "<group>"; };
@@ -506,6 +508,7 @@
 				E79B6BB91D7AFE780048E0DF /* Entity.swift */,
 				E79B6BC21D7AFE780048E0DF /* Record.swift */,
 				E79B6BBB1D7AFE780048E0DF /* Event.swift */,
+				E79640B61D87E94200C9F9DC /* Admin.swift */,
 			);
 			name = Entity;
 			sourceTree = "<group>";
@@ -735,6 +738,7 @@
 				E756AC0D1D81E9DB0077375D /* TextViewCell.swift in Sources */,
 				E7C3D2561D817869007F5146 /* EnsureSubscriptionOperation.swift in Sources */,
 				E76570441D84844400304D3E /* ModifyEventOperation.swift in Sources */,
+				E79640B71D87E94200C9F9DC /* Admin.swift in Sources */,
 				E7BC16021D7F02D900B02897 /* EntitySectionChange.swift in Sources */,
 				E780F2561D8556FC0084E86B /* LocationPickerViewController.swift in Sources */,
 				E79640A51D86FC8F00C9F9DC /* EventDetailRow.swift in Sources */,
