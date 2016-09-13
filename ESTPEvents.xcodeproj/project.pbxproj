@@ -38,6 +38,7 @@
 		E796409B1D86AF9600C9F9DC /* KeyboardManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E796409A1D86AF9600C9F9DC /* KeyboardManager.swift */; };
 		E79640A11D86D88C00C9F9DC /* LocationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E79640A01D86D88C00C9F9DC /* LocationCell.swift */; };
 		E79640A31D86D8AF00C9F9DC /* LocationCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E79640A21D86D8AF00C9F9DC /* LocationCell.xib */; };
+		E79640A51D86FC8F00C9F9DC /* EventDetailRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = E79640A41D86FC8F00C9F9DC /* EventDetailRow.swift */; };
 		E79640A71D86FF5F00C9F9DC /* EventPreviewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E79640A61D86FF5F00C9F9DC /* EventPreviewCell.swift */; };
 		E79640A91D86FF7100C9F9DC /* EventPreviewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E79640A81D86FF7100C9F9DC /* EventPreviewCell.xib */; };
 		E79640AB1D870B3C00C9F9DC /* String+Capitalization.swift in Sources */ = {isa = PBXBuildFile; fileRef = E79640AA1D870B3C00C9F9DC /* String+Capitalization.swift */; };
@@ -128,6 +129,7 @@
 		E796409A1D86AF9600C9F9DC /* KeyboardManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = KeyboardManager.swift; path = Classes/KeyboardManager.swift; sourceTree = "<group>"; };
 		E79640A01D86D88C00C9F9DC /* LocationCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LocationCell.swift; path = Classes/LocationCell.swift; sourceTree = "<group>"; };
 		E79640A21D86D8AF00C9F9DC /* LocationCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = LocationCell.xib; path = Resources/LocationCell.xib; sourceTree = "<group>"; };
+		E79640A41D86FC8F00C9F9DC /* EventDetailRow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EventDetailRow.swift; path = Classes/EventDetailRow.swift; sourceTree = "<group>"; };
 		E79640A61D86FF5F00C9F9DC /* EventPreviewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EventPreviewCell.swift; path = Classes/EventPreviewCell.swift; sourceTree = "<group>"; };
 		E79640A81D86FF7100C9F9DC /* EventPreviewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = EventPreviewCell.xib; path = Resources/EventPreviewCell.xib; sourceTree = "<group>"; };
 		E79640AA1D870B3C00C9F9DC /* String+Capitalization.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "String+Capitalization.swift"; path = "Classes/String+Capitalization.swift"; sourceTree = "<group>"; };
@@ -251,6 +253,7 @@
 				E796409A1D86AF9600C9F9DC /* KeyboardManager.swift */,
 				E7EE0E991D7AC2740089B38C /* Event */,
 				E765703B1D84007A00304D3E /* Modify Event */,
+				E796409C1D86D82E00C9F9DC /* Event Detail */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -369,6 +372,14 @@
 				E76570331D82BFDF00304D3E /* ColorCell.swift */,
 			);
 			name = "Modify Event";
+			sourceTree = "<group>";
+		};
+		E796409C1D86D82E00C9F9DC /* Event Detail */ = {
+			isa = PBXGroup;
+			children = (
+				E79640A41D86FC8F00C9F9DC /* EventDetailRow.swift */,
+			);
+			name = "Event Detail";
 			sourceTree = "<group>";
 		};
 		E796409F1D86D87800C9F9DC /* Event Detail */ = {
@@ -715,6 +726,7 @@
 				E76570441D84844400304D3E /* ModifyEventOperation.swift in Sources */,
 				E7BC16021D7F02D900B02897 /* EntitySectionChange.swift in Sources */,
 				E780F2561D8556FC0084E86B /* LocationPickerViewController.swift in Sources */,
+				E79640A51D86FC8F00C9F9DC /* EventDetailRow.swift in Sources */,
 				E796409B1D86AF9600C9F9DC /* KeyboardManager.swift in Sources */,
 				E79B6BC41D7AFE780048E0DF /* CKQuery+Record.swift in Sources */,
 				E756AC041D81AFE40077375D /* FetchRecordOperation.swift in Sources */,
