@@ -73,7 +73,7 @@ class EventPresenterImplementation<R: EventRepository, PR: PersistencyRepository
     func modifyEvent(event: Event) {
         let operation = eventRepository.modifyEventOperation(event: event)
         let persistentOperation = persistencyRepository.persistEventsOperation()
-        operation.addCompletionBlockOnMainQueue {
+        operation.addWillFinishBlock {
             guard let resultingEvent = operation.resultingEvent else { return }
             persistentOperation.events = [resultingEvent]
         }
