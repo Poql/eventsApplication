@@ -16,4 +16,5 @@ enum OperationError: ErrorType {
     case noContext
     case subscriptionAlreadySubmitted
     case notAuthenticated
+    case adminNotAccepted
 }
