@@ -42,6 +42,7 @@
 		E79640A71D86FF5F00C9F9DC /* EventPreviewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E79640A61D86FF5F00C9F9DC /* EventPreviewCell.swift */; };
 		E79640A91D86FF7100C9F9DC /* EventPreviewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E79640A81D86FF7100C9F9DC /* EventPreviewCell.xib */; };
 		E79640AB1D870B3C00C9F9DC /* String+Capitalization.swift in Sources */ = {isa = PBXBuildFile; fileRef = E79640AA1D870B3C00C9F9DC /* String+Capitalization.swift */; };
+		E79640B11D87E2B500C9F9DC /* FetchAdminOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E79640B01D87E2B500C9F9DC /* FetchAdminOperation.swift */; };
 		E79640B31D87E39200C9F9DC /* FetchUserOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E79640B21D87E39200C9F9DC /* FetchUserOperation.swift */; };
 		E79640B51D87E4C600C9F9DC /* AuthenticatedOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E79640B41D87E4C600C9F9DC /* AuthenticatedOperation.swift */; };
 		E79640B71D87E94200C9F9DC /* Admin.swift in Sources */ = {isa = PBXBuildFile; fileRef = E79640B61D87E94200C9F9DC /* Admin.swift */; };
@@ -138,6 +139,7 @@
 		E79640A61D86FF5F00C9F9DC /* EventPreviewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EventPreviewCell.swift; path = Classes/EventPreviewCell.swift; sourceTree = "<group>"; };
 		E79640A81D86FF7100C9F9DC /* EventPreviewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = EventPreviewCell.xib; path = Resources/EventPreviewCell.xib; sourceTree = "<group>"; };
 		E79640AA1D870B3C00C9F9DC /* String+Capitalization.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "String+Capitalization.swift"; path = "Classes/String+Capitalization.swift"; sourceTree = "<group>"; };
+		E79640B01D87E2B500C9F9DC /* FetchAdminOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FetchAdminOperation.swift; path = Classes/FetchAdminOperation.swift; sourceTree = "<group>"; };
 		E79640B21D87E39200C9F9DC /* FetchUserOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FetchUserOperation.swift; path = Classes/FetchUserOperation.swift; sourceTree = "<group>"; };
 		E79640B41D87E4C600C9F9DC /* AuthenticatedOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AuthenticatedOperation.swift; path = Classes/AuthenticatedOperation.swift; sourceTree = "<group>"; };
 		E79640B61D87E94200C9F9DC /* Admin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Admin.swift; path = Classes/Admin.swift; sourceTree = "<group>"; };
@@ -410,6 +412,7 @@
 				E756ABFF1D81A0A90077375D /* FetchRecordsOperation.swift */,
 				E76570411D8481DC00304D3E /* ModifyRecordsOperation.swift */,
 				E79640B21D87E39200C9F9DC /* FetchUserOperation.swift */,
+				E79640B01D87E2B500C9F9DC /* FetchAdminOperation.swift */,
 			);
 			name = Operations;
 			sourceTree = "<group>";
@@ -806,6 +809,7 @@
 				E79640A71D86FF5F00C9F9DC /* EventPreviewCell.swift in Sources */,
 				E7C3D2471D803174007F5146 /* SequenceType + Record.swift in Sources */,
 				E7FB89361D7B211700FEFD1B /* Model.xcdatamodeld in Sources */,
+				E79640B11D87E2B500C9F9DC /* FetchAdminOperation.swift in Sources */,
 				E76570381D82D28400304D3E /* DatePickerViewController.swift in Sources */,
 				E76570341D82BFDF00304D3E /* ColorCell.swift in Sources */,
 				E79B6BCC1D7AFE780048E0DF /* Operation+Completion.swift in Sources */,
