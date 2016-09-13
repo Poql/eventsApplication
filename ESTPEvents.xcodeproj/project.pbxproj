@@ -394,6 +394,17 @@
 			name = "Event Detail";
 			sourceTree = "<group>";
 		};
+		E79640AE1D87E1E100C9F9DC /* Operations */ = {
+			isa = PBXGroup;
+			children = (
+				E7E5FA361D79EFAE00B6FF1D /* CloudOperation.swift */,
+				E7E5FA381D79F01900B6FF1D /* QueryOperation.swift */,
+				E756ABFF1D81A0A90077375D /* FetchRecordsOperation.swift */,
+				E76570411D8481DC00304D3E /* ModifyRecordsOperation.swift */,
+			);
+			name = Operations;
+			sourceTree = "<group>";
+		};
 		E797F2EC1D7C2D3000CB5EE2 /* Persistency */ = {
 			isa = PBXGroup;
 			children = (
@@ -474,10 +485,7 @@
 		E7E5FA2D1D79ED4100B6FF1D /* Shared */ = {
 			isa = PBXGroup;
 			children = (
-				E7E5FA361D79EFAE00B6FF1D /* CloudOperation.swift */,
-				E7E5FA381D79F01900B6FF1D /* QueryOperation.swift */,
-				E756ABFF1D81A0A90077375D /* FetchRecordsOperation.swift */,
-				E76570411D8481DC00304D3E /* ModifyRecordsOperation.swift */,
+				E79640AE1D87E1E100C9F9DC /* Operations */,
 			);
 			name = Shared;
 			sourceTree = "<group>";
