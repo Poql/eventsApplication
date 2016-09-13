@@ -19,6 +19,7 @@ class TextCell: UITableViewCell {
 
     func configure(withLabel text: String?, value: String?) {
         label.text = text
+        valueLabel.hidden = value?.isEmpty ?? true 
         valueLabel.text = value
     }
 }
