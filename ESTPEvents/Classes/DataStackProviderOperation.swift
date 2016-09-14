@@ -34,11 +34,13 @@ class DataStackProviderOperation: GroupOperation {
 
     func addDataStackOperation<O: Operation where O: DataStackOperation>(operation: O) {
         (operation as Operation).addDependency(loaderBlock)
+        (operation as Operation).addDependency(self.dynamicType.loadDataStackOperation)
         addOperation(operation)
     }
 
     override func operationQueue(queue: OperationQueue, willFinishOperation operation: NSOperation, withErrors errors: [ErrorType]) {
-        guard operation == loaderBlock else { return }
+        let loadDataStackOperation = self.dynamicType.loadDataStackOperation
+        guard operation == loaderBlock && loadDataStackOperation.finished || operation == loadDataStackOperation else { return }
         dataStackOperations.forEach { $0.injectDataStack(self.dynamicType.loadDataStackOperation.stack) }
     }
 }
