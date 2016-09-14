@@ -10,11 +10,11 @@ import Foundation
 import Operations
 
 class PersistencyRepositoryImplementation: PersistencyRepository {
-    func persistEventsOperation() -> PersistEventsOperation {
-        return PersistEventsOperation()
+    func persistEventsOperation() -> StackedPersistEventsOperation {
+        return StackedPersistEventsOperation()
     }
     
-    func deleteEventsOperation(limitDate limitDate: NSDate) -> DeleteEventsOperation {
-        return DeleteEventsOperation(limitDate: limitDate)
+    func deleteEventsOperation(limitDate limitDate: NSDate) -> StackedDeleteEventsOperation {
+        return StackedDeleteEventsOperation(limitDate: limitDate)
     }
 }

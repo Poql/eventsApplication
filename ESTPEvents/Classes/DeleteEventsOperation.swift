@@ -9,7 +9,25 @@
 import Operations
 import BNRCoreDataStack
 
-class DeleteEventsOperation: ContextOperation, DeleteEventsOperationPrototype {
+class StackedDeleteEventsOperation: DataStackProviderOperation, DeleteEventsOperationPrototype {
+    private let deleteEventsOperation: DeleteEventsOperation
+    var limitDate: NSDate {
+        set {
+            deleteEventsOperation.limitDate = newValue
+        }
+        get {
+            return deleteEventsOperation.limitDate
+        }
+    }
+
+    init(limitDate: NSDate) {
+        deleteEventsOperation = DeleteEventsOperation(limitDate: limitDate)
+        super.init()
+        addDataStackOperation(deleteEventsOperation)
+    }
+}
+
+class DeleteEventsOperation: ContextOperation {
     var limitDate: NSDate
 
     init(limitDate: NSDate) {

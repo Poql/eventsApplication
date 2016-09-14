@@ -11,7 +11,6 @@ import Operations
 
 protocol PersistEventsOperationPrototype: class {
     var events: [Event] { get set }
-    var completionHandler: (([Event]) -> Void)? { get set }
 }
 
 protocol DeleteEventsOperationPrototype: class {

@@ -10,9 +10,25 @@ import Foundation
 import BNRCoreDataStack
 import Operations
 
-class PersistEventsOperation: ContextOperation, PersistEventsOperationPrototype {
+class StackedPersistEventsOperation: DataStackProviderOperation, PersistEventsOperationPrototype {
+    private let persistEventsOperation = PersistEventsOperation()
+    var events: [Event] {
+        set {
+            persistEventsOperation.events = newValue
+        }
+        get {
+            return persistEventsOperation.events
+        }
+    }
+
+    override init() {
+        super.init()
+        addDataStackOperation(persistEventsOperation)
+    }
+}
+
+class PersistEventsOperation: ContextOperation {
     var events: [Event] = []
-    var completionHandler: (([Event]) -> Void)?
 
     override func execute() {
         performBlock { context in
