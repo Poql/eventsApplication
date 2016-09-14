@@ -30,13 +30,14 @@ class EventPresenterImplementation<R: EventRepository, PR: PersistencyRepository
     // MARK: - Private
 
     private func loadResultsController() {
-        let operation = ReturnCoreDataStackOperation()
-        operation.addCompletionBlockOnMainQueue {
-            guard let mainContext = operation.stack?.mainQueueContext else { return }
+        let operation = DataStackBlockOperation { stack in
+            guard let mainContext = stack?.mainQueueContext else { return }
             self.setResultsController(with: mainContext)
             self.queryPersistedEvents()
         }
-        operationQueue.addOperation(operation)
+        let provider = DataStackProviderOperation()
+        provider.addDataStackOperation(operation)
+        operationQueue.addOperation(provider)
     }
     
     private func setResultsController(with context: NSManagedObjectContext) {
