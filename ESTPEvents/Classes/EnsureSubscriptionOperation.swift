@@ -29,7 +29,7 @@ class NewSubscriptionCondition: Condition {
 }
 
 class EnsureSubscriptionOperation<R: Record>: ModifySubscriptionsOperation {
-    private let subscription: CKSubscription
+    var subscription: CKSubscription
 
     let key: String
 
