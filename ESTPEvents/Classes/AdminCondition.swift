@@ -17,17 +17,14 @@ class AdminCondition: Condition {
     override init() {
         super.init()
         addCondition(AuthorizedFor(Capability.Cloud (permissions: [CKApplicationPermissions.UserDiscoverability])))
+        let authProvider = AuthenticationProviderOperation()
         let operation = FetchAdminOperation()
+        authProvider.addAuthenticatedOperation(operation)
         operation.addWillFinishBlock { self.admin = operation.resultingAdmin }
-        addDependency(operation)
+        addDependency(authProvider)
     }
 
     override func evaluate(operation: Operation, completion: CompletionBlockType) {
-        guard let operation = operation as? AuthenticatedOperation else {
-            completion(.Ignored)
-            return
-        }
-        operation.userID = admin?.userReference?.recordID
         completion((admin?.accepted ?? false) ? .Satisfied : .Failed(OperationError.adminNotAccepted))
     }
 }
