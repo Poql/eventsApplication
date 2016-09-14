@@ -11,17 +11,7 @@ import Operations
 import CloudKit
 
 class FetchAdminOperation: QueryOperation, AuthenticatedOperation {
-    var userID: CKRecordID? {
-        didSet {
-            if let userID = userID {
-                let reference = CKReference(recordID: userID, action: .None)
-                let predicate = NSPredicate(format: "userReference == %@", reference)
-                query = CKQuery(record: Admin.self, predicate: predicate)
-                return
-            }
-            query = nil
-        }
-    }
+    var userID: CKRecordID?
 
     var resultingAdmin: Admin? {
         if let record = fetchedRecords.first {
@@ -33,5 +23,16 @@ class FetchAdminOperation: QueryOperation, AuthenticatedOperation {
     init() {
         super.init(query: nil)
         addCondition(AuthenticatedCondition())
+    }
+
+    func injectUserID(userID: CKRecordID?) {
+        self.userID = userID
+        if let userID = userID {
+            let reference = CKReference(recordID: userID, action: .None)
+            let predicate = NSPredicate(format: "userReference == %@", reference)
+            query = CKQuery(record: Admin.self, predicate: predicate)
+            return
+        }
+        query = nil
     }
 }
