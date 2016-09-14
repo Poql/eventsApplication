@@ -54,6 +54,17 @@ class EventDetailViewController: SharedViewController, UITableViewDelegate, UITa
         }
     }
 
+    // MARK: - UserStatusUpdateListener
+
+    override func userStatusDidUpdate(userStatus: UserStatus) {
+        switch userStatus {
+        case .follower:
+            navigationItem.rightBarButtonItem = nil
+        case .admin:
+            navigationItem.rightBarButtonItem = editButton
+        }
+    }
+
     // MARK: - Actions
 
     @objc private func editAction(sender: UIBarButtonItem) {
@@ -103,7 +114,6 @@ class EventDetailViewController: SharedViewController, UITableViewDelegate, UITa
 
     private func setupController() {
         title = String(key: "event_detail_title")
-        navigationItem.rightBarButtonItem = editButton
     }
 
     private func searchEventLocation() {
