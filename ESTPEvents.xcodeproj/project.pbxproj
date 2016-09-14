@@ -96,6 +96,7 @@
 		E7C3D25A1D818405007F5146 /* Error+CloudKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C3D2591D818405007F5146 /* Error+CloudKit.swift */; };
 		E7C3D25C1D8186A6007F5146 /* SubscriptionRepositoryImplementation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C3D25B1D8186A6007F5146 /* SubscriptionRepositoryImplementation.swift */; };
 		E7C3D25E1D818AF8007F5146 /* NSPredicate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C3D25D1D818AF8007F5146 /* NSPredicate.swift */; };
+		E7D4720F1D894228006362C2 /* AuthenticationProviderOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7D4720E1D894228006362C2 /* AuthenticationProviderOperation.swift */; };
 		E7E5FA371D79EFAE00B6FF1D /* CloudOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7E5FA361D79EFAE00B6FF1D /* CloudOperation.swift */; };
 		E7E5FA391D79F01900B6FF1D /* QueryOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7E5FA381D79F01900B6FF1D /* QueryOperation.swift */; };
 		E7E5FA3B1D79F08000B6FF1D /* EventRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7E5FA3A1D79F08000B6FF1D /* EventRepository.swift */; };
@@ -199,6 +200,7 @@
 		E7C3D2591D818405007F5146 /* Error+CloudKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Error+CloudKit.swift"; path = "Classes/Error+CloudKit.swift"; sourceTree = "<group>"; };
 		E7C3D25B1D8186A6007F5146 /* SubscriptionRepositoryImplementation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SubscriptionRepositoryImplementation.swift; path = Classes/SubscriptionRepositoryImplementation.swift; sourceTree = "<group>"; };
 		E7C3D25D1D818AF8007F5146 /* NSPredicate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NSPredicate.swift; path = Classes/NSPredicate.swift; sourceTree = "<group>"; };
+		E7D4720E1D894228006362C2 /* AuthenticationProviderOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AuthenticationProviderOperation.swift; path = Classes/AuthenticationProviderOperation.swift; sourceTree = "<group>"; };
 		E7E5FA361D79EFAE00B6FF1D /* CloudOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CloudOperation.swift; path = Classes/CloudOperation.swift; sourceTree = "<group>"; };
 		E7E5FA381D79F01900B6FF1D /* QueryOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = QueryOperation.swift; path = Classes/QueryOperation.swift; sourceTree = "<group>"; };
 		E7E5FA3A1D79F08000B6FF1D /* EventRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EventRepository.swift; path = Classes/EventRepository.swift; sourceTree = "<group>"; };
@@ -428,6 +430,7 @@
 				E76570411D8481DC00304D3E /* ModifyRecordsOperation.swift */,
 				E79640B21D87E39200C9F9DC /* FetchUserOperation.swift */,
 				E79640B01D87E2B500C9F9DC /* FetchAdminOperation.swift */,
+				E7D4720E1D894228006362C2 /* AuthenticationProviderOperation.swift */,
 			);
 			name = Operations;
 			sourceTree = "<group>";
@@ -813,6 +816,7 @@
 				E79B6BB51D7AFE4A0048E0DF /* EventRepositoryImplementation.swift in Sources */,
 				E7BC15FC1D7EDD2E00B02897 /* PersistentRecord.swift in Sources */,
 				E79640B51D87E4C600C9F9DC /* AuthenticatedOperation.swift in Sources */,
+				E7D4720F1D894228006362C2 /* AuthenticationProviderOperation.swift in Sources */,
 				E7C3D25A1D818405007F5146 /* Error+CloudKit.swift in Sources */,
 				E7C3D25C1D8186A6007F5146 /* SubscriptionRepositoryImplementation.swift in Sources */,
 				E7E5FA371D79EFAE00B6FF1D /* CloudOperation.swift in Sources */,
