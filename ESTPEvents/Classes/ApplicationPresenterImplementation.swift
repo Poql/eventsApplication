@@ -47,7 +47,7 @@ class ApplicationPresenterImplementation<PR: PersistencyRepository, SR: Subscrip
         let operation = subscriptionRepository.fetchRecordOperation(recordName: recordID.recordName)
         let persistEventOperation = persistencyRepository.persistEventsOperation()
         (persistEventOperation as Operation).addDependency(operation)
-        operation.addCompletionBlockOnMainQueue {
+        operation.addWillFinishBlock {
             if let event = operation.resultingRecord as? Event {
                 persistEventOperation.events = [event]
             }
