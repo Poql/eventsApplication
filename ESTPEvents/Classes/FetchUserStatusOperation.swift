@@ -9,8 +9,13 @@
 import Operations
 import CloudKit
 
-class FetchUserStatusOperation: FetchAdminOperation, FetchUserStatusOperationPrototype {
+class FetchUserStatusOperation: AuthenticationProviderOperation, FetchUserStatusOperationPrototype {
+    private let fetchAdminOperation = FetchAdminOperation()
     var userStatus: UserStatus {
-        return UserStatus(admin: resultingAdmin)
+        return UserStatus(admin: fetchAdminOperation.resultingAdmin)
+    }
+    override init() {
+        super.init()
+        addAuthenticatedOperation(fetchAdminOperation)
     }
 }
