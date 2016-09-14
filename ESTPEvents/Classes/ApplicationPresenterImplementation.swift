@@ -37,7 +37,9 @@ class ApplicationPresenterImplementation<PR: PersistencyRepository, SR: Subscrip
     func ensureNotifications() {
         let eventOperation = subscriptionRepository.ensureEventsSubscriptionOperation()
         let userEventOperation = subscriptionRepository.ensureNotifyUserOnEventCreationOperation()
-        operationQueue.addOperations(eventOperation, userEventOperation)
+        let adminUpdateOperation = subscriptionRepository.ensureAdminModificationSubscriptionOperation()
+        let userAdminUpdateOperation = subscriptionRepository.ensureNotifyUserOnAdminValidationOperation()
+        operationQueue.addOperations(eventOperation, userEventOperation, adminUpdateOperation, userAdminUpdateOperation)
     }
     
     func handleRemoteNotification(withUserInfo userInfo: [NSObject : AnyObject], completionHandler: (UIBackgroundFetchResult) -> Void) {
