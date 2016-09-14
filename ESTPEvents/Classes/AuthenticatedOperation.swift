@@ -12,4 +12,11 @@ import CloudKit
 
 protocol AuthenticatedOperation: class {
     var userID: CKRecordID? { get set }
+    func injectUserID(userID: CKRecordID?)
+}
+
+extension AuthenticatedOperation {
+    func injectUserID(userID: CKRecordID?) {
+        self.userID = userID
+    }
 }
