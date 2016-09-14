@@ -51,7 +51,7 @@ class SubscriptionRepositoryImplementation: SubscriptionRepository {
         let predicate = NSPredicate(format: "notify == %i", 1)
         let key = Constant.notifyUserOnEventCreationSubscriptionKey
         let notificationInfo = CKNotificationInfo()
-        notificationInfo.alertLocalizationKey = "%1$@ : %2$@"
+        notificationInfo.alertLocalizationKey = "notification_new_event_received_message"
         notificationInfo.alertLocalizationArgs = ["creator", "title"]
         let operation = EnsureSubscriptionOperation<Event>(predicate: predicate, key: key, options: options)
         operation.notificationInfo = notificationInfo
