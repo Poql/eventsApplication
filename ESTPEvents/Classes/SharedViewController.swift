@@ -8,9 +8,20 @@
 
 import UIKit
 
-class SharedViewController: UIViewController {
+class SharedViewController: UIViewController, UserStatusUpdateListener {
     var presenterFactory: PresenterFactory {
         return AppDelegate.shared.presenterFactory
+    }
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        userStatusDidUpdate(presenterFactory.applicationPresenter.currentUserStatus)
+        presenterFactory.applicationPresenter.registerForUserStatusUpdate(self)
+    }
+
+    // MARK: - UserStatusUpdateListener
+
+    func userStatusDidUpdate(userStatus: UserStatus) {
     }
 }
 
