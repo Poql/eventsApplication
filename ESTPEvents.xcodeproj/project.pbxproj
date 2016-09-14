@@ -50,6 +50,7 @@
 		E79640B91D880B0100C9F9DC /* EventDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E79640B81D880B0100C9F9DC /* EventDetailViewController.swift */; };
 		E79640BB1D881FBD00C9F9DC /* AuthenticatedCondition.swift in Sources */ = {isa = PBXBuildFile; fileRef = E79640BA1D881FBD00C9F9DC /* AuthenticatedCondition.swift */; };
 		E79640BE1D882F7900C9F9DC /* UserStatusRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = E79640BD1D882F7900C9F9DC /* UserStatusRepository.swift */; };
+		E79640C11D88304100C9F9DC /* FetchUserStatusOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E79640C01D88304100C9F9DC /* FetchUserStatusOperation.swift */; };
 		E79640CB1D88449700C9F9DC /* WeakList.swift in Sources */ = {isa = PBXBuildFile; fileRef = E79640CA1D88449700C9F9DC /* WeakList.swift */; };
 		E797F2EF1D7C2D4100CB5EE2 /* PersistencyRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = E797F2ED1D7C2D4100CB5EE2 /* PersistencyRepository.swift */; };
 		E797F2F01D7C2D4100CB5EE2 /* PersistencyRepositoryImplementation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E797F2EE1D7C2D4100CB5EE2 /* PersistencyRepositoryImplementation.swift */; };
@@ -150,6 +151,7 @@
 		E79640B81D880B0100C9F9DC /* EventDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EventDetailViewController.swift; path = Classes/EventDetailViewController.swift; sourceTree = "<group>"; };
 		E79640BA1D881FBD00C9F9DC /* AuthenticatedCondition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AuthenticatedCondition.swift; path = Classes/AuthenticatedCondition.swift; sourceTree = "<group>"; };
 		E79640BD1D882F7900C9F9DC /* UserStatusRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserStatusRepository.swift; path = Classes/UserStatusRepository.swift; sourceTree = "<group>"; };
+		E79640C01D88304100C9F9DC /* FetchUserStatusOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FetchUserStatusOperation.swift; path = Classes/FetchUserStatusOperation.swift; sourceTree = "<group>"; };
 		E79640CA1D88449700C9F9DC /* WeakList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WeakList.swift; path = Classes/WeakList.swift; sourceTree = "<group>"; };
 		E797F2ED1D7C2D4100CB5EE2 /* PersistencyRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PersistencyRepository.swift; path = Classes/PersistencyRepository.swift; sourceTree = "<group>"; };
 		E797F2EE1D7C2D4100CB5EE2 /* PersistencyRepositoryImplementation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PersistencyRepositoryImplementation.swift; path = Classes/PersistencyRepositoryImplementation.swift; sourceTree = "<group>"; };
@@ -438,9 +440,18 @@
 		E79640BC1D882F6400C9F9DC /* User Status */ = {
 			isa = PBXGroup;
 			children = (
+				E79640BF1D88303200C9F9DC /* Operations */,
 				E79640BD1D882F7900C9F9DC /* UserStatusRepository.swift */,
 			);
 			name = "User Status";
+			sourceTree = "<group>";
+		};
+		E79640BF1D88303200C9F9DC /* Operations */ = {
+			isa = PBXGroup;
+			children = (
+				E79640C01D88304100C9F9DC /* FetchUserStatusOperation.swift */,
+			);
+			name = Operations;
 			sourceTree = "<group>";
 		};
 		E797F2EC1D7C2D3000CB5EE2 /* Persistency */ = {
@@ -757,6 +768,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E79640C11D88304100C9F9DC /* FetchUserStatusOperation.swift in Sources */,
 				E79B6BB71D7AFE570048E0DF /* QueryEventsOperation.swift in Sources */,
 				E797F2F31D7C2D8100CB5EE2 /* PersistEventsOperation.swift in Sources */,
 				E7BC15F81D7ED68A00B02897 /* PresenterState.swift in Sources */,
