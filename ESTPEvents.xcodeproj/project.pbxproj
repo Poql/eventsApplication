@@ -42,7 +42,18 @@
 		E79640A71D86FF5F00C9F9DC /* EventPreviewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E79640A61D86FF5F00C9F9DC /* EventPreviewCell.swift */; };
 		E79640A91D86FF7100C9F9DC /* EventPreviewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E79640A81D86FF7100C9F9DC /* EventPreviewCell.xib */; };
 		E79640AB1D870B3C00C9F9DC /* String+Capitalization.swift in Sources */ = {isa = PBXBuildFile; fileRef = E79640AA1D870B3C00C9F9DC /* String+Capitalization.swift */; };
+		E79640AD1D87E1DE00C9F9DC /* AdminCondition.swift in Sources */ = {isa = PBXBuildFile; fileRef = E79640AC1D87E1DE00C9F9DC /* AdminCondition.swift */; };
+		E79640B11D87E2B500C9F9DC /* FetchAdminOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E79640B01D87E2B500C9F9DC /* FetchAdminOperation.swift */; };
+		E79640B31D87E39200C9F9DC /* FetchUserOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E79640B21D87E39200C9F9DC /* FetchUserOperation.swift */; };
+		E79640B51D87E4C600C9F9DC /* AuthenticatedOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E79640B41D87E4C600C9F9DC /* AuthenticatedOperation.swift */; };
+		E79640B71D87E94200C9F9DC /* Admin.swift in Sources */ = {isa = PBXBuildFile; fileRef = E79640B61D87E94200C9F9DC /* Admin.swift */; };
 		E79640B91D880B0100C9F9DC /* EventDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E79640B81D880B0100C9F9DC /* EventDetailViewController.swift */; };
+		E79640BB1D881FBD00C9F9DC /* AuthenticatedCondition.swift in Sources */ = {isa = PBXBuildFile; fileRef = E79640BA1D881FBD00C9F9DC /* AuthenticatedCondition.swift */; };
+		E79640BE1D882F7900C9F9DC /* UserStatusRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = E79640BD1D882F7900C9F9DC /* UserStatusRepository.swift */; };
+		E79640C11D88304100C9F9DC /* FetchUserStatusOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E79640C01D88304100C9F9DC /* FetchUserStatusOperation.swift */; };
+		E79640C31D88329200C9F9DC /* UserStatusRepositoryImplementation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E79640C21D88329200C9F9DC /* UserStatusRepositoryImplementation.swift */; };
+		E79640C51D88343700C9F9DC /* NSUserDefault + UserStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = E79640C41D88343700C9F9DC /* NSUserDefault + UserStatus.swift */; };
+		E79640CB1D88449700C9F9DC /* WeakList.swift in Sources */ = {isa = PBXBuildFile; fileRef = E79640CA1D88449700C9F9DC /* WeakList.swift */; };
 		E797F2EF1D7C2D4100CB5EE2 /* PersistencyRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = E797F2ED1D7C2D4100CB5EE2 /* PersistencyRepository.swift */; };
 		E797F2F01D7C2D4100CB5EE2 /* PersistencyRepositoryImplementation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E797F2EE1D7C2D4100CB5EE2 /* PersistencyRepositoryImplementation.swift */; };
 		E797F2F31D7C2D8100CB5EE2 /* PersistEventsOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E797F2F21D7C2D8100CB5EE2 /* PersistEventsOperation.swift */; };
@@ -134,7 +145,18 @@
 		E79640A61D86FF5F00C9F9DC /* EventPreviewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EventPreviewCell.swift; path = Classes/EventPreviewCell.swift; sourceTree = "<group>"; };
 		E79640A81D86FF7100C9F9DC /* EventPreviewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = EventPreviewCell.xib; path = Resources/EventPreviewCell.xib; sourceTree = "<group>"; };
 		E79640AA1D870B3C00C9F9DC /* String+Capitalization.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "String+Capitalization.swift"; path = "Classes/String+Capitalization.swift"; sourceTree = "<group>"; };
+		E79640AC1D87E1DE00C9F9DC /* AdminCondition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AdminCondition.swift; path = Classes/AdminCondition.swift; sourceTree = "<group>"; };
+		E79640B01D87E2B500C9F9DC /* FetchAdminOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FetchAdminOperation.swift; path = Classes/FetchAdminOperation.swift; sourceTree = "<group>"; };
+		E79640B21D87E39200C9F9DC /* FetchUserOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FetchUserOperation.swift; path = Classes/FetchUserOperation.swift; sourceTree = "<group>"; };
+		E79640B41D87E4C600C9F9DC /* AuthenticatedOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AuthenticatedOperation.swift; path = Classes/AuthenticatedOperation.swift; sourceTree = "<group>"; };
+		E79640B61D87E94200C9F9DC /* Admin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Admin.swift; path = Classes/Admin.swift; sourceTree = "<group>"; };
 		E79640B81D880B0100C9F9DC /* EventDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EventDetailViewController.swift; path = Classes/EventDetailViewController.swift; sourceTree = "<group>"; };
+		E79640BA1D881FBD00C9F9DC /* AuthenticatedCondition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AuthenticatedCondition.swift; path = Classes/AuthenticatedCondition.swift; sourceTree = "<group>"; };
+		E79640BD1D882F7900C9F9DC /* UserStatusRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserStatusRepository.swift; path = Classes/UserStatusRepository.swift; sourceTree = "<group>"; };
+		E79640C01D88304100C9F9DC /* FetchUserStatusOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FetchUserStatusOperation.swift; path = Classes/FetchUserStatusOperation.swift; sourceTree = "<group>"; };
+		E79640C21D88329200C9F9DC /* UserStatusRepositoryImplementation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserStatusRepositoryImplementation.swift; path = Classes/UserStatusRepositoryImplementation.swift; sourceTree = "<group>"; };
+		E79640C41D88343700C9F9DC /* NSUserDefault + UserStatus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "NSUserDefault + UserStatus.swift"; path = "Classes/NSUserDefault + UserStatus.swift"; sourceTree = "<group>"; };
+		E79640CA1D88449700C9F9DC /* WeakList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WeakList.swift; path = Classes/WeakList.swift; sourceTree = "<group>"; };
 		E797F2ED1D7C2D4100CB5EE2 /* PersistencyRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PersistencyRepository.swift; path = Classes/PersistencyRepository.swift; sourceTree = "<group>"; };
 		E797F2EE1D7C2D4100CB5EE2 /* PersistencyRepositoryImplementation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PersistencyRepositoryImplementation.swift; path = Classes/PersistencyRepositoryImplementation.swift; sourceTree = "<group>"; };
 		E797F2F21D7C2D8100CB5EE2 /* PersistEventsOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PersistEventsOperation.swift; path = Classes/PersistEventsOperation.swift; sourceTree = "<group>"; };
@@ -285,6 +307,7 @@
 				E7C3D2511D816E3C007F5146 /* Subscriptions */,
 				E797F2EC1D7C2D3000CB5EE2 /* Persistency */,
 				E7E5FA321D79EE0100B6FF1D /* Event */,
+				E79640BC1D882F6400C9F9DC /* User Status */,
 			);
 			name = Repository;
 			sourceTree = "<group>";
@@ -292,6 +315,7 @@
 		E734F81F1D79CDFA001E013C /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				E79640CA1D88449700C9F9DC /* WeakList.swift */,
 				E79B6BBA1D7AFE780048E0DF /* Error.swift */,
 				E79B6BC31D7AFE780048E0DF /* Result.swift */,
 				E780F2571D8599850084E86B /* Location.swift */,
@@ -344,6 +368,7 @@
 				E756AC0A1D81E8DB0077375D /* RawRepresentable.swift */,
 				E780F2591D8599CE0084E86B /* Location+MapKit.swift */,
 				E79640AA1D870B3C00C9F9DC /* String+Capitalization.swift */,
+				E79640C41D88343700C9F9DC /* NSUserDefault + UserStatus.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -392,6 +417,47 @@
 				E79640A61D86FF5F00C9F9DC /* EventPreviewCell.swift */,
 			);
 			name = "Event Detail";
+			sourceTree = "<group>";
+		};
+		E79640AE1D87E1E100C9F9DC /* Operations */ = {
+			isa = PBXGroup;
+			children = (
+				E7E5FA361D79EFAE00B6FF1D /* CloudOperation.swift */,
+				E7E5FA381D79F01900B6FF1D /* QueryOperation.swift */,
+				E756ABFF1D81A0A90077375D /* FetchRecordsOperation.swift */,
+				E76570411D8481DC00304D3E /* ModifyRecordsOperation.swift */,
+				E79640B21D87E39200C9F9DC /* FetchUserOperation.swift */,
+				E79640B01D87E2B500C9F9DC /* FetchAdminOperation.swift */,
+			);
+			name = Operations;
+			sourceTree = "<group>";
+		};
+		E79640AF1D87E1EB00C9F9DC /* Condition */ = {
+			isa = PBXGroup;
+			children = (
+				E79640AC1D87E1DE00C9F9DC /* AdminCondition.swift */,
+				E79640B41D87E4C600C9F9DC /* AuthenticatedOperation.swift */,
+				E79640BA1D881FBD00C9F9DC /* AuthenticatedCondition.swift */,
+			);
+			name = Condition;
+			sourceTree = "<group>";
+		};
+		E79640BC1D882F6400C9F9DC /* User Status */ = {
+			isa = PBXGroup;
+			children = (
+				E79640BF1D88303200C9F9DC /* Operations */,
+				E79640BD1D882F7900C9F9DC /* UserStatusRepository.swift */,
+				E79640C21D88329200C9F9DC /* UserStatusRepositoryImplementation.swift */,
+			);
+			name = "User Status";
+			sourceTree = "<group>";
+		};
+		E79640BF1D88303200C9F9DC /* Operations */ = {
+			isa = PBXGroup;
+			children = (
+				E79640C01D88304100C9F9DC /* FetchUserStatusOperation.swift */,
+			);
+			name = Operations;
 			sourceTree = "<group>";
 		};
 		E797F2EC1D7C2D3000CB5EE2 /* Persistency */ = {
@@ -474,10 +540,8 @@
 		E7E5FA2D1D79ED4100B6FF1D /* Shared */ = {
 			isa = PBXGroup;
 			children = (
-				E7E5FA361D79EFAE00B6FF1D /* CloudOperation.swift */,
-				E7E5FA381D79F01900B6FF1D /* QueryOperation.swift */,
-				E756ABFF1D81A0A90077375D /* FetchRecordsOperation.swift */,
-				E76570411D8481DC00304D3E /* ModifyRecordsOperation.swift */,
+				E79640AE1D87E1E100C9F9DC /* Operations */,
+				E79640AF1D87E1EB00C9F9DC /* Condition */,
 			);
 			name = Shared;
 			sourceTree = "<group>";
@@ -498,6 +562,7 @@
 				E79B6BB91D7AFE780048E0DF /* Entity.swift */,
 				E79B6BC21D7AFE780048E0DF /* Record.swift */,
 				E79B6BBB1D7AFE780048E0DF /* Event.swift */,
+				E79640B61D87E94200C9F9DC /* Admin.swift */,
 			);
 			name = Entity;
 			sourceTree = "<group>";
@@ -709,6 +774,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E79640C11D88304100C9F9DC /* FetchUserStatusOperation.swift in Sources */,
 				E79B6BB71D7AFE570048E0DF /* QueryEventsOperation.swift in Sources */,
 				E797F2F31D7C2D8100CB5EE2 /* PersistEventsOperation.swift in Sources */,
 				E7BC15F81D7ED68A00B02897 /* PresenterState.swift in Sources */,
@@ -718,6 +784,7 @@
 				E7FB89421D7B402100FEFD1B /* ContextOperation.swift in Sources */,
 				E79B6BCE1D7AFE780048E0DF /* Record.swift in Sources */,
 				E79B6BCF1D7AFE780048E0DF /* Result.swift in Sources */,
+				E79640B31D87E39200C9F9DC /* FetchUserOperation.swift in Sources */,
 				E734F8261D79CEA1001E013C /* SharedViewController.swift in Sources */,
 				E780F25A1D8599CE0084E86B /* Location+MapKit.swift in Sources */,
 				E7BC16001D7EF78600B02897 /* ReturnCoreDataStackOperation.swift in Sources */,
@@ -727,6 +794,7 @@
 				E756AC0D1D81E9DB0077375D /* TextViewCell.swift in Sources */,
 				E7C3D2561D817869007F5146 /* EnsureSubscriptionOperation.swift in Sources */,
 				E76570441D84844400304D3E /* ModifyEventOperation.swift in Sources */,
+				E79640B71D87E94200C9F9DC /* Admin.swift in Sources */,
 				E7BC16021D7F02D900B02897 /* EntitySectionChange.swift in Sources */,
 				E780F2561D8556FC0084E86B /* LocationPickerViewController.swift in Sources */,
 				E79640A51D86FC8F00C9F9DC /* EventDetailRow.swift in Sources */,
@@ -737,11 +805,14 @@
 				E765703A1D82E6ED00304D3E /* UIViewController + SegueHandlerType.swift in Sources */,
 				E7C3D2491D803FBF007F5146 /* DeleteEventsOperation.swift in Sources */,
 				E79640AB1D870B3C00C9F9DC /* String+Capitalization.swift in Sources */,
+				E79640C51D88343700C9F9DC /* NSUserDefault + UserStatus.swift in Sources */,
 				E7C3D25E1D818AF8007F5146 /* NSPredicate.swift in Sources */,
 				E76570421D8481DC00304D3E /* ModifyRecordsOperation.swift in Sources */,
 				E7C3D23F1D800970007F5146 /* UIColor.swift in Sources */,
+				E79640C31D88329200C9F9DC /* UserStatusRepositoryImplementation.swift in Sources */,
 				E79B6BB51D7AFE4A0048E0DF /* EventRepositoryImplementation.swift in Sources */,
 				E7BC15FC1D7EDD2E00B02897 /* PersistentRecord.swift in Sources */,
+				E79640B51D87E4C600C9F9DC /* AuthenticatedOperation.swift in Sources */,
 				E7C3D25A1D818405007F5146 /* Error+CloudKit.swift in Sources */,
 				E7C3D25C1D8186A6007F5146 /* SubscriptionRepositoryImplementation.swift in Sources */,
 				E7E5FA371D79EFAE00B6FF1D /* CloudOperation.swift in Sources */,
@@ -766,6 +837,7 @@
 				E7E5FA3B1D79F08000B6FF1D /* EventRepository.swift in Sources */,
 				E797F2F81D7C3D3E00CB5EE2 /* EntityChange.swift in Sources */,
 				E756AC091D81E6730077375D /* ModifyEventRow.swift in Sources */,
+				E79640BB1D881FBD00C9F9DC /* AuthenticatedCondition.swift in Sources */,
 				E7FB89401D7B3DDE00FEFD1B /* LoadCoreDataStackOperation.swift in Sources */,
 				E7C3D2451D802022007F5146 /* NavigationControllerWithWhiteStatusBar.swift in Sources */,
 				E79640B91D880B0100C9F9DC /* EventDetailViewController.swift in Sources */,
@@ -774,12 +846,16 @@
 				E79640A71D86FF5F00C9F9DC /* EventPreviewCell.swift in Sources */,
 				E7C3D2471D803174007F5146 /* SequenceType + Record.swift in Sources */,
 				E7FB89361D7B211700FEFD1B /* Model.xcdatamodeld in Sources */,
+				E79640AD1D87E1DE00C9F9DC /* AdminCondition.swift in Sources */,
+				E79640B11D87E2B500C9F9DC /* FetchAdminOperation.swift in Sources */,
 				E76570381D82D28400304D3E /* DatePickerViewController.swift in Sources */,
+				E79640BE1D882F7900C9F9DC /* UserStatusRepository.swift in Sources */,
 				E76570341D82BFDF00304D3E /* ColorCell.swift in Sources */,
 				E79B6BCC1D7AFE780048E0DF /* Operation+Completion.swift in Sources */,
 				E7BC15F61D7ED67E00B02897 /* RecordMapper.swift in Sources */,
 				E7C3D2431D80120E007F5146 /* UITableViewCell + ReusableCell.swift in Sources */,
 				E79B6BC61D7AFE780048E0DF /* Error.swift in Sources */,
+				E79640CB1D88449700C9F9DC /* WeakList.swift in Sources */,
 				E734F8241D79CE95001E013C /* AppDelegate.swift in Sources */,
 				E7C3D2411D800DB2007F5146 /* String+Localization.swift in Sources */,
 			);

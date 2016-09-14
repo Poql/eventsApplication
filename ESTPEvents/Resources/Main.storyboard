@@ -138,19 +138,16 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="UQk-3G-cj4">
-                        <barButtonItem key="rightBarButtonItem" title="Item" systemItem="add" id="7Ri-WH-7Ol">
-                            <connections>
-                                <segue destination="3QM-OY-xd4" kind="presentation" identifier="ModifyEventViewController" id="jlF-FV-j2q"/>
-                            </connections>
-                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Item" systemItem="add" id="7Ri-WH-7Ol"/>
                     </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="JFP-RT-3Vp" id="Igc-qD-FzH"/>
+                        <segue destination="3QM-OY-xd4" kind="showDetail" identifier="ModifyEventViewController" id="mr2-aB-37K"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1187" y="337"/>
+            <point key="canvasLocation" x="1195" y="386"/>
         </scene>
         <!--Event Detail View Controller-->
         <scene sceneID="fag-ny-eka">
@@ -375,6 +372,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="cwG-G0-3Sj"/>
+        <segue reference="mr2-aB-37K"/>
     </inferredMetricsTieBreakers>
 </document>

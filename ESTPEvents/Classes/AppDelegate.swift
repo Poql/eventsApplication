@@ -30,6 +30,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         setupNotifications(in: application)
         setupNavigationAppearance()
         removeOldEvents()
+        checkUserStatus()
         return true
     }
     
@@ -38,6 +39,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     // MARK: - Private
+
+    private func checkUserStatus() {
+        applicationPresenter.checkUserStatus()
+    }
     
     private func setupNotifications(in application: UIApplication) {
         application.registerForRemoteNotifications()

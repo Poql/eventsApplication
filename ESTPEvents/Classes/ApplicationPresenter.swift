@@ -9,8 +9,16 @@
 import Foundation
 import UIKit
 
-protocol ApplicationPresenter {
+protocol UserStatusUpdateListener {
+    func userStatusDidUpdate(userStatus: UserStatus)
+}
+
+protocol ApplicationPresenter: class {
+    var currentUserStatus: UserStatus { get }
+
     func deleteEvents(beforeDate date: NSDate)
     func ensureNotifications()
     func handleRemoteNotification(withUserInfo userInfo: [NSObject : AnyObject], completionHandler: (UIBackgroundFetchResult) -> Void)
+    func checkUserStatus()
+    func registerForUserStatusUpdate(listener: UserStatusUpdateListener)
 }

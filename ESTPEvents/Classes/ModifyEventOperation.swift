@@ -9,7 +9,10 @@
 import Foundation
 import CloudKit
 
-class ModifyEventOperation: ModifyRecordsOperation, ModifyEventOperationPrototype {
+class ModifyEventOperation: ModifyRecordsOperation, ModifyEventOperationPrototype, AuthenticatedOperation {
+
+    var userID: CKRecordID?
+
     var event: Event? {
         set {
             if let event = newValue {
@@ -36,5 +39,6 @@ class ModifyEventOperation: ModifyRecordsOperation, ModifyEventOperationPrototyp
     init(event: Event) {
         super.init(recordsToSave: [event.record], recordIDsToDelete: nil, database: CKContainer.defaultContainer().publicCloudDatabase)
         savePolicy = .AllKeys
+        addCondition(AdminCondition())
     }
 }

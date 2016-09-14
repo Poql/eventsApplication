@@ -27,6 +27,10 @@ class EventViewController: SharedViewController, EventPresenterClient, UITableVi
             tableView.tableFooterView = UIView()
         }
     }
+
+    private lazy var addEventButton: UIBarButtonItem = {
+        return UIBarButtonItem(barButtonSystemItem: .Add, target: self, action: #selector(addEventAction(_:)))
+    }()
     
     private lazy var eventPresenter: EventPresenter = {
         self.presenterFactory.addClient(self as EventPresenterClient)
@@ -59,6 +63,23 @@ class EventViewController: SharedViewController, EventPresenterClient, UITableVi
         }
     }
     
+    // MARK: - Actions
+
+    @objc private func addEventAction(sender: UIBarButtonItem) {
+        performSegue(withIdentifier: .addEvent, sender: nil)
+    }
+
+    // MARK: - UserStatusUpdateListener
+
+    override func userStatusDidUpdate(userStatus: UserStatus) {
+        switch userStatus {
+        case .follower:
+            navigationItem.rightBarButtonItem = nil
+        case .admin:
+            navigationItem.rightBarButtonItem = addEventButton
+        }
+    }
+
     // MARK: - ModifyEventViewControllerDelegate
 
     func controller(controller: ModifyEventViewController, didModify event: Event) {
