@@ -10,14 +10,23 @@ import Foundation
 import Operations
 import CloudKit
 
-class ApplicationPresenterImplementation<PR: PersistencyRepository, SR: SubscriptionRepository>: ApplicationPresenter {
+class ApplicationPresenterImplementation<PR: PersistencyRepository, SR: SubscriptionRepository, USR: UserStatusRepository>: ApplicationPresenter {
     let operationQueue = OperationQueue()
+
     let persistencyRepository: PR
     let subscriptionRepository: SR
-    
-    init(persistencyRepository: PR, subscriptionRepository: SR) {
+    let userStatusRepository: USR
+
+    private var listeners = WeakList<UserStatusUpdateListener>()
+
+    var currentUserStatus: UserStatus {
+        return NSUserDefaults.standardUserDefaults().userStatus() ?? .follower
+    }
+
+    init(persistencyRepository: PR, subscriptionRepository: SR, userStatusRepository: USR) {
         self.persistencyRepository = persistencyRepository
         self.subscriptionRepository = subscriptionRepository
+        self.userStatusRepository = userStatusRepository
     }
 
     func deleteEvents(beforeDate date: NSDate) {
@@ -42,6 +51,11 @@ class ApplicationPresenterImplementation<PR: PersistencyRepository, SR: Subscrip
             if let event = operation.resultingRecord as? Event {
                 persistEventOperation.events = [event]
             }
+            else if let admin = operation.resultingRecord as? Admin {
+                dispatch_async(dispatch_get_main_queue()) {
+                    self.handleUserStatusFetch(UserStatus(admin: admin))
+                }
+            }
         }
         let group = GroupOperation(operations: operation, persistEventOperation)
         group.addCompletionBlockOnMainQueue {
@@ -52,5 +66,36 @@ class ApplicationPresenterImplementation<PR: PersistencyRepository, SR: Subscrip
             }
         }
         operationQueue.addOperations(operation, persistEventOperation)
+    }
+
+    func checkUserStatus() {
+        let operation = userStatusRepository.fetchUserStatusOperation()
+        operation.addCompletionBlockOnMainQueue {
+            guard operation.errors.isEmpty else { return }
+            self.handleUserStatusFetch(operation.userStatus)
+        }
+        operationQueue.addOperation(operation)
+    }
+
+    func registerForUserStatusUpdate(listener: UserStatusUpdateListener) {
+        listeners.insert(listener)
+    }
+
+    // MARK: - Private
+
+    private func handleUserStatusFetch(change: UserStatus) {
+        if let change = checkUserStatusChange(forNew: change) {
+            for listener in self.listeners {
+                listener.userStatusDidUpdate(change)
+            }
+        }
+    }
+
+    private func checkUserStatusChange(forNew userStatus: UserStatus) -> UserStatus? {
+        if let currentUserStatus = NSUserDefaults.standardUserDefaults().userStatus() where currentUserStatus == userStatus {
+            return nil
+        }
+        NSUserDefaults.standardUserDefaults().set(userStatus: userStatus)
+        return userStatus
     }
 }
