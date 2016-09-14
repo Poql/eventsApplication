@@ -15,15 +15,21 @@ protocol EnsureEventModificationSubscriptionOperationPrototype {
 protocol EnsureNotifyUserOnEventCreationOperationPrototype {
 }
 
+protocol EnsureAdminModificationSubscriptionOperationPrototype {
+}
+
 protocol FetchRecordOperationPrototype {
     var resultingRecord: Record? { get }
 }
 
 protocol SubscriptionRepository {
+    associatedtype EnsureAdminModificationSubscriptionOperation: Operation, EnsureAdminModificationSubscriptionOperationPrototype
     associatedtype EnsureEventModificationSubscriptionOperation: Operation, EnsureEventModificationSubscriptionOperationPrototype
     associatedtype EnsureNotifyUserOnEventCreationOperation: Operation, EnsureNotifyUserOnEventCreationOperationPrototype
     associatedtype FetchRecordOperation: Operation, FetchRecordOperationPrototype
 
+    func ensureAdminModificationSubscriptionOperation() -> EnsureAdminModificationSubscriptionOperation
+    
     func ensureEventsSubscriptionOperation() -> EnsureEventModificationSubscriptionOperation
     func ensureNotifyUserOnEventCreationOperation() -> EnsureNotifyUserOnEventCreationOperation
     func fetchRecordOperation(recordName recordName: String) -> FetchRecordOperation

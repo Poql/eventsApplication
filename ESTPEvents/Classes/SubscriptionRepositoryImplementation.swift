@@ -10,11 +10,20 @@ import Foundation
 import CloudKit
 
 private struct Constant {
+    static let adminModificationSubscriptionKey = "AdminModificationSubscriptionKey"
     static let eventModificationSubscriptionKey = "EventModificationSubscriptionKey"
     static let notifyUserOnEventCreationSubscriptionKey = "NotifyUserOnEventCreationSubscriptionKey"
 }
 
 class SubscriptionRepositoryImplementation: SubscriptionRepository {
+
+    func ensureAdminModificationSubscriptionOperation() -> AuthenticatedEnsureSubscriptionOperation<Admin> {
+        let key = Constant.adminModificationSubscriptionKey
+        let options: CKSubscriptionOptions = [.FiresOnRecordUpdate]
+        let operation = AuthenticatedEnsureSubscriptionOperation<Admin>(key: key, options: options)
+        operation.authenticatedPredicate = { return NSPredicate(format: "userReference == %@", CKReference(recordID: $0, action: .None)) }
+        return operation
+    }
     func ensureEventsSubscriptionOperation() -> EnsureSubscriptionOperation<Event> {
         let predicate = NSPredicate.alwaysTrue()
         let options: CKSubscriptionOptions = [.FiresOnRecordCreation, .FiresOnRecordUpdate]
@@ -38,6 +47,7 @@ class SubscriptionRepositoryImplementation: SubscriptionRepository {
     }
 }
 
+extension AuthenticatedEnsureSubscriptionOperation: EnsureAdminModificationSubscriptionOperationPrototype {}
 extension EnsureSubscriptionOperation: EnsureEventModificationSubscriptionOperationPrototype {}
 extension EnsureSubscriptionOperation: EnsureNotifyUserOnEventCreationOperationPrototype {}
 extension FetchRecordOperation: FetchRecordOperationPrototype {}
