@@ -9,9 +9,7 @@
 import Foundation
 import CloudKit
 
-class ModifyEventOperation: ModifyRecordsOperation, ModifyEventOperationPrototype, AuthenticatedOperation {
-
-    var userID: CKRecordID?
+class ModifyEventOperation: ModifyRecordsOperation, ModifyEventOperationPrototype {
 
     var event: Event? {
         set {
