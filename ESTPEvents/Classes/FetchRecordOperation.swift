@@ -15,6 +15,8 @@ class FetchRecordOperation: FetchRecordsOperation {
         switch record.recordType {
         case Event.name:
             return Event(record: record)
+        case Admin.name:
+            return Admin(record: record)
         default:
             return nil
         }
