@@ -4,9 +4,9 @@ platform :ios, '8.0'
 use_frameworks!
 
 target 'ESTPEvents' do
-    pod 'Operations'
-    pod 'Operations/Extension'
-    pod 'Operations/+CloudKit'
-    pod 'BNRCoreDataStack'
+	pod 'Operations', '~> 3.4.0'
+	pod 'Operations/+CloudKit', '~> 3.4.0'
+	pod 'Operations/Extension', '~> 3.4.0'
+	pod 'BNRCoreDataStack', :git => 'https://github.com/bignerdranch/CoreDataStack.git', :branch => 'rcedwards/swift_2.3'
 end
 
