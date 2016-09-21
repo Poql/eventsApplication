@@ -19,25 +19,29 @@ class EventPresenterImplementation<R: EventRepository, PR: PersistencyRepository
     
     private var resultsController: FetchedResultsController<PersistentEvent>?
 
+    private var resultsControllerIsEmpty: Bool {
+        return resultsController?.fetchedObjects?.isEmpty ?? true
+    }
+
     weak var client: EventPresenterClient?
     
     init(repository: R, persistencyRepository: PR) {
         self.eventRepository = repository
         self.persistencyRepository = persistencyRepository
-        loadResultsController()
     }
 
     // MARK: - Private
 
-    private func loadResultsController() {
+    private func queryPersistedEventsOperation() -> Operation {
         let operation = DataStackBlockOperation { stack in
             guard let mainContext = stack?.mainQueueContext else { return }
             self.setResultsController(with: mainContext)
             self.queryPersistedEvents()
         }
         let provider = DataStackProviderOperation()
+        provider.userIntent = .Initiated
         provider.addDataStackOperation(operation)
-        operationQueue.addOperation(provider)
+        return provider
     }
     
     private func setResultsController(with context: NSManagedObjectContext) {
@@ -47,7 +51,7 @@ class EventPresenterImplementation<R: EventRepository, PR: PersistencyRepository
         resultsController?.setDelegate(self)
     }
 
-    private func queryRemoteEvents() {
+    private func queryRemoteEventsOperation() -> Operation {
         let operation = eventRepository.queryEventsOperation()
         let persistOperation = persistencyRepository.persistEventsOperation()
         (persistOperation as Operation).addDependency(operation)
@@ -56,7 +60,23 @@ class EventPresenterImplementation<R: EventRepository, PR: PersistencyRepository
         }
         let group = GroupOperation(operations: [persistOperation, operation])
         group.addObserver(NetworkObserver())
-        operationQueue.addOperation(group)
+        group.addObserver(queryRemoteEventsObserver())
+        return group
+    }
+
+    private func queryRemoteEventsObserver() -> BlockObserverOnMainQueue {
+        return BlockObserverOnMainQueue(willExecute: { _ in
+            self.client?.presenterWantsToShowLoading()
+            }, didFinish: { _, errors in
+                self.client?.presenterWantsToDismissLoading()
+                if let err = ErrorMapper.applicationError(fromOperationErrors: errors) {
+                    self.client?.presenterWantsToShowError(err)
+                }
+                if self.resultsControllerIsEmpty {
+                    self.client?.presenterIsEmpty()
+                }
+        })
+    }
     }
 
     private func queryPersistedEvents() {
@@ -67,8 +87,10 @@ class EventPresenterImplementation<R: EventRepository, PR: PersistencyRepository
     // MARK: - EventPresenter
 
     func queryAllEvents() {
-        queryPersistedEvents()
-        queryRemoteEvents()
+        let persistedEventsOperation = queryPersistedEventsOperation()
+        let remoteEventsOperation = queryRemoteEventsOperation()
+        remoteEventsOperation.addDependency(persistedEventsOperation)
+        operationQueue.addOperations(persistedEventsOperation, remoteEventsOperation)
     }
 
     func modifyEvent(event: Event) {
@@ -134,9 +156,16 @@ class EventPresenterImplementation<R: EventRepository, PR: PersistencyRepository
 
     func fetchedResultsControllerDidChangeContent(controller: FetchedResultsController<PersistentEvent>) {
         client?.presenterEventsDidChange()
+        if resultsControllerIsEmpty {
+            client?.presenterIsEmpty()
+        }
     }
 
     func fetchedResultsControllerDidPerformFetch(controller: FetchedResultsController<PersistentEvent>) {
-        client?.presenterDidChangeState(.value)
+        if resultsControllerIsEmpty {
+            client?.presenterIsEmpty()
+            return
+        }
+        client?.presenterHasValues()
     }
 }

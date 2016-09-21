@@ -23,7 +23,12 @@ protocol EventPresenter {
 }
 
 protocol EventPresenterClient: class {
-    func presenterDidChangeState(state: PresenterState<ApplicationError>)
+    func presenterWantsToShowError(error: ApplicationError)
+    func presenterWantsToShowLoading()
+    func presenterWantsToDismissLoading()
+    func presenterIsEmpty()
+    func presenterHasValues()
+
     func presenterEventsWillChange()
     func presenterEventDidChange(eventChange: EntityChange)
     func presenterEventSectionDidChange(eventSectionChange: EntitySectionChange)

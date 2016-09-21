@@ -113,6 +113,7 @@ class EventViewController: SharedViewController, EventPresenterClient, UITableVi
 
     func presenterEventsWillChange() {
         tableView.beginUpdates()
+        emptyView.hidden = true
     }
     
     func presenterEventSectionDidChange(eventSectionChange: EntitySectionChange) {
@@ -123,8 +124,22 @@ class EventViewController: SharedViewController, EventPresenterClient, UITableVi
             tableView.deleteSections(NSIndexSet(index: section), withRowAnimation: .Fade)
         }
     }
+
+    func presenterWantsToShowLoading() {
+    }
     
-    func presenterDidChangeState(state: PresenterState<ApplicationError>) {
+    func presenterWantsToDismissLoading() {
+    }
+
+    func presenterIsEmpty() {
+        emptyView.hidden = false
+    }
+
+    func presenterWantsToShowError(error: ApplicationError) {
+        showAlert(withMessage: error.description, title: String(key: "error_title"))
+    }
+
+    func presenterHasValues() {
         tableView.reloadData()
     }
     
