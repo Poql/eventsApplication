@@ -8,6 +8,11 @@
 
 import Foundation
 
+protocol EventModificationListener: class {
+    func presenterDidBeginToModify(event event: Event)
+    func presenterDidModify(event event: Event)
+}
+
 protocol EventPresenter {
     func queryAllEvents()
     func modifyEvent(event: Event)
