@@ -32,6 +32,7 @@
 		E76570401D8405A600304D3E /* TextViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E765703E1D8405A600304D3E /* TextViewCell.xib */; };
 		E76570421D8481DC00304D3E /* ModifyRecordsOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E76570411D8481DC00304D3E /* ModifyRecordsOperation.swift */; };
 		E76570441D84844400304D3E /* ModifyEventOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E76570431D84844400304D3E /* ModifyEventOperation.swift */; };
+		E77E19E61D8AA8CF009D7616 /* UIView + Layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = E77E19E51D8AA8CF009D7616 /* UIView + Layout.swift */; };
 		E780F2561D8556FC0084E86B /* LocationPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E780F2551D8556FC0084E86B /* LocationPickerViewController.swift */; };
 		E780F2581D8599850084E86B /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = E780F2571D8599850084E86B /* Location.swift */; };
 		E780F25A1D8599CE0084E86B /* Location+MapKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = E780F2591D8599CE0084E86B /* Location+MapKit.swift */; };
@@ -138,6 +139,7 @@
 		E765703E1D8405A600304D3E /* TextViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = TextViewCell.xib; path = Resources/TextViewCell.xib; sourceTree = "<group>"; };
 		E76570411D8481DC00304D3E /* ModifyRecordsOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ModifyRecordsOperation.swift; path = Classes/ModifyRecordsOperation.swift; sourceTree = "<group>"; };
 		E76570431D84844400304D3E /* ModifyEventOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ModifyEventOperation.swift; path = Classes/ModifyEventOperation.swift; sourceTree = "<group>"; };
+		E77E19E51D8AA8CF009D7616 /* UIView + Layout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIView + Layout.swift"; path = "Classes/UIView + Layout.swift"; sourceTree = "<group>"; };
 		E780F2551D8556FC0084E86B /* LocationPickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LocationPickerViewController.swift; path = Classes/LocationPickerViewController.swift; sourceTree = "<group>"; };
 		E780F2571D8599850084E86B /* Location.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Location.swift; path = Classes/Location.swift; sourceTree = "<group>"; };
 		E780F2591D8599CE0084E86B /* Location+MapKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Location+MapKit.swift"; path = "Classes/Location+MapKit.swift"; sourceTree = "<group>"; };
@@ -375,6 +377,7 @@
 				E780F2591D8599CE0084E86B /* Location+MapKit.swift */,
 				E79640AA1D870B3C00C9F9DC /* String+Capitalization.swift */,
 				E79640C41D88343700C9F9DC /* NSUserDefault + UserStatus.swift */,
+				E77E19E51D8AA8CF009D7616 /* UIView + Layout.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -811,6 +814,7 @@
 				E79640A51D86FC8F00C9F9DC /* EventDetailRow.swift in Sources */,
 				E796409B1D86AF9600C9F9DC /* KeyboardManager.swift in Sources */,
 				E79B6BC41D7AFE780048E0DF /* CKQuery+Record.swift in Sources */,
+				E77E19E61D8AA8CF009D7616 /* UIView + Layout.swift in Sources */,
 				E756AC041D81AFE40077375D /* FetchRecordOperation.swift in Sources */,
 				E756AC151D81FA8A0077375D /* BooleanCell.swift in Sources */,
 				E765703A1D82E6ED00304D3E /* UIViewController + SegueHandlerType.swift in Sources */,
