@@ -9,7 +9,8 @@
 import UIKit
 import MapKit
 
-class EventDetailViewController: SharedViewController, UITableViewDelegate, UITableViewDataSource, SegueHandlerType, ModifyEventViewControllerDelegate {
+
+class EventDetailViewController: SharedViewController, UITableViewDelegate, UITableViewDataSource, SegueHandlerType, ModifyEventViewControllerDelegate, EventModificationListener {
 
     enum SegueIdentifier: String {
         case editEvent = "ModifyEventViewController"
@@ -35,12 +36,21 @@ class EventDetailViewController: SharedViewController, UITableViewDelegate, UITa
 
     var event: Event?
 
-    weak var delegate: ModifyEventViewControllerDelegate?
 
     override func viewDidLoad() {
         super.viewDidLoad()
         setupController()
         searchEventLocation()
+    }
+
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        guard let event = event else { return }
+        presenterFactory.eventPresenter.registerListener(self)
+        if presenterFactory.eventPresenter.isModifyingEvent(event) {
+            showBanner(with: EventInfo.modyfingEvent, animated: false)
+            editButton.enabled = false
+        }
     }
 
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
@@ -52,6 +62,28 @@ class EventDetailViewController: SharedViewController, UITableViewDelegate, UITa
             controller.event = event
             controller.delegate = self
         }
+    }
+
+    // MARK: - Public
+
+    func tryToUpdateEvent(with event: Event) {
+        guard let currentEvent = self.event where event == currentEvent else { return }
+        self.event = event
+        tableView.reloadData()
+    }
+
+    // MARK: - EventModificationListener
+
+    func presenterDidBeginToModify(event event: Event) {
+        guard let currentEvent = self.event where event == currentEvent else { return }
+        showBanner(with: EventInfo.modyfingEvent)
+        editButton.enabled = false
+    }
+
+    func presenterDidModify(event event: Event) {
+        guard let currentEvent = self.event where event == currentEvent else { return }
+        dismissBannerInfo(EventInfo.modyfingEvent)
+        editButton.enabled = true
     }
 
     // MARK: - UserStatusUpdateListener
@@ -74,9 +106,7 @@ class EventDetailViewController: SharedViewController, UITableViewDelegate, UITa
     // MARK: - ModifyEventViewControllerDelegate
 
     func controller(controller: ModifyEventViewController, didModify event: Event) {
-        self.event = event
-        tableView.reloadData()
-        delegate?.controller(controller, didModify: event)
+        presenterFactory.eventPresenter.modifyEvent(event)
     }
 
     // MARK: - UITableViewDataSource

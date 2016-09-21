@@ -22,6 +22,8 @@
 		E756AC111D81F8DA0077375D /* TextFieldCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E756AC101D81F8DA0077375D /* TextFieldCell.swift */; };
 		E756AC151D81FA8A0077375D /* BooleanCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E756AC141D81FA8A0077375D /* BooleanCell.swift */; };
 		E756AC171D81FAC90077375D /* BooleanCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E756AC161D81FAC90077375D /* BooleanCell.xib */; };
+		E762841F1D8A982700DD6EAA /* BlockObserverOnMainQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = E762841E1D8A982700DD6EAA /* BlockObserverOnMainQueue.swift */; };
+		E76284211D8AA67B00DD6EAA /* BannerContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E76284201D8AA67B00DD6EAA /* BannerContainerView.swift */; };
 		E76570301D82A00400304D3E /* TextCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E765702F1D82A00400304D3E /* TextCell.swift */; };
 		E76570321D82A01D00304D3E /* TextCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E76570311D82A01D00304D3E /* TextCell.xib */; };
 		E76570341D82BFDF00304D3E /* ColorCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E76570331D82BFDF00304D3E /* ColorCell.swift */; };
@@ -32,6 +34,7 @@
 		E76570401D8405A600304D3E /* TextViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E765703E1D8405A600304D3E /* TextViewCell.xib */; };
 		E76570421D8481DC00304D3E /* ModifyRecordsOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E76570411D8481DC00304D3E /* ModifyRecordsOperation.swift */; };
 		E76570441D84844400304D3E /* ModifyEventOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E76570431D84844400304D3E /* ModifyEventOperation.swift */; };
+		E77E19E61D8AA8CF009D7616 /* UIView + Layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = E77E19E51D8AA8CF009D7616 /* UIView + Layout.swift */; };
 		E780F2561D8556FC0084E86B /* LocationPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E780F2551D8556FC0084E86B /* LocationPickerViewController.swift */; };
 		E780F2581D8599850084E86B /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = E780F2571D8599850084E86B /* Location.swift */; };
 		E780F25A1D8599CE0084E86B /* Location+MapKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = E780F2591D8599CE0084E86B /* Location+MapKit.swift */; };
@@ -102,6 +105,7 @@
 		E7E5FA371D79EFAE00B6FF1D /* CloudOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7E5FA361D79EFAE00B6FF1D /* CloudOperation.swift */; };
 		E7E5FA391D79F01900B6FF1D /* QueryOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7E5FA381D79F01900B6FF1D /* QueryOperation.swift */; };
 		E7E5FA3B1D79F08000B6FF1D /* EventRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7E5FA3A1D79F08000B6FF1D /* EventRepository.swift */; };
+		E7F91A871D89864F00B75F7D /* EmptyEventView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7F91A861D89864F00B75F7D /* EmptyEventView.swift */; };
 		E7FB89301D7B1C6900FEFD1B /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7FB892F1D7B1C6900FEFD1B /* CloudKit.framework */; };
 		E7FB89361D7B211700FEFD1B /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E7FB89341D7B211700FEFD1B /* Model.xcdatamodeld */; };
 		E7FB89401D7B3DDE00FEFD1B /* LoadCoreDataStackOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7FB893F1D7B3DDE00FEFD1B /* LoadCoreDataStackOperation.swift */; };
@@ -128,6 +132,8 @@
 		E756AC101D81F8DA0077375D /* TextFieldCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TextFieldCell.swift; path = Classes/TextFieldCell.swift; sourceTree = "<group>"; };
 		E756AC141D81FA8A0077375D /* BooleanCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BooleanCell.swift; path = Classes/BooleanCell.swift; sourceTree = "<group>"; };
 		E756AC161D81FAC90077375D /* BooleanCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = BooleanCell.xib; path = Resources/BooleanCell.xib; sourceTree = "<group>"; };
+		E762841E1D8A982700DD6EAA /* BlockObserverOnMainQueue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BlockObserverOnMainQueue.swift; path = Classes/BlockObserverOnMainQueue.swift; sourceTree = "<group>"; };
+		E76284201D8AA67B00DD6EAA /* BannerContainerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BannerContainerView.swift; path = Classes/BannerContainerView.swift; sourceTree = "<group>"; };
 		E765702F1D82A00400304D3E /* TextCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TextCell.swift; path = Classes/TextCell.swift; sourceTree = "<group>"; };
 		E76570311D82A01D00304D3E /* TextCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = TextCell.xib; path = Resources/TextCell.xib; sourceTree = "<group>"; };
 		E76570331D82BFDF00304D3E /* ColorCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ColorCell.swift; path = Classes/ColorCell.swift; sourceTree = "<group>"; };
@@ -138,6 +144,7 @@
 		E765703E1D8405A600304D3E /* TextViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = TextViewCell.xib; path = Resources/TextViewCell.xib; sourceTree = "<group>"; };
 		E76570411D8481DC00304D3E /* ModifyRecordsOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ModifyRecordsOperation.swift; path = Classes/ModifyRecordsOperation.swift; sourceTree = "<group>"; };
 		E76570431D84844400304D3E /* ModifyEventOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ModifyEventOperation.swift; path = Classes/ModifyEventOperation.swift; sourceTree = "<group>"; };
+		E77E19E51D8AA8CF009D7616 /* UIView + Layout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIView + Layout.swift"; path = "Classes/UIView + Layout.swift"; sourceTree = "<group>"; };
 		E780F2551D8556FC0084E86B /* LocationPickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LocationPickerViewController.swift; path = Classes/LocationPickerViewController.swift; sourceTree = "<group>"; };
 		E780F2571D8599850084E86B /* Location.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Location.swift; path = Classes/Location.swift; sourceTree = "<group>"; };
 		E780F2591D8599CE0084E86B /* Location+MapKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Location+MapKit.swift"; path = "Classes/Location+MapKit.swift"; sourceTree = "<group>"; };
@@ -209,6 +216,7 @@
 		E7E5FA381D79F01900B6FF1D /* QueryOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = QueryOperation.swift; path = Classes/QueryOperation.swift; sourceTree = "<group>"; };
 		E7E5FA3A1D79F08000B6FF1D /* EventRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EventRepository.swift; path = Classes/EventRepository.swift; sourceTree = "<group>"; };
 		E7EE0E9F1D7AF70F0089B38C /* ESTPEvents.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = ESTPEvents.entitlements; sourceTree = "<group>"; };
+		E7F91A861D89864F00B75F7D /* EmptyEventView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EmptyEventView.swift; path = Classes/EmptyEventView.swift; sourceTree = "<group>"; };
 		E7FB892F1D7B1C6900FEFD1B /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
 		E7FB89351D7B211700FEFD1B /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		E7FB893F1D7B3DDE00FEFD1B /* LoadCoreDataStackOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoadCoreDataStackOperation.swift; path = Classes/LoadCoreDataStackOperation.swift; sourceTree = "<group>"; };
@@ -302,6 +310,7 @@
 			isa = PBXGroup;
 			children = (
 				E7FB893E1D7B3DC600FEFD1B /* CoreData */,
+				E762841E1D8A982700DD6EAA /* BlockObserverOnMainQueue.swift */,
 			);
 			name = Operations;
 			sourceTree = "<group>";
@@ -375,6 +384,7 @@
 				E780F2591D8599CE0084E86B /* Location+MapKit.swift */,
 				E79640AA1D870B3C00C9F9DC /* String+Capitalization.swift */,
 				E79640C41D88343700C9F9DC /* NSUserDefault + UserStatus.swift */,
+				E77E19E51D8AA8CF009D7616 /* UIView + Layout.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -386,6 +396,7 @@
 				E756AC101D81F8DA0077375D /* TextFieldCell.swift */,
 				E756AC141D81FA8A0077375D /* BooleanCell.swift */,
 				E765702F1D82A00400304D3E /* TextCell.swift */,
+				E76284201D8AA67B00DD6EAA /* BannerContainerView.swift */,
 			);
 			name = Shared;
 			sourceTree = "<group>";
@@ -511,6 +522,7 @@
 			children = (
 				E7BC16091D7F5C8900B02897 /* EventTableViewCell.swift */,
 				E7BC16051D7F434A00B02897 /* CircleView.swift */,
+				E7F91A861D89864F00B75F7D /* EmptyEventView.swift */,
 			);
 			name = Event;
 			sourceTree = "<group>";
@@ -793,6 +805,7 @@
 				E7C3D2501D816B3A007F5146 /* ModifySubscriptionsOperation.swift in Sources */,
 				E7FB89421D7B402100FEFD1B /* DataStackOperation.swift in Sources */,
 				E79B6BCE1D7AFE780048E0DF /* Record.swift in Sources */,
+				E762841F1D8A982700DD6EAA /* BlockObserverOnMainQueue.swift in Sources */,
 				E79B6BCF1D7AFE780048E0DF /* Result.swift in Sources */,
 				E79640B31D87E39200C9F9DC /* FetchUserOperation.swift in Sources */,
 				E734F8261D79CEA1001E013C /* SharedViewController.swift in Sources */,
@@ -811,6 +824,7 @@
 				E79640A51D86FC8F00C9F9DC /* EventDetailRow.swift in Sources */,
 				E796409B1D86AF9600C9F9DC /* KeyboardManager.swift in Sources */,
 				E79B6BC41D7AFE780048E0DF /* CKQuery+Record.swift in Sources */,
+				E77E19E61D8AA8CF009D7616 /* UIView + Layout.swift in Sources */,
 				E756AC041D81AFE40077375D /* FetchRecordOperation.swift in Sources */,
 				E756AC151D81FA8A0077375D /* BooleanCell.swift in Sources */,
 				E765703A1D82E6ED00304D3E /* UIViewController + SegueHandlerType.swift in Sources */,
@@ -833,6 +847,7 @@
 				E780F2581D8599850084E86B /* Location.swift in Sources */,
 				E7BC160A1D7F5C8900B02897 /* EventTableViewCell.swift in Sources */,
 				E7C3D24C1D8041FE007F5146 /* ApplicationPresenter.swift in Sources */,
+				E76284211D8AA67B00DD6EAA /* BannerContainerView.swift in Sources */,
 				E79B6BC71D7AFE780048E0DF /* Event.swift in Sources */,
 				E756AC001D81A0A90077375D /* FetchRecordsOperation.swift in Sources */,
 				E79B6BC81D7AFE780048E0DF /* EventPresenter.swift in Sources */,
@@ -843,6 +858,7 @@
 				E79B6BC91D7AFE780048E0DF /* EventPresenterImplementation.swift in Sources */,
 				E7C3D2541D816E6B007F5146 /* SubscriptionsRepository.swift in Sources */,
 				E756AC0B1D81E8DB0077375D /* RawRepresentable.swift in Sources */,
+				E7F91A871D89864F00B75F7D /* EmptyEventView.swift in Sources */,
 				E756AC111D81F8DA0077375D /* TextFieldCell.swift in Sources */,
 				E79B6BCB1D7AFE780048E0DF /* Int+Bool.swift in Sources */,
 				E7C3D24E1D804244007F5146 /* ApplicationPresenterImplementation.swift in Sources */,

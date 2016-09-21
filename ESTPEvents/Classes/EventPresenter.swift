@@ -8,9 +8,17 @@
 
 import Foundation
 
+protocol EventModificationListener: class {
+    func presenterDidBeginToModify(event event: Event)
+    func presenterDidModify(event event: Event)
+}
+
 protocol EventPresenter {
     func queryAllEvents()
     func modifyEvent(event: Event)
+    func isModifyingEvent(event: Event) -> Bool
+    func registerListener(listener: EventModificationListener)
+
     func event(atIndex index: NSIndexPath) -> Event
     func title(forSection section: Int) -> String?
     func numberOfEvents(inSection section: Int) -> Int
@@ -18,7 +26,12 @@ protocol EventPresenter {
 }
 
 protocol EventPresenterClient: class {
-    func presenterDidChangeState(state: PresenterState<ApplicationError>)
+    func presenterWantsToShowError(error: ApplicationError)
+    func presenterWantsToShowLoading()
+    func presenterWantsToDismissLoading()
+    func presenterIsEmpty()
+    func presenterHasValues()
+
     func presenterEventsWillChange()
     func presenterEventDidChange(eventChange: EntityChange)
     func presenterEventSectionDidChange(eventSectionChange: EntitySectionChange)

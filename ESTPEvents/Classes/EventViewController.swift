@@ -12,7 +12,22 @@ private struct Constant {
     static let rowHeight: CGFloat = 100
 }
 
-class EventViewController: SharedViewController, EventPresenterClient, UITableViewDelegate, UITableViewDataSource, SegueHandlerType, ModifyEventViewControllerDelegate {
+enum EventInfo: Int, Info {
+    case modyfingEvent = 0
+    case creatingEvent
+
+    var identifier: Int { return self.rawValue }
+    var description: String {
+        switch self {
+        case .modyfingEvent:
+            return String(key: "info_modifing_event")
+        case .creatingEvent:
+            return String(key: "info_creating_event")
+        }
+    }
+}
+
+class EventViewController: SharedViewController, EventPresenterClient, UITableViewDelegate, UITableViewDataSource, SegueHandlerType, ModifyEventViewControllerDelegate, EventModificationListener {
     
     enum SegueIdentifier: String {
         case addEvent = "ModifyEventViewController"
@@ -27,6 +42,12 @@ class EventViewController: SharedViewController, EventPresenterClient, UITableVi
             tableView.tableFooterView = UIView()
         }
     }
+
+    weak private var eventDetailViewController: EventDetailViewController?
+
+    private var creatingEvent: Event?
+
+    private let emptyView = EmptyEventView()
 
     private lazy var addEventButton: UIBarButtonItem = {
         return UIBarButtonItem(barButtonSystemItem: .Add, target: self, action: #selector(addEventAction(_:)))
@@ -43,6 +64,12 @@ class EventViewController: SharedViewController, EventPresenterClient, UITableVi
         super.viewDidLoad()
         setupController()
         eventPresenter.queryAllEvents()
+        eventPresenter.registerListener(self)
+    }
+
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        eventDetailViewController = nil
     }
 
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
@@ -59,7 +86,7 @@ class EventViewController: SharedViewController, EventPresenterClient, UITableVi
                 let controller = segue.destinationViewController as? EventDetailViewController
             else { return }
             controller.event = eventPresenter.event(atIndex: selectedIndexPath)
-            controller.delegate = self
+            eventDetailViewController = controller
         }
     }
     
@@ -67,6 +94,18 @@ class EventViewController: SharedViewController, EventPresenterClient, UITableVi
 
     @objc private func addEventAction(sender: UIBarButtonItem) {
         performSegue(withIdentifier: .addEvent, sender: nil)
+    }
+
+    // MARK: - EventModificationListener
+
+    func presenterDidBeginToModify(event event: Event) {
+        guard let currentEvent = creatingEvent where currentEvent == event else { return }
+        showBanner(with: EventInfo.creatingEvent)
+    }
+
+    func presenterDidModify(event event: Event) {
+        guard let currentEvent = creatingEvent where currentEvent == event else { return }
+        dismissBannerInfo(EventInfo.creatingEvent)
     }
 
     // MARK: - UserStatusUpdateListener
@@ -83,6 +122,7 @@ class EventViewController: SharedViewController, EventPresenterClient, UITableVi
     // MARK: - ModifyEventViewControllerDelegate
 
     func controller(controller: ModifyEventViewController, didModify event: Event) {
+        creatingEvent = event
         eventPresenter.modifyEvent(event)
     }
 
@@ -103,14 +143,17 @@ class EventViewController: SharedViewController, EventPresenterClient, UITableVi
                 let cell = self.tableView.cellForRowAtIndexPath(indexPath) as? EventTableViewCell
                 else { return }
                 cell.configure(with: eventPresenter.event(atIndex: indexPath))
+            eventDetailViewController?.tryToUpdateEvent(with: eventPresenter.event(atIndex: indexPath))
         case let .move(fromIndexPath: fromIndexPath, toIndexPath: toIndexPath):
             self.tableView.deleteRowsAtIndexPaths([fromIndexPath], withRowAnimation: .Fade)
             self.tableView.insertRowsAtIndexPaths([toIndexPath], withRowAnimation: .Fade)
+            eventDetailViewController?.tryToUpdateEvent(with: eventPresenter.event(atIndex: toIndexPath))
         }
     }
 
     func presenterEventsWillChange() {
         tableView.beginUpdates()
+        emptyView.hidden = true
     }
     
     func presenterEventSectionDidChange(eventSectionChange: EntitySectionChange) {
@@ -121,8 +164,23 @@ class EventViewController: SharedViewController, EventPresenterClient, UITableVi
             tableView.deleteSections(NSIndexSet(index: section), withRowAnimation: .Fade)
         }
     }
+
+    func presenterWantsToShowLoading() {
+    }
     
-    func presenterDidChangeState(state: PresenterState<ApplicationError>) {
+    func presenterWantsToDismissLoading() {
+    }
+
+    func presenterIsEmpty() {
+        emptyView.hidden = false
+    }
+
+    func presenterWantsToShowError(error: ApplicationError) {
+        let controller = eventDetailViewController ?? self
+        controller.showAlert(withMessage: error.description, title: String(key: "error_title"))
+    }
+
+    func presenterHasValues() {
         tableView.reloadData()
     }
     
@@ -131,6 +189,8 @@ class EventViewController: SharedViewController, EventPresenterClient, UITableVi
     private func setupController() {
         title = String(key: "event_title")
         automaticallyAdjustsScrollViewInsets = false
+        tableView.backgroundView = emptyView
+        emptyView.hidden = true
     }
 
     // MARK: - UITableViewDelegate
