@@ -12,18 +12,22 @@ private struct Constant {
     static let rowHeight: CGFloat = 100
 }
 
-class EventViewController: SharedViewController, EventPresenterClient, UITableViewDelegate, UITableViewDataSource, SegueHandlerType, ModifyEventViewControllerDelegate {
 enum EventInfo: Int, Info {
     case modyfingEvent = 0
+    case creatingEvent
 
     var identifier: Int { return self.rawValue }
     var description: String {
         switch self {
         case .modyfingEvent:
             return String(key: "info_modifing_event")
+        case .creatingEvent:
+            return String(key: "info_creating_event")
+        }
     }
 }
 
+class EventViewController: SharedViewController, EventPresenterClient, UITableViewDelegate, UITableViewDataSource, SegueHandlerType, ModifyEventViewControllerDelegate, EventModificationListener {
     
     enum SegueIdentifier: String {
         case addEvent = "ModifyEventViewController"
@@ -40,6 +44,8 @@ enum EventInfo: Int, Info {
     }
 
     weak private var eventDetailViewController: EventDetailViewController?
+
+    private var creatingEvent: Event?
 
     private let emptyView = EmptyEventView()
 
@@ -58,6 +64,7 @@ enum EventInfo: Int, Info {
         super.viewDidLoad()
         setupController()
         eventPresenter.queryAllEvents()
+        eventPresenter.registerListener(self)
     }
 
     override func viewDidAppear(animated: Bool) {
@@ -89,6 +96,18 @@ enum EventInfo: Int, Info {
         performSegue(withIdentifier: .addEvent, sender: nil)
     }
 
+    // MARK: - EventModificationListener
+
+    func presenterDidBeginToModify(event event: Event) {
+        guard let currentEvent = creatingEvent where currentEvent == event else { return }
+        showBanner(with: EventInfo.creatingEvent)
+    }
+
+    func presenterDidModify(event event: Event) {
+        guard let currentEvent = creatingEvent where currentEvent == event else { return }
+        dismissBannerInfo(EventInfo.creatingEvent)
+    }
+
     // MARK: - UserStatusUpdateListener
 
     override func userStatusDidUpdate(userStatus: UserStatus) {
@@ -103,6 +122,7 @@ enum EventInfo: Int, Info {
     // MARK: - ModifyEventViewControllerDelegate
 
     func controller(controller: ModifyEventViewController, didModify event: Event) {
+        creatingEvent = event
         eventPresenter.modifyEvent(event)
     }
 
