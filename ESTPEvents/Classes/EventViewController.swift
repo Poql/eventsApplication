@@ -28,6 +28,8 @@ class EventViewController: SharedViewController, EventPresenterClient, UITableVi
         }
     }
 
+    private let emptyView = EmptyEventView()
+
     private lazy var addEventButton: UIBarButtonItem = {
         return UIBarButtonItem(barButtonSystemItem: .Add, target: self, action: #selector(addEventAction(_:)))
     }()
@@ -131,6 +133,8 @@ class EventViewController: SharedViewController, EventPresenterClient, UITableVi
     private func setupController() {
         title = String(key: "event_title")
         automaticallyAdjustsScrollViewInsets = false
+        tableView.backgroundView = emptyView
+        emptyView.hidden = true
     }
 
     // MARK: - UITableViewDelegate
