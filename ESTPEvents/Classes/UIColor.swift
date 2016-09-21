@@ -34,4 +34,8 @@ extension UIColor {
     static func lightBlue() -> UIColor {
         return UIColor(red: 54/255, green: 124/255, blue: 206/255, alpha: 1)
     }
+
+    static func orange() -> UIColor {
+        return UIColor(red: 1, green: 111/255, blue: 29/255, alpha: 1)
+    }
 }
