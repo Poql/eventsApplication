@@ -126,9 +126,10 @@ class ModifyEventViewController: SharedViewController, UITableViewDataSource, UI
     
     func addAction(button: UIBarButtonItem) {
         view.endEditing(true)
-        dismissViewControllerAnimated(true, completion: nil)
-        guard let event = event else { return }
-        delegate?.controller(self, didModify: event)
+        dismissViewControllerAnimated(true) { _ in
+            guard let event = self.event else { return }
+            self.delegate?.controller(self, didModify: event)
+        }
     }
 
     // MARK: - LocationPickerViewControllerDelegate
