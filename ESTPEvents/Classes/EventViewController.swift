@@ -13,6 +13,17 @@ private struct Constant {
 }
 
 class EventViewController: SharedViewController, EventPresenterClient, UITableViewDelegate, UITableViewDataSource, SegueHandlerType, ModifyEventViewControllerDelegate {
+enum EventInfo: Int, Info {
+    case modyfingEvent = 0
+
+    var identifier: Int { return self.rawValue }
+    var description: String {
+        switch self {
+        case .modyfingEvent:
+            return String(key: "info_modifing_event")
+    }
+}
+
     
     enum SegueIdentifier: String {
         case addEvent = "ModifyEventViewController"
