@@ -23,6 +23,9 @@ class EventPresenterImplementation<R: EventRepository, PR: PersistencyRepository
         return resultsController?.fetchedObjects?.isEmpty ?? true
     }
 
+    private var eventListeners = WeakList<EventModificationListener>()
+    private var modifyingEvents = Set<Event>()
+
     weak var client: EventPresenterClient?
     
     init(repository: R, persistencyRepository: PR) {
@@ -85,6 +88,14 @@ class EventPresenterImplementation<R: EventRepository, PR: PersistencyRepository
     }
 
     // MARK: - EventPresenter
+
+    func registerListener(listener: EventModificationListener) {
+        eventListeners.insert(listener)
+    }
+
+    func isModifyingEvent(event: Event) -> Bool {
+        return modifyingEvents.contains(event)
+    }
 
     func queryAllEvents() {
         let persistedEventsOperation = queryPersistedEventsOperation()

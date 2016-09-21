@@ -16,6 +16,9 @@ protocol EventModificationListener: class {
 protocol EventPresenter {
     func queryAllEvents()
     func modifyEvent(event: Event)
+    func isModifyingEvent(event: Event) -> Bool
+    func registerListener(listener: EventModificationListener)
+
     func event(atIndex index: NSIndexPath) -> Event
     func title(forSection section: Int) -> String?
     func numberOfEvents(inSection section: Int) -> Int
