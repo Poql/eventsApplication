@@ -8,6 +8,16 @@
 
 import UIKit
 
+protocol Info {
+    var identifier: Int { get }
+    var description: String { get }
+    var color: UIColor { get }
+}
+
+extension Info {
+    var color: UIColor { return .orange() }
+}
+
 class SharedViewController: UIViewController, UserStatusUpdateListener {
     var presenterFactory: PresenterFactory {
         return AppDelegate.shared.presenterFactory
