@@ -13,6 +13,7 @@ enum ApplicationError: ErrorType {
 }
 
 enum OperationError: ErrorType {
+    case generic
     case noContext
     case subscriptionAlreadySubmitted
     case notAuthenticated
