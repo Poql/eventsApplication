@@ -24,6 +24,9 @@ class SubscriptionRepositoryImplementation: SubscriptionRepository {
         let options: CKSubscriptionOptions = [.FiresOnRecordUpdate]
         let operation = AuthenticatedEnsureSubscriptionOperation<Admin>(key: key, options: options)
         operation.authenticatedPredicate = { return NSPredicate(format: "userReference == %@", CKReference(recordID: $0, action: .None)) }
+        let notificationInfo = CKNotificationInfo()
+        notificationInfo.shouldSendContentAvailable = true
+        operation.notificationInfo = notificationInfo
         return operation
     }
 
@@ -36,6 +39,7 @@ class SubscriptionRepositoryImplementation: SubscriptionRepository {
         }
         let notificationInfo = CKNotificationInfo()
         notificationInfo.alertLocalizationKey = "notification_admin_is_accepted_message"
+        notificationInfo.shouldSendContentAvailable = true
         operation.notificationInfo = notificationInfo
         return operation
     }
@@ -43,7 +47,12 @@ class SubscriptionRepositoryImplementation: SubscriptionRepository {
     func ensureEventsSubscriptionOperation() -> EnsureSubscriptionOperation<Event> {
         let predicate = NSPredicate.alwaysTrue()
         let options: CKSubscriptionOptions = [.FiresOnRecordCreation, .FiresOnRecordUpdate]
-        return EnsureSubscriptionOperation(predicate: predicate, key: Constant.eventModificationSubscriptionKey, options: options)
+        let key = Constant.eventModificationSubscriptionKey
+        let operation = EnsureSubscriptionOperation<Event>(predicate: predicate, key: key, options: options)
+        let notificationInfo = CKNotificationInfo()
+        notificationInfo.shouldSendContentAvailable = true
+        operation.notificationInfo = notificationInfo
+        return operation
     }
 
     func ensureNotifyUserOnEventCreationOperation() -> EnsureSubscriptionOperation<Event> {
@@ -53,6 +62,7 @@ class SubscriptionRepositoryImplementation: SubscriptionRepository {
         let notificationInfo = CKNotificationInfo()
         notificationInfo.alertLocalizationKey = "notification_new_event_received_message"
         notificationInfo.alertLocalizationArgs = ["creator", "title"]
+        notificationInfo.shouldSendContentAvailable = true
         let operation = EnsureSubscriptionOperation<Event>(predicate: predicate, key: key, options: options)
         operation.notificationInfo = notificationInfo
         return operation
