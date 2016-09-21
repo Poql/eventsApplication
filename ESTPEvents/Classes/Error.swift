@@ -35,3 +35,23 @@ enum OperationError: ErrorType {
     case notAuthenticated
     case adminNotAccepted
 }
+
+struct ErrorMapper {
+    static func applicationError(fromOperationError error: OperationError) -> ApplicationError {
+        switch error {
+        case .notAuthenticated:
+            return .notDiscoverable
+        case .adminNotAccepted:
+            return .notAuthorized
+        default:
+            return .generic
+        }
+    }
+
+    static func applicationError(fromOperationErrors errors: [ErrorType]) -> ApplicationError? {
+        if let error = errors.first as? OperationError {
+            return applicationError(fromOperationError: error)
+        }
+        return errors.isEmpty ? nil : .generic
+    }
+}
