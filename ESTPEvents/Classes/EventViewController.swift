@@ -28,6 +28,8 @@ class EventViewController: SharedViewController, EventPresenterClient, UITableVi
         }
     }
 
+    weak private var eventDetailViewController: EventDetailViewController?
+
     private let emptyView = EmptyEventView()
 
     private lazy var addEventButton: UIBarButtonItem = {
@@ -47,6 +49,11 @@ class EventViewController: SharedViewController, EventPresenterClient, UITableVi
         eventPresenter.queryAllEvents()
     }
 
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        eventDetailViewController = nil
+    }
+
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         switch segueIdentifier(forSegue: segue) {
         case .addEvent:
@@ -61,7 +68,7 @@ class EventViewController: SharedViewController, EventPresenterClient, UITableVi
                 let controller = segue.destinationViewController as? EventDetailViewController
             else { return }
             controller.event = eventPresenter.event(atIndex: selectedIndexPath)
-            controller.delegate = self
+            eventDetailViewController = controller
         }
     }
     
@@ -105,9 +112,11 @@ class EventViewController: SharedViewController, EventPresenterClient, UITableVi
                 let cell = self.tableView.cellForRowAtIndexPath(indexPath) as? EventTableViewCell
                 else { return }
                 cell.configure(with: eventPresenter.event(atIndex: indexPath))
+            eventDetailViewController?.tryToUpdateEvent(with: eventPresenter.event(atIndex: indexPath))
         case let .move(fromIndexPath: fromIndexPath, toIndexPath: toIndexPath):
             self.tableView.deleteRowsAtIndexPaths([fromIndexPath], withRowAnimation: .Fade)
             self.tableView.insertRowsAtIndexPaths([toIndexPath], withRowAnimation: .Fade)
+            eventDetailViewController?.tryToUpdateEvent(with: eventPresenter.event(atIndex: toIndexPath))
         }
     }
 
@@ -136,7 +145,8 @@ class EventViewController: SharedViewController, EventPresenterClient, UITableVi
     }
 
     func presenterWantsToShowError(error: ApplicationError) {
-        showAlert(withMessage: error.description, title: String(key: "error_title"))
+        let controller = eventDetailViewController ?? self
+        controller.showAlert(withMessage: error.description, title: String(key: "error_title"))
     }
 
     func presenterHasValues() {

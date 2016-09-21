@@ -35,7 +35,6 @@ class EventDetailViewController: SharedViewController, UITableViewDelegate, UITa
 
     var event: Event?
 
-    weak var delegate: ModifyEventViewControllerDelegate?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -52,6 +51,14 @@ class EventDetailViewController: SharedViewController, UITableViewDelegate, UITa
             controller.event = event
             controller.delegate = self
         }
+    }
+
+    // MARK: - Public
+
+    func tryToUpdateEvent(with event: Event) {
+        guard let currentEvent = self.event where event == currentEvent else { return }
+        self.event = event
+        tableView.reloadData()
     }
 
     // MARK: - UserStatusUpdateListener
@@ -74,9 +81,7 @@ class EventDetailViewController: SharedViewController, UITableViewDelegate, UITa
     // MARK: - ModifyEventViewControllerDelegate
 
     func controller(controller: ModifyEventViewController, didModify event: Event) {
-        self.event = event
-        tableView.reloadData()
-        delegate?.controller(controller, didModify: event)
+        presenterFactory.eventPresenter.modifyEvent(event)
     }
 
     // MARK: - UITableViewDataSource
