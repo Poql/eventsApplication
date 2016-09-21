@@ -22,6 +22,7 @@
 		E756AC111D81F8DA0077375D /* TextFieldCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E756AC101D81F8DA0077375D /* TextFieldCell.swift */; };
 		E756AC151D81FA8A0077375D /* BooleanCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E756AC141D81FA8A0077375D /* BooleanCell.swift */; };
 		E756AC171D81FAC90077375D /* BooleanCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E756AC161D81FAC90077375D /* BooleanCell.xib */; };
+		E762841F1D8A982700DD6EAA /* BlockObserverOnMainQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = E762841E1D8A982700DD6EAA /* BlockObserverOnMainQueue.swift */; };
 		E76284211D8AA67B00DD6EAA /* BannerContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E76284201D8AA67B00DD6EAA /* BannerContainerView.swift */; };
 		E76570301D82A00400304D3E /* TextCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E765702F1D82A00400304D3E /* TextCell.swift */; };
 		E76570321D82A01D00304D3E /* TextCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E76570311D82A01D00304D3E /* TextCell.xib */; };
@@ -131,6 +132,7 @@
 		E756AC101D81F8DA0077375D /* TextFieldCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TextFieldCell.swift; path = Classes/TextFieldCell.swift; sourceTree = "<group>"; };
 		E756AC141D81FA8A0077375D /* BooleanCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BooleanCell.swift; path = Classes/BooleanCell.swift; sourceTree = "<group>"; };
 		E756AC161D81FAC90077375D /* BooleanCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = BooleanCell.xib; path = Resources/BooleanCell.xib; sourceTree = "<group>"; };
+		E762841E1D8A982700DD6EAA /* BlockObserverOnMainQueue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BlockObserverOnMainQueue.swift; path = Classes/BlockObserverOnMainQueue.swift; sourceTree = "<group>"; };
 		E76284201D8AA67B00DD6EAA /* BannerContainerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BannerContainerView.swift; path = Classes/BannerContainerView.swift; sourceTree = "<group>"; };
 		E765702F1D82A00400304D3E /* TextCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TextCell.swift; path = Classes/TextCell.swift; sourceTree = "<group>"; };
 		E76570311D82A01D00304D3E /* TextCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = TextCell.xib; path = Resources/TextCell.xib; sourceTree = "<group>"; };
@@ -308,6 +310,7 @@
 			isa = PBXGroup;
 			children = (
 				E7FB893E1D7B3DC600FEFD1B /* CoreData */,
+				E762841E1D8A982700DD6EAA /* BlockObserverOnMainQueue.swift */,
 			);
 			name = Operations;
 			sourceTree = "<group>";
@@ -802,6 +805,7 @@
 				E7C3D2501D816B3A007F5146 /* ModifySubscriptionsOperation.swift in Sources */,
 				E7FB89421D7B402100FEFD1B /* DataStackOperation.swift in Sources */,
 				E79B6BCE1D7AFE780048E0DF /* Record.swift in Sources */,
+				E762841F1D8A982700DD6EAA /* BlockObserverOnMainQueue.swift in Sources */,
 				E79B6BCF1D7AFE780048E0DF /* Result.swift in Sources */,
 				E79640B31D87E39200C9F9DC /* FetchUserOperation.swift in Sources */,
 				E734F8261D79CEA1001E013C /* SharedViewController.swift in Sources */,
