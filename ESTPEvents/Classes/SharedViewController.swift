@@ -53,6 +53,15 @@ class SharedViewController: UIViewController, UserStatusUpdateListener {
 
     // MARK: - Public
 
+    func showAlert(withMessage message: String, title: String) {
+        let alertController = UIAlertController(title: title, message: message, preferredStyle: .Alert)
+        let doneAction = UIAlertAction(title: String(key: "done_action_label"), style: .Default) { _ in
+            alertController.dismissViewControllerAnimated(true, completion: nil)
+        }
+        alertController.addAction(doneAction)
+        presentViewController(alertController, animated: true, completion: nil)
+    }
+
     func showBanner(with info: Info, animated: Bool = true) {
         identifiers.append(info.identifier)
         currentInfo[info.identifier] = info
