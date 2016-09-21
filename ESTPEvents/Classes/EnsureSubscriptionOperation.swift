@@ -55,12 +55,14 @@ class EnsureSubscriptionOperation<R: Record>: ModifySubscriptionsOperation {
                 // that means the subscription has already been saved
                 if partialError == CKErrorCode.ServerRejectedRequest {
                     NSUserDefaults.standardUserDefaults().saveSubscriptionID(id, forKey: key)
-                } else {
-                    NSUserDefaults.standardUserDefaults().saveSubscriptionID(nil, forKey: key)
+                    return
                 }
             }
+        }
+        if let error = errors.first as? OperationError where error == .subscriptionAlreadySubmitted || errors.isEmpty {
+            NSUserDefaults.standardUserDefaults().saveSubscriptionID(savedSubscriptions?.first?.subscriptionID, forKey: key)
             return
         }
-        NSUserDefaults.standardUserDefaults().saveSubscriptionID(savedSubscriptions?.first?.subscriptionID, forKey: key)
+        NSUserDefaults.standardUserDefaults().saveSubscriptionID(nil, forKey: key)
     }
 }
