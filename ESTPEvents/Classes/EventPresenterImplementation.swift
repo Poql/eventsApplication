@@ -80,6 +80,18 @@ class EventPresenterImplementation<R: EventRepository, PR: PersistencyRepository
                 }
         })
     }
+
+    private func modifyEventObserver(event event: Event) -> BlockObserverOnMainQueue {
+        return BlockObserverOnMainQueue(willExecute: { _ in
+            self.eventListeners.forEach { $0.presenterDidBeginToModify(event: event) }
+            self.modifyingEvents.insert(event)
+            }, didFinish: { op, errors in
+            self.eventListeners.forEach { $0.presenterDidModify(event: event) }
+            self.modifyingEvents.remove(event)
+            if let err = ErrorMapper.applicationError(fromOperationErrors: errors) {
+                self.client?.presenterWantsToShowError(err)
+            }
+        })
     }
 
     private func queryPersistedEvents() {
@@ -114,6 +126,7 @@ class EventPresenterImplementation<R: EventRepository, PR: PersistencyRepository
         (persistentOperation as Operation).addDependency(operation)
         let groupOperation = GroupOperation(operations: operation, persistentOperation)
         groupOperation.addObserver(NetworkObserver())
+        groupOperation.addObserver(modifyEventObserver(event: event))
         operationQueue.addOperation(groupOperation)
     }
     
