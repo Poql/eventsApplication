@@ -1,20 +1,31 @@
 PODS:
-  - BNRCoreDataStack (1.2.5)
-  - Operations (3.2.0):
-    - Operations/Standard (= 3.2.0)
-  - Operations/+CloudKit (3.2.0):
+  - BNRCoreDataStack (1.2.6)
+  - Operations (3.4.0):
+    - Operations/Standard (= 3.4.0)
+  - Operations/+CloudKit (3.4.0):
     - Operations/Standard
-  - Operations/Extension (3.2.0)
-  - Operations/Standard (3.2.0)
+  - Operations/Extension (3.4.0)
+  - Operations/Standard (3.4.0)
 
 DEPENDENCIES:
-  - BNRCoreDataStack
-  - Operations
-  - Operations/+CloudKit
-  - Operations/Extension
+  - BNRCoreDataStack (from `https://github.com/bignerdranch/CoreDataStack.git`, branch
+    `rcedwards/swift_2.3`)
+  - Operations (~> 3.4.0)
+  - Operations/+CloudKit (~> 3.4.0)
+  - Operations/Extension (~> 3.4.0)
+
+EXTERNAL SOURCES:
+  BNRCoreDataStack:
+    :branch: rcedwards/swift_2.3
+    :git: https://github.com/bignerdranch/CoreDataStack.git
+
+CHECKOUT OPTIONS:
+  BNRCoreDataStack:
+    :commit: 3ba3f3dd30655d102fb2a687759b5034e86c70a0
+    :git: https://github.com/bignerdranch/CoreDataStack.git
 
 SPEC CHECKSUMS:
-  BNRCoreDataStack: 968926d1cef9d6eee5e7c18b57762aa270f9b96c
-  Operations: 4c5f06d7328f1b097d5dac5c0d614917ecbc96e7
+  BNRCoreDataStack: 978a8010fb40758a1cac28458194d228bd3e0820
+  Operations: cf9f1b79ee7cfe02884ba3db7a82670590b1cfbd
 
 COCOAPODS: 0.39.0

@@ -25,6 +25,8 @@ public typealias CoreDataStackBatchMOCCallback = CoreDataStack.BatchContextResul
 
  Calling `save()` on any `NSMangedObjectContext` belonging to the stack will automatically bubble the changes all the way to the `NSPersistentStore`
  */
+@available(iOS, introduced=8.0, deprecated=10.0, message="Use NSPersistentContainer")
+@available(OSX, introduced=10.10, deprecated=10.12, message="Use NSPersistentContainer")
 public final class CoreDataStack {
 
     /// CoreDataStack specific ErrorTypes
@@ -294,8 +296,12 @@ public extension CoreDataStack {
 
                             // Remove journal files if present
                             // Eat the error because different versions of SQLite might have different journal files
-                            let _ = try? fm.removeItemAtURL(storeURL.URLByAppendingPathComponent("-shm"))
-                            let _ = try? fm.removeItemAtURL(storeURL.URLByAppendingPathComponent("-wal"))
+                            if let indexURL = storeURL.URLByAppendingPathComponent("-shm") {
+                                let _ = try? fm.removeItemAtURL(indexURL)
+                            }
+                            if let walFile = storeURL.URLByAppendingPathComponent("-wal") {
+                                let _ = try? fm.removeItemAtURL(walFile)
+                            }
                         }
                     }
                 } catch let resetError {
