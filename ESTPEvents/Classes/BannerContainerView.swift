@@ -9,9 +9,9 @@
 import UIKit
 
 private struct Constant {
-    static let bannerHeight: CGFloat = 25
+    static let bannerHeight: CGFloat = 30
     static let bannerLeftInsets: CGFloat = 20
-    static let bannerAnimationDuration: NSTimeInterval = 1
+    static let bannerAnimationDuration: NSTimeInterval = 0.25
 }
 
 protocol BannerContainerViewDelegate: class {
