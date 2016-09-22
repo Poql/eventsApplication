@@ -30,7 +30,7 @@ class BannerContainerView: UIView {
 
     private let messageLabel: UILabel = {
         let label = UILabel()
-        label.font = UIFont.systemFontOfSize(12, weight: UIFontWeightMedium)
+        label.font = UIFont.systemFontOfSize(12, weight: UIFontWeightBold)
         label.textColor = .whiteColor()
         return label
     }()
