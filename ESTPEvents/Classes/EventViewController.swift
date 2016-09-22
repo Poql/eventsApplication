@@ -106,6 +106,7 @@ class EventViewController: SharedViewController, EventPresenterClient, UITableVi
     func presenterDidModify(event event: Event) {
         guard let currentEvent = creatingEvent where currentEvent == event else { return }
         dismissBannerInfo(EventInfo.creatingEvent)
+        creatingEvent = nil
     }
 
     // MARK: - UserStatusUpdateListener
