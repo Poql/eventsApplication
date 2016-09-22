@@ -176,12 +176,12 @@ class ModifyEventViewController: SharedViewController, UITableViewDataSource, UI
             switch row {
             case .title:
                 let cell: TextFieldCell = tableView.dequeueCell()
-                cell.configure(withLabel: nil, placeholder: String(key: "modify_event_title_label"), text: event?.title)
+                cell.configure(withLabel: nil, placeholder: String(key: "modify_event_title_placeholder"), text: event?.title)
                 cell.textFieldDidChange = { self.event?.title = $0; self.tryEnableAddButton() }
                 return cell
             case .type:
                 let cell: TextFieldCell = tableView.dequeueCell()
-                cell.configure(withLabel: nil, placeholder: String(key: "modify_event_type_label"), text: event?.type)
+                cell.configure(withLabel: nil, placeholder: String(key: "modify_event_type_placeholder"), text: event?.type)
                 cell.textFieldDidChange = { self.event?.type = $0; self.tryEnableAddButton() }
                 return cell
             }
@@ -190,12 +190,12 @@ class ModifyEventViewController: SharedViewController, UITableViewDataSource, UI
             switch row {
             case .creator:
                 let cell: TextFieldCell = tableView.dequeueCell()
-                cell.configure(withLabel: nil, placeholder: String(key: "modify_event_creator_label"), text: event?.creator)
+                cell.configure(withLabel: nil, placeholder: String(key: "modify_event_creator_placeholder"), text: event?.creator)
                 cell.textFieldDidChange = { self.event?.creator = $0; self.tryEnableAddButton() }
                 return cell
             case .color:
                 let cell: ColorCell = tableView.dequeueCell()
-                cell.configure(withPlaceholder: String(key: "modify_event_color_label"), value: event?.color)
+                cell.configure(withPlaceholder: String(key: "modify_event_color_placeholder"), value: event?.color)
                 cell.colorDidChange = { self.event?.color = $0; self.tryEnableAddButton() }
                 return cell
             }
@@ -228,14 +228,14 @@ class ModifyEventViewController: SharedViewController, UITableViewDataSource, UI
             switch row {
             case .url:
                 let cell: TextFieldCell = tableView.dequeueCell()
-                cell.configure(withLabel: nil, placeholder: String(key: "modify_event_url_label"), text: event?.link)
+                cell.configure(withLabel: nil, placeholder: String(key: "modify_event_url_placeholder"), text: event?.link)
                 cell.textFieldDidChange = { self.event?.link = $0; self.tryEnableAddButton() }
                 cell.textField.autocorrectionType = .No
                 cell.textField.autocapitalizationType = .None
                 return cell
             case .description:
                 let cell: TextViewCell = tableView.dequeueCell()
-                cell.configure(placeholder: String(key: "modify_event_description_label"), text: event?.description)
+                cell.configure(placeholder: String(key: "modify_event_description_placeholder"), text: event?.description)
                 cell.textViewDidChange = { self.event?.description = $0; self.tryEnableAddButton() }
                 return cell
             }

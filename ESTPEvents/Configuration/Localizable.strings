@@ -1,0 +1,45 @@
+/* 
+  Localizable.strings
+  
+
+  Created by Gaétan Zanella on 22/09/2016.
+
+*/
+
+
+"empty_event_title_label" = "😞";
+"empty_event_subtitle_label" = "Aucun événement";
+
+"error_generic_message" = "Quelque chose ne va pas. Réessayez plus tard.";
+"error_not_authorized_message" = "Vous ne semblez pas être enregistré en tant qu'administrateur";
+"error_not_connected_message" = "Aucune connexion internet";
+"error_not_discoverable_message" = "Vous ne semblez pas avoir autorisé l'application à vous trouver à partir de votre identifiant Apple. Autorisez le dans les réglages iCloud drive";
+"error_title" = "Erreur";
+
+"edit_button" = "Modifier";
+"event_detail_url_label" = "URL";
+"event_detail_title" = "Evénement";
+
+"info_modifing_event" = "Modification de l'événement en cours ...";
+"info_creating_event" = "Création de l'événement en cours ...";
+
+"event_title" = "Evénements";
+"location_picker_title" = "Lieu";
+"location_picker_placeholder" = "Saisir un lieu";
+
+"add_button_title" = "OK";
+"modify_event_title" = "Modifier l'événement";
+"cancel_button_title" = "Annuler";
+"modify_event_title_placeholder" = "Titre";
+"modify_event_type_placeholder" = "Type";
+"modify_event_creator_placeholder" = "Association";
+"modify_event_color_placeholder" = "Couleur";
+"modify_event_date_label" = "Date de l'événement";
+"modify_event_notify_label" = "Notifier les élèves";
+"modify_event_url_placeholder" = "URL";
+"modify_event_description_placeholder" = "Description de l'événement";
+"modify_event_location_label" = "Lieu de l'évènement";
+"done_action_label" = "OK";
+
+"notification_new_event_received_message" = "%1$@ : %2$@";
+"notification_admin_is_accepted_message" = "Vous êtes maintenant administrateur";
