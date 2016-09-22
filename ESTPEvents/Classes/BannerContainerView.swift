@@ -15,7 +15,7 @@ private struct Constant {
 }
 
 protocol BannerContainerViewDelegate: class {
-    func bannerViewDidShow()
+    func bannerViewDidShow(animated animated: Bool)
     func bannerViewDidHide()
 }
 
@@ -57,17 +57,22 @@ class BannerContainerView: UIView {
         heightConstraint.constant = Constant.bannerHeight
         if !animated {
             layoutIfNeeded()
+            delegate?.bannerViewDidShow(animated: false)
             return
         }
-        UIView.animateWithDuration(animationDuration) {
-            self.layoutIfNeeded()
+        UIView.animateWithDuration(animationDuration, animations: {
+            self.superview?.layoutIfNeeded()
+        }) { _ in
+            self.delegate?.bannerViewDidShow(animated: true)
         }
     }
 
     func hideBanner() {
         heightConstraint.constant = 0
-        UIView.animateWithDuration(animationDuration) {
-            self.layoutIfNeeded()
+        UIView.animateWithDuration(animationDuration, animations: {
+            self.superview?.layoutIfNeeded()
+        }) { _ in
+            self.delegate?.bannerViewDidHide()
         }
     }
 
