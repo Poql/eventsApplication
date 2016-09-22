@@ -197,9 +197,7 @@ class EventViewController: SharedViewController, EventPresenterClient, UITableVi
     // MARK: - UITableViewDelegate
 
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        dispatch_async(dispatch_get_main_queue()) {
-            self.tableView.deselectRowAtIndexPath(indexPath, animated: true)
-        }
+        tableView.deselectRowAtIndexPath(indexPath, animated: true)
     }
     
     // MARK: - UITableViewDataSource
