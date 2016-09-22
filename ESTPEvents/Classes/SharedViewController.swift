@@ -18,7 +18,7 @@ extension Info {
     var color: UIColor { return .orange() }
 }
 
-class SharedViewController: UIViewController, UserStatusUpdateListener {
+class SharedViewController: UIViewController, UserStatusUpdateListener, BannerContainerViewDelegate {
     var presenterFactory: PresenterFactory {
         return AppDelegate.shared.presenterFactory
     }
@@ -40,10 +40,31 @@ class SharedViewController: UIViewController, UserStatusUpdateListener {
     func setupBanner() {
         edgesForExtendedLayout = UIRectEdge.None
         view.addSubview(bannerContainer)
+        bannerContainer.delegate = self
         bannerContainer.translatesAutoresizingMaskIntoConstraints = false
         bannerContainer.topAnchor.constraintEqualToAnchor(topLayoutGuide.topAnchor).active = true
         bannerContainer.leadingAnchor.constraintEqualToAnchor(view.leadingAnchor).active = true
         bannerContainer.trailingAnchor.constraintEqualToAnchor(view.trailingAnchor).active = true
+    }
+
+    // MARK: - BannerContainerViewDelegate
+
+    func bannerViewDidHide() {
+        guard let tableview = view.subviews.first as? UITableView else { return }
+        UIView.animateWithDuration(bannerContainer.animationDuration) {
+            tableview.contentInset.top = tableview.contentInset.top - self.bannerContainer.bannerHeight
+        }
+    }
+
+    func bannerViewDidShow(animated animated: Bool) {
+        guard let tableview = view.subviews.first as? UITableView else { return }
+        if !animated {
+            tableview.contentInset.top = tableview.contentInset.top + self.bannerContainer.bannerHeight
+            return
+        }
+        UIView.animateWithDuration(bannerContainer.animationDuration) {
+            tableview.contentInset.top = tableview.contentInset.top + self.bannerContainer.bannerHeight
+        }
     }
 
     // MARK: - UserStatusUpdateListener

@@ -24,6 +24,7 @@ class BannerContainerView: UIView {
     weak var delegate: BannerContainerViewDelegate?
 
     private(set) var animationDuration: NSTimeInterval = Constant.bannerAnimationDuration
+    let bannerHeight = Constant.bannerHeight
 
     private var heightConstraint: NSLayoutConstraint!
 
