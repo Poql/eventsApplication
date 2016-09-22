@@ -32,6 +32,8 @@ protocol SubscriptionRepository {
     associatedtype EnsureNotifyUserOnEventCreationOperation: Operation, EnsureNotifyUserOnEventCreationOperationPrototype
     associatedtype FetchRecordOperation: Operation, FetchRecordOperationPrototype
 
+    func resetAuthenticatedSubscriptionsKeys()
+
     func ensureNotifyUserOnAdminValidationOperation() -> EnsureNotifyUserOnAdminValidationOperation
     func ensureAdminModificationSubscriptionOperation() -> EnsureAdminModificationSubscriptionOperation
     

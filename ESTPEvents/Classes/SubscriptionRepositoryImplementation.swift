@@ -19,6 +19,11 @@ private struct Constant {
 
 class SubscriptionRepositoryImplementation: SubscriptionRepository {
 
+    func resetAuthenticatedSubscriptionsKeys() {
+        NSUserDefaults.standardUserDefaults().saveSubscriptionID(nil, forKey: Constant.notifyUserOnAdminValidationKey)
+        NSUserDefaults.standardUserDefaults().saveSubscriptionID(nil, forKey: Constant.adminModificationSubscriptionKey)
+    }
+
     func ensureAdminModificationSubscriptionOperation() -> AuthenticatedEnsureSubscriptionOperation<Admin> {
         let key = Constant.adminModificationSubscriptionKey
         let options: CKSubscriptionOptions = [.FiresOnRecordUpdate]
