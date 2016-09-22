@@ -18,7 +18,7 @@ class BooleanCell: UITableViewCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()
-        switchView.addTarget(self, action: #selector(switchAction(_:)), forControlEvents: .EditingChanged)
+        switchView.addTarget(self, action: #selector(switchAction(_:)), forControlEvents: .ValueChanged)
         switchView.onTintColor = .lightBlue()
     }
  
