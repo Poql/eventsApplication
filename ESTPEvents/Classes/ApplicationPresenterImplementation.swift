@@ -27,6 +27,11 @@ class ApplicationPresenterImplementation<PR: PersistencyRepository, SR: Subscrip
         self.persistencyRepository = persistencyRepository
         self.subscriptionRepository = subscriptionRepository
         self.userStatusRepository = userStatusRepository
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(handleStatusChangeNotification(_:)), name: CKAccountChangedNotification, object: nil)
+    }
+
+    deinit {
+        NSNotificationCenter.defaultCenter().removeObserver(self)
     }
 
     func deleteEvents(beforeDate date: NSDate) {
@@ -35,11 +40,8 @@ class ApplicationPresenterImplementation<PR: PersistencyRepository, SR: Subscrip
     }
     
     func ensureNotifications() {
-        let eventOperation = subscriptionRepository.ensureEventsSubscriptionOperation()
-        let userEventOperation = subscriptionRepository.ensureNotifyUserOnEventCreationOperation()
-        let adminUpdateOperation = subscriptionRepository.ensureAdminModificationSubscriptionOperation()
-        let userAdminUpdateOperation = subscriptionRepository.ensureNotifyUserOnAdminValidationOperation()
-        operationQueue.addOperations(eventOperation, userEventOperation, adminUpdateOperation, userAdminUpdateOperation)
+        sendSuscriptions()
+        tryToSendAuthenticatedSubscriptions()
     }
     
     func handleRemoteNotification(withUserInfo userInfo: [NSObject : AnyObject], completionHandler: (UIBackgroundFetchResult) -> Void) {
@@ -85,11 +87,52 @@ class ApplicationPresenterImplementation<PR: PersistencyRepository, SR: Subscrip
 
     // MARK: - Private
 
+    private func sendSuscriptions() {
+        let eventOperation = subscriptionRepository.ensureEventsSubscriptionOperation()
+        let userEventOperation = subscriptionRepository.ensureNotifyUserOnEventCreationOperation()
+        operationQueue.addOperations(userEventOperation, eventOperation)
+    }
+
+    private func resetAuthenticatedSubscriptionsKeys() {
+        subscriptionRepository.resetAuthenticatedSubscriptionsKeys()
+    }
+
+    private func tryToSendAuthenticatedSubscriptions() {
+        CKContainer.defaultContainer().accountStatusWithCompletionHandler { status, error in
+            self.handleCloudUserStausFetch(status)
+        }
+    }
+
+    private func sendAuthenticatedSubscriptions() {
+        let adminUpdateOperation = subscriptionRepository.ensureAdminModificationSubscriptionOperation()
+        let userAdminUpdateOperation = subscriptionRepository.ensureNotifyUserOnAdminValidationOperation()
+        operationQueue.addOperations(adminUpdateOperation, userAdminUpdateOperation)
+    }
+
+    @objc private func handleStatusChangeNotification(notification: NSNotification) {
+        tryToSendAuthenticatedSubscriptions()
+    }
+
     private func handleUserStatusFetch(change: UserStatus) {
         if let change = checkUserStatusChange(forNew: change) {
             for listener in self.listeners {
                 listener.userStatusDidUpdate(change)
             }
+        }
+    }
+
+    private func handleCloudUserStausFetch(status: CKAccountStatus) {
+        let userDefaults = NSUserDefaults.standardUserDefaults()
+        let currentStatus = userDefaults.getAccountStatus()
+        userDefaults.set(accountStatus: status)
+        switch status {
+        case .Available:
+            if currentStatus != status {
+                resetAuthenticatedSubscriptionsKeys()
+            }
+            sendAuthenticatedSubscriptions()
+        default:
+            return
         }
     }
 
