@@ -166,6 +166,7 @@ class EventViewController: SharedViewController, EventPresenterClient, UITableVi
     }
 
     func presenterWantsToShowLoading() {
+        emptyView.hidden = true
     }
     
     func presenterWantsToDismissLoading() {
