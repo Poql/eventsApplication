@@ -41,12 +41,12 @@ class EventDetailViewController: SharedViewController, UITableViewDelegate, UITa
         super.viewDidLoad()
         setupController()
         searchEventLocation()
+        presenterFactory.eventPresenter.registerListener(self)
     }
 
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         guard let event = event else { return }
-        presenterFactory.eventPresenter.registerListener(self)
         if presenterFactory.eventPresenter.isModifyingEvent(event) {
             showBanner(with: EventInfo.modyfingEvent, animated: false)
             editButton.enabled = false
