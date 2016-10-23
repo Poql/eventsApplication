@@ -38,6 +38,7 @@
 		E780F2561D8556FC0084E86B /* LocationPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E780F2551D8556FC0084E86B /* LocationPickerViewController.swift */; };
 		E780F2581D8599850084E86B /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = E780F2571D8599850084E86B /* Location.swift */; };
 		E780F25A1D8599CE0084E86B /* Location+MapKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = E780F2591D8599CE0084E86B /* Location+MapKit.swift */; };
+		E78FB7901DB37A2D002303BA /* AdminRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = E78FB78F1DB37A2D002303BA /* AdminRepository.swift */; };
 		E78FB7A81DBCA8E4002303BA /* CKContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E78FB7A71DBCA8E4002303BA /* CKContainer.swift */; };
 		E796409B1D86AF9600C9F9DC /* KeyboardManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E796409A1D86AF9600C9F9DC /* KeyboardManager.swift */; };
 		E79640A11D86D88C00C9F9DC /* LocationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E79640A01D86D88C00C9F9DC /* LocationCell.swift */; };
@@ -151,6 +152,7 @@
 		E780F2551D8556FC0084E86B /* LocationPickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LocationPickerViewController.swift; path = Classes/LocationPickerViewController.swift; sourceTree = "<group>"; };
 		E780F2571D8599850084E86B /* Location.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Location.swift; path = Classes/Location.swift; sourceTree = "<group>"; };
 		E780F2591D8599CE0084E86B /* Location+MapKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Location+MapKit.swift"; path = "Classes/Location+MapKit.swift"; sourceTree = "<group>"; };
+		E78FB78F1DB37A2D002303BA /* AdminRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AdminRepository.swift; path = Classes/AdminRepository.swift; sourceTree = "<group>"; };
 		E78FB7A71DBCA8E4002303BA /* CKContainer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CKContainer.swift; path = Classes/CKContainer.swift; sourceTree = "<group>"; };
 		E796409A1D86AF9600C9F9DC /* KeyboardManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = KeyboardManager.swift; path = Classes/KeyboardManager.swift; sourceTree = "<group>"; };
 		E79640A01D86D88C00C9F9DC /* LocationCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LocationCell.swift; path = Classes/LocationCell.swift; sourceTree = "<group>"; };
@@ -329,6 +331,7 @@
 				E797F2EC1D7C2D3000CB5EE2 /* Persistency */,
 				E7E5FA321D79EE0100B6FF1D /* Event */,
 				E79640BC1D882F6400C9F9DC /* User Status */,
+				E78FB7911DB37A31002303BA /* Admin */,
 			);
 			name = Repository;
 			sourceTree = "<group>";
@@ -425,6 +428,14 @@
 				E76570331D82BFDF00304D3E /* ColorCell.swift */,
 			);
 			name = "Modify Event";
+			sourceTree = "<group>";
+		};
+		E78FB7911DB37A31002303BA /* Admin */ = {
+			isa = PBXGroup;
+			children = (
+				E78FB78F1DB37A2D002303BA /* AdminRepository.swift */,
+			);
+			name = Admin;
 			sourceTree = "<group>";
 		};
 		E796409C1D86D82E00C9F9DC /* Event Detail */ = {
@@ -813,6 +824,7 @@
 				E76570301D82A00400304D3E /* TextCell.swift in Sources */,
 				E7BC15FE1D7EDD3900B02897 /* PersistentEvent.swift in Sources */,
 				E7C3D2501D816B3A007F5146 /* ModifySubscriptionsOperation.swift in Sources */,
+				E78FB7901DB37A2D002303BA /* AdminRepository.swift in Sources */,
 				E7FB89421D7B402100FEFD1B /* DataStackOperation.swift in Sources */,
 				E79B6BCE1D7AFE780048E0DF /* Record.swift in Sources */,
 				E762841F1D8A982700DD6EAA /* BlockObserverOnMainQueue.swift in Sources */,
