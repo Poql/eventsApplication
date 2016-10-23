@@ -16,7 +16,8 @@ class AdminCondition: Condition {
 
     override init() {
         super.init()
-        addCondition(AuthorizedFor(Capability.Cloud (permissions: [CKApplicationPermissions.UserDiscoverability])))
+        let capability = Capability.Cloud (permissions: [CKApplicationPermissions.UserDiscoverability], containerId: CKContainer.currentID)
+        addCondition(AuthorizedFor(capability))
         let authProvider = AuthenticationProviderOperation()
         let operation = FetchAdminOperation()
         authProvider.addAuthenticatedOperation(operation)

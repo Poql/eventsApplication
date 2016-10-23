@@ -11,7 +11,7 @@ import Operations
 import CloudKit
 
 class AuthenticationProviderOperation: GroupOperation {
-    private let fetchUserOperation = FetchUserOperation(container: CKContainer(identifier: "iCloud.com.gzanella.ESTPEvents"))
+    private let fetchUserOperation = FetchUserOperation(container: CKContainer.current())
 
     private var authenticatedOperations: [AuthenticatedOperation] {
         return operations.flatMap { $0 as? AuthenticatedOperation }
