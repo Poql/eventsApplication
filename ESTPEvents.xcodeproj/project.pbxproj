@@ -44,6 +44,7 @@
 		E78FB7981DB37EC8002303BA /* CreateAdminOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E78FB7971DB37EC8002303BA /* CreateAdminOperation.swift */; };
 		E78FB7A21DB7F9D2002303BA /* MainPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E78FB7A11DB7F9D2002303BA /* MainPresenter.swift */; };
 		E78FB7A41DB7F9DF002303BA /* MainPresenterImplementation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E78FB7A31DB7F9DF002303BA /* MainPresenterImplementation.swift */; };
+		E78FB7A61DBB79CF002303BA /* RequestAdminRightsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E78FB7A51DBB79CF002303BA /* RequestAdminRightsViewController.swift */; };
 		E78FB7A81DBCA8E4002303BA /* CKContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E78FB7A71DBCA8E4002303BA /* CKContainer.swift */; };
 		E796409B1D86AF9600C9F9DC /* KeyboardManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E796409A1D86AF9600C9F9DC /* KeyboardManager.swift */; };
 		E79640A11D86D88C00C9F9DC /* LocationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E79640A01D86D88C00C9F9DC /* LocationCell.swift */; };
@@ -163,6 +164,7 @@
 		E78FB7971DB37EC8002303BA /* CreateAdminOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CreateAdminOperation.swift; path = Classes/CreateAdminOperation.swift; sourceTree = "<group>"; };
 		E78FB7A11DB7F9D2002303BA /* MainPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MainPresenter.swift; path = Classes/MainPresenter.swift; sourceTree = "<group>"; };
 		E78FB7A31DB7F9DF002303BA /* MainPresenterImplementation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MainPresenterImplementation.swift; path = Classes/MainPresenterImplementation.swift; sourceTree = "<group>"; };
+		E78FB7A51DBB79CF002303BA /* RequestAdminRightsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RequestAdminRightsViewController.swift; path = Classes/RequestAdminRightsViewController.swift; sourceTree = "<group>"; };
 		E78FB7A71DBCA8E4002303BA /* CKContainer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CKContainer.swift; path = Classes/CKContainer.swift; sourceTree = "<group>"; };
 		E796409A1D86AF9600C9F9DC /* KeyboardManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = KeyboardManager.swift; path = Classes/KeyboardManager.swift; sourceTree = "<group>"; };
 		E79640A01D86D88C00C9F9DC /* LocationCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LocationCell.swift; path = Classes/LocationCell.swift; sourceTree = "<group>"; };
@@ -458,6 +460,14 @@
 				E78FB7971DB37EC8002303BA /* CreateAdminOperation.swift */,
 			);
 			name = Operations;
+			sourceTree = "<group>";
+		};
+		E78FB79D1DB7F957002303BA /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				E78FB7A51DBB79CF002303BA /* RequestAdminRightsViewController.swift */,
+			);
+			name = Main;
 			sourceTree = "<group>";
 		};
 		E78FB7A01DB7F9BF002303BA /* Main */ = {
@@ -879,6 +889,7 @@
 				E796409B1D86AF9600C9F9DC /* KeyboardManager.swift in Sources */,
 				E79B6BC41D7AFE780048E0DF /* CKQuery+Record.swift in Sources */,
 				E77E19E61D8AA8CF009D7616 /* UIView + Layout.swift in Sources */,
+				E78FB7A61DBB79CF002303BA /* RequestAdminRightsViewController.swift in Sources */,
 				E756AC041D81AFE40077375D /* FetchRecordOperation.swift in Sources */,
 				E756AC151D81FA8A0077375D /* BooleanCell.swift in Sources */,
 				E765703A1D82E6ED00304D3E /* UIViewController + SegueHandlerType.swift in Sources */,
