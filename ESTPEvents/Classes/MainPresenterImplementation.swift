@@ -22,6 +22,8 @@ class MainPresenterImplementation<Repository: AdminRepository>: MainPresenter {
 
     func requestToBecomeAdmin() {
         let operation = repository.requestToBecomeAdminOperation()
+        // we use a group to observe conditions evaluation
+        let group = GroupOperation(operations: [operation])
         let observer = BlockObserverOnMainQueue(
             willExecute: { _ in
                 self.client?.presenterWantsToShowLoading()
@@ -36,7 +38,7 @@ class MainPresenterImplementation<Repository: AdminRepository>: MainPresenter {
                 }
             }
         )
-        operation.addObserver(observer)
-        operationQueue.addOperation(operation)
+        group.addObserver(observer)
+        operationQueue.addOperation(group)
     }
 }
