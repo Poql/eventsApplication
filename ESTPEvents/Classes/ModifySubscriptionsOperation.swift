@@ -37,7 +37,7 @@ class ModifySubscriptionsOperation: CloudOperation {
     
     // MARK: - Initialization
     
-    init(subscriptionsToSave: [CKSubscription]?, subscriptionIDsToDelete: [String]?, database: CKDatabase = CKContainer.defaultContainer().publicCloudDatabase) {
+    init(subscriptionsToSave: [CKSubscription]?, subscriptionIDsToDelete: [String]?, database: CKDatabase = CKContainer.current().publicCloudDatabase) {
         self.subscriptionsOperation = CKModifySubscriptionsOperation(subscriptionsToSave: subscriptionsToSave, subscriptionIDsToDelete: subscriptionIDsToDelete)
         super.init(database: database)
     }

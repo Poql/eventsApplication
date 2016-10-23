@@ -26,7 +26,7 @@ class QueryOperation: CloudOperation {
     
     // MARK: - Init
     
-    init(query: CKQuery?, database: CKDatabase = CKContainer.defaultContainer().publicCloudDatabase) {
+    init(query: CKQuery?, database: CKDatabase = CKContainer.current().publicCloudDatabase) {
         self.queryOperation = CKQueryOperation()
         super.init(database: database)
         self.query = query

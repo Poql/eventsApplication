@@ -35,7 +35,7 @@ class ModifyEventOperation: ModifyRecordsOperation, ModifyEventOperationPrototyp
     }
 
     init(event: Event) {
-        super.init(recordsToSave: [event.record], recordIDsToDelete: nil, database: CKContainer.defaultContainer().publicCloudDatabase)
+        super.init(recordsToSave: [event.record], recordIDsToDelete: nil, database: CKContainer.current().publicCloudDatabase)
         savePolicy = .AllKeys
         addCondition(AdminCondition())
     }

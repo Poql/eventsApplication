@@ -98,7 +98,7 @@ class ApplicationPresenterImplementation<PR: PersistencyRepository, SR: Subscrip
     }
 
     private func tryToSendAuthenticatedSubscriptions() {
-        CKContainer.defaultContainer().accountStatusWithCompletionHandler { status, error in
+        CKContainer.current().accountStatusWithCompletionHandler { status, error in
             self.handleCloudUserStausFetch(status)
         }
     }

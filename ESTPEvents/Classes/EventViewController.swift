@@ -190,7 +190,6 @@ class EventViewController: SharedViewController, EventPresenterClient, UITableVi
     
     private func setupController() {
         title = String(key: "event_title")
-        automaticallyAdjustsScrollViewInsets = false
         tableView.backgroundView = emptyView
         emptyView.hidden = true
     }

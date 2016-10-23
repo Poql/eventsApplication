@@ -23,7 +23,7 @@ class FetchRecordsOperation: CloudOperation {
     
     private(set) var resultingRecords: [CKRecordID : CKRecord]?
     
-    init(recordIDs: [CKRecordID], database: CKDatabase = CKContainer.defaultContainer().publicCloudDatabase) {
+    init(recordIDs: [CKRecordID], database: CKDatabase = CKContainer.current().publicCloudDatabase) {
         self.fetchRecordsOperation = CKFetchRecordsOperation(recordIDs: recordIDs)
         super.init(database: database)
     }

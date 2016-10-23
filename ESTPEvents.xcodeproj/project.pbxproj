@@ -38,6 +38,15 @@
 		E780F2561D8556FC0084E86B /* LocationPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E780F2551D8556FC0084E86B /* LocationPickerViewController.swift */; };
 		E780F2581D8599850084E86B /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = E780F2571D8599850084E86B /* Location.swift */; };
 		E780F25A1D8599CE0084E86B /* Location+MapKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = E780F2591D8599CE0084E86B /* Location+MapKit.swift */; };
+		E78FB7901DB37A2D002303BA /* AdminRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = E78FB78F1DB37A2D002303BA /* AdminRepository.swift */; };
+		E78FB7931DB37A4D002303BA /* AdminRepositoryImplementation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E78FB7921DB37A4D002303BA /* AdminRepositoryImplementation.swift */; };
+		E78FB7961DB37EB6002303BA /* RequestToBecomeAdminOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E78FB7951DB37EB6002303BA /* RequestToBecomeAdminOperation.swift */; };
+		E78FB7981DB37EC8002303BA /* CreateAdminOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E78FB7971DB37EC8002303BA /* CreateAdminOperation.swift */; };
+		E78FB79F1DB7F967002303BA /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E78FB79E1DB7F967002303BA /* TabBarController.swift */; };
+		E78FB7A21DB7F9D2002303BA /* MainPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E78FB7A11DB7F9D2002303BA /* MainPresenter.swift */; };
+		E78FB7A41DB7F9DF002303BA /* MainPresenterImplementation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E78FB7A31DB7F9DF002303BA /* MainPresenterImplementation.swift */; };
+		E78FB7A61DBB79CF002303BA /* RequestAdminRightsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E78FB7A51DBB79CF002303BA /* RequestAdminRightsViewController.swift */; };
+		E78FB7A81DBCA8E4002303BA /* CKContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E78FB7A71DBCA8E4002303BA /* CKContainer.swift */; };
 		E796409B1D86AF9600C9F9DC /* KeyboardManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E796409A1D86AF9600C9F9DC /* KeyboardManager.swift */; };
 		E79640A11D86D88C00C9F9DC /* LocationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E79640A01D86D88C00C9F9DC /* LocationCell.swift */; };
 		E79640A31D86D8AF00C9F9DC /* LocationCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E79640A21D86D8AF00C9F9DC /* LocationCell.xib */; };
@@ -150,6 +159,15 @@
 		E780F2551D8556FC0084E86B /* LocationPickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LocationPickerViewController.swift; path = Classes/LocationPickerViewController.swift; sourceTree = "<group>"; };
 		E780F2571D8599850084E86B /* Location.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Location.swift; path = Classes/Location.swift; sourceTree = "<group>"; };
 		E780F2591D8599CE0084E86B /* Location+MapKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Location+MapKit.swift"; path = "Classes/Location+MapKit.swift"; sourceTree = "<group>"; };
+		E78FB78F1DB37A2D002303BA /* AdminRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AdminRepository.swift; path = Classes/AdminRepository.swift; sourceTree = "<group>"; };
+		E78FB7921DB37A4D002303BA /* AdminRepositoryImplementation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AdminRepositoryImplementation.swift; path = Classes/AdminRepositoryImplementation.swift; sourceTree = "<group>"; };
+		E78FB7951DB37EB6002303BA /* RequestToBecomeAdminOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RequestToBecomeAdminOperation.swift; path = Classes/RequestToBecomeAdminOperation.swift; sourceTree = "<group>"; };
+		E78FB7971DB37EC8002303BA /* CreateAdminOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CreateAdminOperation.swift; path = Classes/CreateAdminOperation.swift; sourceTree = "<group>"; };
+		E78FB79E1DB7F967002303BA /* TabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TabBarController.swift; path = Classes/TabBarController.swift; sourceTree = "<group>"; };
+		E78FB7A11DB7F9D2002303BA /* MainPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MainPresenter.swift; path = Classes/MainPresenter.swift; sourceTree = "<group>"; };
+		E78FB7A31DB7F9DF002303BA /* MainPresenterImplementation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MainPresenterImplementation.swift; path = Classes/MainPresenterImplementation.swift; sourceTree = "<group>"; };
+		E78FB7A51DBB79CF002303BA /* RequestAdminRightsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RequestAdminRightsViewController.swift; path = Classes/RequestAdminRightsViewController.swift; sourceTree = "<group>"; };
+		E78FB7A71DBCA8E4002303BA /* CKContainer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CKContainer.swift; path = Classes/CKContainer.swift; sourceTree = "<group>"; };
 		E796409A1D86AF9600C9F9DC /* KeyboardManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = KeyboardManager.swift; path = Classes/KeyboardManager.swift; sourceTree = "<group>"; };
 		E79640A01D86D88C00C9F9DC /* LocationCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LocationCell.swift; path = Classes/LocationCell.swift; sourceTree = "<group>"; };
 		E79640A21D86D8AF00C9F9DC /* LocationCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = LocationCell.xib; path = Resources/LocationCell.xib; sourceTree = "<group>"; };
@@ -293,6 +311,7 @@
 				E7C3D2441D802022007F5146 /* NavigationControllerWithWhiteStatusBar.swift */,
 				E76570371D82D28400304D3E /* DatePickerViewController.swift */,
 				E796409A1D86AF9600C9F9DC /* KeyboardManager.swift */,
+				E78FB79D1DB7F957002303BA /* Main */,
 				E7EE0E991D7AC2740089B38C /* Event */,
 				E765703B1D84007A00304D3E /* Modify Event */,
 				E796409C1D86D82E00C9F9DC /* Event Detail */,
@@ -305,6 +324,7 @@
 			children = (
 				E7EE0E9E1D7AF6B50089B38C /* Shared */,
 				E7E5FA4A1D79FDAD00B6FF1D /* Event */,
+				E78FB7A01DB7F9BF002303BA /* Main */,
 				E7C3D24A1D8041DB007F5146 /* Application */,
 			);
 			name = Presenter;
@@ -327,6 +347,7 @@
 				E797F2EC1D7C2D3000CB5EE2 /* Persistency */,
 				E7E5FA321D79EE0100B6FF1D /* Event */,
 				E79640BC1D882F6400C9F9DC /* User Status */,
+				E78FB7911DB37A31002303BA /* Admin */,
 			);
 			name = Repository;
 			sourceTree = "<group>";
@@ -391,6 +412,7 @@
 				E79640C41D88343700C9F9DC /* NSUserDefault + UserStatus.swift */,
 				E77E19E51D8AA8CF009D7616 /* UIView + Layout.swift */,
 				E7E5B4E61D93CE61002DEC19 /* NSUserDefaults + CKAccountStatus.swift */,
+				E78FB7A71DBCA8E4002303BA /* CKContainer.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -422,6 +444,43 @@
 				E76570331D82BFDF00304D3E /* ColorCell.swift */,
 			);
 			name = "Modify Event";
+			sourceTree = "<group>";
+		};
+		E78FB7911DB37A31002303BA /* Admin */ = {
+			isa = PBXGroup;
+			children = (
+				E78FB7941DB37A60002303BA /* Operations */,
+				E78FB78F1DB37A2D002303BA /* AdminRepository.swift */,
+				E78FB7921DB37A4D002303BA /* AdminRepositoryImplementation.swift */,
+			);
+			name = Admin;
+			sourceTree = "<group>";
+		};
+		E78FB7941DB37A60002303BA /* Operations */ = {
+			isa = PBXGroup;
+			children = (
+				E78FB7951DB37EB6002303BA /* RequestToBecomeAdminOperation.swift */,
+				E78FB7971DB37EC8002303BA /* CreateAdminOperation.swift */,
+			);
+			name = Operations;
+			sourceTree = "<group>";
+		};
+		E78FB79D1DB7F957002303BA /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				E78FB7A51DBB79CF002303BA /* RequestAdminRightsViewController.swift */,
+				E78FB79E1DB7F967002303BA /* TabBarController.swift */,
+			);
+			name = Main;
+			sourceTree = "<group>";
+		};
+		E78FB7A01DB7F9BF002303BA /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				E78FB7A11DB7F9D2002303BA /* MainPresenter.swift */,
+				E78FB7A31DB7F9DF002303BA /* MainPresenterImplementation.swift */,
+			);
+			name = Main;
 			sourceTree = "<group>";
 		};
 		E796409C1D86D82E00C9F9DC /* Event Detail */ = {
@@ -809,7 +868,9 @@
 				E7BC15F81D7ED68A00B02897 /* PresenterState.swift in Sources */,
 				E76570301D82A00400304D3E /* TextCell.swift in Sources */,
 				E7BC15FE1D7EDD3900B02897 /* PersistentEvent.swift in Sources */,
+				E78FB7931DB37A4D002303BA /* AdminRepositoryImplementation.swift in Sources */,
 				E7C3D2501D816B3A007F5146 /* ModifySubscriptionsOperation.swift in Sources */,
+				E78FB7901DB37A2D002303BA /* AdminRepository.swift in Sources */,
 				E7FB89421D7B402100FEFD1B /* DataStackOperation.swift in Sources */,
 				E79B6BCE1D7AFE780048E0DF /* Record.swift in Sources */,
 				E762841F1D8A982700DD6EAA /* BlockObserverOnMainQueue.swift in Sources */,
@@ -832,14 +893,18 @@
 				E796409B1D86AF9600C9F9DC /* KeyboardManager.swift in Sources */,
 				E79B6BC41D7AFE780048E0DF /* CKQuery+Record.swift in Sources */,
 				E77E19E61D8AA8CF009D7616 /* UIView + Layout.swift in Sources */,
+				E78FB7A61DBB79CF002303BA /* RequestAdminRightsViewController.swift in Sources */,
 				E756AC041D81AFE40077375D /* FetchRecordOperation.swift in Sources */,
 				E756AC151D81FA8A0077375D /* BooleanCell.swift in Sources */,
 				E765703A1D82E6ED00304D3E /* UIViewController + SegueHandlerType.swift in Sources */,
 				E7C3D2491D803FBF007F5146 /* DeleteEventsOperation.swift in Sources */,
 				E79640AB1D870B3C00C9F9DC /* String+Capitalization.swift in Sources */,
+				E78FB7961DB37EB6002303BA /* RequestToBecomeAdminOperation.swift in Sources */,
 				E79640C51D88343700C9F9DC /* NSUserDefault + UserStatus.swift in Sources */,
 				E7C3D25E1D818AF8007F5146 /* NSPredicate.swift in Sources */,
+				E78FB79F1DB7F967002303BA /* TabBarController.swift in Sources */,
 				E76570421D8481DC00304D3E /* ModifyRecordsOperation.swift in Sources */,
+				E78FB7A81DBCA8E4002303BA /* CKContainer.swift in Sources */,
 				E7C3D23F1D800970007F5146 /* UIColor.swift in Sources */,
 				E79640C31D88329200C9F9DC /* UserStatusRepositoryImplementation.swift in Sources */,
 				E7E5B4E71D93CE61002DEC19 /* NSUserDefaults + CKAccountStatus.swift in Sources */,
@@ -876,12 +941,15 @@
 				E79640BB1D881FBD00C9F9DC /* AuthenticatedCondition.swift in Sources */,
 				E7FB89401D7B3DDE00FEFD1B /* LoadCoreDataStackOperation.swift in Sources */,
 				E7C3D2451D802022007F5146 /* NavigationControllerWithWhiteStatusBar.swift in Sources */,
+				E78FB7981DB37EC8002303BA /* CreateAdminOperation.swift in Sources */,
 				E79640B91D880B0100C9F9DC /* EventDetailViewController.swift in Sources */,
 				E79B6BC51D7AFE780048E0DF /* Entity.swift in Sources */,
+				E78FB7A41DB7F9DF002303BA /* MainPresenterImplementation.swift in Sources */,
 				E7BC16061D7F434A00B02897 /* CircleView.swift in Sources */,
 				E79640A71D86FF5F00C9F9DC /* EventPreviewCell.swift in Sources */,
 				E7C3D2471D803174007F5146 /* SequenceType + Record.swift in Sources */,
 				E7FB89361D7B211700FEFD1B /* Model.xcdatamodeld in Sources */,
+				E78FB7A21DB7F9D2002303BA /* MainPresenter.swift in Sources */,
 				E79640AD1D87E1DE00C9F9DC /* AdminCondition.swift in Sources */,
 				E79640B11D87E2B500C9F9DC /* FetchAdminOperation.swift in Sources */,
 				E76570381D82D28400304D3E /* DatePickerViewController.swift in Sources */,

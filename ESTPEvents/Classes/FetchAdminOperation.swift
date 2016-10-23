@@ -29,7 +29,7 @@ class FetchAdminOperation: QueryOperation, AuthenticatedOperation {
         self.userID = userID
         if let userID = userID {
             let reference = CKReference(recordID: userID, action: .None)
-            let predicate = NSPredicate(format: "userReference == %@", reference)
+            let predicate = NSPredicate(format: "user == %@", reference)
             query = CKQuery(record: Admin.self, predicate: predicate)
             return
         }
