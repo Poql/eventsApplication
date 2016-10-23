@@ -39,6 +39,7 @@
 		E780F2581D8599850084E86B /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = E780F2571D8599850084E86B /* Location.swift */; };
 		E780F25A1D8599CE0084E86B /* Location+MapKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = E780F2591D8599CE0084E86B /* Location+MapKit.swift */; };
 		E78FB7901DB37A2D002303BA /* AdminRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = E78FB78F1DB37A2D002303BA /* AdminRepository.swift */; };
+		E78FB7981DB37EC8002303BA /* CreateAdminOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E78FB7971DB37EC8002303BA /* CreateAdminOperation.swift */; };
 		E78FB7A81DBCA8E4002303BA /* CKContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E78FB7A71DBCA8E4002303BA /* CKContainer.swift */; };
 		E796409B1D86AF9600C9F9DC /* KeyboardManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E796409A1D86AF9600C9F9DC /* KeyboardManager.swift */; };
 		E79640A11D86D88C00C9F9DC /* LocationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E79640A01D86D88C00C9F9DC /* LocationCell.swift */; };
@@ -153,6 +154,7 @@
 		E780F2571D8599850084E86B /* Location.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Location.swift; path = Classes/Location.swift; sourceTree = "<group>"; };
 		E780F2591D8599CE0084E86B /* Location+MapKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Location+MapKit.swift"; path = "Classes/Location+MapKit.swift"; sourceTree = "<group>"; };
 		E78FB78F1DB37A2D002303BA /* AdminRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AdminRepository.swift; path = Classes/AdminRepository.swift; sourceTree = "<group>"; };
+		E78FB7971DB37EC8002303BA /* CreateAdminOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CreateAdminOperation.swift; path = Classes/CreateAdminOperation.swift; sourceTree = "<group>"; };
 		E78FB7A71DBCA8E4002303BA /* CKContainer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CKContainer.swift; path = Classes/CKContainer.swift; sourceTree = "<group>"; };
 		E796409A1D86AF9600C9F9DC /* KeyboardManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = KeyboardManager.swift; path = Classes/KeyboardManager.swift; sourceTree = "<group>"; };
 		E79640A01D86D88C00C9F9DC /* LocationCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LocationCell.swift; path = Classes/LocationCell.swift; sourceTree = "<group>"; };
@@ -433,9 +435,18 @@
 		E78FB7911DB37A31002303BA /* Admin */ = {
 			isa = PBXGroup;
 			children = (
+				E78FB7941DB37A60002303BA /* Operations */,
 				E78FB78F1DB37A2D002303BA /* AdminRepository.swift */,
 			);
 			name = Admin;
+			sourceTree = "<group>";
+		};
+		E78FB7941DB37A60002303BA /* Operations */ = {
+			isa = PBXGroup;
+			children = (
+				E78FB7971DB37EC8002303BA /* CreateAdminOperation.swift */,
+			);
+			name = Operations;
 			sourceTree = "<group>";
 		};
 		E796409C1D86D82E00C9F9DC /* Event Detail */ = {
@@ -892,6 +903,7 @@
 				E79640BB1D881FBD00C9F9DC /* AuthenticatedCondition.swift in Sources */,
 				E7FB89401D7B3DDE00FEFD1B /* LoadCoreDataStackOperation.swift in Sources */,
 				E7C3D2451D802022007F5146 /* NavigationControllerWithWhiteStatusBar.swift in Sources */,
+				E78FB7981DB37EC8002303BA /* CreateAdminOperation.swift in Sources */,
 				E79640B91D880B0100C9F9DC /* EventDetailViewController.swift in Sources */,
 				E79B6BC51D7AFE780048E0DF /* Entity.swift in Sources */,
 				E7BC16061D7F434A00B02897 /* CircleView.swift in Sources */,
