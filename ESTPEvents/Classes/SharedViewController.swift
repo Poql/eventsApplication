@@ -38,11 +38,10 @@ class SharedViewController: UIViewController, UserStatusUpdateListener, BannerCo
     // MARK: - Private
 
     func setupBanner() {
-        edgesForExtendedLayout = UIRectEdge.None
         view.addSubview(bannerContainer)
         bannerContainer.delegate = self
         bannerContainer.translatesAutoresizingMaskIntoConstraints = false
-        bannerContainer.topAnchor.constraintEqualToAnchor(topLayoutGuide.topAnchor).active = true
+        bannerContainer.topAnchor.constraintEqualToAnchor(topLayoutGuide.bottomAnchor).active = true
         bannerContainer.leadingAnchor.constraintEqualToAnchor(view.leadingAnchor).active = true
         bannerContainer.trailingAnchor.constraintEqualToAnchor(view.trailingAnchor).active = true
     }
