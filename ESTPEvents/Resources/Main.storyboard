@@ -338,6 +338,7 @@
         <scene sceneID="xZo-MD-eNy">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="e5k-bg-yRY" customClass="NavigationControllerWithWhiteStatusBar" customModule="ESTPEvents" customModuleProvider="target" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="cug-Q2-o8J"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="JpL-bl-NDx">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -369,6 +370,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mHT-GX-GTH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1492" y="-327"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="W83-bn-M3I">
+            <objects>
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="uia-fZ-4DF" customClass="TabBarController" customModule="ESTPEvents" customModuleProvider="target" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="AZM-mX-lmS">
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="e5k-bg-yRY" kind="relationship" relationship="viewControllers" id="GmF-Du-TPD"/>
+                        <segue destination="D0v-TE-BvK" kind="presentation" identifier="RequestAdminRightsViewController" modalTransitionStyle="flipHorizontal" id="ZCX-G3-SIq"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Wcx-3t-qIU" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="373.60000000000002" y="336.88155922038982"/>
         </scene>
         <!--Request Admin Rights View Controller-->
         <scene sceneID="W1C-7I-u5U">
