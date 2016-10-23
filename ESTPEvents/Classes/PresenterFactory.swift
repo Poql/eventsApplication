@@ -11,7 +11,9 @@ import Foundation
 protocol PresenterFactory {
     var eventPresenter: EventPresenter { get }
     var applicationPresenter: ApplicationPresenter { get }
+    var mainPresenter: MainPresenter { get }
     func addClient(eventClient: EventPresenterClient)
+    func addClient(mainClient: MainPresenterClient)
 }
 
 class PresenterFactoryImplementation: PresenterFactory {
@@ -23,6 +25,8 @@ class PresenterFactoryImplementation: PresenterFactory {
     private let subscriptionRepository = SubscriptionRepositoryImplementation()
 
     private let userStatusRepository = UserStatusRepositoryImplementation()
+
+    private let adminRepository = AdminRepositoryImplementation()
     
     private lazy var eventPresenterImplementation: EventPresenterImplementation<EventRepositoryImplementation, PersistencyRepositoryImplementation> = {
         return EventPresenterImplementation(repository: self.eventRepository, persistencyRepository: self.persistencyRepository)
@@ -30,6 +34,10 @@ class PresenterFactoryImplementation: PresenterFactory {
     
     private lazy var applicationPresenterImplementation: ApplicationPresenterImplementation<PersistencyRepositoryImplementation, SubscriptionRepositoryImplementation, UserStatusRepositoryImplementation> = {
         return ApplicationPresenterImplementation(persistencyRepository: self.persistencyRepository, subscriptionRepository: self.subscriptionRepository, userStatusRepository: self.userStatusRepository)
+    }()
+
+    private lazy var mainPresenterImplementation: MainPresenterImplementation<AdminRepositoryImplementation> = {
+        return MainPresenterImplementation(repository: self.adminRepository)
     }()
     
     // MARK: - PresenterFactory
@@ -40,6 +48,14 @@ class PresenterFactoryImplementation: PresenterFactory {
     
     var eventPresenter: EventPresenter {
         return eventPresenterImplementation
+    }
+
+    var mainPresenter: MainPresenter {
+        return mainPresenterImplementation
+    }
+
+    func addClient(mainClient: MainPresenterClient) {
+        mainPresenterImplementation.client = mainClient
     }
     
     func addClient(eventClient: EventPresenterClient) {
