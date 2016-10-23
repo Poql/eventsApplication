@@ -80,6 +80,7 @@ class BannerContainerView: UIView {
     // MARK: - Private
 
     private func setupViews() {
+        clipsToBounds = true
         addSubview(bannerView)
         bannerView.translatesAutoresizingMaskIntoConstraints = false
         let stackView = UIStackView(arrangedSubviews: [messageLabel])
