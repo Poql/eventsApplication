@@ -13,6 +13,7 @@ enum ApplicationError: ErrorType {
     case notDiscoverable
     case notAuthorized
     case notConnected
+    case adminAlreadyCreated
 
     var description: String {
         switch self {
@@ -24,6 +25,8 @@ enum ApplicationError: ErrorType {
             return String(key: "error_not_connected_message")
         case .notDiscoverable:
             return String(key: "error_not_discoverable_message")
+        case .adminAlreadyCreated:
+            return String(key: "error_admin_already_created")
         }
     }
 }
