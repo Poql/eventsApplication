@@ -38,6 +38,7 @@
 		E780F2561D8556FC0084E86B /* LocationPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E780F2551D8556FC0084E86B /* LocationPickerViewController.swift */; };
 		E780F2581D8599850084E86B /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = E780F2571D8599850084E86B /* Location.swift */; };
 		E780F25A1D8599CE0084E86B /* Location+MapKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = E780F2591D8599CE0084E86B /* Location+MapKit.swift */; };
+		E78FB7A81DBCA8E4002303BA /* CKContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E78FB7A71DBCA8E4002303BA /* CKContainer.swift */; };
 		E796409B1D86AF9600C9F9DC /* KeyboardManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E796409A1D86AF9600C9F9DC /* KeyboardManager.swift */; };
 		E79640A11D86D88C00C9F9DC /* LocationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E79640A01D86D88C00C9F9DC /* LocationCell.swift */; };
 		E79640A31D86D8AF00C9F9DC /* LocationCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E79640A21D86D8AF00C9F9DC /* LocationCell.xib */; };
@@ -150,6 +151,7 @@
 		E780F2551D8556FC0084E86B /* LocationPickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LocationPickerViewController.swift; path = Classes/LocationPickerViewController.swift; sourceTree = "<group>"; };
 		E780F2571D8599850084E86B /* Location.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Location.swift; path = Classes/Location.swift; sourceTree = "<group>"; };
 		E780F2591D8599CE0084E86B /* Location+MapKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Location+MapKit.swift"; path = "Classes/Location+MapKit.swift"; sourceTree = "<group>"; };
+		E78FB7A71DBCA8E4002303BA /* CKContainer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CKContainer.swift; path = Classes/CKContainer.swift; sourceTree = "<group>"; };
 		E796409A1D86AF9600C9F9DC /* KeyboardManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = KeyboardManager.swift; path = Classes/KeyboardManager.swift; sourceTree = "<group>"; };
 		E79640A01D86D88C00C9F9DC /* LocationCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LocationCell.swift; path = Classes/LocationCell.swift; sourceTree = "<group>"; };
 		E79640A21D86D8AF00C9F9DC /* LocationCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = LocationCell.xib; path = Resources/LocationCell.xib; sourceTree = "<group>"; };
@@ -391,6 +393,7 @@
 				E79640C41D88343700C9F9DC /* NSUserDefault + UserStatus.swift */,
 				E77E19E51D8AA8CF009D7616 /* UIView + Layout.swift */,
 				E7E5B4E61D93CE61002DEC19 /* NSUserDefaults + CKAccountStatus.swift */,
+				E78FB7A71DBCA8E4002303BA /* CKContainer.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -840,6 +843,7 @@
 				E79640C51D88343700C9F9DC /* NSUserDefault + UserStatus.swift in Sources */,
 				E7C3D25E1D818AF8007F5146 /* NSPredicate.swift in Sources */,
 				E76570421D8481DC00304D3E /* ModifyRecordsOperation.swift in Sources */,
+				E78FB7A81DBCA8E4002303BA /* CKContainer.swift in Sources */,
 				E7C3D23F1D800970007F5146 /* UIColor.swift in Sources */,
 				E79640C31D88329200C9F9DC /* UserStatusRepositoryImplementation.swift in Sources */,
 				E7E5B4E71D93CE61002DEC19 /* NSUserDefaults + CKAccountStatus.swift in Sources */,
