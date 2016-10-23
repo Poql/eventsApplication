@@ -11,3 +11,9 @@ import Foundation
 protocol MainPresenter {
     func requestToBecomeAdmin()
 }
+
+protocol MainPresenterClient: class {
+    func presenterWantsToShowError(error: ApplicationError)
+    func presenterWantsToShowLoading()
+    func presenterDidRequestToBecomeAdminSuccessfullly()
+}
