@@ -10,6 +10,7 @@
 		CC0116202BF53C24686BE3C2 /* Pods_ESTPEvents.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B732DA91610C0FDAF3B949AB /* Pods_ESTPEvents.framework */; };
 		E7192E1C1DBD1BA600829A8A /* MessagesRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7192E1B1DBD1BA600829A8A /* MessagesRepository.swift */; };
 		E7192E1F1DBD1C8D00829A8A /* QueryMessagesOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7192E1E1DBD1C8D00829A8A /* QueryMessagesOperation.swift */; };
+		E7192E241DBD1DAD00829A8A /* PersistRecordsOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7192E231DBD1DAD00829A8A /* PersistRecordsOperation.swift */; };
 		E7192E261DBD280400829A8A /* PersistentMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7192E251DBD280400829A8A /* PersistentMessage.swift */; };
 		E734F8241D79CE95001E013C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E734F8231D79CE95001E013C /* AppDelegate.swift */; };
 		E734F8261D79CEA1001E013C /* SharedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E734F8251D79CEA1001E013C /* SharedViewController.swift */; };
@@ -133,6 +134,7 @@
 		B732DA91610C0FDAF3B949AB /* Pods_ESTPEvents.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ESTPEvents.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E7192E1B1DBD1BA600829A8A /* MessagesRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MessagesRepository.swift; path = Classes/MessagesRepository.swift; sourceTree = "<group>"; };
 		E7192E1E1DBD1C8D00829A8A /* QueryMessagesOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = QueryMessagesOperation.swift; path = Classes/QueryMessagesOperation.swift; sourceTree = "<group>"; };
+		E7192E231DBD1DAD00829A8A /* PersistRecordsOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PersistRecordsOperation.swift; path = Classes/PersistRecordsOperation.swift; sourceTree = "<group>"; };
 		E7192E251DBD280400829A8A /* PersistentMessage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PersistentMessage.swift; path = Classes/PersistentMessage.swift; sourceTree = "<group>"; };
 		E734F8061D79CD33001E013C /* ESTPEvents.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ESTPEvents.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E734F8231D79CE95001E013C /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = Classes/AppDelegate.swift; sourceTree = "<group>"; };
@@ -584,6 +586,7 @@
 			isa = PBXGroup;
 			children = (
 				E797F2F21D7C2D8100CB5EE2 /* PersistEventsOperation.swift */,
+				E7192E231DBD1DAD00829A8A /* PersistRecordsOperation.swift */,
 				E7C3D2481D803FBF007F5146 /* DeleteEventsOperation.swift */,
 			);
 			name = Operations;
@@ -904,6 +907,7 @@
 				E762841F1D8A982700DD6EAA /* BlockObserverOnMainQueue.swift in Sources */,
 				E79B6BCF1D7AFE780048E0DF /* Result.swift in Sources */,
 				E79640B31D87E39200C9F9DC /* FetchUserOperation.swift in Sources */,
+				E7192E241DBD1DAD00829A8A /* PersistRecordsOperation.swift in Sources */,
 				E734F8261D79CEA1001E013C /* SharedViewController.swift in Sources */,
 				E780F25A1D8599CE0084E86B /* Location+MapKit.swift in Sources */,
 				E7CFA6B11DC1264300F27F05 /* Message.swift in Sources */,
