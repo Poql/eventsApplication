@@ -17,10 +17,16 @@ protocol DeleteEventsOperationPrototype: class {
     var limitDate: NSDate { get set }
 }
 
+protocol PersistMessagesOperationPrototype: class {
+    var messages: [Message] { get set }
+}
+
 protocol PersistencyRepository {
     associatedtype PersistEventsOperation: Operation, PersistEventsOperationPrototype
     associatedtype DeleteEventsOperation: Operation, DeleteEventsOperationPrototype
+    associatedtype PersistMessagesOperation: Operation, PersistMessagesOperationPrototype
     
     func persistEventsOperation() -> PersistEventsOperation
     func deleteEventsOperation(limitDate limitDate: NSDate) -> DeleteEventsOperation
+    func persistMessagesOperation() -> PersistMessagesOperation
 }
