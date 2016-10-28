@@ -117,6 +117,7 @@
 		E7C3D25E1D818AF8007F5146 /* NSPredicate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C3D25D1D818AF8007F5146 /* NSPredicate.swift */; };
 		E7CFA6B11DC1264300F27F05 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7CFA6B01DC1264300F27F05 /* Message.swift */; };
 		E7CFA6B31DC12AB600F27F05 /* PersistMessagesOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7CFA6B21DC12AB600F27F05 /* PersistMessagesOperation.swift */; };
+		E7CFA6BB1DC1428200F27F05 /* PersistentRecordMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7CFA6BA1DC1428200F27F05 /* PersistentRecordMapper.swift */; };
 		E7D4720F1D894228006362C2 /* AuthenticationProviderOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7D4720E1D894228006362C2 /* AuthenticationProviderOperation.swift */; };
 		E7D472131D895BF6006362C2 /* DataStackProviderOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7D472121D895BF6006362C2 /* DataStackProviderOperation.swift */; };
 		E7D472151D8977B8006362C2 /* EnsureAuthenticatedSubscriptionOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7D472141D8977B8006362C2 /* EnsureAuthenticatedSubscriptionOperation.swift */; };
@@ -247,6 +248,7 @@
 		E7C3D25D1D818AF8007F5146 /* NSPredicate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NSPredicate.swift; path = Classes/NSPredicate.swift; sourceTree = "<group>"; };
 		E7CFA6B01DC1264300F27F05 /* Message.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Message.swift; path = Classes/Message.swift; sourceTree = "<group>"; };
 		E7CFA6B21DC12AB600F27F05 /* PersistMessagesOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PersistMessagesOperation.swift; path = Classes/PersistMessagesOperation.swift; sourceTree = "<group>"; };
+		E7CFA6BA1DC1428200F27F05 /* PersistentRecordMapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PersistentRecordMapper.swift; path = Classes/PersistentRecordMapper.swift; sourceTree = "<group>"; };
 		E7D4720E1D894228006362C2 /* AuthenticationProviderOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AuthenticationProviderOperation.swift; path = Classes/AuthenticationProviderOperation.swift; sourceTree = "<group>"; };
 		E7D472121D895BF6006362C2 /* DataStackProviderOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DataStackProviderOperation.swift; path = Classes/DataStackProviderOperation.swift; sourceTree = "<group>"; };
 		E7D472141D8977B8006362C2 /* EnsureAuthenticatedSubscriptionOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EnsureAuthenticatedSubscriptionOperation.swift; path = Classes/EnsureAuthenticatedSubscriptionOperation.swift; sourceTree = "<group>"; };
@@ -663,6 +665,14 @@
 			name = Operations;
 			sourceTree = "<group>";
 		};
+		E7CFA6B91DC13D8100F27F05 /* Mapper */ = {
+			isa = PBXGroup;
+			children = (
+				E7CFA6BA1DC1428200F27F05 /* PersistentRecordMapper.swift */,
+			);
+			name = Mapper;
+			sourceTree = "<group>";
+		};
 		E7E5FA2D1D79ED4100B6FF1D /* Shared */ = {
 			isa = PBXGroup;
 			children = (
@@ -723,6 +733,7 @@
 		E7EE0E9E1D7AF6B50089B38C /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				E7CFA6B91DC13D8100F27F05 /* Mapper */,
 				E7BC15F71D7ED68A00B02897 /* PresenterState.swift */,
 				E79B6BC11D7AFE780048E0DF /* PresenterFactory.swift */,
 				E797F2F71D7C3D3E00CB5EE2 /* EntityChange.swift */,
@@ -968,6 +979,7 @@
 				E7C3D24C1D8041FE007F5146 /* ApplicationPresenter.swift in Sources */,
 				E7192E261DBD280400829A8A /* PersistentMessage.swift in Sources */,
 				E76284211D8AA67B00DD6EAA /* BannerContainerView.swift in Sources */,
+				E7CFA6BB1DC1428200F27F05 /* PersistentRecordMapper.swift in Sources */,
 				E79B6BC71D7AFE780048E0DF /* Event.swift in Sources */,
 				E756AC001D81A0A90077375D /* FetchRecordsOperation.swift in Sources */,
 				E79B6BC81D7AFE780048E0DF /* EventPresenter.swift in Sources */,
