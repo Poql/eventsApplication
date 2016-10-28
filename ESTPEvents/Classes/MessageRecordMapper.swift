@@ -9,11 +9,11 @@
 import Foundation
 import BNRCoreDataStack
 
-class MessageRecordMapper: Mapper, RecordMapper {
-    static func getMessage(from persistentMessage: PersistentMessage) -> Message {
-        var message: Message = record(from: persistentMessage)
-        message.author = persistentMessage.author
-        message.content = persistentMessage.content
+class MessageRecordMapper: Mapper, RecordMapper, PersistentRecordMapper {
+    static func getRecord(from persistentRecord: PersistentMessage) -> Message {
+        var message: Message = record(from: persistentRecord)
+        message.author = persistentRecord.author
+        message.content = persistentRecord.content
         return message
     }
 
