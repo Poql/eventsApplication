@@ -128,6 +128,7 @@
 		E7E5FA391D79F01900B6FF1D /* QueryOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7E5FA381D79F01900B6FF1D /* QueryOperation.swift */; };
 		E7E5FA3B1D79F08000B6FF1D /* EventRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7E5FA3A1D79F08000B6FF1D /* EventRepository.swift */; };
 		E7EF0A951DC2703800BC5ED1 /* RecordsFetcherController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7EF0A941DC2703800BC5ED1 /* RecordsFetcherController.swift */; };
+		E7EF0A9F1DC3D30A00BC5ED1 /* RecordsFetcherControllerInitializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7EF0A9E1DC3D30A00BC5ED1 /* RecordsFetcherControllerInitializer.swift */; };
 		E7F91A871D89864F00B75F7D /* EmptyEventView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7F91A861D89864F00B75F7D /* EmptyEventView.swift */; };
 		E7FB89301D7B1C6900FEFD1B /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7FB892F1D7B1C6900FEFD1B /* CloudKit.framework */; };
 		E7FB89361D7B211700FEFD1B /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E7FB89341D7B211700FEFD1B /* Model.xcdatamodeld */; };
@@ -262,6 +263,7 @@
 		E7E5FA3A1D79F08000B6FF1D /* EventRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EventRepository.swift; path = Classes/EventRepository.swift; sourceTree = "<group>"; };
 		E7EE0E9F1D7AF70F0089B38C /* ESTPEvents.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = ESTPEvents.entitlements; sourceTree = "<group>"; };
 		E7EF0A941DC2703800BC5ED1 /* RecordsFetcherController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RecordsFetcherController.swift; path = Classes/RecordsFetcherController.swift; sourceTree = "<group>"; };
+		E7EF0A9E1DC3D30A00BC5ED1 /* RecordsFetcherControllerInitializer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordsFetcherControllerInitializer.swift; sourceTree = "<group>"; };
 		E7F91A861D89864F00B75F7D /* EmptyEventView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EmptyEventView.swift; path = Classes/EmptyEventView.swift; sourceTree = "<group>"; };
 		E7FB892F1D7B1C6900FEFD1B /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
 		E7FB89351D7B211700FEFD1B /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
@@ -760,6 +762,7 @@
 			isa = PBXGroup;
 			children = (
 				E7EF0A941DC2703800BC5ED1 /* RecordsFetcherController.swift */,
+				E7EF0A9E1DC3D30A00BC5ED1 /* RecordsFetcherControllerInitializer.swift */,
 			);
 			name = Fetcher;
 			sourceTree = "<group>";
@@ -1045,6 +1048,7 @@
 				E7D472151D8977B8006362C2 /* EnsureAuthenticatedSubscriptionOperation.swift in Sources */,
 				E7192E1F1DBD1C8D00829A8A /* QueryMessagesOperation.swift in Sources */,
 				E79B6BCC1D7AFE780048E0DF /* Operation+Completion.swift in Sources */,
+				E7EF0A9F1DC3D30A00BC5ED1 /* RecordsFetcherControllerInitializer.swift in Sources */,
 				E7BC15F61D7ED67E00B02897 /* RecordMapper.swift in Sources */,
 				E7C3D2431D80120E007F5146 /* UITableViewCell + ReusableCell.swift in Sources */,
 				E79B6BC61D7AFE780048E0DF /* Error.swift in Sources */,
