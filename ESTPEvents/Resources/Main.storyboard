@@ -225,7 +225,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5t5-iy-XnW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3249" y="-1015"/>
+            <point key="canvasLocation" x="4188" y="-1015.1424287856073"/>
         </scene>
         <!--Modify Event View Controller-->
         <scene sceneID="DYX-Vx-899">
@@ -273,7 +273,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="txd-U6-dvi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2437" y="-313"/>
+            <point key="canvasLocation" x="3375.1999999999998" y="-313.49325337331339"/>
         </scene>
         <!--Date Picker View Controller-->
         <scene sceneID="649-I9-onm">
@@ -319,7 +319,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1Ih-is-xbD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3090" y="-313"/>
+            <point key="canvasLocation" x="4028" y="-313.49325337331339"/>
         </scene>
         <!--Evénements-->
         <scene sceneID="xZo-MD-eNy">
@@ -356,12 +356,12 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mHT-GX-GTH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1492" y="-327"/>
+            <point key="canvasLocation" x="2431.1999999999998" y="-327.88605697151428"/>
         </scene>
-        <!--Messages-->
+        <!--Message List View Controller-->
         <scene sceneID="66d-Zr-5HP">
             <objects>
-                <viewController id="Jl6-C4-kb3" sceneMemberID="viewController">
+                <viewController id="Jl6-C4-kb3" customClass="MessageListViewController" customModule="ESTPEvents" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="dhA-My-Wiz"/>
                         <viewControllerLayoutGuide type="bottom" id="Lko-vB-5FS"/>
@@ -371,11 +371,11 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Messages" image="icon_ios_bell" selectedImage="icon_ios_bell_filled" id="G4X-um-VfA"/>
+                    <navigationItem key="navigationItem" id="ZOr-HV-fZu"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Llr-KL-g7A" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="251" y="-414"/>
+            <point key="canvasLocation" x="1189.5999999999999" y="-414.24287856071965"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="W83-bn-M3I">
@@ -390,7 +390,7 @@
                     <connections>
                         <segue destination="e5k-bg-yRY" kind="relationship" relationship="viewControllers" id="GmF-Du-TPD"/>
                         <segue destination="D0v-TE-BvK" kind="presentation" identifier="RequestAdminRightsViewController" modalTransitionStyle="flipHorizontal" id="ZCX-G3-SIq"/>
-                        <segue destination="Jl6-C4-kb3" kind="relationship" relationship="viewControllers" id="myz-Kt-7kD"/>
+                        <segue destination="y8Y-Ye-ZNR" kind="relationship" relationship="viewControllers" id="myz-Kt-7kD"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Wcx-3t-qIU" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -470,12 +470,31 @@
             </objects>
             <point key="canvasLocation" x="374" y="1279"/>
         </scene>
+        <!--Messages-->
+        <scene sceneID="CX0-B9-aWX">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="y8Y-Ye-ZNR" customClass="NavigationControllerWithWhiteStatusBar" customModule="ESTPEvents" customModuleProvider="target" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Messages" image="icon_ios_bell" selectedImage="icon_ios_bell_filled" id="G4X-um-VfA"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="3sd-6z-HT4">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Jl6-C4-kb3" kind="relationship" relationship="rootViewController" id="cLV-WJ-eb8"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4cw-NC-vFA" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="250.40000000000001" y="-414.24287856071965"/>
+        </scene>
     </scenes>
     <resources>
-        <image name="icon_ios_bell" width="20" height="20"/>
-        <image name="icon_ios_bell_filled" width="20" height="21"/>
-        <image name="icon_ios_history" width="22" height="22"/>
-        <image name="icon_ios_history_filled" width="22" height="22"/>
+        <image name="icon_ios_bell" width="26" height="27"/>
+        <image name="icon_ios_bell_filled" width="26" height="28"/>
+        <image name="icon_ios_history" width="28" height="28"/>
+        <image name="icon_ios_history_filled" width="28" height="28"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="mr2-aB-37K"/>
