@@ -9,19 +9,19 @@
 import Foundation
 import BNRCoreDataStack
 
-class EventRecordMapper: Mapper, RecordMapper {
-    static func getEvent(from persistentEvent: PersistentEvent) -> Event {
-        var event: Event = record(from: persistentEvent)
-        event.description = persistentEvent.eventDescription
-        event.color = persistentEvent.color
-        event.eventDate = persistentEvent.eventDate
-        event.link = persistentEvent.link
-        event.location = persistentEvent.location
-        event.notify = persistentEvent.notify
-        event.cancelled = persistentEvent.cancelled
-        event.type = persistentEvent.type
-        event.creator = persistentEvent.creator
-        event.title = persistentEvent.title
+class EventRecordMapper: Mapper, RecordMapper, PersistentRecordMapper {
+    static func getRecord(from persistentRecord: PersistentEvent) -> Event {
+        var event: Event = record(from: persistentRecord)
+        event.description = persistentRecord.eventDescription
+        event.color = persistentRecord.color
+        event.eventDate = persistentRecord.eventDate
+        event.link = persistentRecord.link
+        event.location = persistentRecord.location
+        event.notify = persistentRecord.notify
+        event.cancelled = persistentRecord.cancelled
+        event.type = persistentRecord.type
+        event.creator = persistentRecord.creator
+        event.title = persistentRecord.title
         return event
     }
 
