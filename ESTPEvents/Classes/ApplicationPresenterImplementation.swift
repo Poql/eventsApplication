@@ -51,9 +51,16 @@ class ApplicationPresenterImplementation<PR: PersistencyRepository, SR: Subscrip
         let operation = subscriptionRepository.fetchRecordOperation(recordName: recordID.recordName)
         let persistEventOperation = persistencyRepository.persistEventsOperation()
         (persistEventOperation as Operation).addDependency(operation)
+        let persistMessagesOperation = persistencyRepository.persistMessagesOperation()
+        (persistMessagesOperation as Operation).addDependency(operation)
         operation.addWillFinishBlock {
             if let event = operation.resultingRecord as? Event {
                 persistEventOperation.events = [event]
+                (persistMessagesOperation as Operation).cancel()
+            }
+            else if let message = operation.resultingRecord as? Message {
+                persistMessagesOperation.messages = [message]
+                (persistEventOperation as Operation).cancel()
             }
             else if let admin = operation.resultingRecord as? Admin {
                 dispatch_async(dispatch_get_main_queue()) {
@@ -61,7 +68,7 @@ class ApplicationPresenterImplementation<PR: PersistencyRepository, SR: Subscrip
                 }
             }
         }
-        let group = GroupOperation(operations: operation, persistEventOperation)
+        let group = GroupOperation(operations: operation, persistEventOperation, persistMessagesOperation)
         group.addCompletionBlockOnMainQueue {
             if !group.errors.isEmpty {
                 completionHandler(.Failed)
@@ -90,7 +97,9 @@ class ApplicationPresenterImplementation<PR: PersistencyRepository, SR: Subscrip
     private func sendSuscriptions() {
         let eventOperation = subscriptionRepository.ensureEventsSubscriptionOperation()
         let userEventOperation = subscriptionRepository.ensureNotifyUserOnEventCreationOperation()
-        operationQueue.addOperations(userEventOperation, eventOperation)
+        let messagesOperation = subscriptionRepository.ensureMessageSubscriptionOperation()
+        let userMessageOperation = subscriptionRepository.ensureNotifyUserOnMessageCreationOperation()
+        operationQueue.addOperations(userEventOperation, eventOperation, messagesOperation, userMessageOperation)
     }
 
     private func resetAuthenticatedSubscriptionsKeys() {
