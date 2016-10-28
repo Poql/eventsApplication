@@ -369,9 +369,23 @@
                     <view key="view" contentMode="scaleToFill" id="BA1-CC-zrE">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="flI-jb-vva">
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="flI-jb-vva" firstAttribute="top" secondItem="BA1-CC-zrE" secondAttribute="top" id="LsH-0P-4kr"/>
+                            <constraint firstItem="flI-jb-vva" firstAttribute="leading" secondItem="BA1-CC-zrE" secondAttribute="leading" id="YYK-81-7GU"/>
+                            <constraint firstAttribute="trailing" secondItem="flI-jb-vva" secondAttribute="trailing" id="hQB-5D-ASY"/>
+                            <constraint firstItem="Lko-vB-5FS" firstAttribute="top" secondItem="flI-jb-vva" secondAttribute="bottom" id="r6n-Sd-6tR"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="ZOr-HV-fZu"/>
+                    <connections>
+                        <outlet property="tableView" destination="flI-jb-vva" id="sjH-3t-ddz"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Llr-KL-g7A" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

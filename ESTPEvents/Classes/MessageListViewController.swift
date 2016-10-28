@@ -10,9 +10,7 @@ import UIKit
 
 class MessageListViewController: SharedViewController, UITableViewDataSource, MessagesPresenterClient {
 
-    private var tableView: UITableView {
-        return view as! UITableView
-    }
+    @IBOutlet private var tableView: UITableView!
 
     private lazy var messagesPresenter: MessagesPresenter = {
         let presenter = self.presenterFactory.messagesPresenter
@@ -20,13 +18,10 @@ class MessageListViewController: SharedViewController, UITableViewDataSource, Me
         return presenter
     }()
 
-    override func loadView() {
-        view = UITableView()
-    }
-
     override func viewDidLoad() {
         super.viewDidLoad()
         setupViews()
+        setupController()
     }
 
     override func viewWillAppear(animated: Bool) {
@@ -38,6 +33,10 @@ class MessageListViewController: SharedViewController, UITableViewDataSource, Me
 
     private func setupViews() {
         tableView.dataSource = self
+    }
+
+    private func setupController() {
+        title = String(key: "messages_controller_title")
     }
 
     // MARK: - UITableViewDataSource
