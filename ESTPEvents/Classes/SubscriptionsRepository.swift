@@ -21,6 +21,12 @@ protocol EnsureAdminModificationSubscriptionOperationPrototype {
 protocol EnsureNotifyUserOnAdminValidationOperationPrototype {
 }
 
+protocol EnsureNotifyUserOnMessageCreationOperationPrototype {
+}
+
+protocol EnsureMessageModificationSubscriptionOperationPrototype {
+}
+
 protocol FetchRecordOperationPrototype {
     var resultingRecord: Record? { get }
 }
@@ -30,6 +36,8 @@ protocol SubscriptionRepository {
     associatedtype EnsureNotifyUserOnAdminValidationOperation: Operation, EnsureNotifyUserOnAdminValidationOperationPrototype
     associatedtype EnsureEventModificationSubscriptionOperation: Operation, EnsureEventModificationSubscriptionOperationPrototype
     associatedtype EnsureNotifyUserOnEventCreationOperation: Operation, EnsureNotifyUserOnEventCreationOperationPrototype
+    associatedtype EnsureMessagesModificationSubscriptionOperation: Operation, EnsureMessageModificationSubscriptionOperationPrototype
+    associatedtype EnsureNotifyUserOnMessageCreationOperation: Operation, EnsureNotifyUserOnMessageCreationOperationPrototype
     associatedtype FetchRecordOperation: Operation, FetchRecordOperationPrototype
 
     func resetAuthenticatedSubscriptionsKeys()
@@ -40,4 +48,7 @@ protocol SubscriptionRepository {
     func ensureEventsSubscriptionOperation() -> EnsureEventModificationSubscriptionOperation
     func ensureNotifyUserOnEventCreationOperation() -> EnsureNotifyUserOnEventCreationOperation
     func fetchRecordOperation(recordName recordName: String) -> FetchRecordOperation
+
+    func ensureMessageSubscriptionOperation() -> EnsureMessagesModificationSubscriptionOperation
+    func ensureNotifyUserOnMessageCreationOperation() -> EnsureNotifyUserOnMessageCreationOperation
 }
