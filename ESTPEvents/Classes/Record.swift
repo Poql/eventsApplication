@@ -45,6 +45,10 @@ extension Entity where Self: Record {
             record["deleted"] = Int(newValue)
         }
     }
+
+    var creationDate: NSDate {
+        return record.creationDate ?? NSDate.distantPast()
+    }
     
     var modificationDate: NSDate {
         return record.modificationDate ?? NSDate.distantPast()
