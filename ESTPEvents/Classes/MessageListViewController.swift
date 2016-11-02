@@ -45,6 +45,7 @@ class MessageListViewController: SharedViewController, UITableViewDataSource, Me
         tableView.dataSource = self
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.estimatedRowHeight = Constant.estimatedRowHeight
+        tableView.tableFooterView = UIView()
     }
 
     private func setupController() {
