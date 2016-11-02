@@ -17,6 +17,7 @@
 		E7192E281DBD2A2A00829A8A /* EventRecordMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7192E271DBD2A2A00829A8A /* EventRecordMapper.swift */; };
 		E7192E2A1DBD2A3600829A8A /* MessageRecordMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7192E291DBD2A3600829A8A /* MessageRecordMapper.swift */; };
 		E7192E2C1DBD2C3700829A8A /* PersistEventsOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7192E2B1DBD2C3700829A8A /* PersistEventsOperation.swift */; };
+		E72219241DCA7DF500C5A7EB /* PersistentOperationQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = E72219231DCA7DF500C5A7EB /* PersistentOperationQueue.swift */; };
 		E734F8241D79CE95001E013C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E734F8231D79CE95001E013C /* AppDelegate.swift */; };
 		E734F8261D79CEA1001E013C /* SharedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E734F8251D79CEA1001E013C /* SharedViewController.swift */; };
 		E734F82A1D79CED1001E013C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E734F8291D79CED1001E013C /* Assets.xcassets */; };
@@ -151,6 +152,7 @@
 		E7192E271DBD2A2A00829A8A /* EventRecordMapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EventRecordMapper.swift; path = Classes/EventRecordMapper.swift; sourceTree = "<group>"; };
 		E7192E291DBD2A3600829A8A /* MessageRecordMapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MessageRecordMapper.swift; path = Classes/MessageRecordMapper.swift; sourceTree = "<group>"; };
 		E7192E2B1DBD2C3700829A8A /* PersistEventsOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersistEventsOperation.swift; sourceTree = "<group>"; };
+		E72219231DCA7DF500C5A7EB /* PersistentOperationQueue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PersistentOperationQueue.swift; path = Classes/PersistentOperationQueue.swift; sourceTree = "<group>"; };
 		E734F8061D79CD33001E013C /* ESTPEvents.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ESTPEvents.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E734F8231D79CE95001E013C /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = Classes/AppDelegate.swift; sourceTree = "<group>"; };
 		E734F8251D79CEA1001E013C /* SharedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SharedViewController.swift; path = Classes/SharedViewController.swift; sourceTree = "<group>"; };
@@ -393,6 +395,7 @@
 			children = (
 				E7FB893E1D7B3DC600FEFD1B /* CoreData */,
 				E762841E1D8A982700DD6EAA /* BlockObserverOnMainQueue.swift */,
+				E72219231DCA7DF500C5A7EB /* PersistentOperationQueue.swift */,
 			);
 			name = Operations;
 			sourceTree = "<group>";
@@ -1014,6 +1017,7 @@
 				E7C3D25C1D8186A6007F5146 /* SubscriptionRepositoryImplementation.swift in Sources */,
 				E7E5FA371D79EFAE00B6FF1D /* CloudOperation.swift in Sources */,
 				E79B6BCD1D7AFE780048E0DF /* PresenterFactory.swift in Sources */,
+				E72219241DCA7DF500C5A7EB /* PersistentOperationQueue.swift in Sources */,
 				E79B6BCA1D7AFE780048E0DF /* EventViewController.swift in Sources */,
 				E780F2581D8599850084E86B /* Location.swift in Sources */,
 				E7BC160A1D7F5C8900B02897 /* EventTableViewCell.swift in Sources */,
