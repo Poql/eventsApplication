@@ -8,6 +8,10 @@
 
 import UIKit
 
+private struct Constant {
+    static let estimatedRowHeight: CGFloat = 60
+}
+
 class MessageListViewController: SharedViewController, UITableViewDataSource, MessagesPresenterClient {
 
     @IBOutlet private var tableView: UITableView!
@@ -33,6 +37,8 @@ class MessageListViewController: SharedViewController, UITableViewDataSource, Me
 
     private func setupViews() {
         tableView.dataSource = self
+        tableView.rowHeight = UITableViewAutomaticDimension
+        tableView.estimatedRowHeight = Constant.estimatedRowHeight
     }
 
     private func setupController() {
@@ -46,8 +52,8 @@ class MessageListViewController: SharedViewController, UITableViewDataSource, Me
     }
 
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = UITableViewCell(style: .Default, reuseIdentifier: "cell")
-        cell.textLabel?.text = messagesPresenter.message(atIndex: indexPath).author
+        let cell: MessageTableViewCell = tableView.dequeueCell()
+        cell.configure(with: messagesPresenter.message(atIndex: indexPath))
         return cell
     }
 
@@ -78,9 +84,7 @@ class MessageListViewController: SharedViewController, UITableViewDataSource, Me
         case let .delete(indexPath: indexPath):
             self.tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
         case let .update(indexPath: indexPath):
-            guard let cell = self.tableView.cellForRowAtIndexPath(indexPath)
-                else { return }
-            cell.textLabel?.text = messagesPresenter.message(atIndex: indexPath).author
+            tableView.reloadRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
         case let .move(fromIndexPath: fromIndexPath, toIndexPath: toIndexPath):
             self.tableView.deleteRowsAtIndexPaths([fromIndexPath], withRowAnimation: .Fade)
             self.tableView.insertRowsAtIndexPaths([toIndexPath], withRowAnimation: .Fade)
