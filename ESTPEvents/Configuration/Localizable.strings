@@ -43,3 +43,5 @@
 
 "notification_new_event_received_message" = "%1$@ : %2$@";
 "notification_admin_is_accepted_message" = "Vous êtes maintenant administrateur";
+
+"messages_controller_title" = "Messages";
