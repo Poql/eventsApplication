@@ -13,6 +13,7 @@ import BNRCoreDataStack
 class MessagesPresenterImplementation<MR: MessagesRepository, PR: PersistencyRepository>: MessagesPresenter, RecordsFetcherControllerDelegate, RecordsFetcherControllerInitializer {
 
     private let operationQueue = OperationQueue()
+    private let persistentQueue = PersistentOperationQueue.shared
 
     private let messagesRepository: MR
     private let persistentRepository: PR
@@ -31,14 +32,12 @@ class MessagesPresenterImplementation<MR: MessagesRepository, PR: PersistencyRep
 
     // MARK: - Private
 
-    private func queryRemoteMessagesOperation() -> Operation {
+    private func queryRemoteMessagesOperation(with persistOperation: PR.PersistMessagesOperation) -> Operation {
         let messagesOperation = messagesRepository.queryMessagesRepository()
-        let persistOperation = persistentRepository.persistMessagesOperation()
         (persistOperation as Operation).addDependency(messagesOperation)
         messagesOperation.addWillFinishBlock { persistOperation.messages = messagesOperation.messages }
-        let group = GroupOperation(operations: [persistOperation, messagesOperation])
-        group.addObserver(NetworkObserver())
-        return group
+        messagesOperation.addObserver(NetworkObserver())
+        return messagesOperation
     }
 
     private func queryOperationObserver() -> BlockObserverOnMainQueue {
@@ -84,11 +83,12 @@ class MessagesPresenterImplementation<MR: MessagesRepository, PR: PersistencyRep
 
     func queryMessages() {
         let pOperation = initialiseFetcherControllerOperation(with: self)
-        let operation = queryRemoteMessagesOperation()
+        let persistOperation = persistentRepository.persistMessagesOperation()
+        let operation = queryRemoteMessagesOperation(with: persistOperation)
         operation.addDependency(pOperation)
-        let group = GroupOperation(operations: [pOperation, operation])
-        group.addObserver(queryOperationObserver())
-        operationQueue.addOperation(group)
+        operation.addObserver(queryOperationObserver())
+        operationQueue.addOperation(operation)
+        persistentQueue.addOperations(persistOperation, pOperation)
     }
 
     func title(forSection section: Int) -> String? {

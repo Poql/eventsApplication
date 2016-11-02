@@ -16,6 +16,7 @@ class EventPresenterImplementation<R: EventRepository, PR: PersistencyRepository
     private let persistencyRepository: PR
     
     private let operationQueue = OperationQueue()
+    private let persistentQueue = PersistentOperationQueue.shared
 
     var fetcherController: RecordsFetcherController<EventRecordMapper>?
     var fetcherControllerPredicate: NSPredicate = .alwaysTrue()
@@ -36,17 +37,15 @@ class EventPresenterImplementation<R: EventRepository, PR: PersistencyRepository
 
     // MARK: - Private
 
-    private func queryRemoteEventsOperation() -> Operation {
+    private func queryRemoteEventsOperation(with persistOperation: PR.PersistEventsOperation) -> Operation {
         let operation = eventRepository.queryEventsOperation()
-        let persistOperation = persistencyRepository.persistEventsOperation()
         (persistOperation as Operation).addDependency(operation)
         operation.addWillFinishBlock {
             persistOperation.events = operation.events
         }
-        let group = GroupOperation(operations: [persistOperation, operation])
-        group.addObserver(NetworkObserver())
-        group.addObserver(queryRemoteEventsObserver())
-        return group
+        operation.addObserver(NetworkObserver())
+        operation.addObserver(queryRemoteEventsObserver())
+        return operation
     }
 
     private func queryRemoteEventsObserver() -> BlockObserverOnMainQueue {
@@ -87,9 +86,11 @@ class EventPresenterImplementation<R: EventRepository, PR: PersistencyRepository
 
     func queryAllEvents() {
         let persistedEventsOperation = initialiseFetcherControllerOperation(with: self)
-        let remoteEventsOperation = queryRemoteEventsOperation()
+        let persistOperation = persistencyRepository.persistEventsOperation()
+        let remoteEventsOperation = queryRemoteEventsOperation(with: persistOperation)
         remoteEventsOperation.addDependency(persistedEventsOperation)
-        operationQueue.addOperations(persistedEventsOperation, remoteEventsOperation)
+        operationQueue.addOperations(remoteEventsOperation)
+        persistentQueue.addOperations(persistOperation, persistedEventsOperation)
     }
 
     func modifyEvent(event: Event) {
