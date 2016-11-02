@@ -6,6 +6,8 @@
 
 */
 
+"empty_message_title_label" = "😶";
+"empty_message_subtitle_label" = "Aucun Message";
 
 "empty_event_title_label" = "😞";
 "empty_event_subtitle_label" = "Aucun événement";
