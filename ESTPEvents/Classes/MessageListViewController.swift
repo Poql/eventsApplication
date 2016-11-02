@@ -22,6 +22,12 @@ class MessageListViewController: SharedViewController, UITableViewDataSource, Me
         return presenter
     }()
 
+    private lazy var emptyView: UIView = {
+        let view = EmptyView()
+        view.configure(title: String(key: "empty_message_title_label"), subtitle: String(key: "empty_message_subtitle_label"))
+        return view
+    }()
+
     override func viewDidLoad() {
         super.viewDidLoad()
         setupViews()
@@ -43,6 +49,8 @@ class MessageListViewController: SharedViewController, UITableViewDataSource, Me
 
     private func setupController() {
         title = String(key: "messages_controller_title")
+        tableView.backgroundView = emptyView
+        emptyView.hidden = true
     }
 
     // MARK: - UITableViewDataSource
@@ -64,10 +72,12 @@ class MessageListViewController: SharedViewController, UITableViewDataSource, Me
     }
 
     func presenterMessagesIsEmpty() {
-        tableView.hidden = true
+        emptyView.hidden = false
     }
 
-    func presenterWantsToShowLoading() {}
+    func presenterWantsToShowLoading() {
+        emptyView.hidden = false
+    }
 
     func presenterMessagesDidFill() {
         tableView.reloadData()
@@ -75,6 +85,7 @@ class MessageListViewController: SharedViewController, UITableViewDataSource, Me
 
     func presenterMessagesWillChange() {
         tableView.beginUpdates()
+        emptyView.hidden = false
     }
 
     func presenterMessagesDidChange(eventChange: EntityChange) {
