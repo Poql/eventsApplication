@@ -47,7 +47,11 @@ class EventViewController: SharedViewController, EventPresenterClient, UITableVi
 
     private var creatingEvent: Event?
 
-    private let emptyView = EmptyEventView()
+    private lazy var emptyView: UIView = {
+        let view = EmptyView()
+        view.configure(title: String(key: "empty_event_title_label"), subtitle: String(key: "empty_event_subtitle_label"))
+        return view
+    }()
 
     private lazy var addEventButton: UIBarButtonItem = {
         return UIBarButtonItem(barButtonSystemItem: .Add, target: self, action: #selector(addEventAction(_:)))

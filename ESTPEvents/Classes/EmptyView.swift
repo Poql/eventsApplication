@@ -1,8 +1,8 @@
 //
-//  EmptyEventView.swift
+//  EmptyView.swift
 //  ESTPEvents
 //
-//  Created by Gaétan Zanella on 14/09/2016.
+//  Created by Gaétan Zanella on 02/11/2016.
 //  Copyright © 2016 Gaétan Zanella. All rights reserved.
 //
 
@@ -11,12 +11,11 @@ import UIKit
 private struct Constant {
 }
 
-class EmptyEventView: UIView {
+class EmptyView: UIView {
     private let titleLabel: UILabel = {
         let label = UILabel()
         label.font = UIFont.systemFontOfSize(64)
         label.textAlignment = .Center
-        label.text = String(key: "empty_event_title_label")
         return label
     }()
 
@@ -24,7 +23,6 @@ class EmptyEventView: UIView {
         let label = UILabel()
         label.font = UIFont.systemFontOfSize(17)
         label.textAlignment = .Center
-        label.text = String(key: "empty_event_subtitle_label")
         return label
     }()
 
@@ -36,6 +34,13 @@ class EmptyEventView: UIView {
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         setupViews()
+    }
+
+    // MARK: - Public
+
+    func configure(title title: String, subtitle: String) {
+        subtitleLabel.text = subtitle
+        titleLabel.text = title
     }
 
     // MARK: - Private
