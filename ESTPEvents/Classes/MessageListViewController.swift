@@ -76,7 +76,7 @@ class MessageListViewController: SharedViewController, UITableViewDataSource, Me
     }
 
     func presenterWantsToShowLoading() {
-        emptyView.hidden = false
+        emptyView.hidden = true
     }
 
     func presenterMessagesDidFill() {
