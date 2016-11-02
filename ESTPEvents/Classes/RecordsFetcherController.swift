@@ -26,7 +26,7 @@ class RecordsFetcherController<M: PersistentRecordMapper>: NSObject, FetchedResu
 
     private var resultsController: FetchedResultsController<PE>?
 
-    private var resultsControllerIsEmpty: Bool {
+    var isEmpty: Bool {
         return resultsController?.fetchedObjects?.isEmpty ?? true
     }
 
@@ -97,13 +97,13 @@ class RecordsFetcherController<M: PersistentRecordMapper>: NSObject, FetchedResu
 
     func fetchedResultsControllerDidChangeContent(controller: FetchedResultsController<PE>) {
         delegate?.fetcherControllerDidChange()
-        if resultsControllerIsEmpty {
+        if isEmpty {
             delegate?.fetcherControllerIsEmpty()
         }
     }
 
     func fetchedResultsControllerDidPerformFetch(controller: FetchedResultsController<PE>) {
-        if resultsControllerIsEmpty {
+        if isEmpty {
             delegate?.fetcherControllerIsEmpty()
             return
         }

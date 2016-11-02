@@ -55,9 +55,6 @@ class EventPresenterImplementation<R: EventRepository, PR: PersistencyRepository
                 if let err = ErrorMapper.applicationError(fromOperationErrors: errors) {
                     self.client?.eventPresenterWantsToShowError(err)
                 }
-//                if self.resultsControllerIsEmpty {
-//                    self.client?.presenterIsEmpty()
-//                }
         })
     }
 
@@ -87,6 +84,12 @@ class EventPresenterImplementation<R: EventRepository, PR: PersistencyRepository
     func queryAllEvents() {
         let persistedEventsOperation = initialiseFetcherControllerOperation(with: self)
         let persistOperation = persistencyRepository.persistEventsOperation()
+        let observer = BlockObserverOnMainQueue(willExecute: nil) { _, _ in
+            if self.fetcherController?.isEmpty ?? true {
+                self.client?.eventPresenterIsEmpty()
+            }
+        }
+        persistOperation.addObserver(observer)
         let remoteEventsOperation = queryRemoteEventsOperation(with: persistOperation)
         remoteEventsOperation.addDependency(persistedEventsOperation)
         operationQueue.addOperations(remoteEventsOperation)
