@@ -47,7 +47,11 @@ class EventViewController: SharedViewController, EventPresenterClient, UITableVi
 
     private var creatingEvent: Event?
 
-    private let emptyView = EmptyEventView()
+    private lazy var emptyView: UIView = {
+        let view = EmptyView()
+        view.configure(title: String(key: "empty_event_title_label"), subtitle: String(key: "empty_event_subtitle_label"))
+        return view
+    }()
 
     private lazy var addEventButton: UIBarButtonItem = {
         return UIBarButtonItem(barButtonSystemItem: .Add, target: self, action: #selector(addEventAction(_:)))
@@ -128,12 +132,34 @@ class EventViewController: SharedViewController, EventPresenterClient, UITableVi
     }
 
     // MARK: - EventPresenterClient
-    
-    func presenterEventsDidChange() {
+
+    func eventPresenterWantsToShowLoading() {
+        emptyView.hidden = true
+    }
+
+    func eventPresenterDidFill() {
+        tableView.reloadData()
+    }
+
+    func eventPresenterIsEmpty() {
+        emptyView.hidden = false
+    }
+
+    func eventPresenterDidChange() {
         tableView.endUpdates()
     }
 
-    func presenterEventDidChange(eventChange: EntityChange) {
+    func eventPresenterWillChange() {
+        tableView.beginUpdates()
+        emptyView.hidden = true
+    }
+
+    func eventPresenterWantsToShowError(error: ApplicationError) {
+        let controller = eventDetailViewController ?? self
+        controller.showAlert(withMessage: error.description, title: String(key: "error_title"))
+    }
+
+    func eventPresenterDidChange(eventChange: EntityChange) {
         switch eventChange {
         case let .insert(indexPath: indexPath):
             self.tableView.insertRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
@@ -143,7 +169,7 @@ class EventViewController: SharedViewController, EventPresenterClient, UITableVi
             guard
                 let cell = self.tableView.cellForRowAtIndexPath(indexPath) as? EventTableViewCell
                 else { return }
-                cell.configure(with: eventPresenter.event(atIndex: indexPath))
+            cell.configure(with: eventPresenter.event(atIndex: indexPath))
             eventDetailViewController?.tryToUpdateEvent(with: eventPresenter.event(atIndex: indexPath))
         case let .move(fromIndexPath: fromIndexPath, toIndexPath: toIndexPath):
             self.tableView.deleteRowsAtIndexPaths([fromIndexPath], withRowAnimation: .Fade)
@@ -152,12 +178,7 @@ class EventViewController: SharedViewController, EventPresenterClient, UITableVi
         }
     }
 
-    func presenterEventsWillChange() {
-        tableView.beginUpdates()
-        emptyView.hidden = true
-    }
-    
-    func presenterEventSectionDidChange(eventSectionChange: EntitySectionChange) {
+    func eventPresenterSectionDidChange(eventSectionChange: EntitySectionChange) {
         switch eventSectionChange {
         case let .insert(section):
             tableView.insertSections(NSIndexSet(index: section), withRowAnimation: .Fade)
@@ -166,26 +187,6 @@ class EventViewController: SharedViewController, EventPresenterClient, UITableVi
         }
     }
 
-    func presenterWantsToShowLoading() {
-        emptyView.hidden = true
-    }
-    
-    func presenterWantsToDismissLoading() {
-    }
-
-    func presenterIsEmpty() {
-        emptyView.hidden = false
-    }
-
-    func presenterWantsToShowError(error: ApplicationError) {
-        let controller = eventDetailViewController ?? self
-        controller.showAlert(withMessage: error.description, title: String(key: "error_title"))
-    }
-
-    func presenterHasValues() {
-        tableView.reloadData()
-    }
-    
     // MARK: - Private
     
     private func setupController() {

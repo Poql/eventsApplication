@@ -17,6 +17,8 @@ class FetchRecordOperation: FetchRecordsOperation {
             return Event(record: record)
         case Admin.name:
             return Admin(record: record)
+        case Message.name:
+            return Message(record: record)
         default:
             return nil
         }

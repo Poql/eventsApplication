@@ -10,18 +10,20 @@ import Foundation
 import Operations
 import BNRCoreDataStack
 
-class EventPresenterImplementation<R: EventRepository, PR: PersistencyRepository>: EventPresenter, FetchedResultsControllerDelegate {
+class EventPresenterImplementation<R: EventRepository, PR: PersistencyRepository>: EventPresenter, RecordsFetcherControllerDelegate, RecordsFetcherControllerInitializer {
     private let eventRepository: R
 
     private let persistencyRepository: PR
     
     private let operationQueue = OperationQueue()
-    
-    private var resultsController: FetchedResultsController<PersistentEvent>?
+    private let persistentQueue = PersistentOperationQueue.shared
 
-    private var resultsControllerIsEmpty: Bool {
-        return resultsController?.fetchedObjects?.isEmpty ?? true
-    }
+    var fetcherController: RecordsFetcherController<EventRecordMapper>?
+    var fetcherControllerPredicate: NSPredicate = .alwaysTrue()
+    var fetcherControllerSortDescriptors = [
+        NSSortDescriptor(key: "eventDate", ascending: true),NSSortDescriptor(key: "eventDescription", ascending: true)
+    ]
+    var fetcherControllerSectionPath: String? = "sectionIdentifier"
 
     private var eventListeners = WeakList<EventModificationListener>()
     private var modifyingEvents = Set<Event>()
@@ -35,48 +37,23 @@ class EventPresenterImplementation<R: EventRepository, PR: PersistencyRepository
 
     // MARK: - Private
 
-    private func queryPersistedEventsOperation() -> Operation {
-        let operation = DataStackBlockOperation { stack in
-            guard let mainContext = stack?.mainQueueContext else { return }
-            self.setResultsController(with: mainContext)
-            self.queryPersistedEvents()
-        }
-        let provider = DataStackProviderOperation()
-        provider.userIntent = .Initiated
-        provider.addDataStackOperation(operation)
-        return provider
-    }
-    
-    private func setResultsController(with context: NSManagedObjectContext) {
-        let request = NSFetchRequest(entity: PersistentEvent.self)
-        request.sortDescriptors = [NSSortDescriptor(key: "eventDate", ascending: true), NSSortDescriptor(key: "eventDescription", ascending: true)]
-        resultsController = FetchedResultsController<PersistentEvent>(fetchRequest: request, managedObjectContext: context, sectionNameKeyPath: "sectionIdentifier")
-        resultsController?.setDelegate(self)
-    }
-
-    private func queryRemoteEventsOperation() -> Operation {
+    private func queryRemoteEventsOperation(with persistOperation: PR.PersistEventsOperation) -> Operation {
         let operation = eventRepository.queryEventsOperation()
-        let persistOperation = persistencyRepository.persistEventsOperation()
         (persistOperation as Operation).addDependency(operation)
         operation.addWillFinishBlock {
             persistOperation.events = operation.events
         }
-        let group = GroupOperation(operations: [persistOperation, operation])
-        group.addObserver(NetworkObserver())
-        group.addObserver(queryRemoteEventsObserver())
-        return group
+        operation.addObserver(NetworkObserver())
+        operation.addObserver(queryRemoteEventsObserver())
+        return operation
     }
 
     private func queryRemoteEventsObserver() -> BlockObserverOnMainQueue {
         return BlockObserverOnMainQueue(willExecute: { _ in
-            self.client?.presenterWantsToShowLoading()
+            self.client?.eventPresenterWantsToShowLoading()
             }, didFinish: { _, errors in
-                self.client?.presenterWantsToDismissLoading()
                 if let err = ErrorMapper.applicationError(fromOperationErrors: errors) {
-                    self.client?.presenterWantsToShowError(err)
-                }
-                if self.resultsControllerIsEmpty {
-                    self.client?.presenterIsEmpty()
+                    self.client?.eventPresenterWantsToShowError(err)
                 }
         })
     }
@@ -89,14 +66,9 @@ class EventPresenterImplementation<R: EventRepository, PR: PersistencyRepository
             self.eventListeners.forEach { $0.presenterDidModify(event: event) }
             self.modifyingEvents.remove(event)
             if let err = ErrorMapper.applicationError(fromOperationErrors: errors) {
-                self.client?.presenterWantsToShowError(err)
+                self.client?.eventPresenterWantsToShowError(err)
             }
         })
-    }
-
-    private func queryPersistedEvents() {
-        guard let resultsController = resultsController else { return }
-        try! resultsController.performFetch()
     }
 
     // MARK: - EventPresenter
@@ -110,10 +82,18 @@ class EventPresenterImplementation<R: EventRepository, PR: PersistencyRepository
     }
 
     func queryAllEvents() {
-        let persistedEventsOperation = queryPersistedEventsOperation()
-        let remoteEventsOperation = queryRemoteEventsOperation()
+        let persistedEventsOperation = initialiseFetcherControllerOperation(with: self)
+        let persistOperation = persistencyRepository.persistEventsOperation()
+        let observer = BlockObserverOnMainQueue(willExecute: nil) { _, _ in
+            if self.fetcherController?.isEmpty ?? true {
+                self.client?.eventPresenterIsEmpty()
+            }
+        }
+        persistOperation.addObserver(observer)
+        let remoteEventsOperation = queryRemoteEventsOperation(with: persistOperation)
         remoteEventsOperation.addDependency(persistedEventsOperation)
-        operationQueue.addOperations(persistedEventsOperation, remoteEventsOperation)
+        operationQueue.addOperations(remoteEventsOperation)
+        persistentQueue.addOperations(persistOperation, persistedEventsOperation)
     }
 
     func modifyEvent(event: Event) {
@@ -129,67 +109,46 @@ class EventPresenterImplementation<R: EventRepository, PR: PersistencyRepository
         groupOperation.addObserver(modifyEventObserver(event: event))
         operationQueue.addOperation(groupOperation)
     }
-    
-    func numberOfEventSections() -> Int {
-        return resultsController?.sections?.count ?? 0
-    }
-    
-    func numberOfEvents(inSection section: Int) -> Int {
-        return resultsController?.sections?[section].objects.count ?? 0
-    }
-    
+
     func title(forSection section: Int) -> String? {
-        return resultsController?.sections?[section].name
+        return fetcherController?.title(forSection: section)
     }
-    
+
     func event(atIndex index: NSIndexPath) -> Event {
-        return RecordMapper.getEvent(from: resultsController![index])
-    }
-    
-    // MARK: - FetchedResultsControllerDelegate
-
-    func fetchedResultsController(controller: FetchedResultsController<PersistentEvent>, didChangeObject change: FetchedResultsObjectChange<PersistentEvent>) {
-        let entityChange: EntityChange
-        switch change {
-        case let .Delete(object: _, indexPath: indexPath):
-            entityChange = .delete(indexPath: indexPath)
-        case let .Insert(object: _, indexPath: indexPath):
-            entityChange = .insert(indexPath: indexPath)
-        case let .Update(object: _, indexPath: indexPath):
-            entityChange = .update(indexPath: indexPath)
-        case let .Move(object: _, fromIndexPath: fromIndexPath, toIndexPath: toIndexPath):
-            entityChange = .move(fromIndexPath: fromIndexPath, toIndexPath: toIndexPath)
-        }
-        client?.presenterEventDidChange(entityChange)
+        return fetcherController?.entity(atIndex: index) ?? Event()
     }
 
-    func fetchedResultsController(controller: FetchedResultsController<PersistentEvent>, didChangeSection change: FetchedResultsSectionChange<PersistentEvent>) {
-        let entitySectionChange: EntitySectionChange
-        switch change {
-        case let .Insert(_, index):
-            entitySectionChange = .insert(index: index)
-        case let .Delete(_, index):
-            entitySectionChange = .delete(index: index)
-        }
-        client?.presenterEventSectionDidChange(entitySectionChange)
+    func numberOfEventSections() -> Int {
+        return fetcherController?.numberOfSections() ?? 0
     }
 
-    func fetchedResultsControllerWillChangeContent(controller: FetchedResultsController<PersistentEvent>) {
-        client?.presenterEventsWillChange()
+    func numberOfEvents(inSection section: Int) -> Int {
+        return fetcherController?.numberOfEntities(inSection: section) ?? 0
     }
 
-    func fetchedResultsControllerDidChangeContent(controller: FetchedResultsController<PersistentEvent>) {
-        client?.presenterEventsDidChange()
-        if resultsControllerIsEmpty {
-            client?.presenterIsEmpty()
-        }
+    // MARK: - RecordsFetcherControllerDelegate
+
+    func fetcherControllerWillChange() {
+        client?.eventPresenterWillChange()
     }
 
-    func fetchedResultsControllerDidPerformFetch(controller: FetchedResultsController<PersistentEvent>) {
-        if resultsControllerIsEmpty {
-            client?.presenterIsEmpty()
-            return
-        }
-        client?.presenterHasValues()
+    func fetcherControllerDidChange() {
+        client?.eventPresenterDidChange()
+    }
+
+    func fetcherControllerIsEmpty() {
+        client?.eventPresenterIsEmpty()
+    }
+
+    func fetcherControllerHasValues() {
+        client?.eventPresenterDidFill()
+    }
+
+    func fetcherControllerRecordDidChange(entityChange: EntityChange) {
+        client?.eventPresenterDidChange(entityChange)
+    }
+
+    func fetcherControllerSectionDidChange(sectionChange: EntitySectionChange) {
+        client?.eventPresenterSectionDidChange(sectionChange)
     }
 }

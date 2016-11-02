@@ -8,6 +8,18 @@
 
 /* Begin PBXBuildFile section */
 		CC0116202BF53C24686BE3C2 /* Pods_ESTPEvents.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B732DA91610C0FDAF3B949AB /* Pods_ESTPEvents.framework */; };
+		E7192E171DBD1A0800829A8A /* MessageListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7192E161DBD1A0800829A8A /* MessageListViewController.swift */; };
+		E7192E1C1DBD1BA600829A8A /* MessagesRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7192E1B1DBD1BA600829A8A /* MessagesRepository.swift */; };
+		E7192E1F1DBD1C8D00829A8A /* QueryMessagesOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7192E1E1DBD1C8D00829A8A /* QueryMessagesOperation.swift */; };
+		E7192E221DBD1CFA00829A8A /* MessagesRepositoryImplementation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7192E211DBD1CFA00829A8A /* MessagesRepositoryImplementation.swift */; };
+		E7192E241DBD1DAD00829A8A /* PersistRecordsOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7192E231DBD1DAD00829A8A /* PersistRecordsOperation.swift */; };
+		E7192E261DBD280400829A8A /* PersistentMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7192E251DBD280400829A8A /* PersistentMessage.swift */; };
+		E7192E281DBD2A2A00829A8A /* EventRecordMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7192E271DBD2A2A00829A8A /* EventRecordMapper.swift */; };
+		E7192E2A1DBD2A3600829A8A /* MessageRecordMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7192E291DBD2A3600829A8A /* MessageRecordMapper.swift */; };
+		E7192E2C1DBD2C3700829A8A /* PersistEventsOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7192E2B1DBD2C3700829A8A /* PersistEventsOperation.swift */; };
+		E72219221DC3E05800C5A7EB /* MessageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E72219211DC3E05800C5A7EB /* MessageTableViewCell.swift */; };
+		E72219241DCA7DF500C5A7EB /* PersistentOperationQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = E72219231DCA7DF500C5A7EB /* PersistentOperationQueue.swift */; };
+		E72219281DCA863C00C5A7EB /* EmptyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E72219271DCA863C00C5A7EB /* EmptyView.swift */; };
 		E734F8241D79CE95001E013C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E734F8231D79CE95001E013C /* AppDelegate.swift */; };
 		E734F8261D79CEA1001E013C /* SharedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E734F8251D79CEA1001E013C /* SharedViewController.swift */; };
 		E734F82A1D79CED1001E013C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E734F8291D79CED1001E013C /* Assets.xcassets */; };
@@ -68,7 +80,6 @@
 		E79640CB1D88449700C9F9DC /* WeakList.swift in Sources */ = {isa = PBXBuildFile; fileRef = E79640CA1D88449700C9F9DC /* WeakList.swift */; };
 		E797F2EF1D7C2D4100CB5EE2 /* PersistencyRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = E797F2ED1D7C2D4100CB5EE2 /* PersistencyRepository.swift */; };
 		E797F2F01D7C2D4100CB5EE2 /* PersistencyRepositoryImplementation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E797F2EE1D7C2D4100CB5EE2 /* PersistencyRepositoryImplementation.swift */; };
-		E797F2F31D7C2D8100CB5EE2 /* PersistEventsOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E797F2F21D7C2D8100CB5EE2 /* PersistEventsOperation.swift */; };
 		E797F2F81D7C3D3E00CB5EE2 /* EntityChange.swift in Sources */ = {isa = PBXBuildFile; fileRef = E797F2F71D7C3D3E00CB5EE2 /* EntityChange.swift */; };
 		E79B6BB51D7AFE4A0048E0DF /* EventRepositoryImplementation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E79B6BB41D7AFE4A0048E0DF /* EventRepositoryImplementation.swift */; };
 		E79B6BB71D7AFE570048E0DF /* QueryEventsOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E79B6BB61D7AFE570048E0DF /* QueryEventsOperation.swift */; };
@@ -108,6 +119,11 @@
 		E7C3D25A1D818405007F5146 /* Error+CloudKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C3D2591D818405007F5146 /* Error+CloudKit.swift */; };
 		E7C3D25C1D8186A6007F5146 /* SubscriptionRepositoryImplementation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C3D25B1D8186A6007F5146 /* SubscriptionRepositoryImplementation.swift */; };
 		E7C3D25E1D818AF8007F5146 /* NSPredicate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C3D25D1D818AF8007F5146 /* NSPredicate.swift */; };
+		E7CFA6B11DC1264300F27F05 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7CFA6B01DC1264300F27F05 /* Message.swift */; };
+		E7CFA6B31DC12AB600F27F05 /* PersistMessagesOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7CFA6B21DC12AB600F27F05 /* PersistMessagesOperation.swift */; };
+		E7CFA6BB1DC1428200F27F05 /* PersistentRecordMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7CFA6BA1DC1428200F27F05 /* PersistentRecordMapper.swift */; };
+		E7CFA6BD1DC144B900F27F05 /* MessagesPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7CFA6BC1DC144B900F27F05 /* MessagesPresenter.swift */; };
+		E7CFA6BF1DC1454100F27F05 /* MessagesPresenterImplementation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7CFA6BE1DC1454100F27F05 /* MessagesPresenterImplementation.swift */; };
 		E7D4720F1D894228006362C2 /* AuthenticationProviderOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7D4720E1D894228006362C2 /* AuthenticationProviderOperation.swift */; };
 		E7D472131D895BF6006362C2 /* DataStackProviderOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7D472121D895BF6006362C2 /* DataStackProviderOperation.swift */; };
 		E7D472151D8977B8006362C2 /* EnsureAuthenticatedSubscriptionOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7D472141D8977B8006362C2 /* EnsureAuthenticatedSubscriptionOperation.swift */; };
@@ -116,7 +132,8 @@
 		E7E5FA371D79EFAE00B6FF1D /* CloudOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7E5FA361D79EFAE00B6FF1D /* CloudOperation.swift */; };
 		E7E5FA391D79F01900B6FF1D /* QueryOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7E5FA381D79F01900B6FF1D /* QueryOperation.swift */; };
 		E7E5FA3B1D79F08000B6FF1D /* EventRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7E5FA3A1D79F08000B6FF1D /* EventRepository.swift */; };
-		E7F91A871D89864F00B75F7D /* EmptyEventView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7F91A861D89864F00B75F7D /* EmptyEventView.swift */; };
+		E7EF0A951DC2703800BC5ED1 /* RecordsFetcherController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7EF0A941DC2703800BC5ED1 /* RecordsFetcherController.swift */; };
+		E7EF0A9F1DC3D30A00BC5ED1 /* RecordsFetcherControllerInitializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7EF0A9E1DC3D30A00BC5ED1 /* RecordsFetcherControllerInitializer.swift */; };
 		E7FB89301D7B1C6900FEFD1B /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7FB892F1D7B1C6900FEFD1B /* CloudKit.framework */; };
 		E7FB89361D7B211700FEFD1B /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E7FB89341D7B211700FEFD1B /* Model.xcdatamodeld */; };
 		E7FB89401D7B3DDE00FEFD1B /* LoadCoreDataStackOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7FB893F1D7B3DDE00FEFD1B /* LoadCoreDataStackOperation.swift */; };
@@ -127,6 +144,18 @@
 		60B54B651F52DAD56A33565E /* Pods-ESTPEvents.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ESTPEvents.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ESTPEvents/Pods-ESTPEvents.debug.xcconfig"; sourceTree = "<group>"; };
 		60B69657FD73DAE5B9293AD0 /* Pods-ESTPEvents.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ESTPEvents.release.xcconfig"; path = "Pods/Target Support Files/Pods-ESTPEvents/Pods-ESTPEvents.release.xcconfig"; sourceTree = "<group>"; };
 		B732DA91610C0FDAF3B949AB /* Pods_ESTPEvents.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ESTPEvents.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E7192E161DBD1A0800829A8A /* MessageListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MessageListViewController.swift; path = Classes/MessageListViewController.swift; sourceTree = "<group>"; };
+		E7192E1B1DBD1BA600829A8A /* MessagesRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MessagesRepository.swift; path = Classes/MessagesRepository.swift; sourceTree = "<group>"; };
+		E7192E1E1DBD1C8D00829A8A /* QueryMessagesOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = QueryMessagesOperation.swift; path = Classes/QueryMessagesOperation.swift; sourceTree = "<group>"; };
+		E7192E211DBD1CFA00829A8A /* MessagesRepositoryImplementation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MessagesRepositoryImplementation.swift; path = Classes/MessagesRepositoryImplementation.swift; sourceTree = "<group>"; };
+		E7192E231DBD1DAD00829A8A /* PersistRecordsOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PersistRecordsOperation.swift; path = Classes/PersistRecordsOperation.swift; sourceTree = "<group>"; };
+		E7192E251DBD280400829A8A /* PersistentMessage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PersistentMessage.swift; path = Classes/PersistentMessage.swift; sourceTree = "<group>"; };
+		E7192E271DBD2A2A00829A8A /* EventRecordMapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EventRecordMapper.swift; path = Classes/EventRecordMapper.swift; sourceTree = "<group>"; };
+		E7192E291DBD2A3600829A8A /* MessageRecordMapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MessageRecordMapper.swift; path = Classes/MessageRecordMapper.swift; sourceTree = "<group>"; };
+		E7192E2B1DBD2C3700829A8A /* PersistEventsOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersistEventsOperation.swift; sourceTree = "<group>"; };
+		E72219211DC3E05800C5A7EB /* MessageTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MessageTableViewCell.swift; path = Classes/MessageTableViewCell.swift; sourceTree = "<group>"; };
+		E72219231DCA7DF500C5A7EB /* PersistentOperationQueue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PersistentOperationQueue.swift; path = Classes/PersistentOperationQueue.swift; sourceTree = "<group>"; };
+		E72219271DCA863C00C5A7EB /* EmptyView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EmptyView.swift; path = Classes/EmptyView.swift; sourceTree = "<group>"; };
 		E734F8061D79CD33001E013C /* ESTPEvents.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ESTPEvents.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E734F8231D79CE95001E013C /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = Classes/AppDelegate.swift; sourceTree = "<group>"; };
 		E734F8251D79CEA1001E013C /* SharedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SharedViewController.swift; path = Classes/SharedViewController.swift; sourceTree = "<group>"; };
@@ -189,7 +218,6 @@
 		E79640CA1D88449700C9F9DC /* WeakList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WeakList.swift; path = Classes/WeakList.swift; sourceTree = "<group>"; };
 		E797F2ED1D7C2D4100CB5EE2 /* PersistencyRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PersistencyRepository.swift; path = Classes/PersistencyRepository.swift; sourceTree = "<group>"; };
 		E797F2EE1D7C2D4100CB5EE2 /* PersistencyRepositoryImplementation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PersistencyRepositoryImplementation.swift; path = Classes/PersistencyRepositoryImplementation.swift; sourceTree = "<group>"; };
-		E797F2F21D7C2D8100CB5EE2 /* PersistEventsOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PersistEventsOperation.swift; path = Classes/PersistEventsOperation.swift; sourceTree = "<group>"; };
 		E797F2F71D7C3D3E00CB5EE2 /* EntityChange.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EntityChange.swift; path = Classes/EntityChange.swift; sourceTree = "<group>"; };
 		E79B6BB41D7AFE4A0048E0DF /* EventRepositoryImplementation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EventRepositoryImplementation.swift; path = Classes/EventRepositoryImplementation.swift; sourceTree = "<group>"; };
 		E79B6BB61D7AFE570048E0DF /* QueryEventsOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = QueryEventsOperation.swift; path = Classes/QueryEventsOperation.swift; sourceTree = "<group>"; };
@@ -229,6 +257,11 @@
 		E7C3D2591D818405007F5146 /* Error+CloudKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Error+CloudKit.swift"; path = "Classes/Error+CloudKit.swift"; sourceTree = "<group>"; };
 		E7C3D25B1D8186A6007F5146 /* SubscriptionRepositoryImplementation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SubscriptionRepositoryImplementation.swift; path = Classes/SubscriptionRepositoryImplementation.swift; sourceTree = "<group>"; };
 		E7C3D25D1D818AF8007F5146 /* NSPredicate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NSPredicate.swift; path = Classes/NSPredicate.swift; sourceTree = "<group>"; };
+		E7CFA6B01DC1264300F27F05 /* Message.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Message.swift; path = Classes/Message.swift; sourceTree = "<group>"; };
+		E7CFA6B21DC12AB600F27F05 /* PersistMessagesOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PersistMessagesOperation.swift; path = Classes/PersistMessagesOperation.swift; sourceTree = "<group>"; };
+		E7CFA6BA1DC1428200F27F05 /* PersistentRecordMapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PersistentRecordMapper.swift; path = Classes/PersistentRecordMapper.swift; sourceTree = "<group>"; };
+		E7CFA6BC1DC144B900F27F05 /* MessagesPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MessagesPresenter.swift; path = Classes/MessagesPresenter.swift; sourceTree = "<group>"; };
+		E7CFA6BE1DC1454100F27F05 /* MessagesPresenterImplementation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MessagesPresenterImplementation.swift; path = Classes/MessagesPresenterImplementation.swift; sourceTree = "<group>"; };
 		E7D4720E1D894228006362C2 /* AuthenticationProviderOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AuthenticationProviderOperation.swift; path = Classes/AuthenticationProviderOperation.swift; sourceTree = "<group>"; };
 		E7D472121D895BF6006362C2 /* DataStackProviderOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DataStackProviderOperation.swift; path = Classes/DataStackProviderOperation.swift; sourceTree = "<group>"; };
 		E7D472141D8977B8006362C2 /* EnsureAuthenticatedSubscriptionOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EnsureAuthenticatedSubscriptionOperation.swift; path = Classes/EnsureAuthenticatedSubscriptionOperation.swift; sourceTree = "<group>"; };
@@ -238,7 +271,8 @@
 		E7E5FA381D79F01900B6FF1D /* QueryOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = QueryOperation.swift; path = Classes/QueryOperation.swift; sourceTree = "<group>"; };
 		E7E5FA3A1D79F08000B6FF1D /* EventRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EventRepository.swift; path = Classes/EventRepository.swift; sourceTree = "<group>"; };
 		E7EE0E9F1D7AF70F0089B38C /* ESTPEvents.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = ESTPEvents.entitlements; sourceTree = "<group>"; };
-		E7F91A861D89864F00B75F7D /* EmptyEventView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EmptyEventView.swift; path = Classes/EmptyEventView.swift; sourceTree = "<group>"; };
+		E7EF0A941DC2703800BC5ED1 /* RecordsFetcherController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RecordsFetcherController.swift; path = Classes/RecordsFetcherController.swift; sourceTree = "<group>"; };
+		E7EF0A9E1DC3D30A00BC5ED1 /* RecordsFetcherControllerInitializer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordsFetcherControllerInitializer.swift; sourceTree = "<group>"; };
 		E7FB892F1D7B1C6900FEFD1B /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
 		E7FB89351D7B211700FEFD1B /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		E7FB893F1D7B3DDE00FEFD1B /* LoadCoreDataStackOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoadCoreDataStackOperation.swift; path = Classes/LoadCoreDataStackOperation.swift; sourceTree = "<group>"; };
@@ -265,6 +299,40 @@
 				B732DA91610C0FDAF3B949AB /* Pods_ESTPEvents.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E7192E151DBD19E800829A8A /* Messages */ = {
+			isa = PBXGroup;
+			children = (
+				E7192E161DBD1A0800829A8A /* MessageListViewController.swift */,
+			);
+			name = Messages;
+			sourceTree = "<group>";
+		};
+		E7192E1A1DBD1B7C00829A8A /* Messages */ = {
+			isa = PBXGroup;
+			children = (
+				E7192E1D1DBD1C7300829A8A /* Operations */,
+				E7192E1B1DBD1BA600829A8A /* MessagesRepository.swift */,
+				E7192E211DBD1CFA00829A8A /* MessagesRepositoryImplementation.swift */,
+			);
+			name = Messages;
+			sourceTree = "<group>";
+		};
+		E7192E1D1DBD1C7300829A8A /* Operations */ = {
+			isa = PBXGroup;
+			children = (
+				E7192E1E1DBD1C8D00829A8A /* QueryMessagesOperation.swift */,
+			);
+			name = Operations;
+			sourceTree = "<group>";
+		};
+		E72219201DC3E03E00C5A7EB /* Message */ = {
+			isa = PBXGroup;
+			children = (
+				E72219211DC3E05800C5A7EB /* MessageTableViewCell.swift */,
+			);
+			name = Message;
 			sourceTree = "<group>";
 		};
 		E734F7FD1D79CD33001E013C = {
@@ -311,6 +379,7 @@
 				E7C3D2441D802022007F5146 /* NavigationControllerWithWhiteStatusBar.swift */,
 				E76570371D82D28400304D3E /* DatePickerViewController.swift */,
 				E796409A1D86AF9600C9F9DC /* KeyboardManager.swift */,
+				E7192E151DBD19E800829A8A /* Messages */,
 				E78FB79D1DB7F957002303BA /* Main */,
 				E7EE0E991D7AC2740089B38C /* Event */,
 				E765703B1D84007A00304D3E /* Modify Event */,
@@ -323,6 +392,7 @@
 			isa = PBXGroup;
 			children = (
 				E7EE0E9E1D7AF6B50089B38C /* Shared */,
+				E7CFA6B41DC12BCE00F27F05 /* Messages */,
 				E7E5FA4A1D79FDAD00B6FF1D /* Event */,
 				E78FB7A01DB7F9BF002303BA /* Main */,
 				E7C3D24A1D8041DB007F5146 /* Application */,
@@ -335,6 +405,7 @@
 			children = (
 				E7FB893E1D7B3DC600FEFD1B /* CoreData */,
 				E762841E1D8A982700DD6EAA /* BlockObserverOnMainQueue.swift */,
+				E72219231DCA7DF500C5A7EB /* PersistentOperationQueue.swift */,
 			);
 			name = Operations;
 			sourceTree = "<group>";
@@ -348,6 +419,7 @@
 				E7E5FA321D79EE0100B6FF1D /* Event */,
 				E79640BC1D882F6400C9F9DC /* User Status */,
 				E78FB7911DB37A31002303BA /* Admin */,
+				E7192E1A1DBD1B7C00829A8A /* Messages */,
 			);
 			name = Repository;
 			sourceTree = "<group>";
@@ -425,6 +497,7 @@
 				E756AC141D81FA8A0077375D /* BooleanCell.swift */,
 				E765702F1D82A00400304D3E /* TextCell.swift */,
 				E76284201D8AA67B00DD6EAA /* BannerContainerView.swift */,
+				E72219271DCA863C00C5A7EB /* EmptyView.swift */,
 			);
 			name = Shared;
 			sourceTree = "<group>";
@@ -557,8 +630,10 @@
 		E797F2F11D7C2D6D00CB5EE2 /* Operations */ = {
 			isa = PBXGroup;
 			children = (
-				E797F2F21D7C2D8100CB5EE2 /* PersistEventsOperation.swift */,
+				E7192E231DBD1DAD00829A8A /* PersistRecordsOperation.swift */,
+				E7192E2B1DBD2C3700829A8A /* PersistEventsOperation.swift */,
 				E7C3D2481D803FBF007F5146 /* DeleteEventsOperation.swift */,
+				E7CFA6B21DC12AB600F27F05 /* PersistMessagesOperation.swift */,
 			);
 			name = Operations;
 			sourceTree = "<group>";
@@ -567,6 +642,8 @@
 			isa = PBXGroup;
 			children = (
 				E7BC15F51D7ED67E00B02897 /* RecordMapper.swift */,
+				E7192E271DBD2A2A00829A8A /* EventRecordMapper.swift */,
+				E7192E291DBD2A3600829A8A /* MessageRecordMapper.swift */,
 			);
 			name = Mapper;
 			sourceTree = "<group>";
@@ -576,6 +653,7 @@
 			children = (
 				E756AC071D81E5F90077375D /* Shared */,
 				E7BC16041D7F433500B02897 /* Event */,
+				E72219201DC3E03E00C5A7EB /* Message */,
 				E765703C1D84012600304D3E /* Modify Event */,
 				E796409F1D86D87800C9F9DC /* Event Detail */,
 			);
@@ -587,7 +665,6 @@
 			children = (
 				E7BC16091D7F5C8900B02897 /* EventTableViewCell.swift */,
 				E7BC16051D7F434A00B02897 /* CircleView.swift */,
-				E7F91A861D89864F00B75F7D /* EmptyEventView.swift */,
 			);
 			name = Event;
 			sourceTree = "<group>";
@@ -622,6 +699,23 @@
 			name = Operations;
 			sourceTree = "<group>";
 		};
+		E7CFA6B41DC12BCE00F27F05 /* Messages */ = {
+			isa = PBXGroup;
+			children = (
+				E7CFA6BC1DC144B900F27F05 /* MessagesPresenter.swift */,
+				E7CFA6BE1DC1454100F27F05 /* MessagesPresenterImplementation.swift */,
+			);
+			name = Messages;
+			sourceTree = "<group>";
+		};
+		E7CFA6B91DC13D8100F27F05 /* Mapper */ = {
+			isa = PBXGroup;
+			children = (
+				E7CFA6BA1DC1428200F27F05 /* PersistentRecordMapper.swift */,
+			);
+			name = Mapper;
+			sourceTree = "<group>";
+		};
 		E7E5FA2D1D79ED4100B6FF1D /* Shared */ = {
 			isa = PBXGroup;
 			children = (
@@ -644,6 +738,7 @@
 		E7E5FA3C1D79F0AE00B6FF1D /* Entity */ = {
 			isa = PBXGroup;
 			children = (
+				E7CFA6B01DC1264300F27F05 /* Message.swift */,
 				E79B6BB91D7AFE780048E0DF /* Entity.swift */,
 				E79B6BC21D7AFE780048E0DF /* Record.swift */,
 				E79B6BBB1D7AFE780048E0DF /* Event.swift */,
@@ -681,6 +776,8 @@
 		E7EE0E9E1D7AF6B50089B38C /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				E7EF0A931DC26FE300BC5ED1 /* Fetcher */,
+				E7CFA6B91DC13D8100F27F05 /* Mapper */,
 				E7BC15F71D7ED68A00B02897 /* PresenterState.swift */,
 				E79B6BC11D7AFE780048E0DF /* PresenterFactory.swift */,
 				E797F2F71D7C3D3E00CB5EE2 /* EntityChange.swift */,
@@ -689,12 +786,22 @@
 			name = Shared;
 			sourceTree = "<group>";
 		};
+		E7EF0A931DC26FE300BC5ED1 /* Fetcher */ = {
+			isa = PBXGroup;
+			children = (
+				E7EF0A941DC2703800BC5ED1 /* RecordsFetcherController.swift */,
+				E7EF0A9E1DC3D30A00BC5ED1 /* RecordsFetcherControllerInitializer.swift */,
+			);
+			name = Fetcher;
+			sourceTree = "<group>";
+		};
 		E7FB89311D7B1F6600FEFD1B /* Persistency */ = {
 			isa = PBXGroup;
 			children = (
 				E7FB89341D7B211700FEFD1B /* Model.xcdatamodeld */,
 				E7BC15FD1D7EDD3900B02897 /* PersistentEvent.swift */,
 				E7BC15FB1D7EDD2E00B02897 /* PersistentRecord.swift */,
+				E7192E251DBD280400829A8A /* PersistentMessage.swift */,
 			);
 			name = Persistency;
 			sourceTree = "<group>";
@@ -863,8 +970,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				E79640C11D88304100C9F9DC /* FetchUserStatusOperation.swift in Sources */,
+				E7192E281DBD2A2A00829A8A /* EventRecordMapper.swift in Sources */,
 				E79B6BB71D7AFE570048E0DF /* QueryEventsOperation.swift in Sources */,
-				E797F2F31D7C2D8100CB5EE2 /* PersistEventsOperation.swift in Sources */,
 				E7BC15F81D7ED68A00B02897 /* PresenterState.swift in Sources */,
 				E76570301D82A00400304D3E /* TextCell.swift in Sources */,
 				E7BC15FE1D7EDD3900B02897 /* PersistentEvent.swift in Sources */,
@@ -876,14 +983,18 @@
 				E762841F1D8A982700DD6EAA /* BlockObserverOnMainQueue.swift in Sources */,
 				E79B6BCF1D7AFE780048E0DF /* Result.swift in Sources */,
 				E79640B31D87E39200C9F9DC /* FetchUserOperation.swift in Sources */,
+				E7192E241DBD1DAD00829A8A /* PersistRecordsOperation.swift in Sources */,
 				E734F8261D79CEA1001E013C /* SharedViewController.swift in Sources */,
 				E780F25A1D8599CE0084E86B /* Location+MapKit.swift in Sources */,
+				E7CFA6B11DC1264300F27F05 /* Message.swift in Sources */,
 				E7BC16001D7EF78600B02897 /* DataStackOperations.swift in Sources */,
 				E797F2F01D7C2D4100CB5EE2 /* PersistencyRepositoryImplementation.swift in Sources */,
+				E72219221DC3E05800C5A7EB /* MessageTableViewCell.swift in Sources */,
 				E756AC061D81E49A0077375D /* ModifyEventViewController.swift in Sources */,
 				E7BC15FA1D7ED69900B02897 /* NSFetchRequest+CoreDataModelable.swift in Sources */,
 				E756AC0D1D81E9DB0077375D /* TextViewCell.swift in Sources */,
 				E7C3D2561D817869007F5146 /* EnsureSubscriptionOperation.swift in Sources */,
+				E7192E171DBD1A0800829A8A /* MessageListViewController.swift in Sources */,
 				E76570441D84844400304D3E /* ModifyEventOperation.swift in Sources */,
 				E79640B71D87E94200C9F9DC /* Admin.swift in Sources */,
 				E7BC16021D7F02D900B02897 /* EntitySectionChange.swift in Sources */,
@@ -901,6 +1012,8 @@
 				E79640AB1D870B3C00C9F9DC /* String+Capitalization.swift in Sources */,
 				E78FB7961DB37EB6002303BA /* RequestToBecomeAdminOperation.swift in Sources */,
 				E79640C51D88343700C9F9DC /* NSUserDefault + UserStatus.swift in Sources */,
+				E7EF0A951DC2703800BC5ED1 /* RecordsFetcherController.swift in Sources */,
+				E7192E2C1DBD2C3700829A8A /* PersistEventsOperation.swift in Sources */,
 				E7C3D25E1D818AF8007F5146 /* NSPredicate.swift in Sources */,
 				E78FB79F1DB7F967002303BA /* TabBarController.swift in Sources */,
 				E76570421D8481DC00304D3E /* ModifyRecordsOperation.swift in Sources */,
@@ -916,32 +1029,39 @@
 				E7C3D25C1D8186A6007F5146 /* SubscriptionRepositoryImplementation.swift in Sources */,
 				E7E5FA371D79EFAE00B6FF1D /* CloudOperation.swift in Sources */,
 				E79B6BCD1D7AFE780048E0DF /* PresenterFactory.swift in Sources */,
+				E72219241DCA7DF500C5A7EB /* PersistentOperationQueue.swift in Sources */,
 				E79B6BCA1D7AFE780048E0DF /* EventViewController.swift in Sources */,
 				E780F2581D8599850084E86B /* Location.swift in Sources */,
 				E7BC160A1D7F5C8900B02897 /* EventTableViewCell.swift in Sources */,
 				E7C3D24C1D8041FE007F5146 /* ApplicationPresenter.swift in Sources */,
+				E7192E261DBD280400829A8A /* PersistentMessage.swift in Sources */,
 				E76284211D8AA67B00DD6EAA /* BannerContainerView.swift in Sources */,
+				E7CFA6BB1DC1428200F27F05 /* PersistentRecordMapper.swift in Sources */,
 				E79B6BC71D7AFE780048E0DF /* Event.swift in Sources */,
 				E756AC001D81A0A90077375D /* FetchRecordsOperation.swift in Sources */,
 				E79B6BC81D7AFE780048E0DF /* EventPresenter.swift in Sources */,
 				E797F2EF1D7C2D4100CB5EE2 /* PersistencyRepository.swift in Sources */,
+				E7192E2A1DBD2A3600829A8A /* MessageRecordMapper.swift in Sources */,
 				E7E5FA391D79F01900B6FF1D /* QueryOperation.swift in Sources */,
 				E7C3D2581D817CFD007F5146 /* NSUserDefault + Subscription.swift in Sources */,
+				E72219281DCA863C00C5A7EB /* EmptyView.swift in Sources */,
 				E79640A11D86D88C00C9F9DC /* LocationCell.swift in Sources */,
 				E79B6BC91D7AFE780048E0DF /* EventPresenterImplementation.swift in Sources */,
 				E7C3D2541D816E6B007F5146 /* SubscriptionsRepository.swift in Sources */,
 				E756AC0B1D81E8DB0077375D /* RawRepresentable.swift in Sources */,
-				E7F91A871D89864F00B75F7D /* EmptyEventView.swift in Sources */,
 				E756AC111D81F8DA0077375D /* TextFieldCell.swift in Sources */,
 				E79B6BCB1D7AFE780048E0DF /* Int+Bool.swift in Sources */,
 				E7C3D24E1D804244007F5146 /* ApplicationPresenterImplementation.swift in Sources */,
 				E7E5FA3B1D79F08000B6FF1D /* EventRepository.swift in Sources */,
+				E7192E1C1DBD1BA600829A8A /* MessagesRepository.swift in Sources */,
 				E797F2F81D7C3D3E00CB5EE2 /* EntityChange.swift in Sources */,
 				E756AC091D81E6730077375D /* ModifyEventRow.swift in Sources */,
 				E79640BB1D881FBD00C9F9DC /* AuthenticatedCondition.swift in Sources */,
 				E7FB89401D7B3DDE00FEFD1B /* LoadCoreDataStackOperation.swift in Sources */,
 				E7C3D2451D802022007F5146 /* NavigationControllerWithWhiteStatusBar.swift in Sources */,
 				E78FB7981DB37EC8002303BA /* CreateAdminOperation.swift in Sources */,
+				E7CFA6BF1DC1454100F27F05 /* MessagesPresenterImplementation.swift in Sources */,
+				E7192E221DBD1CFA00829A8A /* MessagesRepositoryImplementation.swift in Sources */,
 				E79640B91D880B0100C9F9DC /* EventDetailViewController.swift in Sources */,
 				E79B6BC51D7AFE780048E0DF /* Entity.swift in Sources */,
 				E78FB7A41DB7F9DF002303BA /* MainPresenterImplementation.swift in Sources */,
@@ -951,12 +1071,16 @@
 				E7FB89361D7B211700FEFD1B /* Model.xcdatamodeld in Sources */,
 				E78FB7A21DB7F9D2002303BA /* MainPresenter.swift in Sources */,
 				E79640AD1D87E1DE00C9F9DC /* AdminCondition.swift in Sources */,
+				E7CFA6BD1DC144B900F27F05 /* MessagesPresenter.swift in Sources */,
 				E79640B11D87E2B500C9F9DC /* FetchAdminOperation.swift in Sources */,
 				E76570381D82D28400304D3E /* DatePickerViewController.swift in Sources */,
+				E7CFA6B31DC12AB600F27F05 /* PersistMessagesOperation.swift in Sources */,
 				E79640BE1D882F7900C9F9DC /* UserStatusRepository.swift in Sources */,
 				E76570341D82BFDF00304D3E /* ColorCell.swift in Sources */,
 				E7D472151D8977B8006362C2 /* EnsureAuthenticatedSubscriptionOperation.swift in Sources */,
+				E7192E1F1DBD1C8D00829A8A /* QueryMessagesOperation.swift in Sources */,
 				E79B6BCC1D7AFE780048E0DF /* Operation+Completion.swift in Sources */,
+				E7EF0A9F1DC3D30A00BC5ED1 /* RecordsFetcherControllerInitializer.swift in Sources */,
 				E7BC15F61D7ED67E00B02897 /* RecordMapper.swift in Sources */,
 				E7C3D2431D80120E007F5146 /* UITableViewCell + ReusableCell.swift in Sources */,
 				E79B6BC61D7AFE780048E0DF /* Error.swift in Sources */,

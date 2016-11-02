@@ -12,6 +12,7 @@ import CloudKit
 
 class ApplicationPresenterImplementation<PR: PersistencyRepository, SR: SubscriptionRepository, USR: UserStatusRepository>: ApplicationPresenter {
     let operationQueue = OperationQueue()
+    let persistentQueue = PersistentOperationQueue.shared
 
     let persistencyRepository: PR
     let subscriptionRepository: SR
@@ -36,7 +37,7 @@ class ApplicationPresenterImplementation<PR: PersistencyRepository, SR: Subscrip
 
     func deleteEvents(beforeDate date: NSDate) {
         let operation = persistencyRepository.deleteEventsOperation(limitDate: date)
-        operationQueue.addOperation(operation)
+        persistentQueue.addOperation(operation)
     }
     
     func ensureNotifications() {
@@ -51,9 +52,16 @@ class ApplicationPresenterImplementation<PR: PersistencyRepository, SR: Subscrip
         let operation = subscriptionRepository.fetchRecordOperation(recordName: recordID.recordName)
         let persistEventOperation = persistencyRepository.persistEventsOperation()
         (persistEventOperation as Operation).addDependency(operation)
+        let persistMessagesOperation = persistencyRepository.persistMessagesOperation()
+        (persistMessagesOperation as Operation).addDependency(operation)
         operation.addWillFinishBlock {
             if let event = operation.resultingRecord as? Event {
                 persistEventOperation.events = [event]
+                (persistMessagesOperation as Operation).cancel()
+            }
+            else if let message = operation.resultingRecord as? Message {
+                persistMessagesOperation.messages = [message]
+                (persistEventOperation as Operation).cancel()
             }
             else if let admin = operation.resultingRecord as? Admin {
                 dispatch_async(dispatch_get_main_queue()) {
@@ -61,7 +69,7 @@ class ApplicationPresenterImplementation<PR: PersistencyRepository, SR: Subscrip
                 }
             }
         }
-        let group = GroupOperation(operations: operation, persistEventOperation)
+        let group = GroupOperation(operations: persistMessagesOperation, persistEventOperation)
         group.addCompletionBlockOnMainQueue {
             if !group.errors.isEmpty {
                 completionHandler(.Failed)
@@ -69,7 +77,8 @@ class ApplicationPresenterImplementation<PR: PersistencyRepository, SR: Subscrip
                 completionHandler(.NewData)
             }
         }
-        operationQueue.addOperations(operation, persistEventOperation)
+        persistentQueue.addOperation(group)
+        operationQueue.addOperations(operation)
     }
 
     func checkUserStatus() {
@@ -90,7 +99,9 @@ class ApplicationPresenterImplementation<PR: PersistencyRepository, SR: Subscrip
     private func sendSuscriptions() {
         let eventOperation = subscriptionRepository.ensureEventsSubscriptionOperation()
         let userEventOperation = subscriptionRepository.ensureNotifyUserOnEventCreationOperation()
-        operationQueue.addOperations(userEventOperation, eventOperation)
+        let messagesOperation = subscriptionRepository.ensureMessageSubscriptionOperation()
+        let userMessageOperation = subscriptionRepository.ensureNotifyUserOnMessageCreationOperation()
+        operationQueue.addOperations(userEventOperation, eventOperation, messagesOperation, userMessageOperation)
     }
 
     private func resetAuthenticatedSubscriptionsKeys() {

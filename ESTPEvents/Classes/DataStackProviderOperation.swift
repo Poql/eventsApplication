@@ -29,7 +29,6 @@ class DataStackProviderOperation: GroupOperation {
     init() {
         super.init(operations: [])
         addOperation(loaderBlock)
-        addCondition(MutuallyExclusive<DataStackProviderOperation>())
     }
 
     func addDataStackOperation<O: Operation where O: DataStackOperation>(operation: O) {
