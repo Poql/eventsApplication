@@ -92,8 +92,9 @@ class ModifyMessageViewController: SharedViewController, UITextViewDelegate {
     // MARK: - UITextViewDelegate
 
     func textViewDidChange(textView: UITextView) {
-        let contentHeight = textView.contentSize.height
-        contentTextViewHeightConstraint.constant = contentHeight > Constant.textViewMinimumHeight ? contentHeight : Constant.textViewMinimumHeight
+        let contentHeight = textView.sizeThatFits(CGSize(width: textView.frame.width, height: CGFloat.max)).height
+        let minContentHeight = Constant.textViewMinimumHeight
+        contentTextViewHeightConstraint.constant = contentHeight > minContentHeight ? contentHeight : minContentHeight
         message?.content = textView.text
         tryToEnableAddButton()
     }
