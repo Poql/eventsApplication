@@ -140,6 +140,31 @@ class EventDetailViewController: SharedViewController, UITableViewDelegate, UITa
         }
     }
 
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        guard let row = EventDetailRowMapper.row(atIndexPath: indexPath, forEvent: event) else { return }
+        switch row {
+        case .url:
+            guard
+                let link = event?.link,
+                let url = NSURL(string: link)
+                where UIApplication.sharedApplication().canOpenURL(url)
+                else { return }
+            UIApplication.sharedApplication().openURL(url)
+        default:
+            return
+        }
+    }
+
+    func tableView(tableView: UITableView, willSelectRowAtIndexPath indexPath: NSIndexPath) -> NSIndexPath? {
+        guard let row = EventDetailRowMapper.row(atIndexPath: indexPath, forEvent: event) else { return nil }
+        switch row {
+        case .url:
+            return indexPath
+        default:
+            return nil
+        }
+    }
+
     // MARK: - Private
 
     private func setupController() {
