@@ -13,8 +13,15 @@ protocol QueryMessagesOperationPrototype {
     var messages: [Message] { get }
 }
 
+protocol ModifyMessageOperationPrototype {
+    var message: Message? { get set }
+    var resultingMessage: Message? { get }
+}
+
 protocol MessagesRepository {
     associatedtype QueryMessagesOperation: Operation, QueryMessagesOperationPrototype
+    associatedtype ModifyMessageOperation: Operation, ModifyMessageOperationPrototype
 
-    func queryMessagesRepository() -> QueryMessagesOperation
+    func queryMessagesOperation() -> QueryMessagesOperation
+    func modifyMessageOperation(message: Message) -> ModifyMessageOperation
 }

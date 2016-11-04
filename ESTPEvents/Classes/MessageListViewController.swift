@@ -12,9 +12,23 @@ private struct Constant {
     static let estimatedRowHeight: CGFloat = 60
 }
 
-class MessageListViewController: SharedViewController, UITableViewDataSource, MessagesPresenterClient {
+enum MessageInfo: Int, Info {
+    case modyfingMessage = 0
+
+    var identifier: Int { return self.rawValue }
+    var description: String {
+        switch self {
+        case .modyfingMessage:
+            return String(key: "info_modifing_message")
+        }
+    }
+}
+
+class MessageListViewController: SharedViewController, UITableViewDataSource, MessagesPresenterClient, ModifyMessageViewControllerDelegate {
 
     @IBOutlet private var tableView: UITableView!
+
+    @IBOutlet var addButton: UIBarButtonItem!
 
     private lazy var messagesPresenter: MessagesPresenter = {
         let presenter = self.presenterFactory.messagesPresenter
@@ -32,11 +46,25 @@ class MessageListViewController: SharedViewController, UITableViewDataSource, Me
         super.viewDidLoad()
         setupViews()
         setupController()
+        messagesPresenter.queryMessages()
     }
 
-    override func viewWillAppear(animated: Bool) {
-        super.viewWillAppear(animated)
-        messagesPresenter.queryMessages()
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        guard
+            let navigationController = segue.destinationViewController as? UINavigationController,
+            let controller = navigationController.viewControllers.first as? ModifyMessageViewController else { return }
+        controller.delegate = self
+    }
+
+    // MARK: -  SharedViewController
+
+    override func userStatusDidUpdate(userStatus: UserStatus) {
+        switch userStatus {
+        case .admin:
+            navigationItem.leftBarButtonItem = addButton
+        case .follower:
+            navigationItem.leftBarButtonItem = nil
+        }
     }
 
     // MARK: - Private
@@ -66,7 +94,21 @@ class MessageListViewController: SharedViewController, UITableViewDataSource, Me
         return cell
     }
 
+    // MARK: - ModifyMessageViewControllerDelegate
+
+    func controller(controller: ModifyMessageViewController, wantsToModify message: Message) {
+        messagesPresenter.modifyMessage(message)
+    }
+
     // MARK: - MessagesPresenterClients
+
+    func presenterMessagesDidEndToModifyMessage() {
+        dismissBannerInfo(MessageInfo.modyfingMessage)
+    }
+
+    func presenterMessagesDidBeginToModifyMessage() {
+        showBanner(with: MessageInfo.modyfingMessage)
+    }
 
     func presenterMessagesWantsToShowError(error: ApplicationError) {
         showAlert(withMessage: error.description, title: "error_title")

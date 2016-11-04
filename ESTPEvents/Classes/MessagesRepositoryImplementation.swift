@@ -9,7 +9,11 @@
 import Foundation
 
 class MessagesRepositoryImplementation: MessagesRepository {
-    func queryMessagesRepository() -> QueryMessagesOperation {
+    func queryMessagesOperation() -> QueryMessagesOperation {
         return QueryMessagesOperation()
+    }
+
+    func modifyMessageOperation(message: Message) -> ModifyMessageOperation {
+        return ModifyMessageOperation(message: message)
     }
 }
