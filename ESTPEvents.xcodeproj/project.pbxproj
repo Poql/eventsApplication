@@ -95,6 +95,7 @@
 		E79B6BCD1D7AFE780048E0DF /* PresenterFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = E79B6BC11D7AFE780048E0DF /* PresenterFactory.swift */; };
 		E79B6BCE1D7AFE780048E0DF /* Record.swift in Sources */ = {isa = PBXBuildFile; fileRef = E79B6BC21D7AFE780048E0DF /* Record.swift */; };
 		E79B6BCF1D7AFE780048E0DF /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = E79B6BC31D7AFE780048E0DF /* Result.swift */; };
+		E7BA36631DCC866D00FC5239 /* ModifyMessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7BA36621DCC866D00FC5239 /* ModifyMessageViewController.swift */; };
 		E7BA36651DCC93BB00FC5239 /* SeparatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7BA36641DCC93BB00FC5239 /* SeparatorView.swift */; };
 		E7BC15F61D7ED67E00B02897 /* RecordMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7BC15F51D7ED67E00B02897 /* RecordMapper.swift */; };
 		E7BC15F81D7ED68A00B02897 /* PresenterState.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7BC15F71D7ED68A00B02897 /* PresenterState.swift */; };
@@ -235,6 +236,7 @@
 		E79B6BC11D7AFE780048E0DF /* PresenterFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PresenterFactory.swift; path = Classes/PresenterFactory.swift; sourceTree = "<group>"; };
 		E79B6BC21D7AFE780048E0DF /* Record.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Record.swift; path = Classes/Record.swift; sourceTree = "<group>"; };
 		E79B6BC31D7AFE780048E0DF /* Result.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Result.swift; path = Classes/Result.swift; sourceTree = "<group>"; };
+		E7BA36621DCC866D00FC5239 /* ModifyMessageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ModifyMessageViewController.swift; path = Classes/ModifyMessageViewController.swift; sourceTree = "<group>"; };
 		E7BA36641DCC93BB00FC5239 /* SeparatorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SeparatorView.swift; path = Classes/SeparatorView.swift; sourceTree = "<group>"; };
 		E7BC15F51D7ED67E00B02897 /* RecordMapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RecordMapper.swift; path = Classes/RecordMapper.swift; sourceTree = "<group>"; };
 		E7BC15F71D7ED68A00B02897 /* PresenterState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PresenterState.swift; path = Classes/PresenterState.swift; sourceTree = "<group>"; };
@@ -386,6 +388,7 @@
 				E796409A1D86AF9600C9F9DC /* KeyboardManager.swift */,
 				E7192E151DBD19E800829A8A /* Messages */,
 				E78FB79D1DB7F957002303BA /* Main */,
+				E7BA36611DCC837800FC5239 /* Modify Message */,
 				E7EE0E991D7AC2740089B38C /* Event */,
 				E765703B1D84007A00304D3E /* Modify Event */,
 				E796409C1D86D82E00C9F9DC /* Event Detail */,
@@ -652,6 +655,14 @@
 				E7192E291DBD2A3600829A8A /* MessageRecordMapper.swift */,
 			);
 			name = Mapper;
+			sourceTree = "<group>";
+		};
+		E7BA36611DCC837800FC5239 /* Modify Message */ = {
+			isa = PBXGroup;
+			children = (
+				E7BA36621DCC866D00FC5239 /* ModifyMessageViewController.swift */,
+			);
+			name = "Modify Message";
 			sourceTree = "<group>";
 		};
 		E7BC16031D7F431500B02897 /* View */ = {
@@ -1047,6 +1058,7 @@
 				E7CFA6BB1DC1428200F27F05 /* PersistentRecordMapper.swift in Sources */,
 				E79B6BC71D7AFE780048E0DF /* Event.swift in Sources */,
 				E756AC001D81A0A90077375D /* FetchRecordsOperation.swift in Sources */,
+				E7BA36631DCC866D00FC5239 /* ModifyMessageViewController.swift in Sources */,
 				E79B6BC81D7AFE780048E0DF /* EventPresenter.swift in Sources */,
 				E797F2EF1D7C2D4100CB5EE2 /* PersistencyRepository.swift in Sources */,
 				E7192E2A1DBD2A3600829A8A /* MessageRecordMapper.swift in Sources */,
