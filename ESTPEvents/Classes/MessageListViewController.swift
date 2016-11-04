@@ -12,7 +12,19 @@ private struct Constant {
     static let estimatedRowHeight: CGFloat = 60
 }
 
-class MessageListViewController: SharedViewController, UITableViewDataSource, MessagesPresenterClient {
+enum MessageInfo: Int, Info {
+    case modyfingMessage = 0
+
+    var identifier: Int { return self.rawValue }
+    var description: String {
+        switch self {
+        case .modyfingMessage:
+            return String(key: "info_modifing_message")
+        }
+    }
+}
+
+class MessageListViewController: SharedViewController, UITableViewDataSource, MessagesPresenterClient, ModifyMessageViewControllerDelegate {
 
     @IBOutlet private var tableView: UITableView!
 
@@ -67,6 +79,14 @@ class MessageListViewController: SharedViewController, UITableViewDataSource, Me
     }
 
     // MARK: - MessagesPresenterClients
+
+    func presenterMessagesDidEndToModifyMessage() {
+        dismissBannerInfo(MessageInfo.modyfingMessage)
+    }
+
+    func presenterMessagesDidBeginToModifyMessage() {
+        showBanner(with: MessageInfo.modyfingMessage)
+    }
 
     func presenterMessagesWantsToShowError(error: ApplicationError) {
         showAlert(withMessage: error.description, title: "error_title")

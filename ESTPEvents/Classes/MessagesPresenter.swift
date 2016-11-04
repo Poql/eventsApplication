@@ -9,6 +9,7 @@
 import Foundation
 
 protocol MessagesPresenter  {
+    func modifyMessage(message: Message)
     func message(atIndex index: NSIndexPath) -> Message
     func title(forSection section: Int) -> String?
     func numberOfMessages(inSection section: Int) -> Int
@@ -25,4 +26,6 @@ protocol MessagesPresenterClient: class {
     func presenterMessagesDidChange(eventChange: EntityChange)
     func presenterMessagesSectionDidChange(eventSectionChange: EntitySectionChange)
     func presenterMessagesDidChange()
+    func presenterMessagesDidBeginToModifyMessage()
+    func presenterMessagesDidEndToModifyMessage()
 }

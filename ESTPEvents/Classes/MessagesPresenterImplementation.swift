@@ -53,6 +53,17 @@ class MessagesPresenterImplementation<MR: MessagesRepository, PR: PersistencyRep
         )
     }
 
+    private func modifyMessageObserver() -> BlockObserverOnMainQueue {
+        return BlockObserverOnMainQueue( willExecute: { _ in
+                self.client?.presenterMessagesDidBeginToModifyMessage()
+            }, didFinish: { _, errors in
+                self.client?.presenterMessagesDidEndToModifyMessage()
+                if let err = ErrorMapper.applicationError(fromOperationErrors: errors) {
+                    self.client?.presenterMessagesWantsToShowError(err)
+                }
+        })
+    }
+
     // MARK: - RecordsFetcherControllerDelegate
 
     func fetcherControllerWillChange() {
@@ -80,6 +91,21 @@ class MessagesPresenterImplementation<MR: MessagesRepository, PR: PersistencyRep
     }
 
     // MARK: - MessagesPresenter
+
+    func modifyMessage(message: Message) {
+        let operation = messagesRepository.modifyMessageOperation(message)
+        let group = GroupOperation(operations: operation)
+        let persistentOperation = persistentRepository.persistMessagesOperation()
+        operation.addWillFinishBlock {
+            guard let message = operation.resultingMessage else { return }
+            persistentOperation.messages = [message]
+        }
+        (persistentOperation as Operation).addDependency(operation)
+        group.addObserver(NetworkObserver())
+        group.addObserver(modifyMessageObserver())
+        operationQueue.addOperation(group)
+        persistentQueue.addOperation(persistentOperation)
+    }
 
     func queryMessages() {
         let pOperation = initialiseFetcherControllerOperation(with: self)
