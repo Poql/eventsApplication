@@ -41,14 +41,18 @@ class LocationCell: UITableViewCell, MKMapViewDelegate {
 
     func configure(locationCoordinate coordinate: CLLocationCoordinate2D?) {
         mapView.removeAnnotations(mapView.annotations)
-        guard let coordinate = coordinate else { return }
-        let pin = MKPointAnnotation()
-        pin.coordinate = coordinate
-        let span = MKCoordinateSpan(latitudeDelta: Constant.latitudeDelta, longitudeDelta: Constant.longitudeDelta)
-        let region = MKCoordinateRegion(center: coordinate, span: span)
-        mapView.addAnnotation(pin)
-        mapView.setCenterCoordinate(coordinate, animated: false)
-        mapView.setRegion(region, animated: false)
+        if let coordinate = coordinate {
+            mapView.alpha = 1
+            let pin = MKPointAnnotation()
+            pin.coordinate = coordinate
+            let span = MKCoordinateSpan(latitudeDelta: Constant.latitudeDelta, longitudeDelta: Constant.longitudeDelta)
+            let region = MKCoordinateRegion(center: coordinate, span: span)
+            mapView.addAnnotation(pin)
+            mapView.setCenterCoordinate(coordinate, animated: false)
+            mapView.setRegion(region, animated: false)
+            return
+        }
+        mapView.alpha = 0
     }
 
     // MARK: - MKMapViewDelegate
