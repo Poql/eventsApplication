@@ -20,6 +20,15 @@ struct Message: Record, Entity {
         }
     }
 
+    var notify: Bool {
+        get {
+            return Bool(record["notify"] as? Int)
+        }
+        set {
+            record["notify"] = Int(newValue)
+        }
+    }
+
     var content: String? {
         set {
             record["content"] = newValue
