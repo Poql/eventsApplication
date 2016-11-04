@@ -77,9 +77,9 @@ class SubscriptionRepositoryImplementation: SubscriptionRepository {
     }
     
 
-    func ensureMessageSubscriptionOperation() -> EnsureSubscriptionOperation<Message> {
-        let predicate = NSPredicate.alwaysTrue()
-        let options: CKSubscriptionOptions = [.FiresOnRecordCreation, .FiresOnRecordUpdate]
+    func ensureNotifyUserOnMessageCreationOperation() -> EnsureSubscriptionOperation<Message> {
+        let predicate = NSPredicate(format: "notify == %i", 1)
+        let options: CKSubscriptionOptions = [.FiresOnRecordCreation]
         let key = Constant.messageModificationSubscriptionKey
         let operation = EnsureSubscriptionOperation<Message>(predicate: predicate, key: key, options: options)
         let notificationInfo = CKNotificationInfo()
@@ -90,9 +90,10 @@ class SubscriptionRepositoryImplementation: SubscriptionRepository {
         return operation
     }
 
-    func ensureNotifyUserOnMessageCreationOperation() -> EnsureSubscriptionOperation<Message> {
-        let options: CKSubscriptionOptions = [.FiresOnRecordCreation]
-        let predicate = NSPredicate(format: "notify == %i", 1)
+
+    func ensureMessageSubscriptionOperation() -> EnsureSubscriptionOperation<Message> {
+        let options: CKSubscriptionOptions = [.FiresOnRecordCreation, .FiresOnRecordUpdate]
+        let predicate = NSPredicate.alwaysTrue()
         let key = Constant.notifyUserOnMessageCreationSubscriptionKey
         let notificationInfo = CKNotificationInfo()
         notificationInfo.shouldSendContentAvailable = true
