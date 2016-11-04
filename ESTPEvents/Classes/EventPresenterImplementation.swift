@@ -98,16 +98,17 @@ class EventPresenterImplementation<R: EventRepository, PR: PersistencyRepository
 
     func modifyEvent(event: Event) {
         let operation = eventRepository.modifyEventOperation(event: event)
+        let group = GroupOperation(operations: operation)
         let persistentOperation = persistencyRepository.persistEventsOperation()
         operation.addWillFinishBlock {
             guard let resultingEvent = operation.resultingEvent else { return }
             persistentOperation.events = [resultingEvent]
         }
         (persistentOperation as Operation).addDependency(operation)
-        let groupOperation = GroupOperation(operations: operation, persistentOperation)
-        groupOperation.addObserver(NetworkObserver())
-        groupOperation.addObserver(modifyEventObserver(event: event))
-        operationQueue.addOperation(groupOperation)
+        group.addObserver(NetworkObserver())
+        group.addObserver(modifyEventObserver(event: event))
+        operationQueue.addOperation(group)
+        persistentQueue.addOperation(persistentOperation)
     }
 
     func title(forSection section: Int) -> String? {
