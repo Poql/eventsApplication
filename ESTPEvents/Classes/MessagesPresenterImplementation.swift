@@ -33,7 +33,7 @@ class MessagesPresenterImplementation<MR: MessagesRepository, PR: PersistencyRep
     // MARK: - Private
 
     private func queryRemoteMessagesOperation(with persistOperation: PR.PersistMessagesOperation) -> Operation {
-        let messagesOperation = messagesRepository.queryMessagesRepository()
+        let messagesOperation = messagesRepository.queryMessagesOperation()
         (persistOperation as Operation).addDependency(messagesOperation)
         messagesOperation.addWillFinishBlock { persistOperation.messages = messagesOperation.messages }
         messagesOperation.addObserver(NetworkObserver())

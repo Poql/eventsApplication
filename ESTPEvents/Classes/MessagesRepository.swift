@@ -22,6 +22,6 @@ protocol MessagesRepository {
     associatedtype QueryMessagesOperation: Operation, QueryMessagesOperationPrototype
     associatedtype ModifyMessageOperation: Operation, ModifyMessageOperationPrototype
 
-    func queryMessagesRepository() -> QueryMessagesOperation
+    func queryMessagesOperation() -> QueryMessagesOperation
     func modifyMessageOperation(message: Message) -> ModifyMessageOperation
 }
