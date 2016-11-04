@@ -51,3 +51,10 @@
 "modify_message_title" = "Nouv. message";
 "notify_user_label" = "Notifier les élèves";
 "message_author_label_placeholder" = "Auteur du message";
+
+"request_admin_rights_title" = "Administrateur";
+"request_admin_rights_subtitle" = "Etre administrateur vous permet de créer ou modifier les éléments de l'application";
+"request_admin_rights_button_title" = "Faire la demande";
+"request_admin_rights_details" = "Vous devez accepter de donner accès au nom et au prénom de votre compte iCloud";
+
+
