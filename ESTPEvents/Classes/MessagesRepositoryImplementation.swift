@@ -12,4 +12,8 @@ class MessagesRepositoryImplementation: MessagesRepository {
     func queryMessagesRepository() -> QueryMessagesOperation {
         return QueryMessagesOperation()
     }
+
+    func modifyMessageOperation(message: Message) -> ModifyMessageOperation {
+        return ModifyMessageOperation(message: message)
+    }
 }
