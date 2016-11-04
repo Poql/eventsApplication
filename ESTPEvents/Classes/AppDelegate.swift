@@ -9,7 +9,6 @@
 import UIKit
 
 private struct Constant {
-    static let weekTimeInterval: NSTimeInterval = 60 * 60 * 24 * 7
     static let notificationSettings = UIUserNotificationSettings(forTypes: .Alert, categories: nil)
 }
 
@@ -29,7 +28,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         setupNotifications(in: application)
         setupNavigationAppearance()
-        removeOldEvents()
+        removeOldEntities()
         checkUserStatus()
         return true
     }
@@ -56,8 +55,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UINavigationBar.appearance().titleTextAttributes = [NSForegroundColorAttributeName : UIColor.whiteColor()]
     }
     
-    private func removeOldEvents() {
-        applicationPresenter.deleteEvents(beforeDate: NSDate().dateByAddingTimeInterval(-Constant.weekTimeInterval))
+    private func removeOldEntities() {
+        applicationPresenter.deleteEvents(beforeDate: NSDate().oneWeekBefore())
+        applicationPresenter.deleteMessages(beforeDate: NSDate().twoMonthsBefore())
     }
 }
 
