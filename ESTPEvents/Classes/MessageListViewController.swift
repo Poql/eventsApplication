@@ -24,7 +24,11 @@ enum MessageInfo: Int, Info {
     }
 }
 
-class MessageListViewController: SharedViewController, UITableViewDataSource, MessagesPresenterClient, ModifyMessageViewControllerDelegate {
+class MessageListViewController: SharedViewController, UITableViewDataSource, MessagesPresenterClient, ModifyMessageViewControllerDelegate, UITableViewDelegate, SegueHandlerType {
+
+    enum SegueIdentifier: String {
+        case modifyMessage = "ModifyMessageViewController"
+    }
 
     @IBOutlet private var tableView: UITableView!
 
@@ -49,11 +53,21 @@ class MessageListViewController: SharedViewController, UITableViewDataSource, Me
         messagesPresenter.queryMessages()
     }
 
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        if let indexPath = tableView.indexPathForSelectedRow {
+            tableView.deselectRowAtIndexPath(indexPath, animated: true)
+        }
+    }
+
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         guard
             let navigationController = segue.destinationViewController as? UINavigationController,
             let controller = navigationController.viewControllers.first as? ModifyMessageViewController else { return }
         controller.delegate = self
+        if let indexPath = tableView.indexPathForSelectedRow {
+            controller.message = messagesPresenter.message(atIndex: indexPath)
+        }
     }
 
     // MARK: -  SharedViewController
@@ -62,8 +76,10 @@ class MessageListViewController: SharedViewController, UITableViewDataSource, Me
         switch userStatus {
         case .admin:
             navigationItem.leftBarButtonItem = addButton
+            tableView.allowsSelection = true
         case .follower:
             navigationItem.leftBarButtonItem = nil
+            tableView.allowsSelection = false
         }
     }
 
@@ -71,6 +87,7 @@ class MessageListViewController: SharedViewController, UITableViewDataSource, Me
 
     private func setupViews() {
         tableView.dataSource = self
+        tableView.delegate = self
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.estimatedRowHeight = Constant.estimatedRowHeight
         tableView.tableFooterView = UIView()
@@ -92,6 +109,12 @@ class MessageListViewController: SharedViewController, UITableViewDataSource, Me
         let cell: MessageTableViewCell = tableView.dequeueCell()
         cell.configure(with: messagesPresenter.message(atIndex: indexPath))
         return cell
+    }
+
+    // MARK: - UITableViewDelegate
+
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        performSegue(withIdentifier: .modifyMessage, sender: nil)
     }
 
     // MARK: - ModifyMessageViewControllerDelegate

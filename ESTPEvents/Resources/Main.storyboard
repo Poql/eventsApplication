@@ -26,7 +26,7 @@
                                         <rect key="frame" x="0.0" y="92" width="375" height="120"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="P9r-ut-AUS" id="JEa-De-JbZ">
-                                            <frame key="frameInset" width="375" height="119.5"/>
+                                            <frame key="frameInset" width="375" height="119"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="PIj-kp-06i">
@@ -569,7 +569,7 @@
                                         <rect key="frame" x="0.0" y="92" width="375" height="174"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Bvx-JY-nCo" id="JBC-Sy-QcE">
-                                            <frame key="frameInset" width="375" height="173.5"/>
+                                            <frame key="frameInset" width="375" height="173"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="3uG-gd-wXo">
@@ -641,7 +641,7 @@
                     <navigationItem key="navigationItem" id="ZOr-HV-fZu">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="2Ct-va-aWx">
                             <connections>
-                                <segue destination="81D-KL-XHW" kind="showDetail" id="ZGJ-jU-1KC"/>
+                                <segue destination="81D-KL-XHW" kind="showDetail" identifier="ModifyMessageViewController" id="ZGJ-jU-1KC"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
