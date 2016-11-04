@@ -38,6 +38,10 @@ class ModifyMessageViewController: SharedViewController, UITextViewDelegate {
 
     var message: Message?
 
+    private lazy var keyboardManager: KeyboardManager = {
+        return KeyboardManager(scrollView: self.scrollView)
+    }()
+
     // MARK: - UIViewController
 
     override func viewDidLoad() {
@@ -53,11 +57,13 @@ class ModifyMessageViewController: SharedViewController, UITextViewDelegate {
         super.viewWillAppear(animated)
         contentTextView.becomeFirstResponder()
         tryToEnableAddButton()
+        keyboardManager.registerForKeyboardMoves()
     }
 
     override func viewWillDisappear(animated: Bool) {
         super.viewWillDisappear(animated)
         view.endEditing(true)
+        keyboardManager.unregisterForKeyboardMoves()
     }
 
     // MARK: - Private
