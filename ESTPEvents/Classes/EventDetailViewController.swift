@@ -153,6 +153,7 @@ class EventDetailViewController: SharedViewController, UITableViewDelegate, UITa
         default:
             return
         }
+        tableView.deselectRowAtIndexPath(indexPath, animated: true)
     }
 
     func tableView(tableView: UITableView, willSelectRowAtIndexPath indexPath: NSIndexPath) -> NSIndexPath? {
