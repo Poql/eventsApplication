@@ -50,6 +50,7 @@
 		E780F2561D8556FC0084E86B /* LocationPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E780F2551D8556FC0084E86B /* LocationPickerViewController.swift */; };
 		E780F2581D8599850084E86B /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = E780F2571D8599850084E86B /* Location.swift */; };
 		E780F25A1D8599CE0084E86B /* Location+MapKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = E780F2591D8599CE0084E86B /* Location+MapKit.swift */; };
+		E78194531DCCE24600DF4A30 /* NSDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E78194521DCCE24600DF4A30 /* NSDate.swift */; };
 		E78FB7901DB37A2D002303BA /* AdminRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = E78FB78F1DB37A2D002303BA /* AdminRepository.swift */; };
 		E78FB7931DB37A4D002303BA /* AdminRepositoryImplementation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E78FB7921DB37A4D002303BA /* AdminRepositoryImplementation.swift */; };
 		E78FB7961DB37EB6002303BA /* RequestToBecomeAdminOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E78FB7951DB37EB6002303BA /* RequestToBecomeAdminOperation.swift */; };
@@ -191,6 +192,7 @@
 		E780F2551D8556FC0084E86B /* LocationPickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LocationPickerViewController.swift; path = Classes/LocationPickerViewController.swift; sourceTree = "<group>"; };
 		E780F2571D8599850084E86B /* Location.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Location.swift; path = Classes/Location.swift; sourceTree = "<group>"; };
 		E780F2591D8599CE0084E86B /* Location+MapKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Location+MapKit.swift"; path = "Classes/Location+MapKit.swift"; sourceTree = "<group>"; };
+		E78194521DCCE24600DF4A30 /* NSDate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NSDate.swift; path = Classes/NSDate.swift; sourceTree = "<group>"; };
 		E78FB78F1DB37A2D002303BA /* AdminRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AdminRepository.swift; path = Classes/AdminRepository.swift; sourceTree = "<group>"; };
 		E78FB7921DB37A4D002303BA /* AdminRepositoryImplementation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AdminRepositoryImplementation.swift; path = Classes/AdminRepositoryImplementation.swift; sourceTree = "<group>"; };
 		E78FB7951DB37EB6002303BA /* RequestToBecomeAdminOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RequestToBecomeAdminOperation.swift; path = Classes/RequestToBecomeAdminOperation.swift; sourceTree = "<group>"; };
@@ -493,6 +495,7 @@
 				E77E19E51D8AA8CF009D7616 /* UIView + Layout.swift */,
 				E7E5B4E61D93CE61002DEC19 /* NSUserDefaults + CKAccountStatus.swift */,
 				E78FB7A71DBCA8E4002303BA /* CKContainer.swift */,
+				E78194521DCCE24600DF4A30 /* NSDate.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -1053,6 +1056,7 @@
 				E780F2581D8599850084E86B /* Location.swift in Sources */,
 				E7BC160A1D7F5C8900B02897 /* EventTableViewCell.swift in Sources */,
 				E7C3D24C1D8041FE007F5146 /* ApplicationPresenter.swift in Sources */,
+				E78194531DCCE24600DF4A30 /* NSDate.swift in Sources */,
 				E7192E261DBD280400829A8A /* PersistentMessage.swift in Sources */,
 				E76284211D8AA67B00DD6EAA /* BannerContainerView.swift in Sources */,
 				E7CFA6BB1DC1428200F27F05 /* PersistentRecordMapper.swift in Sources */,
