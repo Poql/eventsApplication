@@ -25,13 +25,16 @@ class SharedViewController: UIViewController, UserStatusUpdateListener, BannerCo
 
     private var identifiers: [Int] = []
     private var currentInfo: [Int : Info] = [:]
+    var currentUserStatus: UserStatus {
+        return presenterFactory.applicationPresenter.currentUserStatus
+    }
 
     private let bannerContainer = BannerContainerView()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         setupBanner()
-        userStatusDidUpdate(presenterFactory.applicationPresenter.currentUserStatus)
+        userStatusDidUpdate(currentUserStatus)
         presenterFactory.applicationPresenter.registerForUserStatusUpdate(self)
     }
 

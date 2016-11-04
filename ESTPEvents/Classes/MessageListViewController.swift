@@ -75,10 +75,10 @@ class MessageListViewController: SharedViewController, UITableViewDataSource, Me
     override func userStatusDidUpdate(userStatus: UserStatus) {
         switch userStatus {
         case .admin:
-            navigationItem.leftBarButtonItem = addButton
+            navigationItem.rightBarButtonItem = addButton
             tableView.allowsSelection = true
         case .follower:
-            navigationItem.leftBarButtonItem = nil
+            navigationItem.rightBarButtonItem = nil
             tableView.allowsSelection = false
         }
     }
@@ -127,10 +127,14 @@ class MessageListViewController: SharedViewController, UITableViewDataSource, Me
 
     func presenterMessagesDidEndToModifyMessage() {
         dismissBannerInfo(MessageInfo.modyfingMessage)
+        addButton.enabled = true
+        tableView.allowsSelection = currentUserStatus == .admin
     }
 
     func presenterMessagesDidBeginToModifyMessage() {
         showBanner(with: MessageInfo.modyfingMessage)
+        addButton.enabled = false
+        tableView.allowsSelection = false
     }
 
     func presenterMessagesWantsToShowError(error: ApplicationError) {

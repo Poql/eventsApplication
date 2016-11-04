@@ -454,7 +454,7 @@
                                                     <constraint firstItem="aJG-nv-MbV" firstAttribute="leading" secondItem="uKo-J3-Min" secondAttribute="leading" id="FfG-Kf-Ino"/>
                                                     <constraint firstAttribute="trailing" secondItem="Ryl-RT-4mJ" secondAttribute="trailing" id="KfT-8U-48S"/>
                                                     <constraint firstItem="5iN-RS-617" firstAttribute="leading" secondItem="uKo-J3-Min" secondAttribute="leading" id="a3f-RF-XOC"/>
-                                                    <constraint firstAttribute="height" constant="88" id="b9d-Uf-8Oa"/>
+                                                    <constraint firstAttribute="height" constant="94" id="b9d-Uf-8Oa"/>
                                                     <constraint firstAttribute="trailing" secondItem="5iN-RS-617" secondAttribute="trailing" id="c5O-pa-SBi"/>
                                                     <constraint firstAttribute="trailing" secondItem="aJG-nv-MbV" secondAttribute="trailing" id="kTy-RZ-Eg4"/>
                                                     <constraint firstItem="Ryl-RT-4mJ" firstAttribute="leading" secondItem="uKo-J3-Min" secondAttribute="leading" constant="20" id="r2m-qq-mFs"/>
@@ -496,9 +496,9 @@
                                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                         <constraints>
                                             <constraint firstItem="Cbw-v2-URf" firstAttribute="leading" secondItem="LuV-cy-eH3" secondAttribute="leading" id="7aN-NZ-hdX"/>
-                                            <constraint firstItem="uKo-J3-Min" firstAttribute="top" secondItem="LuV-cy-eH3" secondAttribute="top" constant="8" id="QEM-LH-WkX"/>
+                                            <constraint firstItem="uKo-J3-Min" firstAttribute="top" secondItem="LuV-cy-eH3" secondAttribute="top" constant="20" id="QEM-LH-WkX"/>
                                             <constraint firstAttribute="trailing" secondItem="Cbw-v2-URf" secondAttribute="trailing" id="R8E-Ja-d0M"/>
-                                            <constraint firstItem="Cbw-v2-URf" firstAttribute="top" secondItem="uKo-J3-Min" secondAttribute="bottom" constant="8" id="c2o-2z-fFs"/>
+                                            <constraint firstItem="Cbw-v2-URf" firstAttribute="top" secondItem="uKo-J3-Min" secondAttribute="bottom" constant="20" id="c2o-2z-fFs"/>
                                             <constraint firstItem="uKo-J3-Min" firstAttribute="leading" secondItem="LuV-cy-eH3" secondAttribute="leading" id="guV-bc-XNL"/>
                                             <constraint firstAttribute="trailing" secondItem="uKo-J3-Min" secondAttribute="trailing" id="vMA-nN-8ce"/>
                                             <constraint firstAttribute="bottom" secondItem="Cbw-v2-URf" secondAttribute="bottom" id="yHr-u1-U5j"/>
@@ -646,6 +646,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="addButton" destination="2Ct-va-aWx" id="ywa-IV-kAo"/>
                         <outlet property="tableView" destination="flI-jb-vva" id="sjH-3t-ddz"/>
                     </connections>
                 </viewController>
