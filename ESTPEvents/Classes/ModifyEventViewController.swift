@@ -83,6 +83,7 @@ class ModifyEventViewController: SharedViewController, UITableViewDataSource, UI
     override func viewWillDisappear(animated: Bool) {
         super.viewWillDisappear(animated)
         keyboardManager.unregisterForKeyboardMoves()
+        view.endEditing(true)
     }
 
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
