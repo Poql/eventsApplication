@@ -47,3 +47,7 @@
 "notification_admin_is_accepted_message" = "Vous êtes maintenant administrateur";
 
 "messages_controller_title" = "Messages";
+
+"modify_message_title" = "Nouv. message";
+"notify_user_label" = "Notifier les élèves";
+"message_author_label_placeholder" = "Auteur du message";
