@@ -16,7 +16,7 @@ class QueryEventsOperation: QueryOperation, QueryEventsOperationPrototype {
     }
 
     init() {
-        let predicate = NSPredicate(format: "TRUEPREDICATE")
+        let predicate = NSPredicate(format: "eventDate >= %@", NSDate())
         let query = CKQuery(record: Event.self, predicate: predicate)
         super.init(query: query)
     }
