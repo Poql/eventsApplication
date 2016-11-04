@@ -14,6 +14,10 @@ class PersistencyRepositoryImplementation: PersistencyRepository {
         return StackedPersistEventsOperation()
     }
     
+    func deleteMessagesOperation(limitDate limitDate: NSDate) -> StackedDeleteMessagesOperation {
+        return StackedDeleteMessagesOperation(limitDate: limitDate)
+    }
+
     func deleteEventsOperation(limitDate limitDate: NSDate) -> StackedDeleteEventsOperation {
         return StackedDeleteEventsOperation(limitDate: limitDate)
     }

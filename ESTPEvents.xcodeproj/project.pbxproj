@@ -50,6 +50,7 @@
 		E780F2561D8556FC0084E86B /* LocationPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E780F2551D8556FC0084E86B /* LocationPickerViewController.swift */; };
 		E780F2581D8599850084E86B /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = E780F2571D8599850084E86B /* Location.swift */; };
 		E780F25A1D8599CE0084E86B /* Location+MapKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = E780F2591D8599CE0084E86B /* Location+MapKit.swift */; };
+		E78194511DCCD9B500DF4A30 /* DeleteMessagesOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E78194501DCCD9B500DF4A30 /* DeleteMessagesOperation.swift */; };
 		E78194531DCCE24600DF4A30 /* NSDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E78194521DCCE24600DF4A30 /* NSDate.swift */; };
 		E78FB7901DB37A2D002303BA /* AdminRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = E78FB78F1DB37A2D002303BA /* AdminRepository.swift */; };
 		E78FB7931DB37A4D002303BA /* AdminRepositoryImplementation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E78FB7921DB37A4D002303BA /* AdminRepositoryImplementation.swift */; };
@@ -192,6 +193,7 @@
 		E780F2551D8556FC0084E86B /* LocationPickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LocationPickerViewController.swift; path = Classes/LocationPickerViewController.swift; sourceTree = "<group>"; };
 		E780F2571D8599850084E86B /* Location.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Location.swift; path = Classes/Location.swift; sourceTree = "<group>"; };
 		E780F2591D8599CE0084E86B /* Location+MapKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Location+MapKit.swift"; path = "Classes/Location+MapKit.swift"; sourceTree = "<group>"; };
+		E78194501DCCD9B500DF4A30 /* DeleteMessagesOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeleteMessagesOperation.swift; sourceTree = "<group>"; };
 		E78194521DCCE24600DF4A30 /* NSDate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NSDate.swift; path = Classes/NSDate.swift; sourceTree = "<group>"; };
 		E78FB78F1DB37A2D002303BA /* AdminRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AdminRepository.swift; path = Classes/AdminRepository.swift; sourceTree = "<group>"; };
 		E78FB7921DB37A4D002303BA /* AdminRepositoryImplementation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AdminRepositoryImplementation.swift; path = Classes/AdminRepositoryImplementation.swift; sourceTree = "<group>"; };
@@ -646,6 +648,7 @@
 				E7192E2B1DBD2C3700829A8A /* PersistEventsOperation.swift */,
 				E7C3D2481D803FBF007F5146 /* DeleteEventsOperation.swift */,
 				E7CFA6B21DC12AB600F27F05 /* PersistMessagesOperation.swift */,
+				E78194501DCCD9B500DF4A30 /* DeleteMessagesOperation.swift */,
 			);
 			name = Operations;
 			sourceTree = "<group>";
@@ -1065,6 +1068,7 @@
 				E7BA36631DCC866D00FC5239 /* ModifyMessageViewController.swift in Sources */,
 				E79B6BC81D7AFE780048E0DF /* EventPresenter.swift in Sources */,
 				E797F2EF1D7C2D4100CB5EE2 /* PersistencyRepository.swift in Sources */,
+				E78194511DCCD9B500DF4A30 /* DeleteMessagesOperation.swift in Sources */,
 				E7192E2A1DBD2A3600829A8A /* MessageRecordMapper.swift in Sources */,
 				E7E5FA391D79F01900B6FF1D /* QueryOperation.swift in Sources */,
 				E7C3D2581D817CFD007F5146 /* NSUserDefault + Subscription.swift in Sources */,
