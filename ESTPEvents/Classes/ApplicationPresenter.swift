@@ -16,6 +16,7 @@ protocol UserStatusUpdateListener {
 protocol ApplicationPresenter: class {
     var currentUserStatus: UserStatus { get }
 
+    func deleteMessages(beforeDate date: NSDate)
     func deleteEvents(beforeDate date: NSDate)
     func ensureNotifications()
     func handleRemoteNotification(withUserInfo userInfo: [NSObject : AnyObject], completionHandler: (UIBackgroundFetchResult) -> Void)

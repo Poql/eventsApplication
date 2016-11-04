@@ -39,6 +39,11 @@ class ApplicationPresenterImplementation<PR: PersistencyRepository, SR: Subscrip
         let operation = persistencyRepository.deleteEventsOperation(limitDate: date)
         persistentQueue.addOperation(operation)
     }
+
+    func deleteMessages(beforeDate date: NSDate) {
+        let operation = persistencyRepository.deleteMessagesOperation(limitDate: date)
+        persistentQueue.addOperation(operation)
+    }
     
     func ensureNotifications() {
         sendSuscriptions()
