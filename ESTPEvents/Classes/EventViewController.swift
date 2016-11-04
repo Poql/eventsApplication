@@ -133,9 +133,7 @@ class EventViewController: SharedViewController, EventPresenterClient, UITableVi
 
     // MARK: - EventPresenterClient
 
-    func eventPresenterWantsToShowLoading() {
-        emptyView.hidden = true
-    }
+    func eventPresenterWantsToShowLoading() {}
 
     func eventPresenterDidFill() {
         tableView.reloadData()
