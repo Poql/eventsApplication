@@ -80,8 +80,8 @@ class ModifyMessageViewController: SharedViewController, UITextViewDelegate {
         notifyUserLabel.text = String(key: "notify_user_label")
         contentTextView.delegate = self
         contentTextView.scrollEnabled = false
-        contentTextView.text = message?.author
-        authorTextField.text = message?.content
+        contentTextView.text = message?.content
+        authorTextField.text = message?.author
         notifyUserSwitch.on = message?.notify ?? false
     }
 
