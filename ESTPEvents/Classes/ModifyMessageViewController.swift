@@ -66,6 +66,11 @@ class ModifyMessageViewController: SharedViewController, UITextViewDelegate {
         keyboardManager.unregisterForKeyboardMoves()
     }
 
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        setTextViewSize()
+    }
+
     // MARK: - Private
 
     private func setupController() {
@@ -89,12 +94,16 @@ class ModifyMessageViewController: SharedViewController, UITextViewDelegate {
         validButton.enabled = (message?.author ?? "") != "" && (message?.content ?? "") != ""
     }
 
+    private func setTextViewSize() {
+        let contentHeight = contentTextView.sizeThatFits(CGSize(width: contentTextView.frame.width, height: CGFloat.max)).height
+        let minContentHeight = Constant.textViewMinimumHeight
+        contentTextViewHeightConstraint.constant = contentHeight > minContentHeight ? contentHeight : minContentHeight
+    }
+
     // MARK: - UITextViewDelegate
 
     func textViewDidChange(textView: UITextView) {
-        let contentHeight = textView.sizeThatFits(CGSize(width: textView.frame.width, height: CGFloat.max)).height
-        let minContentHeight = Constant.textViewMinimumHeight
-        contentTextViewHeightConstraint.constant = contentHeight > minContentHeight ? contentHeight : minContentHeight
+        setTextViewSize()
         message?.content = textView.text
         tryToEnableAddButton()
     }
