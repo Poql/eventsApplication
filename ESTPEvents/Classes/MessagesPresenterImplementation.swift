@@ -19,8 +19,12 @@ class MessagesPresenterImplementation<MR: MessagesRepository, PR: PersistencyRep
     private let persistentRepository: PR
 
     var fetcherController: RecordsFetcherController<MessageRecordMapper>?
-    var fetcherControllerPredicate: NSPredicate = .alwaysTrue()
-    var fetcherControllerSortDescriptors: [NSSortDescriptor] = []
+    var fetcherControllerPredicate: NSPredicate = {
+        let limitDate = NSDate().oneMonthBefore()
+        let predicate = NSPredicate(format: "creationDate >= %@", limitDate)
+        return predicate
+    }()
+    var fetcherControllerSortDescriptors: [NSSortDescriptor] = [NSSortDescriptor(key: "creationDate", ascending: false)]
     var fetcherControllerSectionPath: String? = nil
 
     weak var client: MessagesPresenterClient?
