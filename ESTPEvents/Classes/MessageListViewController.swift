@@ -28,6 +28,8 @@ class MessageListViewController: SharedViewController, UITableViewDataSource, Me
 
     @IBOutlet private var tableView: UITableView!
 
+    @IBOutlet var addButton: UIBarButtonItem!
+
     private lazy var messagesPresenter: MessagesPresenter = {
         let presenter = self.presenterFactory.messagesPresenter
         self.presenterFactory.addClient(self)
@@ -44,11 +46,25 @@ class MessageListViewController: SharedViewController, UITableViewDataSource, Me
         super.viewDidLoad()
         setupViews()
         setupController()
+        messagesPresenter.queryMessages()
     }
 
-    override func viewWillAppear(animated: Bool) {
-        super.viewWillAppear(animated)
-        messagesPresenter.queryMessages()
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        guard
+            let navigationController = segue.destinationViewController as? UINavigationController,
+            let controller = navigationController.viewControllers.first as? ModifyMessageViewController else { return }
+        controller.delegate = self
+    }
+
+    // MARK: -  SharedViewController
+
+    override func userStatusDidUpdate(userStatus: UserStatus) {
+        switch userStatus {
+        case .admin:
+            navigationItem.leftBarButtonItem = addButton
+        case .follower:
+            navigationItem.leftBarButtonItem = nil
+        }
     }
 
     // MARK: - Private
@@ -76,6 +92,12 @@ class MessageListViewController: SharedViewController, UITableViewDataSource, Me
         let cell: MessageTableViewCell = tableView.dequeueCell()
         cell.configure(with: messagesPresenter.message(atIndex: indexPath))
         return cell
+    }
+
+    // MARK: - ModifyMessageViewControllerDelegate
+
+    func controller(controller: ModifyMessageViewController, wantsToModify message: Message) {
+        messagesPresenter.modifyMessage(message)
     }
 
     // MARK: - MessagesPresenterClients
