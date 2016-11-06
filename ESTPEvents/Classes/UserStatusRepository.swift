@@ -21,8 +21,14 @@ protocol FetchUserStatusOperationPrototype {
     var userStatus: UserStatus { get }
 }
 
+protocol FetchConfigurationFileOperationPrototype {
+    var configurationFile: ConfigurationFile? { get }
+}
+
 protocol UserStatusRepository {
     associatedtype FetchUserStatusOperation: Operation, FetchUserStatusOperationPrototype
+    associatedtype FetchConfigurationFileOperation: Operation, FetchConfigurationFileOperationPrototype
 
     func fetchUserStatusOperation() -> FetchUserStatusOperation
+    func fetchConfigurationFileOperation() -> FetchConfigurationFileOperation
 }

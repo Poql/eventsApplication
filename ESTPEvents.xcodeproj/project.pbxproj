@@ -25,6 +25,8 @@
 		E734F82A1D79CED1001E013C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E734F8291D79CED1001E013C /* Assets.xcassets */; };
 		E734F82F1D79CF08001E013C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E734F82D1D79CF08001E013C /* LaunchScreen.storyboard */; };
 		E734F8301D79CF08001E013C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E734F82E1D79CF08001E013C /* Main.storyboard */; };
+		E74D7D841DCDE8B400A60CDC /* NeedUpdateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E74D7D831DCDE8B400A60CDC /* NeedUpdateViewController.swift */; };
+		E74D7D861DCDEAB100A60CDC /* NeedUpdateViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E74D7D851DCDEAB100A60CDC /* NeedUpdateViewController.xib */; };
 		E756AC001D81A0A90077375D /* FetchRecordsOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E756ABFF1D81A0A90077375D /* FetchRecordsOperation.swift */; };
 		E756AC041D81AFE40077375D /* FetchRecordOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E756AC031D81AFE40077375D /* FetchRecordOperation.swift */; };
 		E756AC061D81E49A0077375D /* ModifyEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E756AC051D81E49A0077375D /* ModifyEventViewController.swift */; };
@@ -52,6 +54,8 @@
 		E780F25A1D8599CE0084E86B /* Location+MapKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = E780F2591D8599CE0084E86B /* Location+MapKit.swift */; };
 		E78194511DCCD9B500DF4A30 /* DeleteMessagesOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E78194501DCCD9B500DF4A30 /* DeleteMessagesOperation.swift */; };
 		E78194531DCCE24600DF4A30 /* NSDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E78194521DCCE24600DF4A30 /* NSDate.swift */; };
+		E78194551DCCF0C700DF4A30 /* ConfigurationFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = E78194541DCCF0C700DF4A30 /* ConfigurationFile.swift */; };
+		E78194571DCCF1FB00DF4A30 /* FetchConfigurationFileOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E78194561DCCF1FB00DF4A30 /* FetchConfigurationFileOperation.swift */; };
 		E78FB7901DB37A2D002303BA /* AdminRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = E78FB78F1DB37A2D002303BA /* AdminRepository.swift */; };
 		E78FB7931DB37A4D002303BA /* AdminRepositoryImplementation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E78FB7921DB37A4D002303BA /* AdminRepositoryImplementation.swift */; };
 		E78FB7961DB37EB6002303BA /* RequestToBecomeAdminOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E78FB7951DB37EB6002303BA /* RequestToBecomeAdminOperation.swift */; };
@@ -168,6 +172,8 @@
 		E734F8291D79CED1001E013C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = Resources/Assets.xcassets; sourceTree = "<group>"; };
 		E734F82D1D79CF08001E013C /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = Resources/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E734F82E1D79CF08001E013C /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = Resources/Main.storyboard; sourceTree = "<group>"; };
+		E74D7D831DCDE8B400A60CDC /* NeedUpdateViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NeedUpdateViewController.swift; path = Classes/NeedUpdateViewController.swift; sourceTree = "<group>"; };
+		E74D7D851DCDEAB100A60CDC /* NeedUpdateViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = NeedUpdateViewController.xib; path = Classes/NeedUpdateViewController.xib; sourceTree = "<group>"; };
 		E756ABFF1D81A0A90077375D /* FetchRecordsOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FetchRecordsOperation.swift; path = Classes/FetchRecordsOperation.swift; sourceTree = "<group>"; };
 		E756AC031D81AFE40077375D /* FetchRecordOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FetchRecordOperation.swift; path = Classes/FetchRecordOperation.swift; sourceTree = "<group>"; };
 		E756AC051D81E49A0077375D /* ModifyEventViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ModifyEventViewController.swift; path = Classes/ModifyEventViewController.swift; sourceTree = "<group>"; };
@@ -195,6 +201,8 @@
 		E780F2591D8599CE0084E86B /* Location+MapKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Location+MapKit.swift"; path = "Classes/Location+MapKit.swift"; sourceTree = "<group>"; };
 		E78194501DCCD9B500DF4A30 /* DeleteMessagesOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeleteMessagesOperation.swift; sourceTree = "<group>"; };
 		E78194521DCCE24600DF4A30 /* NSDate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NSDate.swift; path = Classes/NSDate.swift; sourceTree = "<group>"; };
+		E78194541DCCF0C700DF4A30 /* ConfigurationFile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ConfigurationFile.swift; path = Classes/ConfigurationFile.swift; sourceTree = "<group>"; };
+		E78194561DCCF1FB00DF4A30 /* FetchConfigurationFileOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FetchConfigurationFileOperation.swift; path = Classes/FetchConfigurationFileOperation.swift; sourceTree = "<group>"; };
 		E78FB78F1DB37A2D002303BA /* AdminRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AdminRepository.swift; path = Classes/AdminRepository.swift; sourceTree = "<group>"; };
 		E78FB7921DB37A4D002303BA /* AdminRepositoryImplementation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AdminRepositoryImplementation.swift; path = Classes/AdminRepositoryImplementation.swift; sourceTree = "<group>"; };
 		E78FB7951DB37EB6002303BA /* RequestToBecomeAdminOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RequestToBecomeAdminOperation.swift; path = Classes/RequestToBecomeAdminOperation.swift; sourceTree = "<group>"; };
@@ -385,6 +393,7 @@
 		E734F81B1D79CDD1001E013C /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				E74D7D831DCDE8B400A60CDC /* NeedUpdateViewController.swift */,
 				E780F2551D8556FC0084E86B /* LocationPickerViewController.swift */,
 				E734F8251D79CEA1001E013C /* SharedViewController.swift */,
 				E7C3D2441D802022007F5146 /* NavigationControllerWithWhiteStatusBar.swift */,
@@ -462,6 +471,7 @@
 				E76570351D82BFF200304D3E /* ColorCell.xib */,
 				E79640A21D86D8AF00C9F9DC /* LocationCell.xib */,
 				E79640A81D86FF7100C9F9DC /* EventPreviewCell.xib */,
+				E74D7D851DCDEAB100A60CDC /* NeedUpdateViewController.xib */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -626,6 +636,7 @@
 			isa = PBXGroup;
 			children = (
 				E79640C01D88304100C9F9DC /* FetchUserStatusOperation.swift */,
+				E78194561DCCF1FB00DF4A30 /* FetchConfigurationFileOperation.swift */,
 			);
 			name = Operations;
 			sourceTree = "<group>";
@@ -766,6 +777,7 @@
 				E79B6BC21D7AFE780048E0DF /* Record.swift */,
 				E79B6BBB1D7AFE780048E0DF /* Event.swift */,
 				E79640B61D87E94200C9F9DC /* Admin.swift */,
+				E78194541DCCF0C700DF4A30 /* ConfigurationFile.swift */,
 			);
 			name = Entity;
 			sourceTree = "<group>";
@@ -934,6 +946,7 @@
 				E79640A31D86D8AF00C9F9DC /* LocationCell.xib in Resources */,
 				E734F8301D79CF08001E013C /* Main.storyboard in Resources */,
 				E765703F1D8405A600304D3E /* TextFieldCell.xib in Resources */,
+				E74D7D861DCDEAB100A60CDC /* NeedUpdateViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1015,12 +1028,14 @@
 				E72219221DC3E05800C5A7EB /* MessageTableViewCell.swift in Sources */,
 				E756AC061D81E49A0077375D /* ModifyEventViewController.swift in Sources */,
 				E7BC15FA1D7ED69900B02897 /* NSFetchRequest+CoreDataModelable.swift in Sources */,
+				E74D7D841DCDE8B400A60CDC /* NeedUpdateViewController.swift in Sources */,
 				E756AC0D1D81E9DB0077375D /* TextViewCell.swift in Sources */,
 				E7C3D2561D817869007F5146 /* EnsureSubscriptionOperation.swift in Sources */,
 				E7192E171DBD1A0800829A8A /* MessageListViewController.swift in Sources */,
 				E7FA65471DCCA6710088D72E /* ModifyMessageOperation.swift in Sources */,
 				E76570441D84844400304D3E /* ModifyEventOperation.swift in Sources */,
 				E79640B71D87E94200C9F9DC /* Admin.swift in Sources */,
+				E78194571DCCF1FB00DF4A30 /* FetchConfigurationFileOperation.swift in Sources */,
 				E7BC16021D7F02D900B02897 /* EntitySectionChange.swift in Sources */,
 				E780F2561D8556FC0084E86B /* LocationPickerViewController.swift in Sources */,
 				E7D472131D895BF6006362C2 /* DataStackProviderOperation.swift in Sources */,
@@ -1082,6 +1097,7 @@
 				E7C3D24E1D804244007F5146 /* ApplicationPresenterImplementation.swift in Sources */,
 				E7E5FA3B1D79F08000B6FF1D /* EventRepository.swift in Sources */,
 				E7192E1C1DBD1BA600829A8A /* MessagesRepository.swift in Sources */,
+				E78194551DCCF0C700DF4A30 /* ConfigurationFile.swift in Sources */,
 				E797F2F81D7C3D3E00CB5EE2 /* EntityChange.swift in Sources */,
 				E756AC091D81E6730077375D /* ModifyEventRow.swift in Sources */,
 				E79640BB1D881FBD00C9F9DC /* AuthenticatedCondition.swift in Sources */,

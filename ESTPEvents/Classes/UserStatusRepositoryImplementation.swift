@@ -12,4 +12,8 @@ class UserStatusRepositoryImplementation: UserStatusRepository {
     func fetchUserStatusOperation() -> FetchUserStatusOperation {
         return FetchUserStatusOperation()
     }
+
+    func fetchConfigurationFileOperation() -> FetchConfigurationFileOperation {
+        return FetchConfigurationFileOperation()
+    }
 }

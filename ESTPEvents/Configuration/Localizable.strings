@@ -57,4 +57,9 @@
 "request_admin_rights_button_title" = "Faire la demande";
 "request_admin_rights_details" = "Vous devez accepter de donner accès au nom et au prénom de votre compte iCloud";
 
+"need_update_title" = "🙅";
+"need_update_subtitle" = "Cette version de l'application n'est plus supportée. \n\nTéléchargez la mise à jour.";
+"need_update_agree_button" = "D'ac";
+
+
 
