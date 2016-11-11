@@ -65,9 +65,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     private func setupNavigationAppearance() {
-        UINavigationBar.appearance().barTintColor = .lightBlue()
-        UINavigationBar.appearance().tintColor = .whiteColor()
-        UINavigationBar.appearance().titleTextAttributes = [NSForegroundColorAttributeName : UIColor.whiteColor()]
+        UINavigationBar.appearance().tintColor = .lightBlue()
+        UINavigationBar.appearance().titleTextAttributes = [NSForegroundColorAttributeName : UIColor.whiteColor(), NSFontAttributeName: UIFont.regularHeaderFont(ofSize: 18)]
+        UINavigationBar.appearance().barStyle = .Black
     }
     
     private func removeOldEntities() {
