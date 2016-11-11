@@ -41,7 +41,6 @@ class TabBarController: UITabBarController, SegueHandlerType {
     private func setupTabBarItems() {
         guard let items = tabBar.items else { return }
         tabBar.barStyle = .Black
-        tabBar.tintColor = .lightBlue()
         items[0].title = String(key: "event_title")
         items[1].title = String(key: "messages_controller_title")
     }

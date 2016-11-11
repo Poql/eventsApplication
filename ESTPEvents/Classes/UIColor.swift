@@ -40,7 +40,7 @@ extension UIColor {
     }
 
     static func lightGreen() -> UIColor {
-        return UIColor(red: 0/255, green: 230/255, blue: 118/255, alpha: 1)
+        return UIColor(hex: "###00E676")
     }
 
     static func orange() -> UIColor {

@@ -28,6 +28,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         setupNotifications(in: application)
         setupNavigationAppearance()
+        setupTintColor(UIColor.lightGreen())
         removeOldEntities()
         checkUserStatus()
         return true
@@ -65,13 +66,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     private func setupNavigationAppearance() {
-        UINavigationBar.appearance().tintColor = .lightBlue()
         UINavigationBar.appearance().titleTextAttributes = [NSForegroundColorAttributeName : UIColor.whiteColor(), NSFontAttributeName: UIFont.regularHeaderFont(ofSize: 18)]
         UINavigationBar.appearance().barStyle = .Black
         let backIndicatorImage = UIImage(named: "backArrow")?.imageWithAlignmentRectInsets(UIEdgeInsetsMake(0, 0, -2, 0))
         UINavigationBar.appearance().backIndicatorImage = backIndicatorImage
         UINavigationBar.appearance().backIndicatorTransitionMaskImage = backIndicatorImage
         UIBarButtonItem.appearance().setTitleTextAttributes([NSFontAttributeName: UIFont.regularMainFont(ofSize: 18)], forState: .Normal)
+    }
+
+    private func setupTintColor(color: UIColor) {
+        UINavigationBar.appearance().tintColor = color
+        UIBarButtonItem.appearance().tintColor = color
+        UIButton.appearance().tintColor = color
+        UITabBar.appearance().tintColor = color
+        UISwitch.appearance().onTintColor = color
     }
     
     private func removeOldEntities() {
