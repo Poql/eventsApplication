@@ -21,6 +21,7 @@
 		E70CD3791DD5C8930074A999 /* SFMono-Semibold.otf in Resources */ = {isa = PBXBuildFile; fileRef = E70CD36D1DD5C8930074A999 /* SFMono-Semibold.otf */; };
 		E70CD37A1DD5C8930074A999 /* SFMono-SemiboldItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = E70CD36E1DD5C8930074A999 /* SFMono-SemiboldItalic.otf */; };
 		E70CD37C1DD5C9860074A999 /* UIFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = E70CD37B1DD5C9860074A999 /* UIFont.swift */; };
+		E70CD37E1DD5DCDF0074A999 /* EventTableViewHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = E70CD37D1DD5DCDF0074A999 /* EventTableViewHeader.swift */; };
 		E7192E171DBD1A0800829A8A /* MessageListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7192E161DBD1A0800829A8A /* MessageListViewController.swift */; };
 		E7192E1C1DBD1BA600829A8A /* MessagesRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7192E1B1DBD1BA600829A8A /* MessagesRepository.swift */; };
 		E7192E1F1DBD1C8D00829A8A /* QueryMessagesOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7192E1E1DBD1C8D00829A8A /* QueryMessagesOperation.swift */; };
@@ -199,6 +200,7 @@
 		E70CD36D1DD5C8930074A999 /* SFMono-Semibold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "SFMono-Semibold.otf"; path = "Resources/Font/SFMono-Semibold.otf"; sourceTree = "<group>"; };
 		E70CD36E1DD5C8930074A999 /* SFMono-SemiboldItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "SFMono-SemiboldItalic.otf"; path = "Resources/Font/SFMono-SemiboldItalic.otf"; sourceTree = "<group>"; };
 		E70CD37B1DD5C9860074A999 /* UIFont.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UIFont.swift; path = Classes/UIFont.swift; sourceTree = "<group>"; };
+		E70CD37D1DD5DCDF0074A999 /* EventTableViewHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EventTableViewHeader.swift; path = Classes/EventTableViewHeader.swift; sourceTree = "<group>"; };
 		E7192E161DBD1A0800829A8A /* MessageListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MessageListViewController.swift; path = Classes/MessageListViewController.swift; sourceTree = "<group>"; };
 		E7192E1B1DBD1BA600829A8A /* MessagesRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MessagesRepository.swift; path = Classes/MessagesRepository.swift; sourceTree = "<group>"; };
 		E7192E1E1DBD1C8D00829A8A /* QueryMessagesOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = QueryMessagesOperation.swift; path = Classes/QueryMessagesOperation.swift; sourceTree = "<group>"; };
@@ -792,6 +794,7 @@
 			children = (
 				E7BC16091D7F5C8900B02897 /* EventTableViewCell.swift */,
 				E7BC16051D7F434A00B02897 /* CircleView.swift */,
+				E70CD37D1DD5DCDF0074A999 /* EventTableViewHeader.swift */,
 			);
 			name = Event;
 			sourceTree = "<group>";
@@ -1187,6 +1190,7 @@
 				E72219241DCA7DF500C5A7EB /* PersistentOperationQueue.swift in Sources */,
 				E79B6BCA1D7AFE780048E0DF /* EventViewController.swift in Sources */,
 				E780F2581D8599850084E86B /* Location.swift in Sources */,
+				E70CD37E1DD5DCDF0074A999 /* EventTableViewHeader.swift in Sources */,
 				E7BC160A1D7F5C8900B02897 /* EventTableViewCell.swift in Sources */,
 				E7C3D24C1D8041FE007F5146 /* ApplicationPresenter.swift in Sources */,
 				E78194531DCCE24600DF4A30 /* NSDate.swift in Sources */,
