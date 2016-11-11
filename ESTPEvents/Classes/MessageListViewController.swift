@@ -10,6 +10,7 @@ import UIKit
 
 private struct Constant {
     static let estimatedRowHeight: CGFloat = 60
+    static let tableViewYInsets: CGFloat = 6
 }
 
 enum MessageInfo: Int, Info {
@@ -58,6 +59,12 @@ class MessageListViewController: SharedViewController, UITableViewDataSource, Me
         if let indexPath = tableView.indexPathForSelectedRow {
             tableView.deselectRowAtIndexPath(indexPath, animated: true)
         }
+        navigationItem.title = String(key: "messages_controller_title")
+    }
+
+    override func viewWillDisappear(animated: Bool) {
+        super.viewWillDisappear(animated)
+        navigationItem.title = nil
     }
 
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
@@ -68,6 +75,10 @@ class MessageListViewController: SharedViewController, UITableViewDataSource, Me
         if let indexPath = tableView.indexPathForSelectedRow {
             controller.message = messagesPresenter.message(atIndex: indexPath)
         }
+    }
+
+    override func preferredStatusBarStyle() -> UIStatusBarStyle {
+        return .LightContent
     }
 
     // MARK: -  SharedViewController
@@ -91,10 +102,12 @@ class MessageListViewController: SharedViewController, UITableViewDataSource, Me
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.estimatedRowHeight = Constant.estimatedRowHeight
         tableView.tableFooterView = UIView()
+        tableView.contentInset.top += Constant.tableViewYInsets
+        tableView.contentInset.bottom += Constant.tableViewYInsets
+        view.backgroundColor = UIColor.darkGrey()
     }
 
     private func setupController() {
-        title = String(key: "messages_controller_title")
         tableView.backgroundView = emptyView
         emptyView.hidden = true
     }
