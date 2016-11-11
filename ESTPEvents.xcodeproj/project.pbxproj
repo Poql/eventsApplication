@@ -20,6 +20,7 @@
 		E70CD3781DD5C8930074A999 /* SFMono-RegularItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = E70CD36C1DD5C8930074A999 /* SFMono-RegularItalic.otf */; };
 		E70CD3791DD5C8930074A999 /* SFMono-Semibold.otf in Resources */ = {isa = PBXBuildFile; fileRef = E70CD36D1DD5C8930074A999 /* SFMono-Semibold.otf */; };
 		E70CD37A1DD5C8930074A999 /* SFMono-SemiboldItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = E70CD36E1DD5C8930074A999 /* SFMono-SemiboldItalic.otf */; };
+		E70CD37C1DD5C9860074A999 /* UIFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = E70CD37B1DD5C9860074A999 /* UIFont.swift */; };
 		E7192E171DBD1A0800829A8A /* MessageListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7192E161DBD1A0800829A8A /* MessageListViewController.swift */; };
 		E7192E1C1DBD1BA600829A8A /* MessagesRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7192E1B1DBD1BA600829A8A /* MessagesRepository.swift */; };
 		E7192E1F1DBD1C8D00829A8A /* QueryMessagesOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7192E1E1DBD1C8D00829A8A /* QueryMessagesOperation.swift */; };
@@ -197,6 +198,7 @@
 		E70CD36C1DD5C8930074A999 /* SFMono-RegularItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "SFMono-RegularItalic.otf"; path = "Resources/Font/SFMono-RegularItalic.otf"; sourceTree = "<group>"; };
 		E70CD36D1DD5C8930074A999 /* SFMono-Semibold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "SFMono-Semibold.otf"; path = "Resources/Font/SFMono-Semibold.otf"; sourceTree = "<group>"; };
 		E70CD36E1DD5C8930074A999 /* SFMono-SemiboldItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "SFMono-SemiboldItalic.otf"; path = "Resources/Font/SFMono-SemiboldItalic.otf"; sourceTree = "<group>"; };
+		E70CD37B1DD5C9860074A999 /* UIFont.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UIFont.swift; path = Classes/UIFont.swift; sourceTree = "<group>"; };
 		E7192E161DBD1A0800829A8A /* MessageListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MessageListViewController.swift; path = Classes/MessageListViewController.swift; sourceTree = "<group>"; };
 		E7192E1B1DBD1BA600829A8A /* MessagesRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MessagesRepository.swift; path = Classes/MessagesRepository.swift; sourceTree = "<group>"; };
 		E7192E1E1DBD1C8D00829A8A /* QueryMessagesOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = QueryMessagesOperation.swift; path = Classes/QueryMessagesOperation.swift; sourceTree = "<group>"; };
@@ -598,6 +600,7 @@
 				E7E5B4E61D93CE61002DEC19 /* NSUserDefaults + CKAccountStatus.swift */,
 				E78FB7A71DBCA8E4002303BA /* CKContainer.swift */,
 				E78194521DCCE24600DF4A30 /* NSDate.swift */,
+				E70CD37B1DD5C9860074A999 /* UIFont.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -1243,6 +1246,7 @@
 				E79640CB1D88449700C9F9DC /* WeakList.swift in Sources */,
 				E734F8241D79CE95001E013C /* AppDelegate.swift in Sources */,
 				E7C3D2411D800DB2007F5146 /* String+Localization.swift in Sources */,
+				E70CD37C1DD5C9860074A999 /* UIFont.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
