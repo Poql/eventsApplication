@@ -38,4 +38,8 @@ extension UIColor {
     static func orange() -> UIColor {
         return UIColor(red: 1, green: 111/255, blue: 29/255, alpha: 1)
     }
+
+    static func darkGrey() -> UIColor {
+        return UIColor(white: 64/255, alpha: 1)
+    }
 }
