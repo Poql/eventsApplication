@@ -9,7 +9,7 @@
 import UIKit
 
 private struct Constant {
-    static let rowHeight: CGFloat = 100
+    static let rowHeight: CGFloat = 120
 }
 
 enum EventInfo: Int, Info {
@@ -34,14 +34,9 @@ class EventViewController: SharedViewController, EventPresenterClient, UITableVi
         case eventDetail = "EventDetailViewController"
     }
 
-    @IBOutlet var tableView: UITableView! {
-        didSet {
-            tableView.delegate = self
-            tableView.dataSource = self
-            tableView.rowHeight = Constant.rowHeight
-            tableView.tableFooterView = UIView()
-        }
-    }
+    @IBOutlet var tableView: UITableView!
+
+    @IBOutlet var addButton: UIBarButtonItem!
 
     weak private var eventDetailViewController: EventDetailViewController?
 
@@ -53,10 +48,6 @@ class EventViewController: SharedViewController, EventPresenterClient, UITableVi
         return view
     }()
 
-    private lazy var addEventButton: UIBarButtonItem = {
-        return UIBarButtonItem(barButtonSystemItem: .Add, target: self, action: #selector(addEventAction(_:)))
-    }()
-    
     private lazy var eventPresenter: EventPresenter = {
         self.presenterFactory.addClient(self as EventPresenterClient)
         return self.presenterFactory.eventPresenter
@@ -67,6 +58,7 @@ class EventViewController: SharedViewController, EventPresenterClient, UITableVi
     override func viewDidLoad() {
         super.viewDidLoad()
         setupController()
+        setupTableView()
         eventPresenter.queryAllEvents()
         eventPresenter.registerListener(self)
     }
@@ -74,6 +66,20 @@ class EventViewController: SharedViewController, EventPresenterClient, UITableVi
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
         eventDetailViewController = nil
+    }
+
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationItem.title = String(key: "event_title")
+    }
+
+    override func viewWillDisappear(animated: Bool) {
+        super.viewWillDisappear(animated)
+        navigationItem.title = nil
+    }
+
+    override func preferredStatusBarStyle() -> UIStatusBarStyle {
+        return .LightContent
     }
 
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
@@ -96,7 +102,7 @@ class EventViewController: SharedViewController, EventPresenterClient, UITableVi
     
     // MARK: - Actions
 
-    @objc private func addEventAction(sender: UIBarButtonItem) {
+    @IBAction func addEventAction(sender: UIBarButtonItem) {
         performSegue(withIdentifier: .addEvent, sender: nil)
     }
 
@@ -120,7 +126,7 @@ class EventViewController: SharedViewController, EventPresenterClient, UITableVi
         case .follower:
             navigationItem.rightBarButtonItem = nil
         case .admin:
-            navigationItem.rightBarButtonItem = addEventButton
+            navigationItem.rightBarButtonItem = addButton
         }
     }
 
@@ -188,9 +194,18 @@ class EventViewController: SharedViewController, EventPresenterClient, UITableVi
     // MARK: - Private
     
     private func setupController() {
-        title = String(key: "event_title")
-        tableView.backgroundView = emptyView
+        view.backgroundColor = UIColor.darkGrey()
         emptyView.hidden = true
+    }
+
+    private func setupTableView() {
+        tableView.backgroundColor = UIColor.clearColor()
+        tableView.backgroundView = emptyView
+        tableView.registerClass(EventTableViewHeader.self, forHeaderFooterViewReuseIdentifier: "EventTableViewHeader")
+        tableView.delegate = self
+        tableView.dataSource = self
+        tableView.rowHeight = Constant.rowHeight
+        tableView.tableFooterView = UIView()
     }
 
     // MARK: - UITableViewDelegate
@@ -200,9 +215,15 @@ class EventViewController: SharedViewController, EventPresenterClient, UITableVi
     }
     
     // MARK: - UITableViewDataSource
-    
-    func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return eventPresenter.title(forSection: section)
+
+    func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let header = tableView.dequeueReusableHeaderFooterViewWithIdentifier("EventTableViewHeader") as! EventTableViewHeader
+        header.configure(title: eventPresenter.title(forSection: section))
+        return header
+    }
+
+    func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 35
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
