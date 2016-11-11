@@ -195,6 +195,7 @@ class EventViewController: SharedViewController, EventPresenterClient, UITableVi
     
     private func setupController() {
         view.backgroundColor = UIColor.darkGrey()
+        navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .Plain, target: nil, action: nil)
         emptyView.hidden = true
     }
 

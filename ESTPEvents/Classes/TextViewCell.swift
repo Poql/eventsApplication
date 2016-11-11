@@ -33,6 +33,7 @@ class TextViewCell: UITableViewCell, UITextViewDelegate {
 
     private func setupViews() {
         textView.delegate = self
+        textView.font = UIFont.regularMainFont(ofSize: 15)
     }
 
     // MARK: - UITextViewDelegate

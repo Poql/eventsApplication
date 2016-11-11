@@ -46,12 +46,11 @@ class EventPreviewCell: UITableViewCell {
     // MARK: - Private
 
     private func setupFonts() {
-        dateLabel.font = UIFont.systemFontOfSize(17, weight: UIFontWeightMedium)
-        titleLabel.font = UIFont.systemFontOfSize(17, weight: UIFontWeightBold)
-        creatorLabel.font = UIFont.systemFontOfSize(15)
-        typeLabel.font = UIFont.systemFontOfSize(15)
+        dateLabel.font = UIFont.mediumHeaderFont(ofSize: 17)
+        titleLabel.font = UIFont.boldHeaderFont(ofSize: 17)
+        creatorLabel.font = UIFont.regularHeaderFont(ofSize: 15)
+        typeLabel.font = UIFont.regularHeaderFont(ofSize: 15)
         creatorLabel.textColor = .darkGrayColor()
         typeLabel.textColor = .darkGrayColor()
-//        dateLabel.textColor = .lightGrayColor()
     }
 }

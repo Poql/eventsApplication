@@ -45,6 +45,11 @@ class RequestAdminRightsViewController: SharedViewController, MainPresenterClien
         cancelButton.setTitle(String(key: "cancel_button_title"), forState: .Normal)
         cancelButton.addTarget(self, action: #selector(cancelAction(_:)), forControlEvents: .TouchUpInside)
         requestButton.addTarget(self, action: #selector(requestButtonAction(_:)), forControlEvents: .TouchUpInside)
+        titleLabel.font = UIFont.regularMainFont(ofSize: 30)
+        subtitleLabel.font = UIFont.regularMainFont(ofSize: 17)
+        detailsLabel.font = UIFont.regularMainFont(ofSize: 11)
+        cancelButton.titleLabel?.font = UIFont.regularHeaderFont(ofSize: 15)
+        requestButton.titleLabel?.font = UIFont.regularMainFont(ofSize: 15)
     }
 
     // MARK: - Action

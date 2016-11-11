@@ -14,14 +14,16 @@ private struct Constant {
 class EmptyView: UIView {
     private let titleLabel: UILabel = {
         let label = UILabel()
-        label.font = UIFont.systemFontOfSize(64)
+        label.textColor = .whiteColor()
+        label.font = UIFont.regularHeaderFont(ofSize: 64)
         label.textAlignment = .Center
         return label
     }()
 
     private let subtitleLabel: UILabel = {
         let label = UILabel()
-        label.font = UIFont.systemFontOfSize(17)
+        label.textColor = .whiteColor()
+        label.font = UIFont.regularHeaderFont(ofSize: 17)
         label.textAlignment = .Center
         return label
     }()
