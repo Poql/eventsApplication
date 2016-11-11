@@ -68,6 +68,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UINavigationBar.appearance().tintColor = .lightBlue()
         UINavigationBar.appearance().titleTextAttributes = [NSForegroundColorAttributeName : UIColor.whiteColor(), NSFontAttributeName: UIFont.regularHeaderFont(ofSize: 18)]
         UINavigationBar.appearance().barStyle = .Black
+        let backIndicatorImage = UIImage(named: "backArrow")?.imageWithAlignmentRectInsets(UIEdgeInsetsMake(0, 0, -2, 0))
+        UINavigationBar.appearance().backIndicatorImage = backIndicatorImage
+        UINavigationBar.appearance().backIndicatorTransitionMaskImage = backIndicatorImage
+        UIBarButtonItem.appearance().setTitleTextAttributes([NSFontAttributeName: UIFont.regularMainFont(ofSize: 18)], forState: .Normal)
     }
     
     private func removeOldEntities() {
