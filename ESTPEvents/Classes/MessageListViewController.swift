@@ -10,7 +10,7 @@ import UIKit
 
 private struct Constant {
     static let estimatedRowHeight: CGFloat = 60
-    static let tableViewYInsets: CGFloat = 6
+    static let tableViewYInsets: CGFloat = 26
 }
 
 enum MessageInfo: Int, Info {

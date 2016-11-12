@@ -10,6 +10,7 @@ import UIKit
 
 private struct Constant {
     static let rowHeight: CGFloat = 120
+    static let tableViewTopContentInset: CGFloat = 20
 }
 
 enum EventInfo: Int, Info {
@@ -207,6 +208,7 @@ class EventViewController: SharedViewController, EventPresenterClient, UITableVi
         tableView.dataSource = self
         tableView.rowHeight = Constant.rowHeight
         tableView.tableFooterView = UIView()
+        tableView.contentInset.top += Constant.tableViewTopContentInset
     }
 
     // MARK: - UITableViewDelegate
