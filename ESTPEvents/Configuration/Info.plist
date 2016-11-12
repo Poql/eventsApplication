@@ -43,6 +43,31 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+	<key>UIAppFonts</key>
+	<array>
+		<string>Rubik-Black.ttf</string>
+		<string>Rubik-BlackItalic.ttf</string>
+		<string>Rubik-Bold.ttf</string>
+		<string>Rubik-BoldItalic.ttf</string>
+		<string>Rubik-Italic.ttf</string>
+		<string>Rubik-Light.ttf</string>
+		<string>Rubik-LightItalic.ttf</string>
+		<string>Rubik-Medium.ttf</string>
+		<string>Rubik-MediumItalic.ttf</string>
+		<string>Rubik-Regular.ttf</string>
+		<string>SFMono-Heavy.otf</string>
+		<string>SFMono-HeavyItalic.otf</string>
+		<string>SFMono-Bold.otf</string>
+		<string>SFMono-BoldItalic.otf</string>
+		<string>SFMono-Light.otf</string>
+		<string>SFMono-LightItalic.otf</string>
+		<string>SFMono-Medium.otf</string>
+		<string>SFMono-MediumItalic.otf</string>
+		<string>SFMono-Regular.otf</string>
+		<string>SFMono-RegularItalic.otf</string>
+		<string>SFMono-Semibold.otf</string>
+		<string>SFMono-SemiboldItalic.otf</string>
+	</array>
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<true/>
 </dict>

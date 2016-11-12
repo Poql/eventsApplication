@@ -106,6 +106,7 @@ class ModifyEventViewController: SharedViewController, UITableViewDataSource, UI
         navigationItem.leftBarButtonItem = cancelButton
         navigationItem.rightBarButtonItem = addButton
         addButton.enabled = false
+        navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .Plain, target: nil, action: nil)
     }
 
     private func tryEnableAddButton() {

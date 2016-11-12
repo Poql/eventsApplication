@@ -68,7 +68,7 @@ class LocationCell: UITableViewCell, MKMapViewDelegate {
     // MARK: - Private
 
     private func setupView() {
-        titleLabel.font = UIFont.systemFontOfSize(15, weight: UIFontWeightMedium)
-        subtitleLabel.font = UIFont.systemFontOfSize(15)
+        titleLabel.font = UIFont.mediumMainFont(ofSize: 15)
+        subtitleLabel.font = UIFont.regularMainFont(ofSize: 15)
     }
 }

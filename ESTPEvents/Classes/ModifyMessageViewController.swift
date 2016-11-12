@@ -88,6 +88,9 @@ class ModifyMessageViewController: SharedViewController, UITextViewDelegate {
         contentTextView.text = message?.content
         authorTextField.text = message?.author
         notifyUserSwitch.on = message?.notify ?? false
+        authorTextField.font = UIFont.regularMainFont(ofSize: 15)
+        notifyUserLabel.font = UIFont.regularMainFont(ofSize: 15)
+        contentTextView.font = UIFont.regularMainFont(ofSize: 15)
     }
 
     private func tryToEnableAddButton() {

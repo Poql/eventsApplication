@@ -35,7 +35,7 @@ class PersistentEvent: PersistentRecord {
     }()
     
     var sectionIdentifier: String {
-        return self.dynamicType.sectionDateFormatter.stringFromDate(eventDate)
+        return self.dynamicType.sectionDateFormatter.stringFromDate(eventDate).capitalizedString
     }
     
     @NSManaged var type: String

@@ -26,6 +26,7 @@ class MessageTableViewCell: UITableViewCell {
     private func setupView() {
         indicatorView.fillColor = .darkGrayColor()
         indicatorView.borderColor = .darkGrayColor()
+        selectionStyle = .None
     }
 
     private let dateFormatter: NSDateFormatter = {

@@ -41,17 +41,24 @@ class EventPreviewCell: UITableViewCell {
         titleLabel.text = event?.title
         typeLabel.text = event?.type
         creatorLabel.text = event?.creator
+        if let hex = event?.color {
+            let color = UIColor(hex: hex)
+            typeLabel.textColor = color
+            creatorLabel.textColor = color
+            return
+        }
+        creatorLabel.textColor = .darkGrayColor()
+        typeLabel.textColor = .darkGrayColor()
     }
 
     // MARK: - Private
 
     private func setupFonts() {
-        dateLabel.font = UIFont.systemFontOfSize(17, weight: UIFontWeightMedium)
-        titleLabel.font = UIFont.systemFontOfSize(17, weight: UIFontWeightBold)
-        creatorLabel.font = UIFont.systemFontOfSize(15)
-        typeLabel.font = UIFont.systemFontOfSize(15)
+        dateLabel.font = UIFont.mediumHeaderFont(ofSize: 17)
+        titleLabel.font = UIFont.boldHeaderFont(ofSize: 17)
+        creatorLabel.font = UIFont.mediumMainFont(ofSize: 15)
+        typeLabel.font = UIFont.mediumMainFont(ofSize: 15)
         creatorLabel.textColor = .darkGrayColor()
         typeLabel.textColor = .darkGrayColor()
-//        dateLabel.textColor = .lightGrayColor()
     }
 }

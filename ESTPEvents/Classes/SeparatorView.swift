@@ -25,6 +25,12 @@ class SeparatorView: UIView {
         }
     }
 
+    var color: UIColor = .grayColor() {
+        didSet {
+            setNeedsDisplay()
+        }
+    }
+
     init() {
         super.init(frame: CGRectZero)
     }
@@ -43,7 +49,7 @@ class SeparatorView: UIView {
         }
         let rect = CGRect(x: 0, y: y, width: rect.width, height: Constant.separatorHeight)
         let path = UIBezierPath(rect: rect)
-        UIColor.grayColor().setFill()
+        color.setFill()
         path.fill()
     }
 }

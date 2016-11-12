@@ -19,7 +19,7 @@ class BooleanCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         switchView.addTarget(self, action: #selector(switchAction(_:)), forControlEvents: .ValueChanged)
-        switchView.onTintColor = .lightBlue()
+        titleLabel.font = UIFont.regularMainFont(ofSize: 15)
     }
  
     func configure(withLabel text: String?, selected: Bool) {

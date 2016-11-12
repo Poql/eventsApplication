@@ -27,7 +27,6 @@ class TabBarController: UITabBarController, SegueHandlerType {
     // MARK: - Private
 
     private func setupController() {
-        setupTabBarBackground()
         setupTabBarItems()
         initializeLongPressGestureRecognizer()
     }
@@ -39,19 +38,11 @@ class TabBarController: UITabBarController, SegueHandlerType {
         tabBar.addGestureRecognizer(recognizer)
     }
 
-    private func setupTabBarBackground() {
-        let blurEffect = UIBlurEffect(style: .Light)
-        let view = UIVisualEffectView(effect: blurEffect)
-        view.translatesAutoresizingMaskIntoConstraints = false
-        tabBar.addSubview(view)
-        view.pinToSuperView()
-        tabBar.sendSubviewToBack(view)
-    }
-
     private func setupTabBarItems() {
-        tabBar.backgroundColor = UIColor.clearColor()
-        tabBar.backgroundImage = UIImage()
-        tabBar.tintColor = .lightBlue()
+        guard let items = tabBar.items else { return }
+        tabBar.barStyle = .Black
+        items[0].title = String(key: "event_title")
+        items[1].title = String(key: "messages_controller_title")
     }
 
     // MARK: - Actions

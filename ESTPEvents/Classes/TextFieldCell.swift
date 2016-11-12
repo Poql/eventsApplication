@@ -18,6 +18,8 @@ class TextFieldCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         textField.addTarget(self, action: #selector(textFieldAction(_:)), forControlEvents: .EditingChanged)
+        titleLabel.font = UIFont.regularMainFont(ofSize: 15)
+        textField.font = UIFont.regularMainFont(ofSize: 15)
     }
 
     // MARK: - Configuration

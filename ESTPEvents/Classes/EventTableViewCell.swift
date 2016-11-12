@@ -36,6 +36,7 @@ class EventTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        selectionStyle = .None
         setFonts()
         setTextColors()
     }
@@ -46,8 +47,9 @@ class EventTableViewCell: UITableViewCell {
         let color = UIColor(hex: event.color ?? Constant.defaultReadViewColor)
         readView.borderColor = color
         readView.fillColor = color
-        titleLabel.text = event.title
+        creatorLabel.textColor = color
         creatorLabel.text = event.creator
+        titleLabel.text = event.title
         descriptionLabel.text = event.description
         if let date = event.eventDate {
             dateLabel.text = dateFormatter.stringFromDate(date)
@@ -60,18 +62,14 @@ class EventTableViewCell: UITableViewCell {
     // MARK: - Private
 
     private func setFonts() {
-        dateLabel.font = UIFont.systemFontOfSize(17, weight: UIFontWeightMedium)
-        creatorLabel.font = UIFont.systemFontOfSize(17)
-        titleLabel.font = UIFont.systemFontOfSize(15, weight: UIFontWeightMedium)
-        stateLabel.font = UIFont.systemFontOfSize(15, weight: UIFontWeightMedium)
-        descriptionLabel.font = UIFont.systemFontOfSize(15)
+        titleLabel.font = UIFont.mediumMainFont(ofSize: 16)
     }
     
     private func setTextColors() {
         dateLabel.textColor = .blackColor()
         creatorLabel.textColor = .blackColor()
-        titleLabel.textColor = .darkGrayColor()
+        titleLabel.textColor = .darkGrey()
         stateLabel.textColor = .red()
-        descriptionLabel.textColor = .darkGrayColor()
+        descriptionLabel.textColor = .darkGrey()
     }
 }
