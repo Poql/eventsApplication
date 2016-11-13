@@ -61,5 +61,13 @@
 "need_update_subtitle" = "Cette version de l'application n'est plus supportée. \n\nTéléchargez la mise à jour.";
 "need_update_agree_button" = "D'ac";
 
+"on_boarding_welcome_decoration_label" = "🙋🏼‍♂️";
+"on_boarding_welcome_title_label" = "Bienvenue sur BVA.";
+"on_boarding_welcome_main_button_title" = "Suivant";
+"on_boarding_welcome_description_label" = "L'application est mise à jour par les élèves de l'ESTP";
 
-
+"on_boarding_notifications_decoration_label" = "🛎";
+"on_boarding_notifications_title_label" = "Notifications";
+"on_boarding_notifications_main_button_title" = "Accepter";
+"on_boarding_notifications_second_button_title" = "Non merci";
+"on_boarding_notifications_description_label" = "Les notifications permettent d'être alerté lors de la création de certains messages ou évènements.";
