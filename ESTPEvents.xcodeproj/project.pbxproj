@@ -50,6 +50,7 @@
 		E73FDD4A1DD630830057B41D /* Rubik-MediumItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E70CD35B1DD5C67D0074A999 /* Rubik-MediumItalic.ttf */; };
 		E73FDD4B1DD630830057B41D /* Rubik-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E70CD35C1DD5C67D0074A999 /* Rubik-Regular.ttf */; };
 		E73FDD521DD74B420057B41D /* UIViewController + loader.swift in Sources */ = {isa = PBXBuildFile; fileRef = E73FDD511DD74B420057B41D /* UIViewController + loader.swift */; };
+		E73FDD541DD74E280057B41D /* PageAnimationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E73FDD531DD74E280057B41D /* PageAnimationController.swift */; };
 		E74D7D841DCDE8B400A60CDC /* NeedUpdateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E74D7D831DCDE8B400A60CDC /* NeedUpdateViewController.swift */; };
 		E74D7D861DCDEAB100A60CDC /* NeedUpdateViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E74D7D851DCDEAB100A60CDC /* NeedUpdateViewController.xib */; };
 		E756AC001D81A0A90077375D /* FetchRecordsOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E756ABFF1D81A0A90077375D /* FetchRecordsOperation.swift */; };
@@ -222,6 +223,7 @@
 		E734F82D1D79CF08001E013C /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = Resources/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E734F82E1D79CF08001E013C /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = Resources/Main.storyboard; sourceTree = "<group>"; };
 		E73FDD511DD74B420057B41D /* UIViewController + loader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIViewController + loader.swift"; path = "Classes/UIViewController + loader.swift"; sourceTree = "<group>"; };
+		E73FDD531DD74E280057B41D /* PageAnimationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PageAnimationController.swift; path = Classes/PageAnimationController.swift; sourceTree = "<group>"; };
 		E74D7D831DCDE8B400A60CDC /* NeedUpdateViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NeedUpdateViewController.swift; path = Classes/NeedUpdateViewController.swift; sourceTree = "<group>"; };
 		E74D7D851DCDEAB100A60CDC /* NeedUpdateViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = NeedUpdateViewController.xib; path = Classes/NeedUpdateViewController.xib; sourceTree = "<group>"; };
 		E756ABFF1D81A0A90077375D /* FetchRecordsOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FetchRecordsOperation.swift; path = Classes/FetchRecordsOperation.swift; sourceTree = "<group>"; };
@@ -495,6 +497,7 @@
 				E7C3D2441D802022007F5146 /* NavigationControllerWithWhiteStatusBar.swift */,
 				E76570371D82D28400304D3E /* DatePickerViewController.swift */,
 				E796409A1D86AF9600C9F9DC /* KeyboardManager.swift */,
+				E73FDD4C1DD7278F0057B41D /* On boarding */,
 				E7192E151DBD19E800829A8A /* Messages */,
 				E78FB79D1DB7F957002303BA /* Main */,
 				E7BA36611DCC837800FC5239 /* Modify Message */,
@@ -608,6 +611,14 @@
 				E73FDD511DD74B420057B41D /* UIViewController + loader.swift */,
 			);
 			name = Extensions;
+			sourceTree = "<group>";
+		};
+		E73FDD4C1DD7278F0057B41D /* On boarding */ = {
+			isa = PBXGroup;
+			children = (
+				E73FDD531DD74E280057B41D /* PageAnimationController.swift */,
+			);
+			name = "On boarding";
 			sourceTree = "<group>";
 		};
 		E756AC071D81E5F90077375D /* Shared */ = {
@@ -1185,6 +1196,7 @@
 				E79B6BB51D7AFE4A0048E0DF /* EventRepositoryImplementation.swift in Sources */,
 				E7BC15FC1D7EDD2E00B02897 /* PersistentRecord.swift in Sources */,
 				E79640B51D87E4C600C9F9DC /* AuthenticatedOperation.swift in Sources */,
+				E73FDD541DD74E280057B41D /* PageAnimationController.swift in Sources */,
 				E7D4720F1D894228006362C2 /* AuthenticationProviderOperation.swift in Sources */,
 				E7C3D25A1D818405007F5146 /* Error+CloudKit.swift in Sources */,
 				E7C3D25C1D8186A6007F5146 /* SubscriptionRepositoryImplementation.swift in Sources */,
