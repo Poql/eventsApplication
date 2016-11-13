@@ -1,5 +1,5 @@
 //
-//  MainPresenterImplementation.swift
+//  RequestAdminRightsPresenterImplementation.swift
 //  ESTPEvents
 //
 //  Created by Gaétan Zanella on 19/10/2016.
@@ -9,10 +9,10 @@
 import Foundation
 import Operations
 
-class MainPresenterImplementation<Repository: AdminRepository>: MainPresenter {
+class RequestAdminRightsPresenterImplementation<Repository: AdminRepository>: RequestAdminRightsPresenter {
     let operationQueue = OperationQueue()
 
-    weak var client: MainPresenterClient?
+    weak var client: RequestAdminRightsPresenterClient?
 
     let repository: Repository
 

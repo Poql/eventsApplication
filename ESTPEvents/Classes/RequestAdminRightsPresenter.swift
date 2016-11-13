@@ -1,5 +1,5 @@
 //
-//  MainPresenter.swift
+//  RequestAdminRightsPresenter.swift
 //  ESTPEvents
 //
 //  Created by Gaétan Zanella on 19/10/2016.
@@ -8,11 +8,11 @@
 
 import Foundation
 
-protocol MainPresenter {
+protocol RequestAdminRightsPresenter {
     func requestToBecomeAdmin()
 }
 
-protocol MainPresenterClient: class {
+protocol RequestAdminRightsPresenterClient: class {
     func presenterWantsToShowError(error: ApplicationError)
     func presenterWantsToShowLoading()
     func presenterDidRequestToBecomeAdminSuccessfullly()

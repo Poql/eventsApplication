@@ -11,10 +11,10 @@ import Foundation
 protocol PresenterFactory {
     var eventPresenter: EventPresenter { get }
     var applicationPresenter: ApplicationPresenter { get }
-    var mainPresenter: MainPresenter { get }
+    var requestAdminRightsPresenter: RequestAdminRightsPresenter { get }
     var messagesPresenter: MessagesPresenter { get }
     func addClient(eventClient: EventPresenterClient)
-    func addClient(mainClient: MainPresenterClient)
+    func addClient(mainClient: RequestAdminRightsPresenterClient)
     func addClient(messagesClient: MessagesPresenterClient)
 }
 
@@ -40,8 +40,8 @@ class PresenterFactoryImplementation: PresenterFactory {
         return ApplicationPresenterImplementation(persistencyRepository: self.persistencyRepository, subscriptionRepository: self.subscriptionRepository, userStatusRepository: self.userStatusRepository)
     }()
 
-    private lazy var mainPresenterImplementation: MainPresenterImplementation<AdminRepositoryImplementation> = {
-        return MainPresenterImplementation(repository: self.adminRepository)
+    private lazy var requestAdminRightsPresenterImplementation: RequestAdminRightsPresenterImplementation<AdminRepositoryImplementation> = {
+        return RequestAdminRightsPresenterImplementation(repository: self.adminRepository)
     }()
 
     private lazy var messagesPresenterImplementation: MessagesPresenterImplementation<MessagesRepositoryImplementation, PersistencyRepositoryImplementation> = {
@@ -58,16 +58,16 @@ class PresenterFactoryImplementation: PresenterFactory {
         return eventPresenterImplementation
     }
 
-    var mainPresenter: MainPresenter {
-        return mainPresenterImplementation
+    var requestAdminRightsPresenter: RequestAdminRightsPresenter {
+        return requestAdminRightsPresenterImplementation
     }
 
     var messagesPresenter: MessagesPresenter {
         return messagesPresenterImplementation
     }
 
-    func addClient(mainClient: MainPresenterClient) {
-        mainPresenterImplementation.client = mainClient
+    func addClient(mainClient: RequestAdminRightsPresenterClient) {
+        requestAdminRightsPresenterImplementation.client = mainClient
     }
     
     func addClient(eventClient: EventPresenterClient) {
