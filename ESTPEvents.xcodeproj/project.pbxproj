@@ -49,6 +49,7 @@
 		E73FDD491DD630830057B41D /* Rubik-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E70CD35A1DD5C67D0074A999 /* Rubik-Medium.ttf */; };
 		E73FDD4A1DD630830057B41D /* Rubik-MediumItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E70CD35B1DD5C67D0074A999 /* Rubik-MediumItalic.ttf */; };
 		E73FDD4B1DD630830057B41D /* Rubik-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E70CD35C1DD5C67D0074A999 /* Rubik-Regular.ttf */; };
+		E73FDD4E1DD727A80057B41D /* OnBoardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E73FDD4D1DD727A80057B41D /* OnBoardingViewController.swift */; };
 		E73FDD521DD74B420057B41D /* UIViewController + loader.swift in Sources */ = {isa = PBXBuildFile; fileRef = E73FDD511DD74B420057B41D /* UIViewController + loader.swift */; };
 		E73FDD541DD74E280057B41D /* PageAnimationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E73FDD531DD74E280057B41D /* PageAnimationController.swift */; };
 		E73FDD561DD7563C0057B41D /* PopAnimationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E73FDD551DD7563C0057B41D /* PopAnimationController.swift */; };
@@ -223,6 +224,7 @@
 		E734F8291D79CED1001E013C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = Resources/Assets.xcassets; sourceTree = "<group>"; };
 		E734F82D1D79CF08001E013C /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = Resources/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E734F82E1D79CF08001E013C /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = Resources/Main.storyboard; sourceTree = "<group>"; };
+		E73FDD4D1DD727A80057B41D /* OnBoardingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OnBoardingViewController.swift; path = Classes/OnBoardingViewController.swift; sourceTree = "<group>"; };
 		E73FDD511DD74B420057B41D /* UIViewController + loader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIViewController + loader.swift"; path = "Classes/UIViewController + loader.swift"; sourceTree = "<group>"; };
 		E73FDD531DD74E280057B41D /* PageAnimationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PageAnimationController.swift; path = Classes/PageAnimationController.swift; sourceTree = "<group>"; };
 		E73FDD551DD7563C0057B41D /* PopAnimationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PopAnimationController.swift; path = Classes/PopAnimationController.swift; sourceTree = "<group>"; };
@@ -618,6 +620,7 @@
 		E73FDD4C1DD7278F0057B41D /* On boarding */ = {
 			isa = PBXGroup;
 			children = (
+				E73FDD4D1DD727A80057B41D /* OnBoardingViewController.swift */,
 				E73FDD531DD74E280057B41D /* PageAnimationController.swift */,
 				E73FDD551DD7563C0057B41D /* PopAnimationController.swift */,
 			);
@@ -1186,6 +1189,7 @@
 				E7C3D2491D803FBF007F5146 /* DeleteEventsOperation.swift in Sources */,
 				E79640AB1D870B3C00C9F9DC /* String+Capitalization.swift in Sources */,
 				E78FB7961DB37EB6002303BA /* RequestToBecomeAdminOperation.swift in Sources */,
+				E73FDD4E1DD727A80057B41D /* OnBoardingViewController.swift in Sources */,
 				E7BA36651DCC93BB00FC5239 /* SeparatorView.swift in Sources */,
 				E79640C51D88343700C9F9DC /* NSUserDefault + UserStatus.swift in Sources */,
 				E7EF0A951DC2703800BC5ED1 /* RecordsFetcherController.swift in Sources */,
