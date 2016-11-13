@@ -53,6 +53,7 @@
 		E73FDD521DD74B420057B41D /* UIViewController + loader.swift in Sources */ = {isa = PBXBuildFile; fileRef = E73FDD511DD74B420057B41D /* UIViewController + loader.swift */; };
 		E73FDD541DD74E280057B41D /* PageAnimationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E73FDD531DD74E280057B41D /* PageAnimationController.swift */; };
 		E73FDD561DD7563C0057B41D /* PopAnimationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E73FDD551DD7563C0057B41D /* PopAnimationController.swift */; };
+		E73FDD581DD75B440057B41D /* OnBoardingContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E73FDD571DD75B440057B41D /* OnBoardingContainerViewController.swift */; };
 		E74D7D841DCDE8B400A60CDC /* NeedUpdateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E74D7D831DCDE8B400A60CDC /* NeedUpdateViewController.swift */; };
 		E74D7D861DCDEAB100A60CDC /* NeedUpdateViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E74D7D851DCDEAB100A60CDC /* NeedUpdateViewController.xib */; };
 		E756AC001D81A0A90077375D /* FetchRecordsOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E756ABFF1D81A0A90077375D /* FetchRecordsOperation.swift */; };
@@ -228,6 +229,7 @@
 		E73FDD511DD74B420057B41D /* UIViewController + loader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIViewController + loader.swift"; path = "Classes/UIViewController + loader.swift"; sourceTree = "<group>"; };
 		E73FDD531DD74E280057B41D /* PageAnimationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PageAnimationController.swift; path = Classes/PageAnimationController.swift; sourceTree = "<group>"; };
 		E73FDD551DD7563C0057B41D /* PopAnimationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PopAnimationController.swift; path = Classes/PopAnimationController.swift; sourceTree = "<group>"; };
+		E73FDD571DD75B440057B41D /* OnBoardingContainerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OnBoardingContainerViewController.swift; path = Classes/OnBoardingContainerViewController.swift; sourceTree = "<group>"; };
 		E74D7D831DCDE8B400A60CDC /* NeedUpdateViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NeedUpdateViewController.swift; path = Classes/NeedUpdateViewController.swift; sourceTree = "<group>"; };
 		E74D7D851DCDEAB100A60CDC /* NeedUpdateViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = NeedUpdateViewController.xib; path = Classes/NeedUpdateViewController.xib; sourceTree = "<group>"; };
 		E756ABFF1D81A0A90077375D /* FetchRecordsOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FetchRecordsOperation.swift; path = Classes/FetchRecordsOperation.swift; sourceTree = "<group>"; };
@@ -623,6 +625,7 @@
 				E73FDD4D1DD727A80057B41D /* OnBoardingViewController.swift */,
 				E73FDD531DD74E280057B41D /* PageAnimationController.swift */,
 				E73FDD551DD7563C0057B41D /* PopAnimationController.swift */,
+				E73FDD571DD75B440057B41D /* OnBoardingContainerViewController.swift */,
 			);
 			name = "On boarding";
 			sourceTree = "<group>";
@@ -1253,6 +1256,7 @@
 				E79B6BC51D7AFE780048E0DF /* Entity.swift in Sources */,
 				E78FB7A41DB7F9DF002303BA /* MainPresenterImplementation.swift in Sources */,
 				E7BC16061D7F434A00B02897 /* CircleView.swift in Sources */,
+				E73FDD581DD75B440057B41D /* OnBoardingContainerViewController.swift in Sources */,
 				E79640A71D86FF5F00C9F9DC /* EventPreviewCell.swift in Sources */,
 				E7C3D2471D803174007F5146 /* SequenceType + Record.swift in Sources */,
 				E7FB89361D7B211700FEFD1B /* Model.xcdatamodeld in Sources */,
