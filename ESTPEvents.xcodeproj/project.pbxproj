@@ -49,6 +49,7 @@
 		E73FDD491DD630830057B41D /* Rubik-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E70CD35A1DD5C67D0074A999 /* Rubik-Medium.ttf */; };
 		E73FDD4A1DD630830057B41D /* Rubik-MediumItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E70CD35B1DD5C67D0074A999 /* Rubik-MediumItalic.ttf */; };
 		E73FDD4B1DD630830057B41D /* Rubik-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E70CD35C1DD5C67D0074A999 /* Rubik-Regular.ttf */; };
+		E73FDD521DD74B420057B41D /* UIViewController + loader.swift in Sources */ = {isa = PBXBuildFile; fileRef = E73FDD511DD74B420057B41D /* UIViewController + loader.swift */; };
 		E74D7D841DCDE8B400A60CDC /* NeedUpdateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E74D7D831DCDE8B400A60CDC /* NeedUpdateViewController.swift */; };
 		E74D7D861DCDEAB100A60CDC /* NeedUpdateViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E74D7D851DCDEAB100A60CDC /* NeedUpdateViewController.xib */; };
 		E756AC001D81A0A90077375D /* FetchRecordsOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E756ABFF1D81A0A90077375D /* FetchRecordsOperation.swift */; };
@@ -220,6 +221,7 @@
 		E734F8291D79CED1001E013C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = Resources/Assets.xcassets; sourceTree = "<group>"; };
 		E734F82D1D79CF08001E013C /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = Resources/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E734F82E1D79CF08001E013C /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = Resources/Main.storyboard; sourceTree = "<group>"; };
+		E73FDD511DD74B420057B41D /* UIViewController + loader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIViewController + loader.swift"; path = "Classes/UIViewController + loader.swift"; sourceTree = "<group>"; };
 		E74D7D831DCDE8B400A60CDC /* NeedUpdateViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NeedUpdateViewController.swift; path = Classes/NeedUpdateViewController.swift; sourceTree = "<group>"; };
 		E74D7D851DCDEAB100A60CDC /* NeedUpdateViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = NeedUpdateViewController.xib; path = Classes/NeedUpdateViewController.xib; sourceTree = "<group>"; };
 		E756ABFF1D81A0A90077375D /* FetchRecordsOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FetchRecordsOperation.swift; path = Classes/FetchRecordsOperation.swift; sourceTree = "<group>"; };
@@ -603,6 +605,7 @@
 				E78FB7A71DBCA8E4002303BA /* CKContainer.swift */,
 				E78194521DCCE24600DF4A30 /* NSDate.swift */,
 				E70CD37B1DD5C9860074A999 /* UIFont.swift */,
+				E73FDD511DD74B420057B41D /* UIViewController + loader.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -1189,6 +1192,7 @@
 				E79B6BCD1D7AFE780048E0DF /* PresenterFactory.swift in Sources */,
 				E72219241DCA7DF500C5A7EB /* PersistentOperationQueue.swift in Sources */,
 				E79B6BCA1D7AFE780048E0DF /* EventViewController.swift in Sources */,
+				E73FDD521DD74B420057B41D /* UIViewController + loader.swift in Sources */,
 				E780F2581D8599850084E86B /* Location.swift in Sources */,
 				E70CD37E1DD5DCDF0074A999 /* EventTableViewHeader.swift in Sources */,
 				E7BC160A1D7F5C8900B02897 /* EventTableViewCell.swift in Sources */,
