@@ -68,6 +68,6 @@
 
 "on_boarding_notifications_decoration_label" = "🛎";
 "on_boarding_notifications_title_label" = "Notifications";
-"on_boarding_notifications_main_button_title" = "Accepter";
+"on_boarding_notifications_main_button_title" = "D'ac";
 "on_boarding_notifications_second_button_title" = "Non merci";
 "on_boarding_notifications_description_label" = "Les notifications permettent d'être alerté lors de la création de certains messages ou évènements.";
