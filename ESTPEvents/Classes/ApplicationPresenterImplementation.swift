@@ -99,25 +99,7 @@ class ApplicationPresenterImplementation<PR: PersistencyRepository, SR: Subscrip
         listeners.insert(listener)
     }
 
-    func checkCurrentVersion(completion: (currentVersionIsValid: Bool) -> Void) {
-        let operation = userStatusRepository.fetchConfigurationFileOperation()
-        let observer = BlockObserverOnMainQueue(didFinish: { _, _ in
-            self.checkCurrentVersion(with: operation.configurationFile, completion: completion)
-        })
-        operation.addObserver(NetworkObserver())
-        operation.addObserver(observer)
-        operationQueue.addOperation(operation)
-    }
-
     // MARK: - Private
-
-    private func checkCurrentVersion(with configurationFile: ConfigurationFile?, completion: (currentVersionIsValid: Bool) -> Void) {
-        if let requiredVersion = configurationFile?.requiredVersion,
-            let currentVersion = NSBundle.mainBundle().objectForInfoDictionaryKey("CFBundleShortVersionString") as? String {
-            completion(currentVersionIsValid: currentVersion.compare(requiredVersion) == .OrderedDescending)
-        }
-        completion(currentVersionIsValid: true)
-    }
 
     private func sendSuscriptions() {
         let eventOperation = subscriptionRepository.ensureEventsSubscriptionOperation()

@@ -8,10 +8,6 @@
 
 import UIKit
 
-private struct Constant {
-    static let notificationSettings = UIUserNotificationSettings(forTypes: .Alert, categories: nil)
-}
-
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
@@ -39,21 +35,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     func applicationDidBecomeActive(application: UIApplication) {
-        applicationPresenter.checkCurrentVersion { currentVersionIsValid in
-            guard !currentVersionIsValid else { return }
-            self.showNeedUpdateViewController()
-        }
     }
-    
-    // MARK: - Private
 
-    private func showNeedUpdateViewController() {
-        guard let controller = window?.rootViewController else { return }
-        if let _ = controller.presentedViewController as? NeedUpdateViewController {
-            return
-        }
-        controller.presentViewController(NeedUpdateViewController(), animated: true, completion: nil)
-    }
 
     private func checkUserStatus() {
         applicationPresenter.checkUserStatus()
@@ -61,7 +44,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     private func setupNotifications(in application: UIApplication) {
         application.registerForRemoteNotifications()
-        application.registerUserNotificationSettings(Constant.notificationSettings)
         applicationPresenter.ensureNotifications()
     }
 
