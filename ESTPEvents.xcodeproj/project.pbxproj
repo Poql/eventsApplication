@@ -173,6 +173,7 @@
 		E7DB08141DD8BF8100EA196A /* OnBoardingPresenterImplementation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7DB08131DD8BF8100EA196A /* OnBoardingPresenterImplementation.swift */; };
 		E7DB08161DD8BF9700EA196A /* ConfigurationPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7DB08151DD8BF9700EA196A /* ConfigurationPresenter.swift */; };
 		E7DB08181DD8D94400EA196A /* NSUserDefault.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7DB08171DD8D94400EA196A /* NSUserDefault.swift */; };
+		E7DB081A1DD8E22000EA196A /* TintColorSetter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7DB08191DD8E22000EA196A /* TintColorSetter.swift */; };
 		E7DB081C1DD8E54600EA196A /* ApplicationStateListener.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7DB081B1DD8E54600EA196A /* ApplicationStateListener.swift */; };
 		E7E5B4E51D93BF2A002DEC19 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = E7E5B4E41D93BF2A002DEC19 /* Localizable.strings */; };
 		E7E5B4E71D93CE61002DEC19 /* NSUserDefaults + CKAccountStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7E5B4E61D93CE61002DEC19 /* NSUserDefaults + CKAccountStatus.swift */; };
@@ -359,6 +360,7 @@
 		E7DB08131DD8BF8100EA196A /* OnBoardingPresenterImplementation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OnBoardingPresenterImplementation.swift; path = Classes/OnBoardingPresenterImplementation.swift; sourceTree = "<group>"; };
 		E7DB08151DD8BF9700EA196A /* ConfigurationPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ConfigurationPresenter.swift; path = Classes/ConfigurationPresenter.swift; sourceTree = "<group>"; };
 		E7DB08171DD8D94400EA196A /* NSUserDefault.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NSUserDefault.swift; path = Classes/NSUserDefault.swift; sourceTree = "<group>"; };
+		E7DB08191DD8E22000EA196A /* TintColorSetter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TintColorSetter.swift; path = Classes/TintColorSetter.swift; sourceTree = "<group>"; };
 		E7DB081B1DD8E54600EA196A /* ApplicationStateListener.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ApplicationStateListener.swift; path = Classes/ApplicationStateListener.swift; sourceTree = "<group>"; };
 		E7E5B4E41D93BF2A002DEC19 /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = Localizable.strings; path = Configuration/Localizable.strings; sourceTree = "<group>"; };
 		E7E5B4E61D93CE61002DEC19 /* NSUserDefaults + CKAccountStatus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "NSUserDefaults + CKAccountStatus.swift"; path = "Classes/NSUserDefaults + CKAccountStatus.swift"; sourceTree = "<group>"; };
@@ -523,6 +525,7 @@
 				E7C3D2441D802022007F5146 /* NavigationControllerWithWhiteStatusBar.swift */,
 				E76570371D82D28400304D3E /* DatePickerViewController.swift */,
 				E796409A1D86AF9600C9F9DC /* KeyboardManager.swift */,
+				E7DB08191DD8E22000EA196A /* TintColorSetter.swift */,
 				E73FDD4C1DD7278F0057B41D /* On boarding */,
 				E7192E151DBD19E800829A8A /* Messages */,
 				E78FB79D1DB7F957002303BA /* Main */,
@@ -1316,6 +1319,7 @@
 				E78FB7A21DB7F9D2002303BA /* RequestAdminRightsPresenter.swift in Sources */,
 				E79640AD1D87E1DE00C9F9DC /* AdminCondition.swift in Sources */,
 				E7CFA6BD1DC144B900F27F05 /* MessagesPresenter.swift in Sources */,
+				E7DB081A1DD8E22000EA196A /* TintColorSetter.swift in Sources */,
 				E79640B11D87E2B500C9F9DC /* FetchAdminOperation.swift in Sources */,
 				E76570381D82D28400304D3E /* DatePickerViewController.swift in Sources */,
 				E7CFA6B31DC12AB600F27F05 /* PersistMessagesOperation.swift in Sources */,
