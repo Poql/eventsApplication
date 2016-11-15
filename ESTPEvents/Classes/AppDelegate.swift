@@ -21,6 +21,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return UIApplication.sharedApplication().delegate as! AppDelegate
     }
 
+    private var applicationStateListeners = WeakList<ApplicationStateListener>()
+
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         setupNotifications(in: application)
         setupNavigationAppearance()
@@ -34,9 +36,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         applicationPresenter.handleRemoteNotification(withUserInfo: userInfo, completionHandler: completionHandler)
     }
 
-    func applicationDidBecomeActive(application: UIApplication) {
+    func applicationWillEnterForeground(application: UIApplication) {
+        applicationStateListeners.forEach { $0.applicationWillEnterForeground?() }
     }
 
+    func applicationDidBecomeActive(application: UIApplication) {
+        applicationStateListeners.forEach { $0.applicationDidBecomeActive?() }
+    }
+
+    // MARK: - Public
+
+    func addApplicationStateListener(listener: ApplicationStateListener) {
+        applicationStateListeners.insert(listener)
+    }
+
+    // MARK: - Private
 
     private func checkUserStatus() {
         applicationPresenter.checkUserStatus()

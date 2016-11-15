@@ -164,6 +164,7 @@
 		E7D4720F1D894228006362C2 /* AuthenticationProviderOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7D4720E1D894228006362C2 /* AuthenticationProviderOperation.swift */; };
 		E7D472131D895BF6006362C2 /* DataStackProviderOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7D472121D895BF6006362C2 /* DataStackProviderOperation.swift */; };
 		E7D472151D8977B8006362C2 /* EnsureAuthenticatedSubscriptionOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7D472141D8977B8006362C2 /* EnsureAuthenticatedSubscriptionOperation.swift */; };
+		E7DB081C1DD8E54600EA196A /* ApplicationStateListener.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7DB081B1DD8E54600EA196A /* ApplicationStateListener.swift */; };
 		E7E5B4E51D93BF2A002DEC19 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = E7E5B4E41D93BF2A002DEC19 /* Localizable.strings */; };
 		E7E5B4E71D93CE61002DEC19 /* NSUserDefaults + CKAccountStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7E5B4E61D93CE61002DEC19 /* NSUserDefaults + CKAccountStatus.swift */; };
 		E7E5FA371D79EFAE00B6FF1D /* CloudOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7E5FA361D79EFAE00B6FF1D /* CloudOperation.swift */; };
@@ -340,6 +341,7 @@
 		E7D4720E1D894228006362C2 /* AuthenticationProviderOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AuthenticationProviderOperation.swift; path = Classes/AuthenticationProviderOperation.swift; sourceTree = "<group>"; };
 		E7D472121D895BF6006362C2 /* DataStackProviderOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DataStackProviderOperation.swift; path = Classes/DataStackProviderOperation.swift; sourceTree = "<group>"; };
 		E7D472141D8977B8006362C2 /* EnsureAuthenticatedSubscriptionOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EnsureAuthenticatedSubscriptionOperation.swift; path = Classes/EnsureAuthenticatedSubscriptionOperation.swift; sourceTree = "<group>"; };
+		E7DB081B1DD8E54600EA196A /* ApplicationStateListener.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ApplicationStateListener.swift; path = Classes/ApplicationStateListener.swift; sourceTree = "<group>"; };
 		E7E5B4E41D93BF2A002DEC19 /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = Localizable.strings; path = Configuration/Localizable.strings; sourceTree = "<group>"; };
 		E7E5B4E61D93CE61002DEC19 /* NSUserDefaults + CKAccountStatus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "NSUserDefaults + CKAccountStatus.swift"; path = "Classes/NSUserDefaults + CKAccountStatus.swift"; sourceTree = "<group>"; };
 		E7E5FA361D79EFAE00B6FF1D /* CloudOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CloudOperation.swift; path = Classes/CloudOperation.swift; sourceTree = "<group>"; };
@@ -553,6 +555,7 @@
 		E734F81F1D79CDFA001E013C /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				E7DB081B1DD8E54600EA196A /* ApplicationStateListener.swift */,
 				E79640CA1D88449700C9F9DC /* WeakList.swift */,
 				E79B6BBA1D7AFE780048E0DF /* Error.swift */,
 				E79B6BC31D7AFE780048E0DF /* Result.swift */,
@@ -1179,6 +1182,7 @@
 				E79640B71D87E94200C9F9DC /* Admin.swift in Sources */,
 				E78194571DCCF1FB00DF4A30 /* FetchConfigurationFileOperation.swift in Sources */,
 				E7BC16021D7F02D900B02897 /* EntitySectionChange.swift in Sources */,
+				E7DB081C1DD8E54600EA196A /* ApplicationStateListener.swift in Sources */,
 				E780F2561D8556FC0084E86B /* LocationPickerViewController.swift in Sources */,
 				E7D472131D895BF6006362C2 /* DataStackProviderOperation.swift in Sources */,
 				E79640A51D86FC8F00C9F9DC /* EventDetailRow.swift in Sources */,
