@@ -29,6 +29,15 @@ struct ConfigurationFile: Record, Entity {
         }
     }
 
+    var tintColor: String? {
+        set {
+            record["tintColor"] = newValue
+        }
+        get {
+            return record["tintColor"] as? String
+        }
+    }
+
     let record: CKRecord
 
     init(record: CKRecord) {
