@@ -13,22 +13,69 @@ private struct Constant {
     static let numberOfTouchesRequired = 1
 }
 
-class TabBarController: UITabBarController, SegueHandlerType {
+class TabBarController: UITabBarController, SegueHandlerType, MainPresenterClient, TintColorSetter, ApplicationStateListener {
 
     enum SegueIdentifier: String {
         case requestAdminRights = "RequestAdminRightsViewController"
     }
 
+    private var presenterFactory: PresenterFactory {
+        return AppDelegate.shared.presenterFactory
+    }
+
+    private lazy var presenter: MainPresenter = {
+        let presenter = self.presenterFactory.mainPresenter
+        self.presenterFactory.addClient(self)
+        return presenter
+    }()
+
     override func viewDidLoad() {
         super.viewDidLoad()
         setupController()
+        if let color = presenter.currentStateFile?.tintColor {
+            setTintColor(color)
+        }
+    }
+
+    override func viewDidAppear(animated: Bool) {
+        if !presenter.applicationIsOpened {
+            let controller = OnboardingContainerViewController()
+            presentViewController(controller, animated: false, completion: nil)
+        }
+        super.viewDidAppear(animated)
+    }
+
+    // MARK: - ApplicationStateListener
+
+    func applicationWillEnterForeground() {
+        guard presenter.applicationIsOpened else { return }
+        presenter.updateCurrentStateFile()
+    }
+
+    // MARK: - MainPresenterClient
+
+    func presenterWantsToUpdateTintColor(hex: String) {
+        setTintColor(hex)
+        setCurrentTintColor(hex)
+    }
+
+    func presenterDidDiscoverInvalidApplicationVersion() {
+        guard let _ = presentedViewController else { return }
+        dismissViewControllerAnimated(true) {
+            self.presentViewController(NeedUpdateViewController(), animated: true, completion: nil)
+        }
     }
 
     // MARK: - Private
 
+    private func setCurrentTintColor(color: String) {
+        tabBar.tintColor = UIColor(hex: color)
+    }
+
     private func setupController() {
         setupTabBarItems()
         initializeLongPressGestureRecognizer()
+        AppDelegate.shared.addApplicationStateListener(self)
     }
 
     private func initializeLongPressGestureRecognizer(){
