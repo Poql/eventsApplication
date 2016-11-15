@@ -8,10 +8,6 @@
 
 import UIKit
 
-private struct Constant {
-    static let notificationSettings = UIUserNotificationSettings(forTypes: .Alert, categories: nil)
-}
-
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
@@ -24,6 +20,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     static var shared: AppDelegate {
         return UIApplication.sharedApplication().delegate as! AppDelegate
     }
+
+    private var applicationStateListeners = WeakList<ApplicationStateListener>()
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         setupNotifications(in: application)
@@ -38,22 +36,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         applicationPresenter.handleRemoteNotification(withUserInfo: userInfo, completionHandler: completionHandler)
     }
 
-    func applicationDidBecomeActive(application: UIApplication) {
-        applicationPresenter.checkCurrentVersion { currentVersionIsValid in
-            guard !currentVersionIsValid else { return }
-            self.showNeedUpdateViewController()
-        }
+    func applicationWillEnterForeground(application: UIApplication) {
+        applicationStateListeners.forEach { $0.applicationWillEnterForeground?() }
     }
-    
-    // MARK: - Private
 
-    private func showNeedUpdateViewController() {
-        guard let controller = window?.rootViewController else { return }
-        if let _ = controller.presentedViewController as? NeedUpdateViewController {
-            return
-        }
-        controller.presentViewController(NeedUpdateViewController(), animated: true, completion: nil)
+    func applicationDidBecomeActive(application: UIApplication) {
+        applicationStateListeners.forEach { $0.applicationDidBecomeActive?() }
     }
+
+    // MARK: - Public
+
+    func addApplicationStateListener(listener: ApplicationStateListener) {
+        applicationStateListeners.insert(listener)
+    }
+
+    // MARK: - Private
 
     private func checkUserStatus() {
         applicationPresenter.checkUserStatus()
@@ -61,7 +58,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     private func setupNotifications(in application: UIApplication) {
         application.registerForRemoteNotifications()
-        application.registerUserNotificationSettings(Constant.notificationSettings)
         applicationPresenter.ensureNotifications()
     }
 

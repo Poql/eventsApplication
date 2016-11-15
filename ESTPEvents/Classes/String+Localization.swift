@@ -12,4 +12,8 @@ extension String {
     init(key: String) {
         self = NSLocalizedString(key, comment: "")
     }
+
+    var localized: String {
+        return NSLocalizedString(self, comment: "")
+    }
 }

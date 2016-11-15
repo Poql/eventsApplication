@@ -21,6 +21,5 @@ protocol ApplicationPresenter: class {
     func ensureNotifications()
     func handleRemoteNotification(withUserInfo userInfo: [NSObject : AnyObject], completionHandler: (UIBackgroundFetchResult) -> Void)
     func checkUserStatus()
-    func checkCurrentVersion(completion: (currentVersionIsValid: Bool) -> Void)
     func registerForUserStatusUpdate(listener: UserStatusUpdateListener)
 }

@@ -76,10 +76,13 @@ class SharedViewController: UIViewController, UserStatusUpdateListener, BannerCo
 
     // MARK: - Public
 
-    func showAlert(withMessage message: String, title: String) {
+    func showAlert(withMessage message: String,
+                               title: String,
+                               actionTitle: String = String(key: "done_action_label"),
+                               action: (() -> Void)? = nil) {
         let alertController = UIAlertController(title: title, message: message, preferredStyle: .Alert)
-        let doneAction = UIAlertAction(title: String(key: "done_action_label"), style: .Default) { _ in
-            alertController.dismissViewControllerAnimated(true, completion: nil)
+        let doneAction = UIAlertAction(title: actionTitle, style: .Default) { _ in
+            action?()
         }
         alertController.addAction(doneAction)
         presentViewController(alertController, animated: true, completion: nil)

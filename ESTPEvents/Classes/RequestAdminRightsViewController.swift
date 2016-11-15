@@ -8,7 +8,7 @@
 
 import UIKit
 
-class RequestAdminRightsViewController: SharedViewController, MainPresenterClient {
+class RequestAdminRightsViewController: SharedViewController, RequestAdminRightsPresenterClient {
 
     @IBOutlet var cancelButton: UIButton!
 
@@ -24,8 +24,8 @@ class RequestAdminRightsViewController: SharedViewController, MainPresenterClien
 
     @IBOutlet var bottomStackView: UIStackView!
 
-    private lazy var mainPresenter: MainPresenter = {
-        let presenter = self.presenterFactory.mainPresenter
+    private lazy var presenter: RequestAdminRightsPresenter = {
+        let presenter = self.presenterFactory.requestAdminRightsPresenter
         self.presenterFactory.addClient(self)
         return presenter
     }()
@@ -55,7 +55,7 @@ class RequestAdminRightsViewController: SharedViewController, MainPresenterClien
     // MARK: - Action
 
     @objc private func requestButtonAction(sender: UIButton) {
-        mainPresenter.requestToBecomeAdmin()
+        presenter.requestToBecomeAdmin()
     }
 
     @objc private func cancelAction(sender: UIButton) {
