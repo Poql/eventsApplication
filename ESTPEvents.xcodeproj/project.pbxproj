@@ -55,6 +55,7 @@
 		E73FDD561DD7563C0057B41D /* PopAnimationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E73FDD551DD7563C0057B41D /* PopAnimationController.swift */; };
 		E73FDD581DD75B440057B41D /* OnBoardingContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E73FDD571DD75B440057B41D /* OnBoardingContainerViewController.swift */; };
 		E73FDD5A1DD8A2DC0057B41D /* Coding.swift in Sources */ = {isa = PBXBuildFile; fileRef = E73FDD591DD8A2DC0057B41D /* Coding.swift */; };
+		E73FDD5D1DD8A7E30057B41D /* ApplicationStateFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = E73FDD5C1DD8A7E30057B41D /* ApplicationStateFile.swift */; };
 		E74D7D841DCDE8B400A60CDC /* NeedUpdateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E74D7D831DCDE8B400A60CDC /* NeedUpdateViewController.swift */; };
 		E74D7D861DCDEAB100A60CDC /* NeedUpdateViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E74D7D851DCDEAB100A60CDC /* NeedUpdateViewController.xib */; };
 		E756AC001D81A0A90077375D /* FetchRecordsOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E756ABFF1D81A0A90077375D /* FetchRecordsOperation.swift */; };
@@ -233,6 +234,7 @@
 		E73FDD551DD7563C0057B41D /* PopAnimationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PopAnimationController.swift; path = Classes/PopAnimationController.swift; sourceTree = "<group>"; };
 		E73FDD571DD75B440057B41D /* OnBoardingContainerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OnBoardingContainerViewController.swift; path = Classes/OnBoardingContainerViewController.swift; sourceTree = "<group>"; };
 		E73FDD591DD8A2DC0057B41D /* Coding.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Coding.swift; path = Classes/Coding.swift; sourceTree = "<group>"; };
+		E73FDD5C1DD8A7E30057B41D /* ApplicationStateFile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ApplicationStateFile.swift; path = Classes/ApplicationStateFile.swift; sourceTree = "<group>"; };
 		E74D7D831DCDE8B400A60CDC /* NeedUpdateViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NeedUpdateViewController.swift; path = Classes/NeedUpdateViewController.swift; sourceTree = "<group>"; };
 		E74D7D851DCDEAB100A60CDC /* NeedUpdateViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = NeedUpdateViewController.xib; path = Classes/NeedUpdateViewController.xib; sourceTree = "<group>"; };
 		E756ABFF1D81A0A90077375D /* FetchRecordsOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FetchRecordsOperation.swift; path = Classes/FetchRecordsOperation.swift; sourceTree = "<group>"; };
@@ -640,6 +642,7 @@
 			isa = PBXGroup;
 			children = (
 				E73FDD591DD8A2DC0057B41D /* Coding.swift */,
+				E73FDD5C1DD8A7E30057B41D /* ApplicationStateFile.swift */,
 			);
 			name = Coding;
 			sourceTree = "<group>";
@@ -1211,6 +1214,7 @@
 				E7BA36651DCC93BB00FC5239 /* SeparatorView.swift in Sources */,
 				E73FDD5A1DD8A2DC0057B41D /* Coding.swift in Sources */,
 				E79640C51D88343700C9F9DC /* NSUserDefault + UserStatus.swift in Sources */,
+				E73FDD5D1DD8A7E30057B41D /* ApplicationStateFile.swift in Sources */,
 				E7EF0A951DC2703800BC5ED1 /* RecordsFetcherController.swift in Sources */,
 				E7192E2C1DBD2C3700829A8A /* PersistEventsOperation.swift in Sources */,
 				E7C3D25E1D818AF8007F5146 /* NSPredicate.swift in Sources */,
