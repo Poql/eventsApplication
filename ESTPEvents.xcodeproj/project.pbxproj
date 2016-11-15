@@ -169,6 +169,9 @@
 		E7DB08161DD8BF9700EA196A /* ConfigurationPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7DB08151DD8BF9700EA196A /* ConfigurationPresenter.swift */; };
 		E7DB080D1DD8B3E700EA196A /* MainPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7DB080C1DD8B3E700EA196A /* MainPresenter.swift */; };
 		E7DB080F1DD8B52A00EA196A /* MainPresenterImplementation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7DB080E1DD8B52A00EA196A /* MainPresenterImplementation.swift */; };
+		E7DB08121DD8BCE300EA196A /* OnBoardingPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7DB08111DD8BCE300EA196A /* OnBoardingPresenter.swift */; };
+		E7DB08141DD8BF8100EA196A /* OnBoardingPresenterImplementation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7DB08131DD8BF8100EA196A /* OnBoardingPresenterImplementation.swift */; };
+		E7DB08161DD8BF9700EA196A /* ConfigurationPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7DB08151DD8BF9700EA196A /* ConfigurationPresenter.swift */; };
 		E7DB08181DD8D94400EA196A /* NSUserDefault.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7DB08171DD8D94400EA196A /* NSUserDefault.swift */; };
 		E7DB081C1DD8E54600EA196A /* ApplicationStateListener.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7DB081B1DD8E54600EA196A /* ApplicationStateListener.swift */; };
 		E7E5B4E51D93BF2A002DEC19 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = E7E5B4E41D93BF2A002DEC19 /* Localizable.strings */; };
@@ -352,6 +355,9 @@
 		E7DB08151DD8BF9700EA196A /* ConfigurationPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ConfigurationPresenter.swift; path = Classes/ConfigurationPresenter.swift; sourceTree = "<group>"; };
 		E7DB080C1DD8B3E700EA196A /* MainPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MainPresenter.swift; path = Classes/MainPresenter.swift; sourceTree = "<group>"; };
 		E7DB080E1DD8B52A00EA196A /* MainPresenterImplementation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MainPresenterImplementation.swift; path = Classes/MainPresenterImplementation.swift; sourceTree = "<group>"; };
+		E7DB08111DD8BCE300EA196A /* OnBoardingPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OnBoardingPresenter.swift; path = Classes/OnBoardingPresenter.swift; sourceTree = "<group>"; };
+		E7DB08131DD8BF8100EA196A /* OnBoardingPresenterImplementation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OnBoardingPresenterImplementation.swift; path = Classes/OnBoardingPresenterImplementation.swift; sourceTree = "<group>"; };
+		E7DB08151DD8BF9700EA196A /* ConfigurationPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ConfigurationPresenter.swift; path = Classes/ConfigurationPresenter.swift; sourceTree = "<group>"; };
 		E7DB08171DD8D94400EA196A /* NSUserDefault.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NSUserDefault.swift; path = Classes/NSUserDefault.swift; sourceTree = "<group>"; };
 		E7DB081B1DD8E54600EA196A /* ApplicationStateListener.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ApplicationStateListener.swift; path = Classes/ApplicationStateListener.swift; sourceTree = "<group>"; };
 		E7E5B4E41D93BF2A002DEC19 /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = Localizable.strings; path = Configuration/Localizable.strings; sourceTree = "<group>"; };
@@ -534,6 +540,7 @@
 				E7EE0E9E1D7AF6B50089B38C /* Shared */,
 				E7CFA6B41DC12BCE00F27F05 /* Messages */,
 				E7E5FA4A1D79FDAD00B6FF1D /* Event */,
+				E7DB08101DD8BCC200EA196A /* On boarding */,
 				E78FB7A01DB7F9BF002303BA /* Main */,
 				E7C3D24A1D8041DB007F5146 /* Application */,
 			);
@@ -897,6 +904,15 @@
 			name = Mapper;
 			sourceTree = "<group>";
 		};
+		E7DB08101DD8BCC200EA196A /* On boarding */ = {
+			isa = PBXGroup;
+			children = (
+				E7DB08111DD8BCE300EA196A /* OnBoardingPresenter.swift */,
+				E7DB08131DD8BF8100EA196A /* OnBoardingPresenterImplementation.swift */,
+			);
+			name = "On boarding";
+			sourceTree = "<group>";
+		};
 		E7E5FA2D1D79ED4100B6FF1D /* Shared */ = {
 			isa = PBXGroup;
 			children = (
@@ -1241,6 +1257,7 @@
 				E7E5B4E71D93CE61002DEC19 /* NSUserDefaults + CKAccountStatus.swift in Sources */,
 				E79B6BB51D7AFE4A0048E0DF /* EventRepositoryImplementation.swift in Sources */,
 				E7BC15FC1D7EDD2E00B02897 /* PersistentRecord.swift in Sources */,
+				E7DB08141DD8BF8100EA196A /* OnBoardingPresenterImplementation.swift in Sources */,
 				E79640B51D87E4C600C9F9DC /* AuthenticatedOperation.swift in Sources */,
 				E73FDD541DD74E280057B41D /* PageAnimationController.swift in Sources */,
 				E7D4720F1D894228006362C2 /* AuthenticationProviderOperation.swift in Sources */,
@@ -1248,6 +1265,7 @@
 				E7C3D25C1D8186A6007F5146 /* SubscriptionRepositoryImplementation.swift in Sources */,
 				E7E5FA371D79EFAE00B6FF1D /* CloudOperation.swift in Sources */,
 				E79B6BCD1D7AFE780048E0DF /* PresenterFactory.swift in Sources */,
+				E7DB08121DD8BCE300EA196A /* OnBoardingPresenter.swift in Sources */,
 				E72219241DCA7DF500C5A7EB /* PersistentOperationQueue.swift in Sources */,
 				E79B6BCA1D7AFE780048E0DF /* EventViewController.swift in Sources */,
 				E73FDD521DD74B420057B41D /* UIViewController + loader.swift in Sources */,
