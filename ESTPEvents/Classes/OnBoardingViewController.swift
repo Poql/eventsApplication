@@ -27,7 +27,7 @@ protocol OnBoardingViewControllerDelegate: class {
     func onBoardingControllerWantsToPresentOtherPage(controller: OnBoardingViewController)
 }
 
-class OnBoardingViewController: UIViewController, UIViewControllerTransitioningDelegate {
+class OnBoardingViewController: SharedViewController, UIViewControllerTransitioningDelegate, OnBoardingPresenterClient, TintColorSetter, ApplicationStateListener {
     var type: OnBoardingType = .welcome
 
     @IBOutlet var decorationLabel: UILabel!
@@ -44,12 +44,21 @@ class OnBoardingViewController: UIViewController, UIViewControllerTransitioningD
 
     @IBOutlet var activityIndicatorView: UIActivityIndicatorView!
 
+    private var hasRequestedNotifications: Bool = false
+
+    private lazy var presenter: OnBoardingPresenter = {
+        let presenter = self.presenterFactory.onBoardingPresenter
+        self.presenterFactory.addClient(self)
+        return presenter
+    }()
+
     weak var delegate: OnBoardingViewControllerDelegate?
 
     // MARK: - UIViewController
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        AppDelegate.shared.addApplicationStateListener(self)
         setupTextColors()
         setupFont()
         setupView()
@@ -57,15 +66,52 @@ class OnBoardingViewController: UIViewController, UIViewControllerTransitioningD
 
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
-        guard  type == .notifications else { return }
-        animateDecorationLabel()
+        switch type {
+        case .notifications:
+            animateDecorationLabel()
+        case .welcome:
+            presenter.fetchApplicationConfiguration()
+        }
     }
 
     override func preferredStatusBarStyle() -> UIStatusBarStyle {
         return .LightContent
     }
 
+    // MARK: - OnBoardingPresenterClient
+
+    func presenterWantsToShowLoading() {
+        buttonsStackView.hidden = true
+        activityIndicatorView.startAnimating()
+    }
+
+    func presenterDidUpdateTintColor(hex: String) {
+        setTintColor(hex)
+        setCurrentTintColors(hex)
+        buttonsStackView.hidden = false
+        activityIndicatorView.stopAnimating()
+    }
+
+    func presenterWantsToShowError(error: ApplicationError) {
+        activityIndicatorView.stopAnimating()
+        showAlert(withMessage: error.description, title: "error_title".localized, actionTitle: "retry_button_title") {
+            self.presenter.fetchApplicationConfiguration()
+        }
+    }
+
+    // MARK: - ApplicationStateListener
+
+    func applicationDidBecomeActive() {
+        guard type == .notifications && hasRequestedNotifications else { return }
+        delegate?.onBoardingControllerWantsToDismiss(self)
+        presenter.finishApplicationOpening()
+    }
+
     // MARK: - Private
+
+    private func setCurrentTintColors(color: String) {
+        mainButton.tintColor = UIColor(hex: color)
+    }
 
     private func setupView() {
         switch type {
@@ -75,6 +121,7 @@ class OnBoardingViewController: UIViewController, UIViewControllerTransitioningD
             mainButton.setTitle("on_boarding_notifications_main_button_title".localized, forState: .Normal)
             secondButton.setTitle("on_boarding_notifications_second_button_title".localized, forState: .Normal)
             descriptionLabel.text = "on_boarding_notifications_description_label".localized
+            secondButton.hidden = true
         case .welcome:
             decorationLabel.text = "on_boarding_welcome_decoration_label".localized
             titleLabel.text = "on_boarding_welcome_title_label".localized
@@ -86,7 +133,8 @@ class OnBoardingViewController: UIViewController, UIViewControllerTransitioningD
         secondButton.addTarget(self, action: #selector(secondButtonAction(_:)), forControlEvents: .TouchUpInside)
         secondButton.tintColor = .grayColor()
         view.backgroundColor = .darkGrey()
-        activityIndicatorView.hidden = true
+        activityIndicatorView.hidesWhenStopped = true
+        activityIndicatorView.stopAnimating()
     }
 
     private func setupFont() {
@@ -136,13 +184,15 @@ class OnBoardingViewController: UIViewController, UIViewControllerTransitioningD
         switch type {
         case .welcome:
             delegate?.onBoardingControllerWantsToPresentOtherPage(self)
-        default:
-            delegate?.onBoardingControllerWantsToDismiss(self)
+        case .notifications:
+            presenter.requestNotifications()
+            hasRequestedNotifications = true
         }
     }
 
     @objc private func secondButtonAction(sender: UIButton) {
-        animateDecorationLabel()
+        presenter.finishApplicationOpening()
+        delegate?.onBoardingControllerWantsToDismiss(self)
     }
 
     // MARK: - UIViewControllerTransitioningDelegate
