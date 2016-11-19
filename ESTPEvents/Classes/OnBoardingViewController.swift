@@ -10,7 +10,7 @@ import UIKit
 
 private struct Constant {
     static let π = M_PI
-    static let waitingDuration: CFTimeInterval = 1
+    static let waitingDuration: CFTimeInterval = 0.5
     static let decorationAnimationRotationDuration: CFTimeInterval = 0.8
     static let decorationAnimationTranslationDuration: CFTimeInterval = 0.15
     static let decorationAnimationTranslationValue: NSNumber = -15
@@ -140,7 +140,7 @@ class OnBoardingViewController: SharedViewController, UIViewControllerTransition
     private func setupFont() {
         decorationLabel.font = UIFont.mediumHeaderFont(ofSize: 100)
         titleLabel.font = UIFont.boldHeaderFont(ofSize: 20)
-        descriptionLabel.font = UIFont.regularMainFont(ofSize: 15)
+        descriptionLabel.font = UIFont.regularMainFont(ofSize: 17)
         mainButton.titleLabel?.font = UIFont.regularMainFont(ofSize: 28)
         secondButton.titleLabel?.font = UIFont.regularMainFont(ofSize: 13)
     }
