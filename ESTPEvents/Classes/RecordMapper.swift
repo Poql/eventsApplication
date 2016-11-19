@@ -36,6 +36,7 @@ class Mapper {
         persistentRecord.modificationDate = record.record.modificationDate
         persistentRecord.creationDate = record.record.creationDate
         persistentRecord.changeTag = record.record.recordChangeTag
+        persistentRecord.read = false
     }
     
     static func record<R: Record, PR: PersistentRecord>(from persistentRecord: PR) -> R {

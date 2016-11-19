@@ -14,6 +14,7 @@ class MessageRecordMapper: Mapper, RecordMapper, PersistentRecordMapper {
         var message: Message = record(from: persistentRecord)
         message.author = persistentRecord.author
         message.content = persistentRecord.content
+        message.read = persistentRecord.read
         return message
     }
 

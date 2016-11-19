@@ -22,6 +22,7 @@ class EventRecordMapper: Mapper, RecordMapper, PersistentRecordMapper {
         event.type = persistentRecord.type
         event.creator = persistentRecord.creator
         event.title = persistentRecord.title
+        event.read = persistentRecord.read
         return event
     }
 
