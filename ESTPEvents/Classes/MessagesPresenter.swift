@@ -15,6 +15,7 @@ protocol MessagesPresenter  {
     func numberOfMessages(inSection section: Int) -> Int
     func numberOfSections() -> Int
     func queryMessages()
+    func markMessagesAsRead()
 }
 
 protocol MessagesPresenterClient: class {

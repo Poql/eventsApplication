@@ -73,6 +73,11 @@ class EventPresenterImplementation<R: EventRepository, PR: PersistencyRepository
 
     // MARK: - EventPresenter
 
+    func markEventsAsRead() {
+        let operation = persistencyRepository.markAsReadLocalEventsOperation()
+        persistentQueue.addOperation(operation)
+    }
+
     func registerListener(listener: EventModificationListener) {
         eventListeners.insert(listener)
     }

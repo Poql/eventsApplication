@@ -96,6 +96,11 @@ class MessagesPresenterImplementation<MR: MessagesRepository, PR: PersistencyRep
 
     // MARK: - MessagesPresenter
 
+    func markMessagesAsRead() {
+        let operation = persistentRepository.markAsReadLocalMessagesOperation()
+        persistentQueue.addOperation(operation)
+    }
+
     func modifyMessage(message: Message) {
         let operation = messagesRepository.modifyMessageOperation(message)
         let group = GroupOperation(operations: operation)
