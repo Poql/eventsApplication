@@ -172,7 +172,7 @@ class MessageListViewController: SharedViewController, UITableViewDataSource, Me
 
     func presenterMessagesWillChange() {
         tableView.beginUpdates()
-        emptyView.hidden = false
+        emptyView.hidden = true
     }
 
     func presenterMessagesDidChange(eventChange: EntityChange) {
