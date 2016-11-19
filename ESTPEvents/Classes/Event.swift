@@ -105,6 +105,8 @@ struct Event: Entity, Record {
             record["location"] = nil
         }
     }
+
+    var read = false
     
     let record: CKRecord
 
