@@ -120,6 +120,12 @@ class EventViewController: SharedViewController, EventPresenterClient, UITableVi
         creatingEvent = nil
     }
 
+    // MARK: - ApplicationStateListener
+
+    override func applicationWillEnterForeground() {
+        eventPresenter.markEventsAsRead()
+    }
+
     // MARK: - UserStatusUpdateListener
 
     override func userStatusDidUpdate(userStatus: UserStatus) {

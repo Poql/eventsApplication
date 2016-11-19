@@ -27,7 +27,7 @@ protocol OnBoardingViewControllerDelegate: class {
     func onBoardingControllerWantsToPresentOtherPage(controller: OnBoardingViewController)
 }
 
-class OnBoardingViewController: SharedViewController, UIViewControllerTransitioningDelegate, OnBoardingPresenterClient, TintColorSetter, ApplicationStateListener {
+class OnBoardingViewController: SharedViewController, UIViewControllerTransitioningDelegate, OnBoardingPresenterClient, TintColorSetter {
     var type: OnBoardingType = .welcome
 
     @IBOutlet var decorationLabel: UILabel!
@@ -101,7 +101,7 @@ class OnBoardingViewController: SharedViewController, UIViewControllerTransition
 
     // MARK: - ApplicationStateListener
 
-    func applicationDidBecomeActive() {
+    override func applicationDidBecomeActive() {
         guard type == .notifications && hasRequestedNotifications else { return }
         delegate?.onBoardingControllerWantsToDismiss(self)
         presenter.finishApplicationOpening()

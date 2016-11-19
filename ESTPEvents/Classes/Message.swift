@@ -38,6 +38,8 @@ struct Message: Record, Entity {
         }
     }
 
+    var read = false
+
     let record: CKRecord
 
     init(record: CKRecord) {

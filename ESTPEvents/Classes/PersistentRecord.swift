@@ -15,6 +15,7 @@ class PersistentRecord: NSManagedObject, CoreDataModelable {
         return "PersistentRecord"
     }
 
+    @NSManaged var read: Bool
     @NSManaged var metadata: NSData
     @NSManaged var changeTag: String?
     @NSManaged var recordName: String

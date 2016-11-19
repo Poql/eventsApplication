@@ -79,6 +79,7 @@
 		E76570401D8405A600304D3E /* TextViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E765703E1D8405A600304D3E /* TextViewCell.xib */; };
 		E76570421D8481DC00304D3E /* ModifyRecordsOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E76570411D8481DC00304D3E /* ModifyRecordsOperation.swift */; };
 		E76570441D84844400304D3E /* ModifyEventOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E76570431D84844400304D3E /* ModifyEventOperation.swift */; };
+		E769C2401DE05D790085C8C3 /* MarkAsReadLocalRecordOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E769C23F1DE05D790085C8C3 /* MarkAsReadLocalRecordOperation.swift */; };
 		E77E19E61D8AA8CF009D7616 /* UIView + Layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = E77E19E51D8AA8CF009D7616 /* UIView + Layout.swift */; };
 		E780F2561D8556FC0084E86B /* LocationPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E780F2551D8556FC0084E86B /* LocationPickerViewController.swift */; };
 		E780F2581D8599850084E86B /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = E780F2571D8599850084E86B /* Location.swift */; };
@@ -266,6 +267,7 @@
 		E765703E1D8405A600304D3E /* TextViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = TextViewCell.xib; path = Resources/TextViewCell.xib; sourceTree = "<group>"; };
 		E76570411D8481DC00304D3E /* ModifyRecordsOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ModifyRecordsOperation.swift; path = Classes/ModifyRecordsOperation.swift; sourceTree = "<group>"; };
 		E76570431D84844400304D3E /* ModifyEventOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ModifyEventOperation.swift; path = Classes/ModifyEventOperation.swift; sourceTree = "<group>"; };
+		E769C23F1DE05D790085C8C3 /* MarkAsReadLocalRecordOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MarkAsReadLocalRecordOperation.swift; path = Classes/MarkAsReadLocalRecordOperation.swift; sourceTree = "<group>"; };
 		E77E19E51D8AA8CF009D7616 /* UIView + Layout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIView + Layout.swift"; path = "Classes/UIView + Layout.swift"; sourceTree = "<group>"; };
 		E780F2551D8556FC0084E86B /* LocationPickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LocationPickerViewController.swift; path = Classes/LocationPickerViewController.swift; sourceTree = "<group>"; };
 		E780F2571D8599850084E86B /* Location.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Location.swift; path = Classes/Location.swift; sourceTree = "<group>"; };
@@ -816,6 +818,7 @@
 				E7C3D2481D803FBF007F5146 /* DeleteEventsOperation.swift */,
 				E7CFA6B21DC12AB600F27F05 /* PersistMessagesOperation.swift */,
 				E78194501DCCD9B500DF4A30 /* DeleteMessagesOperation.swift */,
+				E769C23F1DE05D790085C8C3 /* MarkAsReadLocalRecordOperation.swift */,
 			);
 			name = Operations;
 			sourceTree = "<group>";
@@ -1300,6 +1303,7 @@
 				E7E5FA3B1D79F08000B6FF1D /* EventRepository.swift in Sources */,
 				E7192E1C1DBD1BA600829A8A /* MessagesRepository.swift in Sources */,
 				E78194551DCCF0C700DF4A30 /* ConfigurationFile.swift in Sources */,
+				E769C2401DE05D790085C8C3 /* MarkAsReadLocalRecordOperation.swift in Sources */,
 				E797F2F81D7C3D3E00CB5EE2 /* EntityChange.swift in Sources */,
 				E756AC091D81E6730077375D /* ModifyEventRow.swift in Sources */,
 				E79640BB1D881FBD00C9F9DC /* AuthenticatedCondition.swift in Sources */,

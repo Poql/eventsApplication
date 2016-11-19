@@ -18,6 +18,7 @@ protocol EventPresenter {
     func modifyEvent(event: Event)
     func isModifyingEvent(event: Event) -> Bool
     func registerListener(listener: EventModificationListener)
+    func markEventsAsRead()
 
     func event(atIndex index: NSIndexPath) -> Event
     func title(forSection section: Int) -> String?

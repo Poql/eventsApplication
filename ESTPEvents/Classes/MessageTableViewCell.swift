@@ -39,5 +39,6 @@ class MessageTableViewCell: UITableViewCell {
         descriptionLabel.text = model.content
         authorLabel.text = model.author
         dateLabel.text = dateFormatter.stringFromDate(model.creationDate)
+        indicatorView.fillColor = model.read ? UIColor.whiteColor() : UIColor.darkGrayColor()
     }
 }
