@@ -46,7 +46,7 @@ class EventTableViewCell: UITableViewCell {
     func configure(with event: Event) {
         let color = UIColor(hex: event.color ?? Constant.defaultReadViewColor)
         readView.borderColor = color
-        readView.fillColor = color
+        readView.fillColor = event.read ? UIColor.whiteColor() : color
         creatorLabel.textColor = color
         creatorLabel.text = event.creator
         titleLabel.text = event.title
