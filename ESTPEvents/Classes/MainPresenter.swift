@@ -16,5 +16,4 @@ protocol MainPresenter {
 
 protocol MainPresenterClient: class {
     func presenterDidDiscoverInvalidApplicationVersion()
-    func presenterWantsToUpdateTintColor(hex: String)
 }

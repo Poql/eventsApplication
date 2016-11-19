@@ -24,10 +24,6 @@ class MainPresenterImplementation<Repository: UserStatusRepository>: Configurati
         updateCurrentStateFile(showLoading: true)
     }
 
-    override func presenterDidUpdateTintColor(colorHex: String) {
-        client?.presenterWantsToUpdateTintColor(colorHex)
-    }
-
     override func presenterDidDiscoverInvalidApplicationVersion() {
         client?.presenterDidDiscoverInvalidApplicationVersion()
     }
