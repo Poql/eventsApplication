@@ -25,4 +25,15 @@ class PersistencyRepositoryImplementation: PersistencyRepository {
     func persistMessagesOperation() -> StackedPersistMessagesOperation {
         return StackedPersistMessagesOperation()
     }
+
+    func markAsReadLocalEventsOperation() -> MarkAsReadLocalRecordOperationProvider<PersistentEvent> {
+        return MarkAsReadLocalRecordOperationProvider<PersistentEvent>()
+    }
+
+    func markAsReadLocalMessagesOperation() -> MarkAsReadLocalRecordOperationProvider<PersistentMessage> {
+        return MarkAsReadLocalRecordOperationProvider<PersistentMessage>()
+    }
 }
+
+extension MarkAsReadLocalRecordOperationProvider : MarkAsReadLocalMessagesOperationPrototype {}
+extension MarkAsReadLocalRecordOperationProvider : MarkAsReadLocalEventsOperationPrototype {}
