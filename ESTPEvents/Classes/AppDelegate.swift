@@ -61,7 +61,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     private func setupNavigationAppearance() {
-        UINavigationBar.appearance().titleTextAttributes = [NSForegroundColorAttributeName : UIColor.whiteColor(), NSFontAttributeName: UIFont.regularHeaderFont(ofSize: 18)]
+        UINavigationBar.appearance().titleTextAttributes = [NSForegroundColorAttributeName : UIColor.whiteColor(), NSFontAttributeName: UIFont.semiboldHeaderFont(ofSize: 18)]
         UINavigationBar.appearance().barStyle = .Black
         let backIndicatorImage = UIImage(named: "backArrow")?.imageWithAlignmentRectInsets(UIEdgeInsetsMake(0, 0, -2, 0))
         UINavigationBar.appearance().backIndicatorImage = backIndicatorImage

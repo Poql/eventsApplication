@@ -27,6 +27,9 @@ class MessageTableViewCell: UITableViewCell {
         indicatorView.fillColor = .darkGrayColor()
         indicatorView.borderColor = .darkGrayColor()
         selectionStyle = .None
+        authorLabel.font = UIFont.semiboldHeaderFont(ofSize: 16)
+        dateLabel.font = UIFont.semiboldHeaderFont(ofSize: 16)
+        descriptionLabel.font = UIFont.regularMainFont(ofSize: 16)
     }
 
     private let dateFormatter: NSDateFormatter = {

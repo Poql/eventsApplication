@@ -62,7 +62,11 @@ class EventTableViewCell: UITableViewCell {
     // MARK: - Private
 
     private func setFonts() {
+        creatorLabel.font = UIFont.mediumHeaderFont(ofSize: 16)
+        dateLabel.font = UIFont.mediumHeaderFont(ofSize: 16)
+        stateLabel.font = UIFont.mediumMainFont(ofSize: 16)
         titleLabel.font = UIFont.mediumMainFont(ofSize: 16)
+        descriptionLabel.font = UIFont.regularMainFont(ofSize: 15)
     }
     
     private func setTextColors() {

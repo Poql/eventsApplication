@@ -15,6 +15,7 @@ private struct Constant {
     static let decorationAnimationTranslationDuration: CFTimeInterval = 0.15
     static let decorationAnimationTranslationValue: NSNumber = -15
     static let decorationAnimaionRotationValues = [0, -π/12, π/12, -π/6, π/6, -π/8, π/8, -π/12, π/12, 0]
+    static let descriptionLineSpacing: CGFloat = 3
 }
 
 enum OnBoardingType {
@@ -120,13 +121,13 @@ class OnBoardingViewController: SharedViewController, UIViewControllerTransition
             titleLabel.text = "on_boarding_notifications_title_label".localized
             mainButton.setTitle("on_boarding_notifications_main_button_title".localized, forState: .Normal)
             secondButton.setTitle("on_boarding_notifications_second_button_title".localized, forState: .Normal)
-            descriptionLabel.text = "on_boarding_notifications_description_label".localized
+            setDescriptionText("on_boarding_notifications_description_label".localized)
             secondButton.hidden = true
         case .welcome:
             decorationLabel.text = "on_boarding_welcome_decoration_label".localized
             titleLabel.text = "on_boarding_welcome_title_label".localized
             mainButton.setTitle("on_boarding_welcome_main_button_title".localized, forState: .Normal)
-            descriptionLabel.text = "on_boarding_welcome_description_label".localized
+            setDescriptionText("on_boarding_welcome_description_label".localized)
             secondButton.hidden = true
         }
         mainButton.addTarget(self, action: #selector(mainButtonAction(_:)), forControlEvents: .TouchUpInside)
@@ -143,6 +144,15 @@ class OnBoardingViewController: SharedViewController, UIViewControllerTransition
         descriptionLabel.font = UIFont.regularMainFont(ofSize: 17)
         mainButton.titleLabel?.font = UIFont.regularMainFont(ofSize: 28)
         secondButton.titleLabel?.font = UIFont.regularMainFont(ofSize: 13)
+    }
+
+    private func setDescriptionText(text: String) {
+        let font = UIFont.regularMainFont(ofSize: 17)
+        let paragraphStyle = NSMutableParagraphStyle()
+        paragraphStyle.lineSpacing = Constant.descriptionLineSpacing
+        paragraphStyle.alignment = .Center
+        let attributes = [NSFontAttributeName:font, NSParagraphStyleAttributeName:paragraphStyle]
+        descriptionLabel.attributedText = NSAttributedString(string: text, attributes: attributes)
     }
 
     private func setupTextColors() {

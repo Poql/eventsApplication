@@ -26,7 +26,7 @@ class EventTableViewHeader: UITableViewHeaderFooterView {
 
     private func setupView() {
         contentView.backgroundColor = UIColor.darkGrey()
-        label.font = UIFont.regularMainFont(ofSize: 16)
+        label.font = UIFont.regularMainFont(ofSize: 17)
         label.textColor = UIColor.whiteColor()
         contentView.addSubview(label)
         label.translatesAutoresizingMaskIntoConstraints = false
