@@ -18,7 +18,7 @@ extension Info {
     var color: UIColor { return .orange() }
 }
 
-class SharedViewController: UIViewController, UserStatusUpdateListener, BannerContainerViewDelegate {
+class SharedViewController: UIViewController, UserStatusUpdateListener, BannerContainerViewDelegate, ApplicationStateListener {
     var presenterFactory: PresenterFactory {
         return AppDelegate.shared.presenterFactory
     }
@@ -35,6 +35,7 @@ class SharedViewController: UIViewController, UserStatusUpdateListener, BannerCo
         super.viewDidLoad()
         setupBanner()
         userStatusDidUpdate(currentUserStatus)
+        AppDelegate.shared.addApplicationStateListener(self)
         presenterFactory.applicationPresenter.registerForUserStatusUpdate(self)
     }
 
@@ -67,6 +68,14 @@ class SharedViewController: UIViewController, UserStatusUpdateListener, BannerCo
         UIView.animateWithDuration(bannerContainer.animationDuration) {
             tableview.contentInset.top = tableview.contentInset.top + self.bannerContainer.bannerHeight
         }
+    }
+
+    // MARK: - ApplicationStateListener
+
+    func applicationWillEnterForeground() {
+    }
+
+    func applicationDidBecomeActive() {
     }
 
     // MARK: - UserStatusUpdateListener
