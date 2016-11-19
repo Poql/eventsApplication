@@ -81,6 +81,12 @@ class MessageListViewController: SharedViewController, UITableViewDataSource, Me
         return .LightContent
     }
 
+    // MARK: - ApplicationStateListener
+
+    override func applicationWillEnterForeground() {
+        messagesPresenter.markMessagesAsRead()
+    }
+
     // MARK: -  SharedViewController
 
     override func userStatusDidUpdate(userStatus: UserStatus) {
