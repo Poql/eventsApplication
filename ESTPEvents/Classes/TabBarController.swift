@@ -35,6 +35,7 @@ class TabBarController: UITabBarController, SegueHandlerType, MainPresenterClien
         if let color = presenter.currentStateFile?.tintColor {
             setTintColor(color)
         }
+        updateTintColor()
     }
 
     override func viewDidAppear(animated: Bool) {
@@ -48,16 +49,10 @@ class TabBarController: UITabBarController, SegueHandlerType, MainPresenterClien
     // MARK: - ApplicationStateListener
 
     func applicationWillEnterForeground() {
-        guard presenter.applicationIsOpened else { return }
-        presenter.updateCurrentStateFile()
+        updateTintColor()
     }
 
     // MARK: - MainPresenterClient
-
-    func presenterWantsToUpdateTintColor(hex: String) {
-        setTintColor(hex)
-        setCurrentTintColor(hex)
-    }
 
     func presenterDidDiscoverInvalidApplicationVersion() {
         guard let _ = presentedViewController else { return }
@@ -67,6 +62,11 @@ class TabBarController: UITabBarController, SegueHandlerType, MainPresenterClien
     }
 
     // MARK: - Private
+
+    private func updateTintColor() {
+        guard presenter.applicationIsOpened else { return }
+        presenter.updateCurrentStateFile()
+    }
 
     private func setCurrentTintColor(color: String) {
         tabBar.tintColor = UIColor(hex: color)
