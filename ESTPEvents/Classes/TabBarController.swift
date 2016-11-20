@@ -9,8 +9,8 @@
 import UIKit
 
 private struct Constant {
-    static let minimumPressDuration: NSTimeInterval = 0.5
-    static let numberOfTouchesRequired = 1
+    static let minimumPressDuration: NSTimeInterval = 1
+    static let numberOfTouchesRequired = 2
 }
 
 class TabBarController: UITabBarController, SegueHandlerType, MainPresenterClient, TintColorSetter, ApplicationStateListener {
