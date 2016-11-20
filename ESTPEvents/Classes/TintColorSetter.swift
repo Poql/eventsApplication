@@ -15,10 +15,7 @@ protocol TintColorSetter {
 extension TintColorSetter {
     func setTintColor(color: String) {
         let color = UIColor(hex: color)
-        UINavigationBar.appearance().tintColor = color
-        UIBarButtonItem.appearance().tintColor = color
-        UIButton.appearance().tintColor = color
-        UITabBar.appearance().tintColor = color
         UISwitch.appearance().onTintColor = color
+        AppDelegate.shared.window?.tintColor = color
     }
 }
