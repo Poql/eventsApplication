@@ -20,7 +20,7 @@ class MessagesPresenterImplementation<MR: MessagesRepository, PR: PersistencyRep
 
     var fetcherController: RecordsFetcherController<MessageRecordMapper>?
     var fetcherControllerPredicate: NSPredicate = {
-        let limitDate = NSDate().oneMonthBefore()
+        let limitDate = NSDate().twoMonthsBefore()
         let predicate = NSPredicate(format: "creationDate >= %@", limitDate)
         return predicate
     }()

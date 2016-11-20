@@ -19,7 +19,7 @@ class EventPresenterImplementation<R: EventRepository, PR: PersistencyRepository
     private let persistentQueue = PersistentOperationQueue.shared
 
     var fetcherController: RecordsFetcherController<EventRecordMapper>?
-    var fetcherControllerPredicate: NSPredicate = .alwaysTrue()
+    var fetcherControllerPredicate = NSPredicate(format: "eventDate >= %@", NSDate())
     var fetcherControllerSortDescriptors = [
         NSSortDescriptor(key: "eventDate", ascending: true),NSSortDescriptor(key: "eventDescription", ascending: true)
     ]

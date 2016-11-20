@@ -15,7 +15,7 @@ class QueryMessagesOperation: QueryOperation, QueryMessagesOperationPrototype {
     }
 
     init() {
-        let limitDate = NSDate().oneMonthBefore()
+        let limitDate = NSDate().twoMonthsBefore()
         let predicate = NSPredicate(format: "creationDate >= %@", limitDate)
         let query = CKQuery(record: Message.self, predicate: predicate)
         super.init(query: query)
