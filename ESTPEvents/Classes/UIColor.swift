@@ -50,4 +50,8 @@ extension UIColor {
     static func darkGrey() -> UIColor {
         return UIColor(white: 64/255, alpha: 1)
     }
+
+    static func heavyGrey() -> UIColor {
+        return UIColor(white: 54/255, alpha: 1)
+    }
 }

@@ -133,7 +133,7 @@ class OnBoardingViewController: SharedViewController, UIViewControllerTransition
         mainButton.addTarget(self, action: #selector(mainButtonAction(_:)), forControlEvents: .TouchUpInside)
         secondButton.addTarget(self, action: #selector(secondButtonAction(_:)), forControlEvents: .TouchUpInside)
         secondButton.tintColor = .grayColor()
-        view.backgroundColor = .darkGrey()
+        view.backgroundColor = .heavyGrey()
         activityIndicatorView.hidesWhenStopped = true
         activityIndicatorView.stopAnimating()
     }
