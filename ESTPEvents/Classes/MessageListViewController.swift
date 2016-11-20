@@ -51,7 +51,6 @@ class MessageListViewController: SharedViewController, UITableViewDataSource, Me
         super.viewDidLoad()
         setupViews()
         setupController()
-        messagesPresenter.queryMessages()
     }
 
     override func viewWillAppear(animated: Bool) {
@@ -84,6 +83,7 @@ class MessageListViewController: SharedViewController, UITableViewDataSource, Me
     // MARK: - ApplicationStateListener
 
     override func applicationWillEnterForeground() {
+        super.applicationWillEnterForeground()
         messagesPresenter.markMessagesAsRead()
     }
 
@@ -98,6 +98,10 @@ class MessageListViewController: SharedViewController, UITableViewDataSource, Me
             navigationItem.rightBarButtonItem = nil
             tableView.allowsSelection = false
         }
+    }
+
+    override func shouldRefresh() {
+        messagesPresenter.queryMessages()
     }
 
     // MARK: - Private
@@ -163,6 +167,7 @@ class MessageListViewController: SharedViewController, UITableViewDataSource, Me
     }
 
     func presenterMessagesWantsToShowError(error: ApplicationError) {
+        resetRefreshClock()
         showAlert(withMessage: error.description, title: "error_title")
     }
 

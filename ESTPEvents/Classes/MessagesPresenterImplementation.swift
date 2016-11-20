@@ -119,12 +119,14 @@ class MessagesPresenterImplementation<MR: MessagesRepository, PR: PersistencyRep
     func queryMessages() {
         let pOperation = initialiseFetcherControllerOperation(with: self)
         let persistOperation = persistentRepository.persistMessagesOperation()
-        let observer = BlockObserverOnMainQueue(willExecute: nil) { _, _ in
-            if self.fetcherController?.isEmpty ?? true {
-                self.client?.presenterMessagesIsEmpty()
+        if fetcherController?.isEmpty ?? true {
+            let observer = BlockObserverOnMainQueue(willExecute: nil) { _, _ in
+                if self.fetcherController?.isEmpty ?? true {
+                    self.client?.presenterMessagesIsEmpty()
+                }
             }
+            persistOperation.addObserver(observer)
         }
-        persistOperation.addObserver(observer)
         let operation = queryRemoteMessagesOperation(with: persistOperation)
         operation.addDependency(pOperation)
         operation.addObserver(queryOperationObserver())

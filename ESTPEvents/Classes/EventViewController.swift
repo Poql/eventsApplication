@@ -60,7 +60,6 @@ class EventViewController: SharedViewController, EventPresenterClient, UITableVi
         super.viewDidLoad()
         setupController()
         setupTableView()
-        eventPresenter.queryAllEvents()
         eventPresenter.registerListener(self)
     }
 
@@ -123,6 +122,7 @@ class EventViewController: SharedViewController, EventPresenterClient, UITableVi
     // MARK: - ApplicationStateListener
 
     override func applicationWillEnterForeground() {
+        super.applicationWillEnterForeground()
         eventPresenter.markEventsAsRead()
     }
 
@@ -135,6 +135,10 @@ class EventViewController: SharedViewController, EventPresenterClient, UITableVi
         case .admin:
             navigationItem.rightBarButtonItem = addButton
         }
+    }
+
+    override func shouldRefresh() {
+        eventPresenter.queryAllEvents()
     }
 
     // MARK: - ModifyEventViewControllerDelegate
@@ -166,6 +170,7 @@ class EventViewController: SharedViewController, EventPresenterClient, UITableVi
     }
 
     func eventPresenterWantsToShowError(error: ApplicationError) {
+        resetRefreshClock()
         let controller = eventDetailViewController ?? self
         controller.showAlert(withMessage: error.description, title: String(key: "error_title"))
     }

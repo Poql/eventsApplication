@@ -8,6 +8,10 @@
 
 import UIKit
 
+private struct Constant {
+    static let minimumRefreshDistanceTime: NSTimeInterval = 60 * 5
+}
+
 protocol Info {
     var identifier: Int { get }
     var description: String { get }
@@ -29,6 +33,8 @@ class SharedViewController: UIViewController, UserStatusUpdateListener, BannerCo
         return presenterFactory.applicationPresenter.currentUserStatus
     }
 
+    private var lastRefreshDate = NSDate.distantPast()
+
     private let bannerContainer = BannerContainerView()
 
     override func viewDidLoad() {
@@ -39,15 +45,29 @@ class SharedViewController: UIViewController, UserStatusUpdateListener, BannerCo
         presenterFactory.applicationPresenter.registerForUserStatusUpdate(self)
     }
 
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        tryToTriggerRefresh()
+    }
+
     // MARK: - Private
 
-    func setupBanner() {
+    private func setupBanner() {
         view.addSubview(bannerContainer)
         bannerContainer.delegate = self
         bannerContainer.translatesAutoresizingMaskIntoConstraints = false
         bannerContainer.topAnchor.constraintEqualToAnchor(topLayoutGuide.bottomAnchor).active = true
         bannerContainer.leadingAnchor.constraintEqualToAnchor(view.leadingAnchor).active = true
         bannerContainer.trailingAnchor.constraintEqualToAnchor(view.trailingAnchor).active = true
+    }
+
+    private func tryToTriggerRefresh() {
+        let currentDate = NSDate()
+        guard currentDate.timeIntervalSinceDate(lastRefreshDate) > Constant.minimumRefreshDistanceTime else {
+            return
+        }
+        lastRefreshDate = currentDate
+        shouldRefresh()
     }
 
     // MARK: - BannerContainerViewDelegate
@@ -73,6 +93,7 @@ class SharedViewController: UIViewController, UserStatusUpdateListener, BannerCo
     // MARK: - ApplicationStateListener
 
     func applicationWillEnterForeground() {
+        tryToTriggerRefresh()
     }
 
     func applicationDidBecomeActive() {
@@ -84,6 +105,14 @@ class SharedViewController: UIViewController, UserStatusUpdateListener, BannerCo
     }
 
     // MARK: - Public
+
+    func resetRefreshClock() {
+        lastRefreshDate = NSDate.distantPast()
+    }
+
+    func shouldRefresh() {
+        // override
+    }
 
     func showAlert(withMessage message: String,
                                title: String,

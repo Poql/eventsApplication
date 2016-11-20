@@ -89,12 +89,14 @@ class EventPresenterImplementation<R: EventRepository, PR: PersistencyRepository
     func queryAllEvents() {
         let persistedEventsOperation = initialiseFetcherControllerOperation(with: self)
         let persistOperation = persistencyRepository.persistEventsOperation()
-        let observer = BlockObserverOnMainQueue(willExecute: nil) { _, _ in
-            if self.fetcherController?.isEmpty ?? true {
-                self.client?.eventPresenterIsEmpty()
+        if fetcherController?.isEmpty ?? true {
+            let observer = BlockObserverOnMainQueue(willExecute: nil) { _, _ in
+                if self.fetcherController?.isEmpty ?? true {
+                    self.client?.eventPresenterIsEmpty()
+                }
             }
+            persistOperation.addObserver(observer)
         }
-        persistOperation.addObserver(observer)
         let remoteEventsOperation = queryRemoteEventsOperation(with: persistOperation)
         remoteEventsOperation.addDependency(persistedEventsOperation)
         operationQueue.addOperations(remoteEventsOperation)
