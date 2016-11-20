@@ -17,7 +17,7 @@ enum EventDetailRow: Int {
 
 struct EventDetailRowMapper {
     static func row(atIndexPath indexPath: NSIndexPath, forEvent event: Event?) -> EventDetailRow? {
-        let hasURL = event?.link != nil
+        let hasURL = !(event?.link?.isEmpty ?? true)
         switch indexPath.row {
         case 0:
             return .preview
@@ -35,7 +35,7 @@ struct EventDetailRowMapper {
     static func numberOfRows(forEvent event: Event?) -> Int {
         guard let event = event else { return 0 }
         var count = EventDetailRow.count
-        count -= event.link != nil ? 0 : 1
+        count -= !(event.link?.isEmpty ?? true) ? 0 : 1
         count -= event.location != nil ? 0 : 1
         return count
     }

@@ -32,7 +32,7 @@ class EventDetailViewController: SharedViewController, UITableViewDelegate, UITa
         return button
     }()
 
-    private var eventCoordinate: CLLocationCoordinate2D?
+    private var eventMapItem: MKMapItem?
 
     var event: Event?
 
@@ -69,6 +69,8 @@ class EventDetailViewController: SharedViewController, UITableViewDelegate, UITa
     func tryToUpdateEvent(with event: Event) {
         guard let currentEvent = self.event where event == currentEvent else { return }
         self.event = event
+        eventMapItem = nil
+        searchEventLocation()
         tableView.reloadData()
     }
 
@@ -131,7 +133,7 @@ class EventDetailViewController: SharedViewController, UITableViewDelegate, UITa
         case .location:
             let cell: LocationCell = tableView.dequeueCell()
             cell.configure(location: event?.location)
-            cell.configure(locationCoordinate: eventCoordinate)
+            cell.configure(locationCoordinate: eventMapItem?.placemark.coordinate)
             return cell
         case .url:
             let cell: TextCell = tableView.dequeueCell()
@@ -142,6 +144,9 @@ class EventDetailViewController: SharedViewController, UITableViewDelegate, UITa
 
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         guard let row = EventDetailRowMapper.row(atIndexPath: indexPath, forEvent: event) else { return }
+        defer {
+            tableView.deselectRowAtIndexPath(indexPath, animated: true)
+        }
         switch row {
         case .url:
             guard
@@ -150,10 +155,12 @@ class EventDetailViewController: SharedViewController, UITableViewDelegate, UITa
                 where UIApplication.sharedApplication().canOpenURL(url)
                 else { return }
             UIApplication.sharedApplication().openURL(url)
+        case .location:
+            guard let item = eventMapItem else { return }
+            item.openInMapsWithLaunchOptions(nil)
         default:
             return
         }
-        tableView.deselectRowAtIndexPath(indexPath, animated: true)
     }
 
     func tableView(tableView: UITableView, willSelectRowAtIndexPath indexPath: NSIndexPath) -> NSIndexPath? {
@@ -161,8 +168,22 @@ class EventDetailViewController: SharedViewController, UITableViewDelegate, UITa
         switch row {
         case .url:
             return indexPath
+        case .location:
+            return eventMapItem != nil ? indexPath : nil
         default:
             return nil
+        }
+    }
+
+    func tableView(tableView: UITableView, shouldHighlightRowAtIndexPath indexPath: NSIndexPath) -> Bool {
+        guard let row = EventDetailRowMapper.row(atIndexPath: indexPath, forEvent: event) else { return false }
+        switch row {
+        case .url:
+            return true
+        case .location:
+            return eventMapItem != nil
+        default:
+            return false
         }
     }
 
@@ -178,8 +199,8 @@ class EventDetailViewController: SharedViewController, UITableViewDelegate, UITa
         request.naturalLanguageQuery = "\(location.title) \(location.subtitle)"
         let localSearch = MKLocalSearch(request: request)
         localSearch.startWithCompletionHandler { response, error in
-            guard let coordinate = response?.mapItems.first?.placemark.coordinate else { return }
-            self.eventCoordinate = coordinate
+            guard let item = response?.mapItems.first else { return }
+            self.eventMapItem = item
             self.tableView.reloadData()
         }
     }

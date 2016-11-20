@@ -56,7 +56,7 @@ class EventTableViewCell: UITableViewCell {
         } else {
             dateLabel.text = nil
         }
-        stateLabel.text = event.cancelled ? String("event_cancelled_label") : nil
+        stateLabel.text = event.cancelled ? "event_cancelled_label".localized : nil
     }
 
     // MARK: - Private
