@@ -38,6 +38,15 @@ struct Message: Record, Entity {
         }
     }
 
+    var isAlert: Bool {
+        set {
+            record["isAlert"] = newValue
+        }
+        get {
+            return Bool(record["isAlert"] as? Int)
+        }
+    }
+
     var read = false
 
     let record: CKRecord

@@ -14,6 +14,7 @@ class PersistentMessage: PersistentRecord {
         return "PersistentMessage"
     }
 
+    @NSManaged var isAlert: Bool
     @NSManaged var content: String
     @NSManaged var author: String
 }

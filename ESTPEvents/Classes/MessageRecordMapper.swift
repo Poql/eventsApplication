@@ -15,6 +15,7 @@ class MessageRecordMapper: Mapper, RecordMapper, PersistentRecordMapper {
         message.author = persistentRecord.author
         message.content = persistentRecord.content
         message.read = persistentRecord.read
+        message.isAlert = persistentRecord.isAlert
         return message
     }
 
@@ -30,6 +31,7 @@ class MessageRecordMapper: Mapper, RecordMapper, PersistentRecordMapper {
         updatePersistentRecord(persistentRecord, with: record)
         persistentRecord.author = record.author ?? ""
         persistentRecord.content = record.content ?? ""
+        persistentRecord.isAlert = record.isAlert
     }
 
 }
