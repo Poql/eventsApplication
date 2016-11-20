@@ -16,6 +16,7 @@
     <entity name="PersistentMessage" representedClassName=".PersistentMessage" parentEntity="PersistentRecord" syncable="YES">
         <attribute name="author" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="content" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="isAlert" optional="YES" attributeType="Boolean" usesScalarValueType="NO" syncable="YES"/>
     </entity>
     <entity name="PersistentRecord" representedClassName=".PersistentRecord" syncable="YES">
         <attribute name="changeTag" optional="YES" attributeType="String" syncable="YES"/>
@@ -27,7 +28,7 @@
     </entity>
     <elements>
         <element name="PersistentEvent" positionX="-45" positionY="27" width="128" height="210"/>
-        <element name="PersistentMessage" positionX="-54" positionY="90" width="128" height="75"/>
+        <element name="PersistentMessage" positionX="-54" positionY="90" width="128" height="90"/>
         <element name="PersistentRecord" positionX="-63" positionY="-18" width="128" height="135"/>
     </elements>
 </model>
