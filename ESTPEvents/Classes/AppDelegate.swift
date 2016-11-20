@@ -69,14 +69,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UIBarButtonItem.appearance().setTitleTextAttributes([NSFontAttributeName: UIFont.regularMainFont(ofSize: 18)], forState: .Normal)
     }
 
-    private func setupTintColor(color: UIColor) {
-        UINavigationBar.appearance().tintColor = color
-        UIBarButtonItem.appearance().tintColor = color
-        UIButton.appearance().tintColor = color
-        UITabBar.appearance().tintColor = color
-        UISwitch.appearance().onTintColor = color
-    }
-    
+//    private func setupTintColor(color: UIColor) {
+//        UINavigationBar.appearance().tintColor = color
+//        UIBarButtonItem.appearance().tintColor = color
+//        UIButton.appearance().tintColor = color
+//        UITabBar.appearance().tintColor = color
+//        UISwitch.appearance().onTintColor = color
+//    }
+//    
     private func removeOldEntities() {
         applicationPresenter.deleteEvents(beforeDate: NSDate().oneWeekBefore())
         applicationPresenter.deleteMessages(beforeDate: NSDate().twoMonthsBefore())
