@@ -125,8 +125,14 @@ class MessageListViewController: SharedViewController, UITableViewDataSource, Me
     }
 
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let message = messagesPresenter.message(atIndex: indexPath)
+        if message.isAlert {
+            let cell: AlertMessageTableViewCell = tableView.dequeueCell()
+            cell.configure(with: message)
+            return cell
+        }
         let cell: MessageTableViewCell = tableView.dequeueCell()
-        cell.configure(with: messagesPresenter.message(atIndex: indexPath))
+        cell.configure(with: message)
         return cell
     }
 

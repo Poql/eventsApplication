@@ -82,6 +82,7 @@
 		E769C2431DE06AF70085C8C3 /* DeleteMessagesOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E769C2411DE06AF70085C8C3 /* DeleteMessagesOperation.swift */; };
 		E769C2441DE06AF70085C8C3 /* PersistEventsOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E769C2421DE06AF70085C8C3 /* PersistEventsOperation.swift */; };
 		E769C2461DE06B0C0085C8C3 /* RecordsFetcherControllerInitializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E769C2451DE06B0C0085C8C3 /* RecordsFetcherControllerInitializer.swift */; };
+		E769C2481DE097F40085C8C3 /* AlertMessageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E769C2471DE097F40085C8C3 /* AlertMessageTableViewCell.swift */; };
 		E769C24A1DE099750085C8C3 /* NSDateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E769C2491DE099750085C8C3 /* NSDateFormatter.swift */; };
 		E77E19E61D8AA8CF009D7616 /* UIView + Layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = E77E19E51D8AA8CF009D7616 /* UIView + Layout.swift */; };
 		E780F2561D8556FC0084E86B /* LocationPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E780F2551D8556FC0084E86B /* LocationPickerViewController.swift */; };
@@ -270,6 +271,7 @@
 		E769C2411DE06AF70085C8C3 /* DeleteMessagesOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DeleteMessagesOperation.swift; path = Classes/DeleteMessagesOperation.swift; sourceTree = "<group>"; };
 		E769C2421DE06AF70085C8C3 /* PersistEventsOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PersistEventsOperation.swift; path = Classes/PersistEventsOperation.swift; sourceTree = "<group>"; };
 		E769C2451DE06B0C0085C8C3 /* RecordsFetcherControllerInitializer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RecordsFetcherControllerInitializer.swift; path = Classes/RecordsFetcherControllerInitializer.swift; sourceTree = "<group>"; };
+		E769C2471DE097F40085C8C3 /* AlertMessageTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AlertMessageTableViewCell.swift; path = Classes/AlertMessageTableViewCell.swift; sourceTree = "<group>"; };
 		E769C2491DE099750085C8C3 /* NSDateFormatter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NSDateFormatter.swift; path = Classes/NSDateFormatter.swift; sourceTree = "<group>"; };
 		E77E19E51D8AA8CF009D7616 /* UIView + Layout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIView + Layout.swift"; path = "Classes/UIView + Layout.swift"; sourceTree = "<group>"; };
 		E780F2551D8556FC0084E86B /* LocationPickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LocationPickerViewController.swift; path = Classes/LocationPickerViewController.swift; sourceTree = "<group>"; };
@@ -477,6 +479,7 @@
 			isa = PBXGroup;
 			children = (
 				E72219211DC3E05800C5A7EB /* MessageTableViewCell.swift */,
+				E769C2471DE097F40085C8C3 /* AlertMessageTableViewCell.swift */,
 			);
 			name = Message;
 			sourceTree = "<group>";
@@ -1315,6 +1318,7 @@
 				E78FB7981DB37EC8002303BA /* CreateAdminOperation.swift in Sources */,
 				E7CFA6BF1DC1454100F27F05 /* MessagesPresenterImplementation.swift in Sources */,
 				E7192E221DBD1CFA00829A8A /* MessagesRepositoryImplementation.swift in Sources */,
+				E769C2481DE097F40085C8C3 /* AlertMessageTableViewCell.swift in Sources */,
 				E79640B91D880B0100C9F9DC /* EventDetailViewController.swift in Sources */,
 				E79B6BC51D7AFE780048E0DF /* Entity.swift in Sources */,
 				E78FB7A41DB7F9DF002303BA /* RequestAdminRightsPresenterImplementation.swift in Sources */,
