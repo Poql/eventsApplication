@@ -34,6 +34,10 @@ class ModifyMessageViewController: SharedViewController, UITextViewDelegate {
 
     @IBOutlet var scrollView: UIScrollView!
 
+    @IBOutlet var isAlertLabel: UILabel!
+
+    @IBOutlet var isAlertSwitch: UISwitch!
+
     weak var delegate: ModifyMessageViewControllerDelegate?
 
     var message: Message?
@@ -83,13 +87,16 @@ class ModifyMessageViewController: SharedViewController, UITextViewDelegate {
         cancelButton.title = String(key: "cancel_button_title")
         authorTextField.placeholder = String(key: "message_author_label_placeholder")
         notifyUserLabel.text = String(key: "notify_user_label")
+        isAlertLabel.text = "is_alert_label".localized
         contentTextView.delegate = self
         contentTextView.scrollEnabled = false
         contentTextView.text = message?.content
         authorTextField.text = message?.author
         notifyUserSwitch.on = message?.notify ?? false
+        isAlertSwitch.on = message?.isAlert ?? false
         authorTextField.font = UIFont.regularMainFont(ofSize: 15)
         notifyUserLabel.font = UIFont.regularMainFont(ofSize: 15)
+        isAlertLabel.font = UIFont.regularMainFont(ofSize: 15)
         contentTextView.font = UIFont.regularMainFont(ofSize: 15)
     }
 
@@ -116,6 +123,10 @@ class ModifyMessageViewController: SharedViewController, UITextViewDelegate {
         tryToEnableAddButton()
     }
     // MARK: - Actions
+
+    @IBAction func isAlertAction(sender: UISwitch) {
+        message?.isAlert = sender.on
+    }
 
     @IBAction func notifyUserSwitchAction(sender: UISwitch) {
         message?.notify = sender.on
