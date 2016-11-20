@@ -15,11 +15,6 @@ private struct Constant {
 protocol Info {
     var identifier: Int { get }
     var description: String { get }
-    var color: UIColor { get }
-}
-
-extension Info {
-    var color: UIColor { return .orange() }
 }
 
 class SharedViewController: UIViewController, UserStatusUpdateListener, BannerContainerViewDelegate, ApplicationStateListener {
@@ -129,7 +124,7 @@ class SharedViewController: UIViewController, UserStatusUpdateListener, BannerCo
     func showBanner(with info: Info, animated: Bool = true) {
         identifiers.append(info.identifier)
         currentInfo[info.identifier] = info
-        bannerContainer.showBanner(with: info.description, color: info.color, animated: animated)
+        bannerContainer.showBanner(with: info.description, animated: animated)
     }
 
     func dismissBannerInfo(info: Info) {

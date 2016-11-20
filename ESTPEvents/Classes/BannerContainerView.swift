@@ -37,7 +37,13 @@ class BannerContainerView: UIView {
 
     private let bannerView: UIView = {
         let view = UIView()
+        view.backgroundColor = UIColor.clearColor()
         return view
+    }()
+
+    private let translucentView: UIView = {
+        let effet = UIBlurEffect(style: .Dark)
+        return UIVisualEffectView(effect: effet)
     }()
 
     init() {
@@ -51,9 +57,8 @@ class BannerContainerView: UIView {
 
     // MARK: - Public
 
-    func showBanner(with message: String, color: UIColor = .red(), animated: Bool) {
+    func showBanner(with message: String, animated: Bool) {
         messageLabel.text = message
-        bannerView.backgroundColor = color
         guard heightConstraint.constant < Constant.bannerHeight else { return }
         heightConstraint.constant = Constant.bannerHeight
         if !animated {
@@ -83,6 +88,8 @@ class BannerContainerView: UIView {
         clipsToBounds = true
         addSubview(bannerView)
         bannerView.translatesAutoresizingMaskIntoConstraints = false
+        bannerView.addSubview(translucentView)
+        translucentView.pinToSuperView()
         let stackView = UIStackView(arrangedSubviews: [messageLabel])
         bannerView.addSubview(stackView)
         stackView.pinToSuperView(with: UIEdgeInsetsMake(0, Constant.bannerLeftInsets, 0, 0))
