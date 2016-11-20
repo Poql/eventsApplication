@@ -62,17 +62,13 @@ class ModifyMessageViewController: SharedViewController, UITextViewDelegate {
         contentTextView.becomeFirstResponder()
         tryToEnableAddButton()
         keyboardManager.registerForKeyboardMoves()
+        setTextViewSize()
     }
 
     override func viewWillDisappear(animated: Bool) {
         super.viewWillDisappear(animated)
         view.endEditing(true)
         keyboardManager.unregisterForKeyboardMoves()
-    }
-
-    override func viewDidAppear(animated: Bool) {
-        super.viewDidAppear(animated)
-        setTextViewSize()
     }
 
     // MARK: - Private
