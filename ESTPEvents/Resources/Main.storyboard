@@ -313,6 +313,7 @@
                         <outlet property="tableView" destination="FaT-ay-zlB" id="ltf-Sc-CLJ"/>
                         <segue destination="7gX-4E-6DC" kind="show" identifier="DatePickerViewController" id="9jF-vk-kNS"/>
                         <segue destination="Tq6-PX-Tpy" kind="show" identifier="LocationPickerViewController" id="Kwa-22-iRb"/>
+                        <segue destination="vuH-QJ-hyF" kind="show" identifier="ColorPickerViewController" id="ig2-kC-Ovl"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="txd-U6-dvi" userLabel="First Responder" sceneMemberID="firstResponder"/>

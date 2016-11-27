@@ -17,11 +17,12 @@ protocol ModifyEventViewControllerDelegate: class {
     func controller(controller: ModifyEventViewController, didModify event: Event)
 }
 
-class ModifyEventViewController: SharedViewController, UITableViewDataSource, UITableViewDelegate, SegueHandlerType, DatePickerViewControllerDelegate, LocationPickerViewControllerDelegate {
+class ModifyEventViewController: SharedViewController, UITableViewDataSource, UITableViewDelegate, SegueHandlerType, DatePickerViewControllerDelegate, LocationPickerViewControllerDelegate, ColorPickerViewControllerDelegate {
 
     enum SegueIdentifier: String {
         case date = "DatePickerViewController"
         case location = "LocationPickerViewController"
+        case color = "ColorPickerViewController"
     }
 
     @IBOutlet var tableView: UITableView! {
@@ -55,6 +56,10 @@ class ModifyEventViewController: SharedViewController, UITableViewDataSource, UI
 
     private var descriptionIndexPath: NSIndexPath {
         return NSIndexPath(forRow: ModifyEventAdjunctRow.description.rawValue, inSection: ModifyEventSection.adjunct.rawValue)
+    }
+
+    private var colorIndexPath: NSIndexPath {
+        return NSIndexPath(forRow: ModifyEventCreatorRow.color.rawValue, inSection: ModifyEventSection.creator.rawValue)
     }
 
     private var locationIndexPath: NSIndexPath {
@@ -94,6 +99,9 @@ class ModifyEventViewController: SharedViewController, UITableViewDataSource, UI
             controller.delegate = self
         case .location:
             guard let controller = segue.destinationViewController as? LocationPickerViewController else { return }
+            controller.delegate = self
+        case .color:
+            guard let controller = segue.destinationViewController as? ColorPickerViewController else { return }
             controller.delegate = self
         }
     }
@@ -149,6 +157,15 @@ class ModifyEventViewController: SharedViewController, UITableViewDataSource, UI
         tryEnableAddButton()
         tableView.reloadRowsAtIndexPaths([dateIndexPath], withRowAnimation: .Fade)
     }
+
+    // MARK: - ColorPickerViewControllerDelegate
+
+    func controller(controller: ColorPickerViewController, didPickColor color: Color) {
+        event?.color = color.hex
+        tryEnableAddButton()
+        tableView.reloadRowsAtIndexPaths([colorIndexPath], withRowAnimation: .Fade)
+        navigationController?.popViewControllerAnimated(true)
+    }
     
     // MARK: - UITableViewDataSource
 
@@ -197,8 +214,12 @@ class ModifyEventViewController: SharedViewController, UITableViewDataSource, UI
                 return cell
             case .color:
                 let cell: ColorCell = tableView.dequeueCell()
-                cell.configure(withPlaceholder: String(key: "modify_event_color_placeholder"), value: event?.color)
-                cell.colorDidChange = { self.event?.color = $0; self.tryEnableAddButton() }
+                cell.configure(
+                    withPlaceholder: String(key: "modify_event_color_placeholder"),
+                    value: event?.color,
+                    editable: false
+                )
+                cell.accessoryType = .DisclosureIndicator
                 return cell
             }
         case .detail:
@@ -256,13 +277,22 @@ class ModifyEventViewController: SharedViewController, UITableViewDataSource, UI
             performSegue(withIdentifier: .date, sender: self)
         case locationIndexPath:
             performSegue(withIdentifier: .location, sender: self)
+        case colorIndexPath:
+            performSegue(withIdentifier: .color, sender: self)
         default:
             break
         }
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
     }
+
+    func tableView(tableView: UITableView, willSelectRowAtIndexPath indexPath: NSIndexPath) -> NSIndexPath? {
+        if indexPath == dateIndexPath || indexPath == locationIndexPath || indexPath == colorIndexPath {
+            return indexPath
+        }
+        return nil
+    }
     
     func tableView(tableView: UITableView, shouldHighlightRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        return indexPath == dateIndexPath || indexPath == locationIndexPath
+        return indexPath == dateIndexPath || indexPath == locationIndexPath || indexPath == colorIndexPath
     }
 }

@@ -22,6 +22,18 @@ class ColorCell: UITableViewCell, UITextFieldDelegate {
     @IBOutlet var textField: UITextField!
     
     var colorDidChange: ((color: String?) -> Void)?
+
+    override func setHighlighted(highlighted: Bool, animated: Bool) {
+        let color = colorView.backgroundColor
+        super.setHighlighted(highlighted, animated: animated)
+        colorView.backgroundColor = color
+    }
+
+    override func setSelected(selected: Bool, animated: Bool) {
+        let color = colorView.backgroundColor
+        super.setSelected(selected, animated: animated)
+        colorView.backgroundColor = color
+    }
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -30,9 +42,10 @@ class ColorCell: UITableViewCell, UITextFieldDelegate {
         colorView.layer.cornerRadius = Constant.colorViewCornerRadius
     }
 
-    func configure(withPlaceholder placeholder: String?, value: String?) {
+    func configure(withPlaceholder placeholder: String?, value: String?, editable: Bool = true) {
         textField.placeholder = placeholder
         textField.text = value
+        textField.enabled = editable
         setColor(fromText: value)
     }
 
