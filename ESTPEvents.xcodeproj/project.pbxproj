@@ -38,6 +38,7 @@
 		E734F82A1D79CED1001E013C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E734F8291D79CED1001E013C /* Assets.xcassets */; };
 		E734F82F1D79CF08001E013C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E734F82D1D79CF08001E013C /* LaunchScreen.storyboard */; };
 		E734F8301D79CF08001E013C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E734F82E1D79CF08001E013C /* Main.storyboard */; };
+		E73B8BEC1DE22D2D009ADB0F /* ColorPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E73B8BEB1DE22D2D009ADB0F /* ColorPickerViewController.swift */; };
 		E73B8BF01DE22D9F009ADB0F /* PickableColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E73B8BEF1DE22D9F009ADB0F /* PickableColor.swift */; };
 		E73B8BF31DE22DDC009ADB0F /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = E73B8BF21DE22DDC009ADB0F /* Color.swift */; };
 		E73B8BF61DE23AC1009ADB0F /* ColorTypePickerCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E73B8BF51DE23AC1009ADB0F /* ColorTypePickerCollectionViewCell.swift */; };
@@ -241,6 +242,7 @@
 		E734F8291D79CED1001E013C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = Resources/Assets.xcassets; sourceTree = "<group>"; };
 		E734F82D1D79CF08001E013C /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = Resources/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E734F82E1D79CF08001E013C /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = Resources/Main.storyboard; sourceTree = "<group>"; };
+		E73B8BEB1DE22D2D009ADB0F /* ColorPickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ColorPickerViewController.swift; path = Classes/ColorPickerViewController.swift; sourceTree = "<group>"; };
 		E73B8BEF1DE22D9F009ADB0F /* PickableColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PickableColor.swift; path = Classes/PickableColor.swift; sourceTree = "<group>"; };
 		E73B8BF21DE22DDC009ADB0F /* Color.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Color.swift; path = Classes/Color.swift; sourceTree = "<group>"; };
 		E73B8BF51DE23AC1009ADB0F /* ColorTypePickerCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ColorTypePickerCollectionViewCell.swift; path = Classes/ColorTypePickerCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -665,6 +667,7 @@
 		E73B8BEA1DE22C74009ADB0F /* Color Picker */ = {
 			isa = PBXGroup;
 			children = (
+				E73B8BEB1DE22D2D009ADB0F /* ColorPickerViewController.swift */,
 				E73B8BEF1DE22D9F009ADB0F /* PickableColor.swift */,
 			);
 			name = "Color Picker";
@@ -1362,6 +1365,7 @@
 				E79B6BC51D7AFE780048E0DF /* Entity.swift in Sources */,
 				E78FB7A41DB7F9DF002303BA /* RequestAdminRightsPresenterImplementation.swift in Sources */,
 				E7BC16061D7F434A00B02897 /* CircleView.swift in Sources */,
+				E73B8BEC1DE22D2D009ADB0F /* ColorPickerViewController.swift in Sources */,
 				E73FDD581DD75B440057B41D /* OnBoardingContainerViewController.swift in Sources */,
 				E79640A71D86FF5F00C9F9DC /* EventPreviewCell.swift in Sources */,
 				E7C3D2471D803174007F5146 /* SequenceType + Record.swift in Sources */,
