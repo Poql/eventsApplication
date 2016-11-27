@@ -39,6 +39,7 @@
 		E734F82F1D79CF08001E013C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E734F82D1D79CF08001E013C /* LaunchScreen.storyboard */; };
 		E734F8301D79CF08001E013C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E734F82E1D79CF08001E013C /* Main.storyboard */; };
 		E73B8BF31DE22DDC009ADB0F /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = E73B8BF21DE22DDC009ADB0F /* Color.swift */; };
+		E73B8BF81DE993AB009ADB0F /* ColorPickerCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E73B8BF71DE993AB009ADB0F /* ColorPickerCollectionViewCell.swift */; };
 		E73FDD421DD630830057B41D /* Rubik-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E70CD3531DD5C67D0074A999 /* Rubik-Black.ttf */; };
 		E73FDD431DD630830057B41D /* Rubik-BlackItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E70CD3541DD5C67D0074A999 /* Rubik-BlackItalic.ttf */; };
 		E73FDD441DD630830057B41D /* Rubik-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E70CD3551DD5C67D0074A999 /* Rubik-Bold.ttf */; };
@@ -240,6 +241,7 @@
 		E734F82E1D79CF08001E013C /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = Resources/Main.storyboard; sourceTree = "<group>"; };
 		E73B8BEF1DE22D9F009ADB0F /* PickableColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PickableColor.swift; path = Classes/PickableColor.swift; sourceTree = "<group>"; };
 		E73B8BF21DE22DDC009ADB0F /* Color.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Color.swift; path = Classes/Color.swift; sourceTree = "<group>"; };
+		E73B8BF71DE993AB009ADB0F /* ColorPickerCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ColorPickerCollectionViewCell.swift; path = Classes/ColorPickerCollectionViewCell.swift; sourceTree = "<group>"; };
 		E73FDD4D1DD727A80057B41D /* OnBoardingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OnBoardingViewController.swift; path = Classes/OnBoardingViewController.swift; sourceTree = "<group>"; };
 		E73FDD511DD74B420057B41D /* UIViewController + loader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIViewController + loader.swift"; path = "Classes/UIViewController + loader.swift"; sourceTree = "<group>"; };
 		E73FDD531DD74E280057B41D /* PageAnimationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PageAnimationController.swift; path = Classes/PageAnimationController.swift; sourceTree = "<group>"; };
@@ -673,6 +675,14 @@
 			name = Color;
 			sourceTree = "<group>";
 		};
+		E73B8BF41DE23A97009ADB0F /* Color Picker */ = {
+			isa = PBXGroup;
+			children = (
+				E73B8BF71DE993AB009ADB0F /* ColorPickerCollectionViewCell.swift */,
+			);
+			name = "Color Picker";
+			sourceTree = "<group>";
+		};
 		E73FDD4C1DD7278F0057B41D /* On boarding */ = {
 			isa = PBXGroup;
 			children = (
@@ -874,6 +884,7 @@
 				E72219201DC3E03E00C5A7EB /* Message */,
 				E765703C1D84012600304D3E /* Modify Event */,
 				E796409F1D86D87800C9F9DC /* Event Detail */,
+				E73B8BF41DE23A97009ADB0F /* Color Picker */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -1246,6 +1257,7 @@
 				E7BC16001D7EF78600B02897 /* DataStackOperations.swift in Sources */,
 				E797F2F01D7C2D4100CB5EE2 /* PersistencyRepositoryImplementation.swift in Sources */,
 				E72219221DC3E05800C5A7EB /* MessageTableViewCell.swift in Sources */,
+				E73B8BF81DE993AB009ADB0F /* ColorPickerCollectionViewCell.swift in Sources */,
 				E756AC061D81E49A0077375D /* ModifyEventViewController.swift in Sources */,
 				E7BC15FA1D7ED69900B02897 /* NSFetchRequest+CoreDataModelable.swift in Sources */,
 				E74D7D841DCDE8B400A60CDC /* NeedUpdateViewController.swift in Sources */,
