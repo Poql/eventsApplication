@@ -238,6 +238,7 @@
 		E734F8291D79CED1001E013C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = Resources/Assets.xcassets; sourceTree = "<group>"; };
 		E734F82D1D79CF08001E013C /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = Resources/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E734F82E1D79CF08001E013C /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = Resources/Main.storyboard; sourceTree = "<group>"; };
+		E73B8BEF1DE22D9F009ADB0F /* PickableColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PickableColor.swift; path = Classes/PickableColor.swift; sourceTree = "<group>"; };
 		E73B8BF21DE22DDC009ADB0F /* Color.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Color.swift; path = Classes/Color.swift; sourceTree = "<group>"; };
 		E73FDD4D1DD727A80057B41D /* OnBoardingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OnBoardingViewController.swift; path = Classes/OnBoardingViewController.swift; sourceTree = "<group>"; };
 		E73FDD511DD74B420057B41D /* UIViewController + loader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIViewController + loader.swift"; path = "Classes/UIViewController + loader.swift"; sourceTree = "<group>"; };
@@ -540,6 +541,7 @@
 				E7EE0E991D7AC2740089B38C /* Event */,
 				E765703B1D84007A00304D3E /* Modify Event */,
 				E796409C1D86D82E00C9F9DC /* Event Detail */,
+				E73B8BEA1DE22C74009ADB0F /* Color Picker */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -653,6 +655,14 @@
 				E769C2491DE099750085C8C3 /* NSDateFormatter.swift */,
 			);
 			name = Extensions;
+			sourceTree = "<group>";
+		};
+		E73B8BEA1DE22C74009ADB0F /* Color Picker */ = {
+			isa = PBXGroup;
+			children = (
+				E73B8BEF1DE22D9F009ADB0F /* PickableColor.swift */,
+			);
+			name = "Color Picker";
 			sourceTree = "<group>";
 		};
 		E73B8BF11DE22DCD009ADB0F /* Color */ = {
@@ -1326,6 +1336,7 @@
 				E79640BB1D881FBD00C9F9DC /* AuthenticatedCondition.swift in Sources */,
 				E7FB89401D7B3DDE00FEFD1B /* LoadCoreDataStackOperation.swift in Sources */,
 				E7C3D2451D802022007F5146 /* NavigationControllerWithWhiteStatusBar.swift in Sources */,
+				E73B8BF01DE22D9F009ADB0F /* PickableColor.swift in Sources */,
 				E78FB7981DB37EC8002303BA /* CreateAdminOperation.swift in Sources */,
 				E7CFA6BF1DC1454100F27F05 /* MessagesPresenterImplementation.swift in Sources */,
 				E7192E221DBD1CFA00829A8A /* MessagesRepositoryImplementation.swift in Sources */,
