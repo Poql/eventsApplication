@@ -39,6 +39,7 @@
 		E734F82F1D79CF08001E013C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E734F82D1D79CF08001E013C /* LaunchScreen.storyboard */; };
 		E734F8301D79CF08001E013C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E734F82E1D79CF08001E013C /* Main.storyboard */; };
 		E73B8BF31DE22DDC009ADB0F /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = E73B8BF21DE22DDC009ADB0F /* Color.swift */; };
+		E73B8BF61DE23AC1009ADB0F /* ColorTypePickerCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E73B8BF51DE23AC1009ADB0F /* ColorTypePickerCollectionViewCell.swift */; };
 		E73B8BF81DE993AB009ADB0F /* ColorPickerCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E73B8BF71DE993AB009ADB0F /* ColorPickerCollectionViewCell.swift */; };
 		E73FDD421DD630830057B41D /* Rubik-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E70CD3531DD5C67D0074A999 /* Rubik-Black.ttf */; };
 		E73FDD431DD630830057B41D /* Rubik-BlackItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E70CD3541DD5C67D0074A999 /* Rubik-BlackItalic.ttf */; };
@@ -241,6 +242,7 @@
 		E734F82E1D79CF08001E013C /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = Resources/Main.storyboard; sourceTree = "<group>"; };
 		E73B8BEF1DE22D9F009ADB0F /* PickableColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PickableColor.swift; path = Classes/PickableColor.swift; sourceTree = "<group>"; };
 		E73B8BF21DE22DDC009ADB0F /* Color.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Color.swift; path = Classes/Color.swift; sourceTree = "<group>"; };
+		E73B8BF51DE23AC1009ADB0F /* ColorTypePickerCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ColorTypePickerCollectionViewCell.swift; path = Classes/ColorTypePickerCollectionViewCell.swift; sourceTree = "<group>"; };
 		E73B8BF71DE993AB009ADB0F /* ColorPickerCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ColorPickerCollectionViewCell.swift; path = Classes/ColorPickerCollectionViewCell.swift; sourceTree = "<group>"; };
 		E73FDD4D1DD727A80057B41D /* OnBoardingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OnBoardingViewController.swift; path = Classes/OnBoardingViewController.swift; sourceTree = "<group>"; };
 		E73FDD511DD74B420057B41D /* UIViewController + loader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIViewController + loader.swift"; path = "Classes/UIViewController + loader.swift"; sourceTree = "<group>"; };
@@ -678,6 +680,7 @@
 		E73B8BF41DE23A97009ADB0F /* Color Picker */ = {
 			isa = PBXGroup;
 			children = (
+				E73B8BF51DE23AC1009ADB0F /* ColorTypePickerCollectionViewCell.swift */,
 				E73B8BF71DE993AB009ADB0F /* ColorPickerCollectionViewCell.swift */,
 			);
 			name = "Color Picker";
@@ -1276,6 +1279,7 @@
 				E79640A51D86FC8F00C9F9DC /* EventDetailRow.swift in Sources */,
 				E796409B1D86AF9600C9F9DC /* KeyboardManager.swift in Sources */,
 				E79B6BC41D7AFE780048E0DF /* CKQuery+Record.swift in Sources */,
+				E73B8BF61DE23AC1009ADB0F /* ColorTypePickerCollectionViewCell.swift in Sources */,
 				E77E19E61D8AA8CF009D7616 /* UIView + Layout.swift in Sources */,
 				E78FB7A61DBB79CF002303BA /* RequestAdminRightsViewController.swift in Sources */,
 				E756AC041D81AFE40077375D /* FetchRecordOperation.swift in Sources */,
