@@ -850,10 +850,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="UEA-ff-8Zw">
-                                <rect key="frame" x="0.0" y="64" width="45" height="603"/>
+                                <rect key="frame" x="0.0" y="64" width="55" height="603"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="45" id="lEN-wH-kmf"/>
+                                    <constraint firstAttribute="width" constant="55" id="lEN-wH-kmf"/>
                                 </constraints>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="lL3-4r-GyT">
                                     <size key="itemSize" width="50" height="50"/>
@@ -863,7 +863,7 @@
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="yiB-tZ-D7h">
-                                        <rect key="frame" x="-3" y="0.0" width="50" height="50"/>
+                                        <rect key="frame" x="3" y="0.0" width="50" height="50"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
@@ -873,14 +873,14 @@
                                 </cells>
                             </collectionView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iBQ-lG-5e0">
-                                <rect key="frame" x="45" y="0.0" width="1" height="667"/>
+                                <rect key="frame" x="55" y="0.0" width="1" height="667"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="1" id="oFo-J3-XaX"/>
                                 </constraints>
                             </view>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="buL-tz-cOh">
-                                <rect key="frame" x="46" y="64" width="329" height="603"/>
+                                <rect key="frame" x="56" y="64" width="319" height="603"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="28b-DG-fvr">
                                     <size key="itemSize" width="50" height="50"/>

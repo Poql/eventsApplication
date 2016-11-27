@@ -13,7 +13,7 @@ private struct Constant {
     static let detailCollectioViewItemSpacing: CGFloat = 8
     static let collectionViewItemSpacing: CGFloat = 0
     static let collectionViewItemHeight: CGFloat = 44
-    static let detailCollectionViewItemHeight: CGFloat = 40
+    static let detailCollectionViewItemHeight: CGFloat = 50
 }
 
 protocol ColorPickerViewControllerDelegate: class {

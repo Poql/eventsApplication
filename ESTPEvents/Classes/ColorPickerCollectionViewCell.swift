@@ -49,6 +49,6 @@ class ColorPickerCollectionViewCell: UICollectionViewCell {
         label.translatesAutoresizingMaskIntoConstraints = false
         label.centerYAnchor.constraintEqualToAnchor(tenorView.centerYAnchor).active = true
         label.trailingAnchor.constraintEqualToAnchor(tenorView.trailingAnchor, constant: -Constant.trailingLabel).active = true
-        label.font = UIFont.regularMainFont(ofSize: 15)
+        label.font = UIFont.regularMainFont(ofSize: 16)
     }
 }
