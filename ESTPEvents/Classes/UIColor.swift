@@ -54,4 +54,16 @@ extension UIColor {
     static func heavyGrey() -> UIColor {
         return UIColor(white: 54/255, alpha: 1)
     }
+
+    static func textColor(forBackgroundColor color: UIColor) -> UIColor {
+        var r: CGFloat = 0
+        var g: CGFloat = 0
+        var b: CGFloat = 0
+        var alpha: CGFloat = 0
+        color.getRed(&r, green: &g, blue: &b, alpha: &alpha)
+        if r * 0.299 + g * 0.587 + b * 0.114 > CGFloat(186) / 255 {
+            return UIColor.heavyGrey()
+        }
+        return UIColor.whiteColor()
+    }
 }
