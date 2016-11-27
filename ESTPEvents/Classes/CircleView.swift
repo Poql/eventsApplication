@@ -31,6 +31,22 @@ class CircleView: UIView {
         }
     }
 
+    var lineWidth: CGFloat = Constant.lineWidth {
+        didSet {
+            setNeedsDisplay()
+        }
+    }
+
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        opaque = false
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        opaque = false
+    }
+
     override func drawRect(rect: CGRect) {
         let path = circlePath(forRect: rect)
         fillPath(path)
@@ -38,7 +54,6 @@ class CircleView: UIView {
     }
     
     private func circlePath(forRect rect: CGRect) -> UIBezierPath {
-        let lineWidth = Constant.lineWidth
         let origin = CGPointMake(rect.origin.x + lineWidth / 2, rect.origin.y + lineWidth / 2)
         let size = CGSizeMake(rect.width - lineWidth, rect.height - lineWidth)
         return UIBezierPath(ovalInRect: CGRect(origin: origin, size: size))
@@ -52,7 +67,7 @@ class CircleView: UIView {
     
     private func strokePath(path: UIBezierPath) {
         borderColor.setStroke()
-        path.lineWidth = Constant.lineWidth
+        path.lineWidth = lineWidth
         path.stroke()
     }
 }
