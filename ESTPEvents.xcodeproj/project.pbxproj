@@ -38,6 +38,7 @@
 		E734F82A1D79CED1001E013C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E734F8291D79CED1001E013C /* Assets.xcassets */; };
 		E734F82F1D79CF08001E013C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E734F82D1D79CF08001E013C /* LaunchScreen.storyboard */; };
 		E734F8301D79CF08001E013C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E734F82E1D79CF08001E013C /* Main.storyboard */; };
+		E73B8BF01DE22D9F009ADB0F /* PickableColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E73B8BEF1DE22D9F009ADB0F /* PickableColor.swift */; };
 		E73B8BF31DE22DDC009ADB0F /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = E73B8BF21DE22DDC009ADB0F /* Color.swift */; };
 		E73B8BF61DE23AC1009ADB0F /* ColorTypePickerCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E73B8BF51DE23AC1009ADB0F /* ColorTypePickerCollectionViewCell.swift */; };
 		E73B8BF81DE993AB009ADB0F /* ColorPickerCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E73B8BF71DE993AB009ADB0F /* ColorPickerCollectionViewCell.swift */; };
