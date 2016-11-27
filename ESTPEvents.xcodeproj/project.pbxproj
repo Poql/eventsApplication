@@ -38,6 +38,7 @@
 		E734F82A1D79CED1001E013C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E734F8291D79CED1001E013C /* Assets.xcassets */; };
 		E734F82F1D79CF08001E013C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E734F82D1D79CF08001E013C /* LaunchScreen.storyboard */; };
 		E734F8301D79CF08001E013C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E734F82E1D79CF08001E013C /* Main.storyboard */; };
+		E73B8BF31DE22DDC009ADB0F /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = E73B8BF21DE22DDC009ADB0F /* Color.swift */; };
 		E73FDD421DD630830057B41D /* Rubik-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E70CD3531DD5C67D0074A999 /* Rubik-Black.ttf */; };
 		E73FDD431DD630830057B41D /* Rubik-BlackItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E70CD3541DD5C67D0074A999 /* Rubik-BlackItalic.ttf */; };
 		E73FDD441DD630830057B41D /* Rubik-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E70CD3551DD5C67D0074A999 /* Rubik-Bold.ttf */; };
@@ -237,6 +238,7 @@
 		E734F8291D79CED1001E013C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = Resources/Assets.xcassets; sourceTree = "<group>"; };
 		E734F82D1D79CF08001E013C /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = Resources/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E734F82E1D79CF08001E013C /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = Resources/Main.storyboard; sourceTree = "<group>"; };
+		E73B8BF21DE22DDC009ADB0F /* Color.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Color.swift; path = Classes/Color.swift; sourceTree = "<group>"; };
 		E73FDD4D1DD727A80057B41D /* OnBoardingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OnBoardingViewController.swift; path = Classes/OnBoardingViewController.swift; sourceTree = "<group>"; };
 		E73FDD511DD74B420057B41D /* UIViewController + loader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIViewController + loader.swift"; path = "Classes/UIViewController + loader.swift"; sourceTree = "<group>"; };
 		E73FDD531DD74E280057B41D /* PageAnimationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PageAnimationController.swift; path = Classes/PageAnimationController.swift; sourceTree = "<group>"; };
@@ -587,6 +589,7 @@
 				E79B6BBA1D7AFE780048E0DF /* Error.swift */,
 				E79B6BC31D7AFE780048E0DF /* Result.swift */,
 				E780F2571D8599850084E86B /* Location.swift */,
+				E73B8BF11DE22DCD009ADB0F /* Color */,
 				E73FDD5B1DD8A7840057B41D /* Coding */,
 				E7FB89311D7B1F6600FEFD1B /* Persistency */,
 				E7E5FA3C1D79F0AE00B6FF1D /* Entity */,
@@ -650,6 +653,14 @@
 				E769C2491DE099750085C8C3 /* NSDateFormatter.swift */,
 			);
 			name = Extensions;
+			sourceTree = "<group>";
+		};
+		E73B8BF11DE22DCD009ADB0F /* Color */ = {
+			isa = PBXGroup;
+			children = (
+				E73B8BF21DE22DDC009ADB0F /* Color.swift */,
+			);
+			name = Color;
 			sourceTree = "<group>";
 		};
 		E73FDD4C1DD7278F0057B41D /* On boarding */ = {
@@ -1341,6 +1352,7 @@
 				E79B6BCC1D7AFE780048E0DF /* Operation+Completion.swift in Sources */,
 				E7DB08161DD8BF9700EA196A /* ConfigurationPresenter.swift in Sources */,
 				E7BC15F61D7ED67E00B02897 /* RecordMapper.swift in Sources */,
+				E73B8BF31DE22DDC009ADB0F /* Color.swift in Sources */,
 				E7C3D2431D80120E007F5146 /* UITableViewCell + ReusableCell.swift in Sources */,
 				E79B6BC61D7AFE780048E0DF /* Error.swift in Sources */,
 				E79640CB1D88449700C9F9DC /* WeakList.swift in Sources */,
